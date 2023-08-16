@@ -1,0 +1,7 @@
+<div class="map {{size}}">
+<div class="actualMap">
+{% for pos in boxCoords %}{% include square, x: pos[0], y: pos[1], color:pos[2] %}
+{% else %}empty!
+{% endfor %}
+</div>
+</div>

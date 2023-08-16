@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+testVar: true
+testString: TestString
+testArr: [2,3,4]
+title: Liquid Sandbox
+---
+<body>
+<h1>{{title}}</h1>
+<span>✅ Template Variables: {{ testVar }}</span>
+<br>
+<span>✅ Filter: {{ testString | makeUppercase }}</span>
+<br>
+<span>✅ Shortcode: {% sandboxSum 2, 3 %}</span>
+<br>
+<span>✅ JSON field: {{ sandbox-data.lion.size }}</span>
+<br>
+<span>✅ Subtemplate: {% include sandbox/liquid-sandbox-child %}</span>
+<br>
+<span>✅ Pass string to subtemplate {% include sandbox/liquid-sandbox-child, name:'abc' %}</span>
+<br>
+<span>✅ Pass array to subtemplate {% include sandbox/liquid-sandbox-child, arr:testArr %}</span>
+<br>
+</body>

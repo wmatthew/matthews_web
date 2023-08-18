@@ -11,6 +11,6 @@ eleventyImport:
 
 <ul>
 {%- for post in collections.puzzle -%}
-  <li>{{ post.data.title }}</li>
+  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
 {%- endfor -%}
 </ul>

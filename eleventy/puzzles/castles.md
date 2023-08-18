@@ -2,6 +2,7 @@
 layout: layouts/base.njk
 title: Castles Puzzle
 tags: tiling, "Unique Solution", puzzle, castle
+permalink: castle/puzzle/
 ---
 # Castles
 Assemble 42 identical pieces into an elaborate castle.

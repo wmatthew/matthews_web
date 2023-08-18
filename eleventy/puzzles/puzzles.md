@@ -1,6 +1,8 @@
 ---
 layout: layouts/base.njk
 title: Puzzles
+eleventyNavigation:
+  key: Puzzles
 permalink: puzzles/
 eleventyImport:
   collections: ["puzzle"]

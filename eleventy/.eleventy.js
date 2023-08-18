@@ -1,4 +1,8 @@
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+
 module.exports = function (eleventyConfig) {
+
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   eleventyConfig.setLiquidOptions({
     dynamicPartials: false, // see https://www.11ty.dev/docs/languages/liquid/ for details
@@ -22,4 +26,4 @@ module.exports = function (eleventyConfig) {
       output: "../docs"
     }    
   }
-}
+};

@@ -1,6 +1,9 @@
 ---
 layout: layouts/base.njk
 title: Pentomino Tiling
+eleventyNavigation:
+  key: Pentominos
+  parent: Puzzles
 tags:
   - puzzle
   - rep-tile

@@ -1,6 +1,9 @@
 ---
 layout: layouts/base.njk
 title: Castles
+eleventyNavigation:
+  key: Castles
+  parent: Puzzles
 tags:
   - tiling
   - unique solution

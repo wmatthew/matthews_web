@@ -1,6 +1,9 @@
 ---
 layout: layouts/base.njk
-title: Tiling Pentominos
+title: Pentomino Tiling
+tags:
+  - puzzle
+  - rep-tile
 permalink: pentomino/puzzle/
 ---
 # {{title}}

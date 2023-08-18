@@ -15,4 +15,11 @@ module.exports = function (eleventyConfig) {
 
   // copy the 'css' folder to the output
   eleventyConfig.addPassthroughCopy("css");
+
+  return {
+    dir: {
+      input: ".",
+      output: "../docs"
+    }    
+  }
 }

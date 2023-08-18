@@ -4,6 +4,7 @@ testVar: true
 testString: TestString
 testArr: [2,3,4]
 title: Markdown Sandbox
+eleventyExcludeFromCollections: true
 ---
 # {{ title }}
 

@@ -16,10 +16,6 @@ eleventyExcludeFromCollections: true
 <br>
 <span>✅ JSON field: {{ sandbox-data.lion.size }}</span>
 <br>
-<span>✅ Subtemplate: {% include sandbox/liquid-sandbox-child %}</span>
-<br>
-<span>✅ Pass string to subtemplate {% include sandbox/liquid-sandbox-child, name:'abc' %}</span>
-<br>
-<span>✅ Pass array to subtemplate {% include sandbox/liquid-sandbox-child, arr:testArr %}</span>
+<span>✅ Subtemplate: {% include sandbox/liquid-sandbox-child, name:'Brad', arr:testArr %}</span>
 <br>
 </body>

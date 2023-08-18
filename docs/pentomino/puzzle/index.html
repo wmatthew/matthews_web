@@ -1,0 +1,2559 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Tiling Pentominos | Tiling</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+  <h1>Tiling Pentominos</h1>
+<p>This is a P-pentomino:</p>
+<div class="map small">
+<div class="actualMap">
+<div class="map-cell color1" style="grid-area: 1 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color1" style="grid-area: 2 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color1" style="grid-area: 1 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color1" style="grid-area: 2 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color1" style="grid-area: 3 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+</div>
+</div>
+<p>This shape is <strong>chiral</strong>: flipping it creates a new shape that can't be restored by shifting or rotating. That means there is a 'regular' and 'flipped' version. We'll call the shape above regular.</p>
+<p>Here's the flipped version:</p>
+<div class="map small">
+<div class="actualMap">
+<div class="map-cell color2" style="grid-area: 1 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color2" style="grid-area: 2 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color2" style="grid-area: 1 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color2" style="grid-area: 2 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color2" style="grid-area: 3 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+</div>
+</div>
+<p>One thing that's cool about this shape is that multiple copies can be arranged to form a larger version of the original shape.</p>
+<p>Here two regular and two flipped shapes are used:</p>
+<div class="map small">
+<div class="actualMap">
+<div class="map-cell color1" style="grid-area: 1 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color1" style="grid-area: 2 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color1" style="grid-area: 1 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color1" style="grid-area: 2 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color1" style="grid-area: 3 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color2" style="grid-area: 1 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color2" style="grid-area: 1 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color2" style="grid-area: 2 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color2" style="grid-area: 2 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color2" style="grid-area: 3 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color3" style="grid-area: 3 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color3" style="grid-area: 3 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color3" style="grid-area: 4 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color3" style="grid-area: 4 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color3" style="grid-area: 4 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color4" style="grid-area: 4 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color4" style="grid-area: 5 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color4" style="grid-area: 6 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color4" style="grid-area: 5 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color4" style="grid-area: 6 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+</div>
+</div>
+<p>This tiling of the space is satisfying: everything fits perfectly, with no gaps or overlaps. Lovely!</p>
+<p>We can also do this with one regular and three flipped shapes:</p>
+<div class="map small">
+<div class="actualMap">
+<div class="map-cell color2" style="grid-area: 3 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color2" style="grid-area: 3 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color2" style="grid-area: 4 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color2" style="grid-area: 4 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color2" style="grid-area: 4 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color1" style="grid-area: 1 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color1" style="grid-area: 1 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color1" style="grid-area: 2 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color1" style="grid-area: 2 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color1" style="grid-area: 1 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color3" style="grid-area: 1 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color3" style="grid-area: 2 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color3" style="grid-area: 3 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color3" style="grid-area: 2 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color3" style="grid-area: 3 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color4" style="grid-area: 4 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color4" style="grid-area: 5 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color4" style="grid-area: 6 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color4" style="grid-area: 5 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color4" style="grid-area: 6 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+</div>
+</div>
+<p>Some combinations aren't possible. For example, there's no way to arrange four regular shapes to make a larger P-pentomino.</p>
+<h1>Scaling Up</h1>
+<p>Let's say our original P-pentomino shape is made of five unit squares. It has area 5, width 2, height 3.</p>
+<p>The larger <strong>board</strong> we tiled above has four shapes (area 20, width 4, height 6).</p>
+<p>There are many possible larger boards: for any N={1,2,3,...}, we can draw a board of area 5N², width 2N, and height 3N.</p>
+<p>Here's any empty board of size N=3 (area 45, width 6, height 9):</p>
+<div class="map small">
+<div class="actualMap">
+<div class="map-cell color-2" style="grid-area: 1 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 2 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 3 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 4 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 5 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 6 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 7 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 8 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 9 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 1 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 2 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 3 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 4 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 5 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 6 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 7 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 8 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 9 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 1 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 2 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 3 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 4 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 5 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 6 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 7 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 8 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 9 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 1 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 2 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 3 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 4 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 5 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 6 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 1 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 2 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 3 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 4 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 5 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 6 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 1 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 2 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 3 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 4 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 5 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 6 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+</div>
+</div>
+<p>For each larger board, we can ask:</p>
+<ul>
+<li>Can we tile the board with <strong>tile set</strong> of N² regular tiles?</li>
+<li>What about a tile set of N²-1 regular tiles and 1 flipped tile?</li>
+<li>What about a tile set of N²-2 regular tiles and 2 flipped tiles?</li>
+<li>What about a tile set of N²-3 regular tiles and 3 flipped tiles?</li>
+<li>...</li>
+<li>What about a tile set of 0 regular tiles and N² flipped tiles?</li>
+</ul>
+<p>In effect, we have a boundless number of tiling <strong>puzzles</strong>, where each puzzle is a fixed tile set and board size. Some will have no solutions; some will have many. It's not immediately obvious if there will be any pattern, but this seems like an interesting space to explore.</p>
+<div class="map small">
+<div class="actualMap">
+<div class="map-cell color-2" style="grid-area: 1 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 2 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 3 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 4 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 5 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 6 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 7 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 8 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 9 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 10 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 11 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 12 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 13 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 14 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 15 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 16 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 17 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 18 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 1 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 2 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 3 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 4 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 5 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 6 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 7 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 8 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 9 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 10 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 11 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 12 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 13 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 14 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 15 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 16 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 17 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 18 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 1 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 2 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 3 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 4 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 5 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 6 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 7 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 8 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 9 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 10 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 11 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 12 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 13 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 14 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 15 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 16 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 17 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 18 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 1 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 2 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 3 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 4 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 5 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 6 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 7 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 8 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 9 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 10 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 11 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 12 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 13 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 14 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 15 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 16 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 17 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 18 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 1 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 2 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 3 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 4 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 5 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 6 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 7 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 8 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 9 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 10 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 11 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 12 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 13 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 14 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 15 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 16 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 17 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 18 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 1 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 2 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 3 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 4 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 5 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 6 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 7 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 8 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 9 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 10 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 11 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 12 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 13 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 14 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 15 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 16 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 17 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 18 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 1 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 2 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 3 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 4 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 5 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 6 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 7 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 8 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 9 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 10 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 11 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 12 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 1 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 2 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 3 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 4 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 5 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 6 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 7 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 8 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 9 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 10 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 11 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 12 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 1 / 9 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 2 / 9 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 3 / 9 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 4 / 9 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 5 / 9 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 6 / 9 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 7 / 9 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 8 / 9 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 9 / 9 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 10 / 9 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 11 / 9 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 12 / 9 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 1 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 2 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 3 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 4 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 5 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 6 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 7 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 8 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 9 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 10 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 11 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 12 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 1 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 2 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 3 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 4 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 5 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 6 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 7 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 8 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 9 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 10 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 11 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 12 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 1 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 2 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 3 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 4 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 5 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 6 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 7 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 8 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 9 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 10 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-1" style="grid-area: 11 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color-2" style="grid-area: 12 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+</div>
+</div>
+<h1>Predictions</h1>
+<p>Before I programmatically explore the space, I'll make some predictions:</p>
+<p>Will there be a pattern to which boards/tile sets have solutions?</p>
+<ul>
+<li>Prediction: No, solutions will be more common as area grows, without a clear pattern.</li>
+</ul>
+<p>Will large boards be completely possible/impossible regardless of tile set?</p>
+<ul>
+<li>Prediction: No, large boards will have a mix of possible and impossible tile sets.</li>
+</ul>
+<p>Will large boards have unique solutions?</p>
+<ul>
+<li>Prediction: Yes, we'll find at least one puzzle with a unique solution on every board we look at.</li>
+</ul>
+<p>Will there be a repeating interior pattern in large board solutions?</p>
+<ul>
+<li>Prediction: Yes, there will be repeating interior patterns when there are many solutions. Unique solutions will have chaotic interiors.</li>
+</ul>
+<h1>Quality Rubric</h1>
+<p>Ultimately, I'm hoping to find a puzzle that is fun to solve.</p>
+<p>In descending priority order, I'd like to find a board/tile set that is:</p>
+<ul>
+<li><strong>Possible</strong>: There is at least one solution.</li>
+<li><strong>Unique</strong>: There are few solutions (ideally just one)</li>
+<li><strong>Chiral</strong>: The tile set can only make one board shape (it can't assemble a mirror board).</li>
+<li><strong>Tricky</strong>: There are many 'near misses': solutions for the same size board with one more or fewer regular tiles.</li>
+</ul>
+<p>We can quantify these and automatically rank solutions by quality as we find them.</p>
+<p>There are other factors to consider:</p>
+<ul>
+<li>Avoid repetitive patterns (tedious)</li>
+<li>Avoid very large/small boards (too hard/easy)</li>
+</ul>
+<p>These are harder to quantify up front. We'll just have to play it by ear after we find some solutions.</p>
+<h2>Colors</h2>
+<p>As we solve individual board/tileset combinations we'll color-code them as follows:</p>
+<ul>
+<li>Grey for unknown states</li>
+<li>Red for puzzles with 0 solutions</li>
+<li>Orange for puzzles with 2+ solutions</li>
+<li>Yellow for puzzles with 1 solution (not chiral-unique; tile set can assemble a flipped board)</li>
+<li>Green for puzzles with 1 solution (chiral-unique)</li>
+</ul>
+<div class="map small">
+<div class="actualMap">
+<div class="map-cell color10" style="grid-area: 1 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 1 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 1 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color13" style="grid-area: 1 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color14" style="grid-area: 1 / 5 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+</div>
+</div>
+<h1>Visualizing Results</h1>
+<p>Each board size N has N²+1 possible tile sets corresponding to (0,1,...N²) regular tiles.</p>
+<p>To visualize the solution space, we'll group solutions by board size. In each group, the single top square represents a tile set with 0 regular tiles. The N² squares below will represent tile sets with (1,...N²) tiles.</p>
+<p>This is what the map of solutions for N=[1,2,3,4] will look like:</p>
+<div class="map large">
+<div class="actualMap">
+<div class="map-cell color10" style="grid-area: 1 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 1 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 1 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 1 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 5 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 5 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 5 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 5 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+</div>
+</div>
+<p>Don't read too much into the spatial arrangement here: it's an arbitrary/aesthetic decision to make the data easy to scan. These results could have been presented in a ranked list, spreadsheet, or 3D visualization. Hopefully this layout will help us spot interesting solutions.</p>
+<p>The fact that N=2 forms a P-Pentomino shape is a happy accident (or an unfortunate source of confusion?)</p>
+<h1>Results</h1>
+<p>Let's start with the smallest board size (N=1) and work our way up.</p>
+<p>We can do the first few by hand.</p>
+<h2>N = 1</h2>
+<p>It's easy to reason about N=1. These are tile sets with 1 tile total and the board is the size of a single tile.</p>
+<ul>
+<li>0 regular tiles means we only have 1 flipped tile. There's no solution, so this square is red.</li>
+<li>1 regular tile is trivally solvable. Since we can't use the tile to make a flipped board, the solution is chiral-unique. Green.</li>
+</ul>
+<div class="map large">
+<div class="actualMap">
+<div class="map-cell color11" style="grid-area: 1 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color14" style="grid-area: 2 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 1 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 1 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 1 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 5 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 5 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 5 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 5 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+</div>
+</div>
+<h2>N = 2</h2>
+<p>You can work out N=2 in a few minutes with a pen and paper. These are tile sets with 4 tiles total. The two solutions described are the ones illustrated earlier in this post.</p>
+<ul>
+<li>0 regular tiles is impossible (red)</li>
+<li>1 regular tile is chiral-unique (greeen)</li>
+<li>2 regular tiles is unique (yellow).</li>
+<li>3 and 4 regular tiles are impossible (red)</li>
+</ul>
+<div class="map large">
+<div class="actualMap">
+<div class="map-cell color11" style="grid-area: 1 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color14" style="grid-area: 2 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 1 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color14" style="grid-area: 2 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color13" style="grid-area: 2 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 3 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 3 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 1 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 1 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 5 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 5 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 5 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 5 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+</div>
+</div>
+<p>As the board grows, it gets harder to work out solutions. I wrote a program that solves tiling puzzles and will use this going forward.</p>
+<h2>N = 3</h2>
+<p>This content was generated 100% automatically. It's reassuring to see that the solutions for size 1 and 2 match the manual results above.</p>
+<div class="map large">
+<div class="actualMap">
+<div class="map-cell color11" style="grid-area: 1 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color14" style="grid-area: 2 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 1 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color14" style="grid-area: 2 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color13" style="grid-area: 2 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 3 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 3 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 1 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 2 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 2 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 2 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color13" style="grid-area: 3 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color14" style="grid-area: 3 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color14" style="grid-area: 4 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 4 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 4 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 1 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 5 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 5 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 5 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 2 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 3 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 4 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color10" style="grid-area: 5 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+</div>
+</div>
+<h2>N = 4</h2>
+<div class="map large">
+<div class="actualMap">
+<div class="map-cell color11" style="grid-area: 1 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color14" style="grid-area: 2 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 1 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color14" style="grid-area: 2 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color13" style="grid-area: 2 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 3 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 3 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 1 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 2 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 2 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 2 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color13" style="grid-area: 3 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color14" style="grid-area: 3 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color14" style="grid-area: 4 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 4 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 4 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 1 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 2 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 2 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 5 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 5 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+</div>
+</div>
+<h2>N = 5, 6, 7</h2>
+<div class="map large">
+<div class="actualMap">
+<div class="map-cell color11" style="grid-area: 1 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color14" style="grid-area: 2 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 1 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color14" style="grid-area: 2 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color13" style="grid-area: 2 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 3 / 3 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 3 / 4 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 1 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 2 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 2 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 2 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color13" style="grid-area: 3 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color14" style="grid-area: 3 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color14" style="grid-area: 4 / 6 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 4 / 7 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 4 / 8 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 1 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 2 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 2 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 10 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 11 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 5 / 12 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 5 / 13 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 1 / 15 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 2 / 15 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 16 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 17 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 18 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 19 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 15 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 16 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 17 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 18 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 19 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 15 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 16 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 17 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 18 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 19 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 15 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 16 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 17 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 18 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 19 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 6 / 15 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 6 / 16 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 6 / 17 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 6 / 18 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 6 / 19 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 1 / 21 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 21 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 22 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 23 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 24 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 25 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 26 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 21 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 22 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 23 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 24 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 25 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 26 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 21 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 22 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 23 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 24 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 25 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 26 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 21 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 22 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 23 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 24 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 25 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 26 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 6 / 21 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 6 / 22 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 6 / 23 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 6 / 24 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 6 / 25 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 6 / 26 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 7 / 21 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 7 / 22 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 7 / 23 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 7 / 24 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 7 / 25 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 7 / 26 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 1 / 28 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 28 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 29 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 30 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 31 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 32 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 33 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 2 / 34 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 28 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 29 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 30 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 31 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 32 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 33 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 3 / 34 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 28 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 29 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 30 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 31 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 32 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 33 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 4 / 34 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 28 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 29 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 30 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 31 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 32 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 33 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 5 / 34 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 6 / 28 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 6 / 29 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 6 / 30 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 6 / 31 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 6 / 32 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 6 / 33 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 6 / 34 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 7 / 28 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 7 / 29 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 7 / 30 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 7 / 31 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 7 / 32 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 7 / 33 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 7 / 34 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 8 / 28 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 8 / 29 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 8 / 30 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 8 / 31 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 8 / 32 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color11" style="grid-area: 8 / 33 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+<div class="map-cell color12" style="grid-area: 8 / 34 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+</div>
+</div>
+<h1>Analysis</h1>
+<ul>
+<li>examine the best solutions</li>
+<li>were my predictions right?</li>
+<li>anything else interesting here?</li>
+<li>is recursion apparent? (ie: N=2 solutions embedded in N=4?)</li>
+</ul>
+<h1>Further Reading</h1>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Rep-tile">Rep-tile</a> (wikipedia): a shape that can be dissected into smaller copies of the same shape.</li>
+</ul>
+
+  </body>
+</html>

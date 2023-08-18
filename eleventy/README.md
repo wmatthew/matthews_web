@@ -10,7 +10,7 @@ npm install @11ty/eleventy --save-dev
 ## Core Workflow
 Wipe + Regen + Serve + Auto-reload:
 ```
-rm -rf _site && npx @11ty/eleventy --serve
+rm -rf ../docs && npx @11ty/eleventy --serve
 ```
 
 View content locally: http://localhost:8080/
@@ -18,7 +18,7 @@ View content locally: http://localhost:8080/
 ## Other Tasks
 Regen Content Once (but don't start server?):
 ```
-rm -rf _site && npx @11ty/eleventy
+rm -rf ../docs && npx @11ty/eleventy
 ```
 
 ## Scripts

@@ -9,6 +9,7 @@ tags:
   - unique solution
   - puzzle
   - castle
+  - 3D printed
 permalink: castle/puzzle/
 ---
 # {{title}}

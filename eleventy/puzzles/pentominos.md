@@ -7,6 +7,7 @@ eleventyNavigation:
 tags:
   - puzzle
   - rep-tile
+  - 3D printed
 permalink: pentomino/puzzle/
 ---
 # {{title}}

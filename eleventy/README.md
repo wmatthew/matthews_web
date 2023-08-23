@@ -8,7 +8,7 @@ npm install @11ty/eleventy --save-dev
 ```
 
 ## Core Workflow
-Wipe + Regen + Serve + Auto-reload:
+Wipe + Regenerate + Serve + Auto-reload:
 ```
 rm -rf ../docs && npx @11ty/eleventy --serve
 ```
@@ -16,12 +16,12 @@ rm -rf ../docs && npx @11ty/eleventy --serve
 View content locally: http://localhost:8080/
 
 ## Other Tasks
-Regen Content Once (but don't start server?):
+Wipe + Regenerate Content Once (but don't start server?):
 ```
 rm -rf ../docs && npx @11ty/eleventy
 ```
 
-## Scripts
+## Pentomino Puzzle Scripts
 
 Generate checkerboard maps (JS):
 ```
@@ -44,6 +44,3 @@ for (n=1; n<=size;n++) {
 JSON.stringify(arr)
 
 ```
-
-## Other Documentation
-* Documentation: https://www.11ty.dev/docs/getting-started/

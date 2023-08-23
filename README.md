@@ -1,2 +1,2 @@
 # matthews_web
-eleventy-powered web site hosted at m.atthe.ws
+Eleventy-powered web site hosted at http://m.atthe.ws

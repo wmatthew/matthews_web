@@ -8,6 +8,7 @@ tags:
   - puzzle
   - rep-tile
   - 3D printed
+  - tiling
 permalink: pentomino/puzzle/
 ---
 # {{title}}

@@ -5,6 +5,7 @@ eleventyNavigation:
   key: 16 Triangles
   parent: Puzzles
 tags:
+  - tiling
   - puzzle
   - 3D printed
 permalink: 16/triangles/puzzle/

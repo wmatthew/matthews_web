@@ -13,5 +13,3 @@ permalink: 16/triangles/puzzle/
 # {{title}}
 
 An assembly puzzle where the orientation of pieces is constrained.
-
-{% include tags %}

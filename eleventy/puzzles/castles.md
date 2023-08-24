@@ -28,5 +28,3 @@ Assemble 42 identical pieces into an elaborate castle.
 * Solution
 * Bonus Challenge
 * Development Log / Diary / Making-Of
-
-{% include tags %}

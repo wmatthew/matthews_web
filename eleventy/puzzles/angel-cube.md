@@ -13,5 +13,3 @@ permalink: angel/cube/puzzle/
 # {{title}}
 
 3D assembly puzzle with 12 pieces.
-
-{% include tags %}

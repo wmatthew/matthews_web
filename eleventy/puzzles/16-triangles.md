@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/base.liquid
 title: 16 Triangles
 eleventyNavigation:
   key: 16 Triangles

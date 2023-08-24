@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/base.liquid
 title: Angel Cube
 eleventyNavigation:
   key: Angel Cube

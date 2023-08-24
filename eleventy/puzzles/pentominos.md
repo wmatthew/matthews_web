@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/base.liquid
 title: Pentomino Tiling
 eleventyNavigation:
   key: Pentominos

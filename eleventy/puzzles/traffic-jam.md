@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/base.liquid
 title: Traffic Jam
 eleventyNavigation:
   key: Traffic Jam

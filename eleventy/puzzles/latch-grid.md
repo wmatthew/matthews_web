@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/base.liquid
 title: Latch Grid
 eleventyNavigation:
   key: Latch Grid

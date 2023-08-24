@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/base.liquid
 testVar: true
 testString: TestString
 testArr: [2,3,4]

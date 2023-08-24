@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/base.liquid
 title: Matthew's
 permalink: /
 eleventyExcludeFromCollections: true

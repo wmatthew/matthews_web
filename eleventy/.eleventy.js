@@ -2,8 +2,7 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function (eleventyConfig) {
 
-  eleventyConfig.addPassthroughCopy("CNAME");
-  eleventyConfig.addPassthroughCopy(".nojekyll");
+  eleventyConfig.addPassthroughCopy({"root": "/"});
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("img");
 

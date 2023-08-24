@@ -4,6 +4,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy(".nojekyll");
+  eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("img");
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
@@ -19,9 +21,6 @@ module.exports = function (eleventyConfig) {
   // * JavaScript
   eleventyConfig.addShortcode("sandboxSum", function (firstNum, secondNum) { return firstNum + " plus " + secondNum + " is " + (parseInt(firstNum) + parseInt(secondNum)); });
   eleventyConfig.addFilter("makeUppercase", function (value) { return value.toUpperCase(); });
-
-  // copy the 'css' folder to the output
-  eleventyConfig.addPassthroughCopy("css");
 
   return {
     dir: {

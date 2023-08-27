@@ -1,2 +1,4 @@
 # matthews_web
-Eleventy-powered web site hosted at http://m.atthe.ws
+A small static website showcasing puzzles and other things I've made.
+
+Hosted at http://m.atthe.ws

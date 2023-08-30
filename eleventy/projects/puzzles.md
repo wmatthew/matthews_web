@@ -9,6 +9,8 @@ eleventyImport:
 ---
 # {{title}}
 
+Interactive projects where the goal is to discover a solved state.
+
 <ul>
 {%- for post in collections.puzzle -%}
   <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>

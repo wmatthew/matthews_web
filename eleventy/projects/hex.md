@@ -8,6 +8,8 @@ tags:
   - 3D printed
 permalink: hex/game/
 ---
+{% include hero-image %}
+
 # {{title}}
 
 A game for two players.

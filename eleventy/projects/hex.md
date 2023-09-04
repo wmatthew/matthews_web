@@ -7,9 +7,8 @@ eleventyNavigation:
 tags:
   - 3D printed
 permalink: hex/game/
+hero: hex-blue-grey-cropped.jpg 
 ---
-{% include hero-image %}
-
 # {{title}}
 
 A game for two players.

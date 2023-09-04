@@ -18,7 +18,7 @@ Assemble 42 identical pieces into an elaborate castle.
 * Photo Gallery: __
 (no spoilers)
 
-* Play Style: This is a puzzle with a specific solution, but the pieces also work well for open ended play. Can be played with one or more players.
+* Play Style: This is a puzzle with a specific solution, but the pieces also work well for open ended play. Works well with one to three players.
 
 ## Contents
 * 42 castle pieces

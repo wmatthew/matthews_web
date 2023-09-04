@@ -15,7 +15,12 @@
     <meta name="theme-color" content="#969696">
   </head>
   <body>
-  {{ content }}
-  {% include tags %}
+    {% if hero %}
+      {% render hero-image, hero-img-path:hero %}
+    {% endif %}
+    <div class="content">
+    {{ content }}
+    {% include tags %}
+    </div>
   </body>
 </html>

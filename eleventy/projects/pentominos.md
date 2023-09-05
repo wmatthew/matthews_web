@@ -10,6 +10,7 @@ tags:
   - 3D printed
   - tiling
 permalink: pentomino/puzzle/
+hero: pentomino-1.jpg
 ---
 # {{title}}
 

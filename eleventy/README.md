@@ -35,4 +35,7 @@ rm -rf ../docs && npx @11ty/eleventy --serve && open http://localhost:8080/
 ```
 
 ## Other Notes
-* Site deploys on push to master
+The site automatically deploys on each push to master.
+
+* [See recent deploys](https://github.com/wmatthew/matthews_web/deployments/github-pages)
+* [Check for github outages](https://www.githubstatus.com/)

@@ -9,6 +9,7 @@ tags:
   - puzzle
   - 3D printed
 permalink: 16/triangles/puzzle/
+hero: 16-triangles-1.jpg 
 ---
 # {{title}}
 

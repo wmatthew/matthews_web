@@ -12,4 +12,4 @@ permalink: angel/cube/puzzle/
 ---
 # {{title}}
 
-3D assembly puzzle with 12 pieces.
+A twelve-piece 3D assembly puzzle.

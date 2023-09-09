@@ -11,6 +11,7 @@ tags:
   - castle
   - 3D printed
 permalink: castle/puzzle/
+hero: castle-1.jpg 
 ---
 # {{title}}
 Assemble 42 identical pieces into an elaborate castle.

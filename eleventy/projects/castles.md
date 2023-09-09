@@ -11,13 +11,12 @@ tags:
   - castle
   - 3D printed
 permalink: castle/puzzle/
-hero: castle-1.jpg 
+hero: castle-many.jpg 
 ---
 # {{title}}
 Assemble 42 identical pieces into an elaborate castle.
 
-* Photo Gallery: __
-(no spoilers)
+<img src="/img/castle-sq.jpg" width=200></img>
 
 * Play Style: This is a puzzle with a specific solution, but the pieces also work well for open ended play. Works well with one to four players.
 

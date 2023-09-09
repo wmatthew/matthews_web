@@ -1,9 +1,22 @@
+const eleventyWebcPlugin = require("@11ty/eleventy-plugin-webc");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const Image = require("@11ty/eleventy-img");
+const { eleventyImagePlugin } = require("@11ty/eleventy-img");
 
 module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({"root": "/"});
   eleventyConfig.addPassthroughCopy("img");
+
+  (async () => {
+    let url = "img/castle-sq.jpg";
+    let stats = await Image(url, {
+      widths: [100, 200, 300],
+      formats: ["jpeg"]
+    });
+  
+    console.log( stats );
+  })();
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 

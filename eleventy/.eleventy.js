@@ -1,7 +1,5 @@
-const eleventyWebcPlugin = require("@11ty/eleventy-plugin-webc");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const Image = require("@11ty/eleventy-img");
-const { eleventyImagePlugin } = require("@11ty/eleventy-img");
 
 module.exports = function (eleventyConfig) {
 
@@ -9,12 +7,23 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
 
   (async () => {
-    let url = "img/castle-sq.jpg";
-    let stats = await Image(url, {
-      widths: [100, 200, 300],
-      formats: ["jpeg"]
-    });
-  
+    let imgUrl = "img/castle-sq.jpg";
+    let imgOptions = {
+      widths: [100, 200],
+      formats: ["jpeg"],
+      filenameFormat: function (id, src, width, format, options) {
+        // id: hash of the original image
+        // src: original image path
+        // width: current width in px
+        // format: current file format
+        // options: set of options passed to the Image call
+        slug = src.split(".")[0].split("/").pop();
+        return `${slug}-${width}.${format}`;    
+      },
+      outputDir: "../docs/img/"
+    };
+
+    let stats = await Image(imgUrl, imgOptions);
     console.log( stats );
   })();
 

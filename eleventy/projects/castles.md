@@ -16,7 +16,7 @@ hero: castle-many.jpg
 # {{title}}
 Assemble 42 identical pieces into an elaborate castle.
 
-<img src="/img/castle-sq.jpg" width=200></img>
+<img src="/img/castle-sq-200.jpeg"></img>
 
 ## Play Style
 This is a puzzle with a specific solution, but the pieces also work well for open ended play.

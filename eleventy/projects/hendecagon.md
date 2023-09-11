@@ -5,8 +5,8 @@ eleventyNavigation:
   key: Hendecagon
   parent: Puzzles
 tags:
-  - 3D printed
   - puzzle
+  - electronics
 permalink: hendecagon/
 ---
 # {{title}}

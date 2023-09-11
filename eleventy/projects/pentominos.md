@@ -9,6 +9,7 @@ tags:
   - rep-tile
   - 3D printed
   - tiling
+  - identical pieces
 permalink: pentomino/puzzle/
 hero: pentomino-1.jpg
 ---

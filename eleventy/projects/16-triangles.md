@@ -4,6 +4,7 @@ title: 16 Triangles
 eleventyNavigation:
   key: 16 Triangles
   parent: Puzzles
+  excerpt: A tiling puzzle where piece orientation is constrained.
 tags:
   - tiling
   - puzzle
@@ -13,4 +14,4 @@ hero: 16-triangles-1.jpg
 ---
 # {{title}}
 
-An assembly puzzle where the orientation of pieces is constrained.
+A tiling puzzle where piece orientation is constrained.

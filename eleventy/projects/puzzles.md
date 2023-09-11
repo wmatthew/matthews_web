@@ -16,3 +16,10 @@ Interactive projects where the goal is to discover a solved state.
   <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
 {%- endfor -%}
 </ul>
+
+## Philosophy
+
+I'm interested in making puzzles that:
+* Start simple.
+* Reveal complexity via organic emergent behavior.
+* End simple in a satisfying solved state.

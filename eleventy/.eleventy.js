@@ -6,6 +6,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({"root": "/"});
   eleventyConfig.addPassthroughCopy("img");
 
+  // Generate thumbnail images
+  // TODO: make this a shortcode / filter
   (async () => {
     let imgUrl = "img/castle-sq.jpg";
     let imgOptions = {
@@ -34,11 +36,7 @@ module.exports = function (eleventyConfig) {
     strictFilters: false, // renamed from `strict_filters` in Eleventy 1.0
   });
 
-  // Universal Shortcodes are added to:
-  // * Liquid
-  // * Nunjucks
-  // * Handlebars
-  // * JavaScript
+  // Universal Shortcodes
   eleventyConfig.addShortcode("sandboxSum", function (firstNum, secondNum) { return firstNum + " plus " + secondNum + " is " + (parseInt(firstNum) + parseInt(secondNum)); });
   eleventyConfig.addFilter("makeUppercase", function (value) { return value.toUpperCase(); });
 

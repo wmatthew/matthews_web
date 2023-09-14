@@ -7,7 +7,8 @@ body, html {
 }
 
 div.content {
-  margin: 8px;
+  margin: 0 auto 0 auto;
+  width: 720px;
 }
 .tags {
     font: 12px/1.5 'PT Sans', serif;

@@ -18,13 +18,7 @@ hero: castle-many.jpg
 
 # {{title}}
 
-The goal of this project is to make a satisfying puzzle where every piece is identical.
-
-"Satisfying" is hard to pin down and certainly harder to assess than "identical". Here are some examples of puzzles that would not be satisfying:
-
-* Arrange 4 square tiles to form a larger square. (trivial)
-* Arrange 10,000 square tiles to form a larger square. (tedious)
-
+The goal of this project was to make a satisfying puzzle where every piece is identical.
  
 ## Play Style
 Assemble 42 identical pieces into an elaborate castle.

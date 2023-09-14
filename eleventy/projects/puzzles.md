@@ -35,7 +35,7 @@ When possible, the solution state should be unique. It should be exhaustive, usi
 
 The solution state itself should be interesting- although it will likely have internal structure, it should not be a tedious repetition of a trivial idea or pattern. Ideally players reaching the solution will not groan at a cheap trick or loophole that enables it, but identify with their work and feel ownership and pride in what they've accomplished.
 
-## Links to Puzzles
+## Puzzles I've Made
 <ul>
 {%- for post in collections.puzzle -%}
   <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>

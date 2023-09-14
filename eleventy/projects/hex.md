@@ -6,9 +6,10 @@ eleventyNavigation:
   parent: Games
 tags:
   - 3D printed
+  - game
 permalink: hex/game/
 hero: hex-blue-grey-cropped.jpg 
 ---
 # {{title}}
 
-A game for two players.
+I designed and 3D printed a board for [this game](https://en.wikipedia.org/wiki/Hex_(board_game)).

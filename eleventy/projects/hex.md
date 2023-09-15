@@ -12,4 +12,4 @@ hero: hex-blue-grey-cropped.jpg
 ---
 # {{title}}
 
-I designed and 3D printed a board for [this game](https://en.wikipedia.org/wiki/Hex_(board_game)).
+I designed and 3D printed a board and pieces for [the game Hex](https://en.wikipedia.org/wiki/Hex_(board_game)).

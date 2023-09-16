@@ -15,11 +15,9 @@ Interactive projects where the goal is to discover a solved state.
 My goal is to make puzzles that start simple, exhibit organic emergent complexity, and end with a satisfying solution.
 
 ### Start Simple
-Puzzles should be approachable and frictionless to start. It should be easy to learn and internalize a puzzle's rules and mechanics.
+Puzzles should be approachable and frictionless to start. It should be easy to learn and internalize a puzzle's rules and mechanics. When possible, favor few rules, or rules that are built into the materials of the puzzle.
 
-The design should be honest. If the pieces seem to be identical, the solution should not hinge on a single piece being marginally wider, shorter or heavier. Angles that are very close to major increments (45º, 60º, 90º) should be true to the user's perception and expectation.
-
-When possible, favor few rules, or rules that are built into the materials of the puzzle. Pieces that fit together should decisively fit or not be close. Pieces that should not be flipped upside down or stacked should not flip or stack neatly. The player should not need significant strength or dexterity to solve a puzzle, and they should not be left wondering if they need to jam pieces together with force.
+The design should be honest: If pieces seem to be identical, the solution should not hinge on a single piece being marginally wider, shorter or heavier. Angles that are very close to major increments (45º, 60º, 90º) should be true to the user's perception and expectation. Pieces that connect together should decisively fit or not be close. Pieces that should not be flipped upside down or stacked should not flip or stack neatly. The player should not need significant strength or dexterity to solve a puzzle, and they should not be left wondering if they need to jam pieces together with force to progress.
 
 ### Emergent Complexity
 As the puzzle progresses, simple elements should combine together in interesting or surprising ways. The player should get a feeling of exploration or discovery, where new layers proceed naturally from mechanics introduced at the start.

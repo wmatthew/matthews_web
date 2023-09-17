@@ -9,3 +9,23 @@ div.content {
   margin: 0 auto 0 auto;
   width: 720px;
 }
+
+/* unvisited link */
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: black;
+  background-color: #CCC;
+}
+
+a:active {
+  color: black;
+  background-color: #EEE;
+  text-decoration: none;
+}

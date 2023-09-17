@@ -10,6 +10,26 @@ div.content {
   margin: 0 auto 0 auto;
   width: 720px;
 }
+
+/* unvisited link */
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: black;
+  background-color: #CCC;
+}
+
+a:active {
+  color: black;
+  background-color: #EEE;
+  text-decoration: none;
+}
 .tags {
     font: 12px/1.5 'PT Sans', serif;
     list-style: none;
@@ -68,6 +88,15 @@ div.content {
      border-left-color: crimson;
   }
 
+  a.taglink:hover {
+    color: black;
+    background-color: #A5ADB6;
+  }
+  
+  a.taglink:active {
+    color: black;
+    background-color: #A5ADB6;
+  }
 .hero-image {
     /* Fixed height */
     height: 200px;

@@ -8,7 +8,7 @@ body, html {
 
 div.content {
   margin: 0 auto 0 auto;
-  width: 720px;
+  width: 640px;
 }
 
 /* unvisited link */
@@ -127,10 +127,14 @@ a:active {
     width: 600px;
 }
 
+div.caption {
+   background-color: lightgrey;
+   padding: 3px; 
+}
+
 .actualMap {
     display: grid;
     padding: 15px;
-    border: 1px solid #ccc;
     grid-auto-rows: 1fr;
     grid-gap: 0px;
     background-color: #eee;

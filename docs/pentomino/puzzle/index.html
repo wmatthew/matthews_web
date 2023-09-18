@@ -47,9 +47,12 @@
   </div>
 </div>
 </div>
+<div class="caption" align="center">
+P
 </div>
-<p>This shape is <strong>chiral</strong>: flipping it creates a new shape that can't be restored by shifting or rotating. That means there is a 'regular' and 'flipped' version. We'll call the shape above regular.</p>
-<p>Here's the flipped version:</p>
+</div>
+<p>This shape is <strong>chiral</strong>: flipping it creates a new shape that can't be restored by shifting or rotating. That means there is a 'regular' and 'flipped' version. We'll call the version above P because it looks like an upper case letter P.</p>
+<p>The flipped version looks like a lower case Q:</p>
 <div class="map small">
 <div class="actualMap">
 <div class="map-cell color2" style="grid-area: 1 / 1 / auto / auto;">
@@ -73,9 +76,12 @@
   </div>
 </div>
 </div>
+<div class="caption" align="center">
+Q
 </div>
-<p>One thing that's cool about this shape is that multiple copies can be arranged to form a larger version of the original shape.</p>
-<p>Here two regular and two flipped shapes are used:</p>
+</div>
+<p>Multiple Ps and Qs can be arranged to form a larger version of the original P shape.</p>
+<p>Here two Ps and two Qs are used:</p>
 <div class="map small">
 <div class="actualMap">
 <div class="map-cell color1" style="grid-area: 1 / 1 / auto / auto;">
@@ -159,9 +165,12 @@
   </div>
 </div>
 </div>
+<div class="caption" align="center">
+2P+2Q
+</div>
 </div>
 <p>This tiling of the space is satisfying: everything fits perfectly, with no gaps or overlaps. Lovely!</p>
-<p>We can also do this with one regular and three flipped shapes:</p>
+<p>We can also do this with one P and three Qs:</p>
 <div class="map small">
 <div class="actualMap">
 <div class="map-cell color2" style="grid-area: 3 / 3 / auto / auto;">
@@ -245,8 +254,11 @@
   </div>
 </div>
 </div>
+<div class="caption" align="center">
+P+3Q
 </div>
-<p>Some combinations aren't possible. For example, there's no way to arrange four regular shapes to make a larger P-pentomino.</p>
+</div>
+<p>Some combinations aren't possible. For example, there's no way to arrange four P shapes to make a larger P.</p>
 <h1>Scaling Up</h1>
 <p>Let's say our original P-pentomino shape is made of five unit squares. It has area 5, width 2, height 3.</p>
 <p>The larger <strong>board</strong> we tiled above has four shapes (area 20, width 4, height 6).</p>
@@ -435,15 +447,18 @@
   </div>
 </div>
 </div>
+<div class="caption" align="center">
+size 3 board
+</div>
 </div>
 <p>For each larger board, we can ask:</p>
 <ul>
-<li>Can we tile the board with <strong>tile set</strong> of N² regular tiles?</li>
-<li>What about a tile set of N²-1 regular tiles and 1 flipped tile?</li>
-<li>What about a tile set of N²-2 regular tiles and 2 flipped tiles?</li>
-<li>What about a tile set of N²-3 regular tiles and 3 flipped tiles?</li>
+<li>Can we tile the board with <strong>tile set</strong> of N² P tiles?</li>
+<li>What about a tile set of N²-1 P tiles and 1 Q tile?</li>
+<li>What about a tile set of N²-2 P tiles and 2 Q tiles?</li>
+<li>What about a tile set of N²-3 P tiles and 3 Q tiles?</li>
 <li>...</li>
-<li>What about a tile set of 0 regular tiles and N² flipped tiles?</li>
+<li>What about a tile set of 0 P tiles and N² Q tiles?</li>
 </ul>
 <p>In effect, we have a boundless number of tiling <strong>puzzles</strong>, where each puzzle is a fixed tile set and board size. Some will have no solutions; some will have many. It's not immediately obvious if there will be any pattern, but this seems like an interesting space to explore.</p>
 <div class="map small">
@@ -1169,33 +1184,38 @@
   </div>
 </div>
 </div>
+<div class="caption" align="center">
+size 6 board
+</div>
 </div>
 <h1>Predictions</h1>
 <p>Before I programmatically explore the space, I'll make some predictions:</p>
+<ol>
+<li>
 <p>Will there be a pattern to which boards/tile sets have solutions?</p>
-<ul>
-<li>Prediction: No, solutions will be more common as area grows, without a clear pattern.</li>
-</ul>
+<p>Prediction: No, solutions will be more common as area grows, without a clear pattern.</p>
+</li>
+<li>
 <p>Will large boards be completely possible/impossible regardless of tile set?</p>
-<ul>
-<li>Prediction: No, large boards will have a mix of possible and impossible tile sets.</li>
-</ul>
+<p>Prediction: No, large boards will have a mix of possible and impossible tile sets.</p>
+</li>
+<li>
 <p>Will large boards have unique solutions?</p>
-<ul>
-<li>Prediction: Yes, we'll find at least one puzzle with a unique solution on every board we look at.</li>
-</ul>
+<p>Prediction: Yes, we'll find at least one puzzle with a unique solution on every board we look at.</p>
+</li>
+<li>
 <p>Will there be a repeating interior pattern in large board solutions?</p>
-<ul>
-<li>Prediction: Yes, there will be repeating interior patterns when there are many solutions. Unique solutions will have chaotic interiors.</li>
-</ul>
+<p>Prediction: Yes, there will be repeating interior patterns when there are many solutions. Unique solutions will have chaotic interiors.</p>
+</li>
+</ol>
 <h1>Quality Rubric</h1>
 <p>Ultimately, I'm hoping to find a puzzle that is fun to solve.</p>
 <p>In descending priority order, I'd like to find a board/tile set that is:</p>
 <ul>
 <li><strong>Possible</strong>: There is at least one solution.</li>
-<li><strong>Unique</strong>: There are few solutions (ideally just one)</li>
+<li><strong>Unique</strong>: There is exactly one solution.</li>
 <li><strong>Chiral</strong>: The tile set can only make one board shape (it can't assemble a mirror board).</li>
-<li><strong>Tricky</strong>: There are many 'near misses': solutions for the same size board with one more or fewer regular tiles.</li>
+<li><strong>Tricky</strong>: There are many 'near misses': solutions for the same size board that use one more or fewer P tiles.</li>
 </ul>
 <p>We can quantify these and automatically rank solutions by quality as we find them.</p>
 <p>There are other factors to consider:</p>
@@ -1205,13 +1225,13 @@
 </ul>
 <p>These are harder to quantify up front. We'll just have to play it by ear after we find some solutions.</p>
 <h2>Colors</h2>
-<p>As we solve individual board/tileset combinations we'll color-code them as follows:</p>
+<p>As we solve individual board/tileset combinations we'll color-code them:</p>
 <ul>
 <li>Grey for unknown states</li>
-<li>Red for puzzles with 0 solutions</li>
-<li>Orange for puzzles with 2+ solutions</li>
-<li>Yellow for puzzles with 1 solution (not chiral-unique; tile set can assemble a flipped board)</li>
-<li>Green for puzzles with 1 solution (chiral-unique)</li>
+<li>Red for puzzles with 0 solutions (worst)</li>
+<li>Orange for puzzles with multiple solutions</li>
+<li>Yellow for unique puzzles: exactly 1 solution but not chiral-unique; tile set can assemble a flipped board.</li>
+<li>Green for chiral-unique puzzles: exactly 1 solution; can't assemble a flipped board. (best)</li>
 </ul>
 <div class="map small">
 <div class="actualMap">
@@ -1236,10 +1256,13 @@
   </div>
 </div>
 </div>
+<div class="caption" align="center">
+color key
+</div>
 </div>
 <h1>Visualizing Results</h1>
-<p>Each board size N has N²+1 possible tile sets corresponding to (0,1,...N²) regular tiles.</p>
-<p>To visualize the solution space, we'll group solutions by board size. In each group, the single top square represents a tile set with 0 regular tiles. The N² squares below will represent tile sets with (1,...N²) tiles.</p>
+<p>Each board size N has N²+1 possible tile sets corresponding to (0,1,...N²) P tiles.</p>
+<p>To visualize the solution space, we'll group solutions by board size. In each group, the single top square represents a tile set with zero P tiles (all Q tiles). The N² squares below will represent tile sets with (1 ... N²) P tiles.</p>
 <p>This is what the map of solutions for N=[1,2,3,4] will look like:</p>
 <div class="map large">
 <div class="actualMap">
@@ -1380,17 +1403,20 @@
   </div>
 </div>
 </div>
+<div class="caption" align="center">
+map of solutions for board sizes 1-4
 </div>
-<p>Don't read too much into the spatial arrangement here: it's an arbitrary/aesthetic decision to make the data easy to scan. These results could have been presented in a ranked list, spreadsheet, or 3D visualization. Hopefully this layout will help us spot interesting solutions.</p>
-<p>The fact that N=2 forms a P-Pentomino shape is a happy accident (or an unfortunate source of confusion?)</p>
+</div>
+<p>Don't read too much into the spatial arrangement here: like the periodic table of elements, it's an arbitrary/aesthetic layout decision to make the data easy to scan. Hopefully this layout will help us spot interesting solutions.</p>
+<p>The fact that N=2 forms a P-Pentomino shape is a coincidence (and hopefully not too confusing)</p>
 <h1>Results</h1>
 <p>Let's start with the smallest board size (N=1) and work our way up.</p>
 <p>We can do the first few by hand.</p>
-<h2>N = 1</h2>
+<h2>Size 1 Boards</h2>
 <p>It's easy to reason about N=1. These are tile sets with 1 tile total and the board is the size of a single tile.</p>
 <ul>
-<li>0 regular tiles means we only have 1 flipped tile. There's no solution, so this square is red.</li>
-<li>1 regular tile is trivally solvable. Since we can't use the tile to make a flipped board, the solution is chiral-unique. Green.</li>
+<li>0 P tiles means we only have 1 Q tile. There's no solution, so this square is red.</li>
+<li>1 P tile is trivally solvable. Since we can't use the tile to make a flipped board, the solution is chiral-unique. Green.</li>
 </ul>
 <div class="map large">
 <div class="actualMap">
@@ -1531,14 +1557,17 @@
   </div>
 </div>
 </div>
+<div class="caption" align="center">
+results for boards of size 1
 </div>
-<h2>N = 2</h2>
+</div>
+<h2>Size 2 Boards</h2>
 <p>You can work out N=2 in a few minutes with a pen and paper. These are tile sets with 4 tiles total. The two solutions described are the ones illustrated earlier in this post.</p>
 <ul>
-<li>0 regular tiles is impossible (red)</li>
-<li>1 regular tile is chiral-unique (greeen)</li>
-<li>2 regular tiles is unique (yellow).</li>
-<li>3 and 4 regular tiles are impossible (red)</li>
+<li>0 P tiles is impossible (red)</li>
+<li>1 P tile is chiral-unique (green)</li>
+<li>2 P tiles is unique (yellow).</li>
+<li>3 and 4 P tiles are impossible (red)</li>
 </ul>
 <div class="map large">
 <div class="actualMap">
@@ -1679,9 +1708,12 @@
   </div>
 </div>
 </div>
+<div class="caption" align="center">
+results for boards of size 1-2
+</div>
 </div>
 <p>As the board grows, it gets harder to work out solutions. I wrote a program that solves tiling puzzles and will use this going forward.</p>
-<h2>N = 3</h2>
+<h2>Size 3 Boards</h2>
 <p>This content was generated 100% automatically. It's reassuring to see that the solutions for size 1 and 2 match the manual results above.</p>
 <div class="map large">
 <div class="actualMap">
@@ -1822,8 +1854,11 @@
   </div>
 </div>
 </div>
+<div class="caption" align="center">
+results for boards of size 1-3
 </div>
-<h2>N = 4</h2>
+</div>
+<h2>Size 4 Boards</h2>
 <div class="map large">
 <div class="actualMap">
 <div class="map-cell color11" style="grid-area: 1 / 1 / auto / auto;">
@@ -1963,8 +1998,11 @@
   </div>
 </div>
 </div>
+<div class="caption" align="center">
+results for boards of size 1-4
 </div>
-<h2>N = 5, 6, 7</h2>
+</div>
+<h2>Size 5, 6, 7 Boards</h2>
 <div class="map large">
 <div class="actualMap">
 <div class="map-cell color11" style="grid-area: 1 / 1 / auto / auto;">
@@ -2555,6 +2593,9 @@
   <div class="cell-content">
   </div>
 </div>
+</div>
+<div class="caption" align="center">
+results for boards of size 1-7
 </div>
 </div>
 <h1>Analysis</h1>

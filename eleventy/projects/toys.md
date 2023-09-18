@@ -1,8 +1,6 @@
 ---
 layout: layouts/base.liquid
 title: Toys
-eleventyNavigation:
-  key: Toys
 permalink: toys/
 eleventyImport:
   collections: ["toy"]

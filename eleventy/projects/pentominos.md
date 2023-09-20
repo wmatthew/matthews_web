@@ -30,10 +30,10 @@ Here two Ps and two Qs are used:
 
 This tiling of the space is satisfying: everything fits perfectly, with no gaps or overlaps. Lovely!
 
-We can also do this with one P and three Qs:
+We can instead fill this space with one P and three Qs:
 {% include polyomino, boxCoords:p-pentominos.mirrorFourCoords, size:"small", caption: "P+3Q" %}
 
-Some combinations aren't possible. For example, there's no way to arrange four P shapes to make a larger P.
+But some combinations aren't possible. For example, there's no way to arrange four P shapes to make a larger P.
 
 # Scaling Up
 Let's say our original P-pentomino shape is made of five unit squares. It has area 5, width 2, height 3.
@@ -42,7 +42,7 @@ The larger **board** we tiled above has four shapes (area 20, width 4, height 6)
 
 There are many possible larger boards: for any N={1,2,3,...}, we can draw a board of area 5N&sup2;, width 2N, and height 3N.
 
-Here's any empty board of size N=3 (area 45, width 6, height 9):
+Here's a board of size 3:
 {% include polyomino, boxCoords:p-pentominos.bigCheckerboard, size:"small", caption:"size 3 board" %}
 
 For each larger board, we can ask:
@@ -149,17 +149,22 @@ This content was generated 100% automatically. It's reassuring to see that the s
 
 ## Size 4 Boards
 
+No unique solutions! A few extreme cases have no solutions, but most have multiple solutions.
+
 {% include polyomino, boxCoords:p-autosolutions.autoSolutionUpTo4 size:"large", caption:"results for boards of size 1-4" %}
 
 ## Size 5, 6, 7 Boards
 
+More of the same: no unique solutions, and all but a few cases have multiple solutions.
+
 {% include polyomino, boxCoords:p-autosolutions.autoSolutionUpTo7 size:"large", caption:"results for boards of size 1-7" %}
 
 # Analysis
-* examine the best solutions
 * were my predictions right?
+* examine the best solutions
 * anything else interesting here?
-* is recursion apparent? (ie: N=2 solutions embedded in N=4?)
+* do the solutions have repeating structure?
+* is recursion apparent? (ie: are N=2 solutions embedded in N=4?)
 
 # Further Reading
 * [Rep-tile](https://en.wikipedia.org/wiki/Rep-tile) (wikipedia): a shape that can be dissected into smaller copies of the same shape.

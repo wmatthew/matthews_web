@@ -170,7 +170,7 @@ Q
 </div>
 </div>
 <p>This tiling of the space is satisfying: everything fits perfectly, with no gaps or overlaps. Lovely!</p>
-<p>We can also do this with one P and three Qs:</p>
+<p>We can instead fill this space with one P and three Qs:</p>
 <div class="map small">
 <div class="actualMap">
 <div class="map-cell color2" style="grid-area: 3 / 3 / auto / auto;">
@@ -258,12 +258,12 @@ Q
 P+3Q
 </div>
 </div>
-<p>Some combinations aren't possible. For example, there's no way to arrange four P shapes to make a larger P.</p>
+<p>But some combinations aren't possible. For example, there's no way to arrange four P shapes to make a larger P.</p>
 <h1>Scaling Up</h1>
 <p>Let's say our original P-pentomino shape is made of five unit squares. It has area 5, width 2, height 3.</p>
 <p>The larger <strong>board</strong> we tiled above has four shapes (area 20, width 4, height 6).</p>
 <p>There are many possible larger boards: for any N={1,2,3,...}, we can draw a board of area 5N², width 2N, and height 3N.</p>
-<p>Here's any empty board of size N=3 (area 45, width 6, height 9):</p>
+<p>Here's a board of size 3:</p>
 <div class="map small">
 <div class="actualMap">
 <div class="map-cell color-2" style="grid-area: 1 / 1 / auto / auto;">
@@ -1859,6 +1859,7 @@ results for boards of size 1-3
 </div>
 </div>
 <h2>Size 4 Boards</h2>
+<p>No unique solutions! A few extreme cases have no solutions, but most have multiple solutions.</p>
 <div class="map large">
 <div class="actualMap">
 <div class="map-cell color11" style="grid-area: 1 / 1 / auto / auto;">
@@ -2003,6 +2004,7 @@ results for boards of size 1-4
 </div>
 </div>
 <h2>Size 5, 6, 7 Boards</h2>
+<p>More of the same: no unique solutions, and all but a few cases have multiple solutions.</p>
 <div class="map large">
 <div class="actualMap">
 <div class="map-cell color11" style="grid-area: 1 / 1 / auto / auto;">
@@ -2600,10 +2602,11 @@ results for boards of size 1-7
 </div>
 <h1>Analysis</h1>
 <ul>
-<li>examine the best solutions</li>
 <li>were my predictions right?</li>
+<li>examine the best solutions</li>
 <li>anything else interesting here?</li>
-<li>is recursion apparent? (ie: N=2 solutions embedded in N=4?)</li>
+<li>do the solutions have repeating structure?</li>
+<li>is recursion apparent? (ie: are N=2 solutions embedded in N=4?)</li>
 </ul>
 <h1>Further Reading</h1>
 <ul>

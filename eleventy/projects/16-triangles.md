@@ -1,16 +1,16 @@
 ---
 layout: layouts/base.liquid
-title: 16 Triangles
+title: 36 Triangles
 eleventyNavigation:
-  key: 16 Triangles
+  key: 36 Triangles
   parent: Puzzles
   excerpt: A tiling puzzle where piece orientation is constrained.
 tags:
   - tiling
   - puzzle
   - 3D printed
-permalink: 16/triangles/puzzle/
-hero: 16-triangles-1.jpg 
+permalink: 36/triangles/puzzle/
+hero: 36-triangles-1.jpg 
 ---
 # {{title}}
 

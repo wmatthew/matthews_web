@@ -47,7 +47,12 @@ In my current iteration pieces are all rectangular, which means they are overcon
 * 6x6 grid with 9 pieces
 * Every combination of width and height up to 3x3
 * Colors based on aspect ratio
-* Box to hold pieces for storage vs flip open and play/experiment
+
+### Physical properties
+
+* Rounded corners
+* Two-part box to hold pieces for storage vs flip open and play/experiment
+* Holes in both lid and base
 
 ## Finding An Interesting Challenge
 

@@ -1,3 +1,4 @@
+//==========================================
 // Regenerates board-library.json.
 // To Run: node backendJS/generateBoards.js
 
@@ -9,6 +10,7 @@ const jsonFormatter = require('./jsonFormatter.js');
 console.log("Generating boards...");
 var boardLibrary = {};
 
+//==========================================
 // P-Pentomino Boards
 for (var i=1; i<=8; i++) {
     var description = i==1 ? "Pentomino" : "Pentomino scaled up " + i + "x.";
@@ -19,11 +21,13 @@ for (var i=1; i<=8; i++) {
     add(key, points, description);
 }
 
+//==========================================
 // Cube Boards
 for (var i=1; i<=6; i++) {
     add("cube" + i, [[pt(1, 1, 1), pt(i, i, i)]], "Cube of side length " + i + ".");
 }
 
+//==========================================
 // Rectangle Boards
 // Keep this one last because it's a lot of stuff.
 var RECT_MAX_SIZE = 16;
@@ -34,6 +38,7 @@ for (var i=1; i<=RECT_MAX_SIZE; i++) {
     }
 }
 
+//==========================================
 function add(key, value, description) {
     //console.log(key);
     //console.log(JSON.stringify(value));
@@ -63,5 +68,6 @@ function pt(x1,y1,z1) {
     return {x:x1, y:y1, z:z1};
 }
 
+//==========================================
 fs.writeFileSync("_data/board-library.json", jsonFormatter.formatJSON(boardLibrary));
-console.log("...generated " + Object.keys(boardLibrary).length + " boards.");
+console.log("...Generated " + Object.keys(boardLibrary).length + " boards.");

@@ -81,7 +81,7 @@
 <div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
 <h3>Tiling Defaults</h3>
 <p>This is not a puzzle. This is a listing of the default settings for a tiling puzzle.</p>
-<p>Key: </p>
+<p>Key: Tiling_Default</p>
 <p>Type: Defaults</p>
 <p>Board: sq4</p>
 <p>Pieces: ["T",2],["O",2],["I4",2],["L",2],["S",2]</p>
@@ -109,7 +109,7 @@
 <div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
 <h3>Tatami Tiling - Classic</h3>
 <p>Tiling 2x1 rectangles.</p>
-<p>Key: </p>
+<p>Key: Tatami</p>
 <p>Type: Template</p>
 <p>Board: varies</p>
 <p>Pieces: varies</p>
@@ -120,7 +120,7 @@
 <div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
 <h3>Tatami Tiling - 3 color variation</h3>
 <p>Tiling 2x1 rectangles, 3-colorable.</p>
-<p>Key: </p>
+<p>Key: Tatami_3color</p>
 <p>Type: Template</p>
 <p>Board: varies</p>
 <p>Pieces: varies</p>
@@ -133,7 +133,7 @@
 <div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
 <h3>P-Pentominos</h3>
 <p>P-Pentomino Rep-Tiling.</p>
-<p>Key: </p>
+<p>Key: P_Pentominos</p>
 <p>Type: Template</p>
 <p>Board: varies</p>
 <p>Pieces: varies</p>
@@ -143,7 +143,7 @@
 <div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
 <h3>Locked Triangles</h3>
 <p>Pieces that can't turn. eg 36 Triangles Puzzle.</p>
-<p>Key: </p>
+<p>Key: Locked_Triangles</p>
 <p>Type: Template</p>
 <p>Board: varies</p>
 <p>Pieces: varies</p>
@@ -155,7 +155,7 @@
 <div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
 <h3>Block City / Clones Tile A Square / Rectangle</h3>
 <p>Many copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.</p>
-<p>Key: </p>
+<p>Key: Clones_Tile_A_Square</p>
 <p>Type: Template</p>
 <p>Board: varies</p>
 <p>Pieces: varies</p>
@@ -167,7 +167,7 @@
 <div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
 <h3>Overhang City</h3>
 <p>Many copies of a polycube tile a rectangle board and can overhang.</p>
-<p>Key: </p>
+<p>Key: Overhang_City</p>
 <p>Type: Template</p>
 <p>Board: varies</p>
 <p>Pieces: varies</p>
@@ -178,7 +178,7 @@
 <div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
 <h3>Angel Cube</h3>
 <p>Fill a cube with pieces.</p>
-<p>Key: </p>
+<p>Key: Angel_Cube</p>
 <p>Type: Custom</p>
 <p>Board: cube4</p>
 <p>Pieces: ["T",8],["S2",4]</p>

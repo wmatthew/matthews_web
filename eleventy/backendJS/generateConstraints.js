@@ -22,6 +22,11 @@ for (var key in constraintTemplates) {
 }
 
 //==========================================
+// Write constraintTemplates JSON file
+// Only necessary when we want to reformat this file, or make sure the key field is set on all entries.
+//fs.writeFileSync("_data/constraints-templates.json", jsonFormatter.formatJSON(constraintTemplates));
+
+//==========================================
 // Copy over the custom entries as-is.
 Object.values(constraintTemplates).filter(t => t.type == "Custom").forEach(t => {
     constraintLibrary[t.key] = t;
@@ -45,8 +50,7 @@ for (var size=1; size<=10; size++) {
 
 //==========================================
 // Save it to constraint-library.json (overwrite)
-var outputString = JSON.stringify(constraintLibrary, null, 2);
-fs.writeFileSync("_data/constraints-library.json", jsonFormatter.formatJSON(outputString));
+fs.writeFileSync("_data/constraints-library.json", jsonFormatter.formatJSON(constraintLibrary));
 
 var numTemplates = Object.keys(constraintTemplates).length;
 var numGenerated = Object.keys(constraintLibrary).length;

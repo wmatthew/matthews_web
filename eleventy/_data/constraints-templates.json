@@ -1,0 +1,184 @@
+{
+    "TODO - this is a comment": [
+        "Can add notes here since JSON isn't great w comments...",    
+        ""
+    ],
+
+    "Icons": {
+        "board": "🐗",
+        "pieceSupply": "🧩",
+
+        "allowGaps": "🕳️",
+
+        "allowGroundLevelOverflow": "🌊",
+        "allowSkyLevelOverflow": "🌧️",
+        "allowUpwardOverflow": "🚀",
+
+        "allowUnsupportedOverhangs": "🪑",
+        "allowSupportedOverhangs": "💺",
+        "allowSkyPieces": "✈️",
+
+        "colorByPiece": "🎨🧩",
+        "colorByOrientation": "🎨🎲",
+
+        "allowColorVertexNeighbors": "👉🏘️",
+        "allowColorEdgeNeighbors": "🔪🏘️",
+        "allowColorFaceNeighbors": "😡🏘️",
+        "allowHiddenNeighborsToBreakColorRules": "🙈",
+
+        "allow4PieceEdgeIntersections": "⊞",
+
+        "allowPieceRotation": "♻️",
+        "allowPieceOrienting": "🎲",
+
+        "allowUnusedPieces": "🗑️🧩",
+        "allowUnusedOrientations": "🗑️🎲"
+    },
+
+    "Tiling_Default": {
+        "name": "Tiling Defaults",
+        "description": "This is not a puzzle. This is a listing of the default settings for a tiling puzzle.",
+
+        "type": "Defaults",
+        "board": "sq4",
+        "pieceSupply": [
+            ["T", 2],
+            ["O", 2],
+            ["I4", 2],
+            ["L", 2],
+            ["S", 2]
+        ],
+
+        "constraint_flags": {
+            "allowGaps": false,
+
+            "allowGroundLevelOverflow": false,
+            "allowSkyLevelOverflow": false,
+            "allowUpwardOverflow": false,
+
+            "allowUnsupportedOverhangs": false,
+            "allowSupportedOverhangs": false,
+            "allowSkyPieces": false,
+
+            "colorByPiece": false,
+            "colorByOrientation": false,
+
+            "allowColorVertexNeighbors": true,
+            "allowColorEdgeNeighbors": true,
+            "allowColorFaceNeighbors": true,
+            "allowHiddenNeighborsToBreakColorRules": true,
+
+            "allow4PieceEdgeIntersections": true,
+
+            "allowPieceRotation": true,
+            "allowPieceOrienting": true,
+
+            "allowUnusedPieces": false,
+            "allowUnusedOrientations": true
+        }
+    },
+
+    "Clones_Tile_A_Square": {
+        "name": "Block City / Clones Tile A Square / Rectangle",
+        "description": "Many copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
+        "type": "Template",
+
+        "board": "varies",
+        "pieceSupply": "varies",
+
+        "constraint_flags": {
+            "colorByOrientation": true,
+            "allowColorVertexNeighbors": false,
+            "allowUpwardOverflow": true
+        }
+    }, 
+
+    "Overhang_City": {
+        "name": "Overhang City",
+        "description": "Many copies of a polycube tile a rectangle board and can overhang.",
+        "type": "Template",
+
+        "board": "varies",
+        "pieceSupply": "varies",
+
+        "constraint_flags": {
+            "allowSupportedOverhangs": true,
+            "allowUpwardOverflow": true
+        }
+    }, 
+    
+    "Tatami": {
+        "name": "Tatami Tiling - Classic",
+        "description": "Tiling 2x1 rectangles.",
+        "type": "Template",
+
+        "board": "varies",
+        "pieceSupply": "varies",
+
+        "constraint_flags": {
+            "allow4PieceEdgeIntersections": false,
+            "allowPieceOrienting": false
+        }
+    },
+
+    "Tatami_3color": {
+        "name": "Tatami Tiling - 3 color variation",
+        "description": "Tiling 2x1 rectangles, 3-colorable.",
+        "type": "Template",
+
+        "board": "varies",
+        "pieceSupply": "varies",
+
+        "constraint_flags": {
+            "allowPieceOrienting": false,
+            "colorByPiece": true,
+            "allowColorVertexNeighbors": false,
+            "allowUnusedPieces": true
+        }
+    },
+
+    "P_Pentominos": {
+        "name": "P-Pentominos",
+        "description": "P-Pentomino Rep-Tiling.",
+        "type": "Template",
+
+        "board": "varies",
+        "pieceSupply": "varies",
+
+        "constraint_flags": {
+            "allowPieceOrienting": false
+        }
+    },
+
+    "Locked_Triangles": {
+        "name": "Locked Triangles",
+        "description": "Pieces that can't turn. eg 36 Triangles Puzzle.",
+        "type": "Template",
+
+        "board": "varies",
+        "pieceSupply": "varies",
+
+        "constraint_flags": {
+            "allowPieceRotation": false,
+            "allowPieceOrienting": false
+        }
+    },
+
+    "Angel_Cube": {
+        "name": "Angel Cube",
+        "description": "Fill a cube with pieces.",
+        "type": "Custom",
+
+        "board": "cube4",
+        "pieceSupply": [
+            ["T", 8],
+            ["S2", 4]
+        ],
+
+        "constraint_flags": {
+            "allowSkyPieces": true,
+            "allowSupportedOverhangs": true
+        }
+    }
+
+}

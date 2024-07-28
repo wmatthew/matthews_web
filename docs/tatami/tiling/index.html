@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Tatami Tiling | </title>
+    <link rel="stylesheet" href="/css/bundle.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#969696">
+  </head>
+  <body>
+    
+    <div class="content">
+    <h1>Tatami Tiling</h1>
+<h2>Premise</h2>
+<ul>
+<li>What tatami tilings are</li>
+<li>Constraints</li>
+</ul>
+<h2>Interesting Tilings</h2>
+<p>Outline:</p>
+<ul>
+<li>start with all tilings 1x1 up to 16x16</li>
+<li>remove impossible ones</li>
+<li>note patterns.</li>
+<li>remove ones w multiple solutions</li>
+<li>remove ones w simple whorl solutions</li>
+<li>remove ones w 2 whorls in a symmetrical layout</li>
+<li>remove trivial / uninteresting ones (eg:1xN)</li>
+<li>what's left?</li>
+</ul>
+<h2>Visualizations</h2>
+<ul>
+<li>
+<p>Need way to highlight current ones being changed. Brighten? Darken all the others?</p>
+</li>
+<li>
+<p>Mousing over selections should show a preview</p>
+</li>
+<li>
+<p>Split out colors into a separate page</p>
+</li>
+</ul>
+<h3>Sample Code</h3>
+<pre><code>createGrid(17,17) // each cell has a value, color, and map to show when moused over
+
+.fillValues(&lt;list of 289 values? start with question marks until investigated?&gt;)
+
+.colorAllCells(unknownColor) // purple
+
+.colorRow(0,headerColor) // light grey
+
+.colorCol(0,headerColor) // light grey
+
+.colorCells([cells], impossibleColor) // black
+
+.colorCells([cells], trivialColor) // red. eg: 1xN.
+
+.colorCells([cells], manySolutionsColor) // orange
+
+.colorCells([cells], oneWhorlColor) // yellow
+
+.colorCells([cells], tooSymmetricalColor) // yellow
+
+.colorCells([cells], prettyGoodCandidatesColor) // green
+
+.colorCells([cells], bestOptionColor) // bright green?
+
+</code></pre>
+
+    <ul class="tags">
+
+  <li><a class="taglink" href="/posts/tagged/with/investigation/"><span class="tag">investigation</span></a></li>
+
+</ul>
+    </div>
+  </body>
+</html>

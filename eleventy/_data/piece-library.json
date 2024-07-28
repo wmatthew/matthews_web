@@ -1,0 +1,28 @@
+{
+    "I1": { "compact": "1" },
+    "I2": { "compact": "11" },
+    "R": { "compact": "11/1" },
+    "I3": { "compact": "111" },
+    "T": { "compact": "111/01" },
+    "O": { "compact": "11/11" },
+    "I4": { "compact": "1111" },
+    "L": { "compact": "1/1/11" },
+    "S": { "compact": "011/11" },
+    "P": { "compact": "11/11/1" },
+    "A": { "compact": "111/11/1" },
+    "PLR": { "compact": "221/1" },
+    "L+3": { "compact": "411/1", "note": "L plus 3-spike" },
+    "PQR": { "compact": "221/11" },
+    "PLR+": { "compact": "43/2", "note": "High footprint variation (3 to 7) may be useful for some puzzles." },
+    "APL": { "compact": "321/2" },
+    "PQA": { "compact": "321/21" },
+    "VPL": { "compact": "311/11" },
+    "3x4x5": { "compact": "5555/5555/5555" },
+    "PQO": { "compact": "221/21" },
+    "knot": { "compact": "322/31/11", "note": "Identical footprint on 3 sides." },
+    "knot+1": { "compact": "422/31/11" },
+    "hollowCube": { "compact": "333/313/333//0//0/01", "note": "3x3x3 cube, with middle spot empty." },
+    "helix": { "compact": "02/011//1", "note": "Overhang in every direction."},
+    "kian": { "compact": "403/02/151", "note": "Kian shape"}
+}
+

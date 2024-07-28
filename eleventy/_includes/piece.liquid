@@ -1,0 +1,11 @@
+<div class="map {{size}}">
+<div class="actualMap">
+{% for pos in piece.points %}
+  {% include square, x: pos[0], y: pos[1], color:color %}
+  {% else %}empty!
+{% endfor %}
+</div>
+{% if piece.caption %}
+  <div class="caption" align="center">{{piece.caption}}</div>
+{% endif %}
+</div>

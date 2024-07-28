@@ -1,0 +1,38 @@
+/* https://codepen.io/simon-sant-cassia/pen/QWGdOgV */
+
+.tabs-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tabs-container > input[type=radio] {
+  display: none;
+}
+
+.tabs-container > input[type=radio]:checked + .tab-label {
+  background-color: darkslategray;
+}
+
+.tabs-container > input[type=radio]:first-child + .tab-label {
+  border-radius: 50px 0 0 50px;
+}
+
+.tabs-container > input[type=radio]:last-of-type + .tab-label {
+  border-radius: 0 50px 50px 0;
+}
+
+.tabs-container > input[type=radio]:not(:checked) + .tab-label + .tab-content {
+  display: none;
+}
+
+.tabs-container .tab-label {
+    padding: 5px 15px;
+    color: white;
+    background-color: slategray;
+}
+
+.tabs-container .tab-content {
+  order: 99;
+  width: 100%;
+  display: block;
+}

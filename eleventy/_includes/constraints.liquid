@@ -1,0 +1,16 @@
+{% assign defaultConstraints = constraints-library.Tiling_Default %} 
+{% assign icons = constraints-library.Icons %} 
+
+<div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
+<h3>{{constraints.name}}</h3>
+<p>{{constraints.description}}</p>
+<p>Key: {{constraints.key}}</p>
+<p>Type: {{constraints.type}}</p>
+<p>Board: {{constraints.board}}</p>
+<p>Pieces: {{constraints.pieceSupply | json | stripOuterChars }}</p>
+<h4>Constraints:</h4>
+{% for setting in constraints.constraint_flags %}
+    {% assign isDefault = setting[1] == defaultConstraints.constraint_flags[setting[0]] %}
+      {{ icons[setting[0]] }} {{ setting[0] }}: {% if isDefault %}{{ constraints.constraint_flags[setting[0]] }} (default){% else %}<b>{{ constraints.constraint_flags[setting[0]] }}</b>{% endif %}
+{% endfor %}
+</div>

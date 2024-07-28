@@ -1,0 +1,138 @@
+/**
+Range of bright contrasting colors that go well together.
+*/
+.color0 {
+    /* blank/empty space */
+    background-color: hsl(216, 27%, 20%);
+}
+
+.color1 {
+    background-color: hsl(216, 78%, 60%);
+}
+
+.color2 {
+    background-color: hsl(20, 78%, 60%);
+}
+
+.color3 {
+    background-color: hsl(131, 53%, 48%);
+}
+
+.color4 {
+    background-color: hsl(263, 72%, 65%);
+}
+
+.color5 {
+    background-color: hsl(68, 78%, 60%);
+}
+
+.color6 {
+    background-color: hsl(8, 78%, 60%);
+}
+
+.color7 {
+    background-color: hsl(178, 78%, 60%);
+}
+
+.color8 {
+    background-color: hsl(0, 44%, 72%);
+}
+
+/*
+Range of colors with semantic meaning.
+these indicate good, bad, etc.
+*/
+.color100 {
+    background-color: #360c31;
+}
+
+.color101 {
+    background-color: #d62828;
+}
+
+.color102 {
+    background-color: #f77f00;
+}
+
+.color103 {
+    background-color: hsl(40, 95%, 63%);
+}
+
+.color104 {
+    background-color: #6a994e;
+}
+
+.color105 {
+    background-color: hsl(98, 100%, 42%);
+}
+
+.color106 {
+    background-color: #666666;
+}
+
+.color107 {
+    background-color: #d2d2d2;
+}
+
+/* Gradient Colors*/
+.color200 {
+    background-color: hsl(226, 80%, 0%);
+}
+
+.color201 {
+    background-color: hsl(226, 80%, 9%);
+}
+
+.color202 {
+    background-color: hsl(226, 80%, 17%);
+}
+
+.color203 {
+    background-color: hsl(226, 80%, 25%);
+}
+
+.color204 {
+    background-color: hsl(226, 80%, 34%);
+}
+
+.color205 {
+    background-color: hsl(226, 80%, 42%);
+}
+
+.color206 {
+    background-color: hsl(226, 80%, 50%);
+}
+
+.color207 {
+    background-color: hsl(226, 80%, 58%);
+}
+
+.color208 {
+    background-color: hsl(226, 80%, 66%);
+}
+
+.color209 {
+    background-color: hsl(226, 80%, 75%);
+}
+
+.color210 {
+    background-color: hsl(226, 80%, 83%);
+}
+
+.color211 {
+    background-color: hsl(226, 80%, 91%);
+}
+
+.color212 {
+    background-color: hsl(226, 80%, 100%);
+}
+
+/* Checkerboard / Alternating Colors*/
+.color301 {
+    background-color: #EDB458;
+}
+
+.color302 {
+    background-color: #b97832;
+}
+

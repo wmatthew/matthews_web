@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Clones Tile A Square | </title>
+    <link rel="stylesheet" href="/css/bundle.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#969696">
+  </head>
+  <body>
+    
+    <div class="content">
+    <h1>Clones Tile A Square</h1>
+<h2>Premise</h2>
+<p>Puzzle: you are given N identical polycubes and asked to tile a square board of size B.</p>
+<ul>
+<li>Each piece must touch the board.</li>
+<li>The board must be completely covered (no gaps, no spillover outside the boundaries)</li>
+<li>Pieces in the same orientation can't touch (at face, edge or corner)</li>
+</ul>
+<p>For what pieces and values B, N is this a good puzzle?</p>
+<h2>Configuration</h2>
+<div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
+<h3>Block City / Clones Tile A Square / Rectangle</h3>
+<p>Many copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.</p>
+<p>Key: </p>
+<p>Type: Template</p>
+<p>Board: varies</p>
+<p>Pieces: varies</p>
+<h4>Constraints:</h4>
+<p>colorByOrientation: <b>true</b></p>
+<p>allowColorVertexNeighbors: <b>false</b></p>
+<p>allowUpwardOverflow: <b>true</b></p>
+</div>
+<h2>Pieces</h2>
+<p>Here's the piece you start with. We'll examine 1-25 of these.</p>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(0px) translateZ(100px) translateY(-100px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(100px) translateY(-300px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(100px) translateY(-100px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(100px) translateY(-300px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(100px) translateY(-100px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(300px) translateY(-100px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">PLR</div>
+</div>
+<p>Here are the three valid faces:</p>
+<div class="map small">
+<div class="actualMap">
+  <div class="map-cell color1" style="grid-area: 1 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+  <div class="map-cell color1" style="grid-area: 1 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+  <div class="map-cell color1" style="grid-area: 2 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+  <div class="map-cell color1" style="grid-area: 2 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+  <div class="map-cell color1" style="grid-area: 3 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">PLR</div>
+</div>
+<div class="map small">
+<div class="actualMap">
+  <div class="map-cell color1" style="grid-area: 1 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+  <div class="map-cell color1" style="grid-area: 2 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+  <div class="map-cell color1" style="grid-area: 3 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+  <div class="map-cell color1" style="grid-area: 3 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">PLR</div>
+</div>
+<div class="map small">
+<div class="actualMap">
+  <div class="map-cell color1" style="grid-area: 1 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+  <div class="map-cell color1" style="grid-area: 1 / 2 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+  <div class="map-cell color1" style="grid-area: 2 / 1 / auto / auto;">
+  <div class="cell-content">
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">PLR</div>
+</div>
+<h2>Possible Boards</h2>
+<p>For each N, which board sizes are possible?</p>
+<ul>
+<li>N=1: (3..5) --&gt; board size: 2</li>
+<li>N=2: (6..10) --&gt; 3</li>
+<li>N=3: (9..15) --&gt; 3</li>
+<li>N=4: (12..20) --&gt; 4</li>
+<li>N=5: (15..25) --&gt; 4 or 5 (area 16 or 25)</li>
+<li>...</li>
+<li>N=25 (75..125) --&gt; 9, 10, or 11</li>
+</ul>
+<p>TODO: make this a table. Only show allowed board sizes.</p>
+<p>Color coding:</p>
+<ul>
+<li>Red = 0 solutions</li>
+<li>Yellow = 2+ unique solutions</li>
+<li>Green = 1 solution</li>
+</ul>
+<p>Headers:</p>
+<ul>
+<li>Columns: no header</li>
+<li>Rows: number of pieces (N)</li>
+</ul>
+<p>Cell Text (without highlight)</p>
+<ul>
+<li>Board Size (B) (or maybe exclude for cleaner view?)</li>
+</ul>
+<p>When highlighting each cell we see:</p>
+<ul>
+<li>number of pieces (N)</li>
+<li>board size (B)</li>
+<li>preview of 1 solution (if applicable)</li>
+</ul>
+
+    <ul class="tags">
+
+  <li><a class="taglink" href="/posts/tagged/with/investigation/"><span class="tag">investigation</span></a></li>
+
+</ul>
+    </div>
+  </body>
+</html>

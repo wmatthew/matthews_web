@@ -1,0 +1,13 @@
+{% assign grid = widget-gallery-examples[key] | fixCoordinates %} 
+
+<div class="map {{size}}">
+<div class="actualMap">
+{% for point in grid.points %}
+  {% include square, x: point.x, y: point.y, color:point.color, text:point.label %}
+{% endfor %}
+</div>
+
+{% if key %}
+  <div class="caption" align="center">{{key}}</div>
+{% endif %}
+</div>

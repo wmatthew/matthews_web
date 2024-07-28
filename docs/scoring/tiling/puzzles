@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Scoring | </title>
+    <link rel="stylesheet" href="/css/bundle.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#969696">
+  </head>
+  <body>
+    
+    <div class="content">
+    <h1>Scoring</h1>
+<p>Some investigations will produce many possible solutions. Scoring solutions makes it easier to quickly sort out which solutions are worth looking at more closely.</p>
+<p>This is an approximate rubrik, so the highest score is not necessarily the best puzzle.</p>
+<h2>Scores</h2>
+<ul>
+<li>Sliceability: every grid-aligned straight line/plane splits some number of pieces. the best cut minimizes this number. how many pieces does the best cut split? (int) (bigger number is better):
+<ul>
+<li>5 * (slice number)</li>
+</ul>
+</li>
+<li>Number of solutions:
+<ul>
+<li>-1 * (solutions)</li>
+</ul>
+</li>
+<li>Use every piece (probably never comes up, because pieces could be removed from supply?)
+<ul>
+<li>-1 * (pieces not used)</li>
+</ul>
+</li>
+<li>Use every orientation:
+<ul>
+<li>-1 * (orientations not used)</li>
+</ul>
+</li>
+<li>Use every orientation/rotation combo:
+<ul>
+<li>-1 * (orientation/rotation combo not used)</li>
+</ul>
+</li>
+</ul>
+<h2>Precalculated Scores</h2>
+<p>Some scores can be computed before we even search for solutions.</p>
+<ul>
+<li>Total Number of pieces: ideal is 12.
+<ul>
+<li>-1 * (distance from ideal)</li>
+</ul>
+</li>
+<li>Board is simple
+<ul>
+<li>-1 * (sides on board)</li>
+</ul>
+</li>
+<li>Small distinct number of pieces in puzzle.
+<ul>
+<li>-5 * (number of pieces)</li>
+</ul>
+</li>
+<li>Annoying rules: eg, you must assess buried pieces to know if a solution is valid.
+<ul>
+<li>-1 * (number of rules)</li>
+</ul>
+</li>
+</ul>
+
+    <ul class="tags">
+
+  <li><a class="taglink" href="/posts/tagged/with/tiling/"><span class="tag">tiling</span></a></li>
+
+  <li><a class="taglink" href="/posts/tagged/with/investigation/"><span class="tag">investigation</span></a></li>
+
+</ul>
+    </div>
+  </body>
+</html>

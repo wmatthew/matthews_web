@@ -1,5 +1,6 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const Image = require("@11ty/eleventy-img");
+const Hydrator = require("./backendJS/pieceHydrator.js");
 
 module.exports = function (eleventyConfig) {
 
@@ -26,7 +27,7 @@ module.exports = function (eleventyConfig) {
     };
 
     let stats = await Image(imgUrl, imgOptions);
-    console.log( stats );
+    //console.log( stats );
   })();
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -37,9 +38,14 @@ module.exports = function (eleventyConfig) {
   });
 
   // Universal Shortcodes
-  eleventyConfig.addShortcode("sandboxSum", function (firstNum, secondNum) { return firstNum + " plus " + secondNum + " is " + (parseInt(firstNum) + parseInt(secondNum)); });
-  eleventyConfig.addFilter("makeUppercase", function (value) { return value.toUpperCase(); });
-
+  eleventyConfig.addShortcode("sandboxSum", function (firstNum, secondNum) { return firstNum + " plus " + secondNum + " is " + (parseInt(firstNum) + parseInt(secondNum)); }); // example only
+  eleventyConfig.addFilter("makeUppercase", function (value) { return value.toUpperCase(); }); // example only
+  eleventyConfig.addFilter("hydratePiece", Hydrator.hydrate );
+  eleventyConfig.addFilter("hideOneLabels", Hydrator.hideOneLabels );
+  eleventyConfig.addFilter("fixCoordinates", Hydrator.fixCoordinates );
+  eleventyConfig.addFilter("rotatePiece", Hydrator.rotatePiece );
+  eleventyConfig.addFilter("stripOuterChars", function (str) { return str.slice(1, -1);  } );
+  
   return {
     dir: {
       input: ".",

@@ -1,9 +1,9 @@
 ---
 layout: layouts/base.liquid
 title: Games
-eleventyNavigation:
-  key: Games
-permalink: games/
+--eleventyNavigation:
+--  key: Games
+permalink: false
 eleventyImport:
   collections: ["game"]
 ---

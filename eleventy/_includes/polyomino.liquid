@@ -1,7 +1,10 @@
 <div class="map {{size}}">
 <div class="actualMap">
-{% for pos in boxCoords %}{% include square, x: pos[0], y: pos[1], color:pos[2] %}
-{% else %}empty!
+{% for pos in boxCoords %}
+  {% assign shift = colorShift | default: 0 %}
+  {% assign myColor = pos[2] | plus:shift | default: color %}
+  {% include square, x: pos[0], y: pos[1], color:myColor  %}
+  {% else %}empty!
 {% endfor %}
 </div>
 {% if caption %}

@@ -9,8 +9,6 @@ eleventyImport:
 ---
 # {{title}}
 
-Interactive projects where the goal is to discover a solved state.
-
 ## Design Philosophy: Simple, Complex, Satisfying
 My goal is to make puzzles that start simple, exhibit organic emergent complexity, and end with a satisfying solution.
 
@@ -34,8 +32,19 @@ When possible, the solution state should be unique. It should be exhaustive, usi
 The solution state itself should be interesting- although it will likely have internal structure, it should not be a tedious repetition of a trivial idea or pattern. Ideally players reaching the solution will not groan at a cheap trick or loophole that enables it, but identify with their work and feel ownership and pride in what they've accomplished.
 
 ## Puzzles I've Made
+Interactive projects where the goal is to discover a solved state.
+
 <ul>
 {%- for post in collections.puzzle -%}
+  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+{%- endfor -%}
+</ul>
+
+## Games
+Projects where the goal is to reach a win condition.
+
+<ul>
+{%- for post in collections.game -%}
   <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
 {%- endfor -%}
 </ul>

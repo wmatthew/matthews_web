@@ -1,20 +1,23 @@
 {
-  "name": "eleventy",
+  "name": "matthews-site",
   "version": "1.0.0",
-  "description": "",
+  "description": "A small static website showcasing puzzles and other things I've made.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "commonjs",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2",
-    "@11ty/eleventy-navigation": "^0.3.5"
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "depcheck": "^1.4.7"
   },
   "dependencies": {
     "@11ty/eleventy-img": "^3.1.0",
-    "@11ty/eleventy-plugin-webc": "^0.11.1"
+    "@11ty/eleventy-plugin-webc": "^0.11.1",
+    "@11ty/eleventy-upgrade-help": "^2.0.5"
   }
 }

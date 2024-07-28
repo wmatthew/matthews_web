@@ -3,7 +3,7 @@ layout: layouts/base.liquid
 title: Pentomino Tiling
 eleventyNavigation:
   key: Pentominos
-  parent: Puzzles
+  parent: Investigations
 tags:
   - puzzle
   - rep-tile
@@ -43,7 +43,7 @@ The larger **board** we tiled above has four shapes (area 20, width 4, height 6)
 There are many possible larger boards: for any N={1,2,3,...}, we can draw a board of area 5N&sup2;, width 2N, and height 3N.
 
 Here's a board of size 3:
-{% include polyomino, boxCoords:p-pentominos.bigCheckerboard, size:"small", caption:"size 3 board" %}
+{% include polyomino, boxCoords:p-pentominos.bigCheckerboard, size:"small", caption:"size 3 board", colorShift:303 %}
 
 For each larger board, we can ask:
 * Can we tile the board with **tile set** of N&sup2; P tiles?
@@ -55,7 +55,7 @@ For each larger board, we can ask:
 
 In effect, we have a boundless number of tiling **puzzles**, where each puzzle is a fixed tile set and board size. Some will have no solutions; some will have many. It's not immediately obvious if there will be any pattern, but this seems like an interesting space to explore.
 
-{% include polyomino, boxCoords:p-pentominos.biggerCheckerboard, size:"small", caption:"size 6 board" %}
+{% include polyomino, boxCoords:p-pentominos.biggerCheckerboard, size:"small", caption:"size 6 board", colorShift:303 %}
 
 # Predictions
 Before I programmatically explore the space, I'll make some predictions:
@@ -95,13 +95,13 @@ These are harder to quantify up front. We'll just have to play it by ear after w
 
 ## Colors
 As we solve individual board/tileset combinations we'll color-code them:
-* Grey for unknown states
+* Deep purple for unknown states
 * Red for puzzles with 0 solutions (worst)
 * Orange for puzzles with multiple solutions
 * Yellow for unique puzzles: exactly 1 solution but not chiral-unique; tile set can assemble a flipped board.
 * Green for chiral-unique puzzles: exactly 1 solution; can't assemble a flipped board. (best)
 
-{% include polyomino, boxCoords:p-solutions.palette, size:"small", caption:"color key" %}
+{% include polyomino, boxCoords:p-solutions.palette, size:"small", caption:"color key", colorShift:90 %}
 
 # Visualizing Results
 Each board size N has N&sup2;+1 possible tile sets corresponding to (0,1,...N&sup2;) P tiles.
@@ -110,7 +110,7 @@ To visualize the solution space, we'll group solutions by board size. In each gr
 
 This is what the map of solutions for N=[1,2,3,4] will look like:
 
-{% include polyomino, boxCoords:p-solutions.blank4, size:"large", caption:"map of solutions for board sizes 1-4"%}
+{% include polyomino, boxCoords:p-solutions.blank4, size:"large", caption:"map of solutions for board sizes 1-4", colorShift:90%}
 
 Don't read too much into the spatial arrangement here: like the periodic table of elements, it's an arbitrary/aesthetic layout decision to make the data easy to scan. Hopefully this layout will help us spot interesting solutions.
 
@@ -127,7 +127,7 @@ It's easy to reason about N=1. These are tile sets with 1 tile total and the boa
 * 0 P tiles means we only have 1 Q tile. There's no solution, so this square is red.
 * 1 P tile is trivally solvable. Since we can't use the tile to make a flipped board, the solution is chiral-unique. Green.
 
-{% include polyomino, boxCoords:p-solutions.solution1, size:"large", caption:"results for boards of size 1"%}
+{% include polyomino, boxCoords:p-solutions.solution1, size:"large", caption:"results for boards of size 1", colorShift:90%}
 
 ## Size 2 Boards
 You can work out N=2 in a few minutes with a pen and paper. These are tile sets with 4 tiles total. The two solutions described are the ones illustrated earlier in this post.
@@ -137,7 +137,7 @@ You can work out N=2 in a few minutes with a pen and paper. These are tile sets 
 * 2 P tiles is unique (yellow).
 * 3 and 4 P tiles are impossible (red)
 
-{% include polyomino, boxCoords:p-solutions.solution2, size:"large", caption:"results for boards of size 1-2"%}
+{% include polyomino, boxCoords:p-solutions.solution2, size:"large", caption:"results for boards of size 1-2", colorShift:90%}
 
 As the board grows, it gets harder to work out solutions. I wrote a program that solves tiling puzzles and will use this going forward.
 
@@ -145,19 +145,19 @@ As the board grows, it gets harder to work out solutions. I wrote a program that
 
 This content was generated 100% automatically. It's reassuring to see that the solutions for size 1 and 2 match the manual results above.
 
-{% include polyomino, boxCoords:p-autosolutions.autoSolutionUpTo3 size:"large", caption:"results for boards of size 1-3" %}
+{% include polyomino, boxCoords:p-autosolutions.autoSolutionUpTo3 size:"large", caption:"results for boards of size 1-3", colorShift:90 %}
 
 ## Size 4 Boards
 
 No unique solutions! A few extreme cases have no solutions, but most have multiple solutions.
 
-{% include polyomino, boxCoords:p-autosolutions.autoSolutionUpTo4 size:"large", caption:"results for boards of size 1-4" %}
+{% include polyomino, boxCoords:p-autosolutions.autoSolutionUpTo4 size:"large", caption:"results for boards of size 1-4", colorShift:90 %}
 
 ## Size 5, 6, 7 Boards
 
 More of the same: no unique solutions, and all but a few cases have multiple solutions.
 
-{% include polyomino, boxCoords:p-autosolutions.autoSolutionUpTo7 size:"large", caption:"results for boards of size 1-7" %}
+{% include polyomino, boxCoords:p-autosolutions.autoSolutionUpTo7 size:"large", caption:"results for boards of size 1-7", colorShift:90 %}
 
 # Analysis
 * were my predictions right?

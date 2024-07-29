@@ -25,8 +25,8 @@
       "allowPieceOrienting": false},
     "key": "Tatami",
     "template": "Tatami"},
-  "Clones_Tile_A_Square_rect1x1": {
-    "name": "Block City / Clones Tile A Square / Rectangle",
+  "Clones_Tile_A_Square_rect1x1_PLR": {
+    "name": "Clones Tile A Rectangle",
     "description": "Many copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -42,8 +42,8 @@
       "allowUpwardOverflow": true},
     "key": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
-  "Clones_Tile_A_Square_rect2x2": {
-    "name": "Block City / Clones Tile A Square / Rectangle",
+  "Clones_Tile_A_Square_rect2x2_PLR": {
+    "name": "Clones Tile A Rectangle",
     "description": "Many copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -59,8 +59,8 @@
       "allowUpwardOverflow": true},
     "key": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
-  "Clones_Tile_A_Square_rect3x3": {
-    "name": "Block City / Clones Tile A Square / Rectangle",
+  "Clones_Tile_A_Square_rect3x3_PLR": {
+    "name": "Clones Tile A Rectangle",
     "description": "Many copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -76,8 +76,8 @@
       "allowUpwardOverflow": true},
     "key": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
-  "Clones_Tile_A_Square_rect4x4": {
-    "name": "Block City / Clones Tile A Square / Rectangle",
+  "Clones_Tile_A_Square_rect4x4_PLR": {
+    "name": "Clones Tile A Rectangle",
     "description": "Many copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -93,8 +93,8 @@
       "allowUpwardOverflow": true},
     "key": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
-  "Clones_Tile_A_Square_rect5x5": {
-    "name": "Block City / Clones Tile A Square / Rectangle",
+  "Clones_Tile_A_Square_rect5x5_PLR": {
+    "name": "Clones Tile A Rectangle",
     "description": "Many copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -110,8 +110,8 @@
       "allowUpwardOverflow": true},
     "key": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
-  "Clones_Tile_A_Square_rect6x6": {
-    "name": "Block City / Clones Tile A Square / Rectangle",
+  "Clones_Tile_A_Square_rect6x6_PLR": {
+    "name": "Clones Tile A Rectangle",
     "description": "Many copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -127,8 +127,8 @@
       "allowUpwardOverflow": true},
     "key": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
-  "Clones_Tile_A_Square_rect7x7": {
-    "name": "Block City / Clones Tile A Square / Rectangle",
+  "Clones_Tile_A_Square_rect7x7_PLR": {
+    "name": "Clones Tile A Rectangle",
     "description": "Many copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -144,8 +144,8 @@
       "allowUpwardOverflow": true},
     "key": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
-  "Clones_Tile_A_Square_rect8x8": {
-    "name": "Block City / Clones Tile A Square / Rectangle",
+  "Clones_Tile_A_Square_rect8x8_PLR": {
+    "name": "Clones Tile A Rectangle",
     "description": "Many copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -161,8 +161,8 @@
       "allowUpwardOverflow": true},
     "key": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
-  "Clones_Tile_A_Square_rect9x9": {
-    "name": "Block City / Clones Tile A Square / Rectangle",
+  "Clones_Tile_A_Square_rect9x9_PLR": {
+    "name": "Clones Tile A Rectangle",
     "description": "Many copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -178,8 +178,8 @@
       "allowUpwardOverflow": true},
     "key": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
-  "Clones_Tile_A_Square_rect10x10": {
-    "name": "Block City / Clones Tile A Square / Rectangle",
+  "Clones_Tile_A_Square_rect10x10_PLR": {
+    "name": "Clones Tile A Rectangle",
     "description": "Many copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -194,4 +194,88 @@
       "allowColorVertexNeighbors": false,
       "allowUpwardOverflow": true},
     "key": "Clones_Tile_A_Square",
-    "template": "Clones_Tile_A_Square"}}
+    "template": "Clones_Tile_A_Square"},
+  "Clones_Tile_A_Square_Simple_rect1x1_T": {
+    "name": "Clones Tile A Rectangle",
+    "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
+    "type": "Generated",
+    "board": {
+      "key": "rect1x1",
+      "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 1,"y": 1,"z": 1}]],
+      "points": [{"x": 1,"y": 1,"z": 1}],
+      "area": 1,
+      "description": "Rectangle of size 1x1."},
+    "pieceSupply": [["T",-1]],
+    "constraint_flags": {},
+    "key": "Clones_Tile_A_Square_Simple",
+    "template": "Clones_Tile_A_Square_Simple"},
+  "Clones_Tile_A_Square_Simple_rect2x2_T": {
+    "name": "Clones Tile A Rectangle",
+    "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
+    "type": "Generated",
+    "board": {
+      "key": "rect2x2",
+      "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 2,"y": 2,"z": 1}]],
+      "points": [{"x": 1,"y": 1,"z": 1},{"x": 1,"y": 2,"z": 1},{"x": 2,"y": 1,"z": 1},{"x": 2,"y": 2,"z": 1}],
+      "area": 4,
+      "description": "Rectangle of size 2x2."},
+    "pieceSupply": [["T",-1]],
+    "constraint_flags": {},
+    "key": "Clones_Tile_A_Square_Simple",
+    "template": "Clones_Tile_A_Square_Simple"},
+  "Clones_Tile_A_Square_Simple_rect3x3_T": {
+    "name": "Clones Tile A Rectangle",
+    "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
+    "type": "Generated",
+    "board": {
+      "key": "rect3x3",
+      "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 3,"y": 3,"z": 1}]],
+      "points": [{"x": 1,"y": 1,"z": 1},{"x": 1,"y": 2,"z": 1},{"x": 1,"y": 3,"z": 1},{"x": 2,"y": 1,"z": 1},{"x": 2,"y": 2,"z": 1},{"x": 2,"y": 3,"z": 1},{"x": 3,"y": 1,"z": 1},{"x": 3,"y": 2,"z": 1},{"x": 3,"y": 3,"z": 1}],
+      "area": 9,
+      "description": "Rectangle of size 3x3."},
+    "pieceSupply": [["T",-1]],
+    "constraint_flags": {},
+    "key": "Clones_Tile_A_Square_Simple",
+    "template": "Clones_Tile_A_Square_Simple"},
+  "Clones_Tile_A_Square_Simple_rect4x4_T": {
+    "name": "Clones Tile A Rectangle",
+    "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
+    "type": "Generated",
+    "board": {
+      "key": "rect4x4",
+      "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 4,"y": 4,"z": 1}]],
+      "points": [{"x": 1,"y": 1,"z": 1},{"x": 1,"y": 2,"z": 1},{"x": 1,"y": 3,"z": 1},{"x": 1,"y": 4,"z": 1},{"x": 2,"y": 1,"z": 1},{"x": 2,"y": 2,"z": 1},{"x": 2,"y": 3,"z": 1},{"x": 2,"y": 4,"z": 1},{"x": 3,"y": 1,"z": 1},{"x": 3,"y": 2,"z": 1},{"x": 3,"y": 3,"z": 1},{"x": 3,"y": 4,"z": 1},{"x": 4,"y": 1,"z": 1},{"x": 4,"y": 2,"z": 1},{"x": 4,"y": 3,"z": 1},{"x": 4,"y": 4,"z": 1}],
+      "area": 16,
+      "description": "Rectangle of size 4x4."},
+    "pieceSupply": [["T",-1]],
+    "constraint_flags": {},
+    "key": "Clones_Tile_A_Square_Simple",
+    "template": "Clones_Tile_A_Square_Simple"},
+  "Clones_Tile_A_Square_Simple_rect5x5_T": {
+    "name": "Clones Tile A Rectangle",
+    "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
+    "type": "Generated",
+    "board": {
+      "key": "rect5x5",
+      "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 5,"y": 5,"z": 1}]],
+      "points": [{"x": 1,"y": 1,"z": 1},{"x": 1,"y": 2,"z": 1},{"x": 1,"y": 3,"z": 1},{"x": 1,"y": 4,"z": 1},{"x": 1,"y": 5,"z": 1},{"x": 2,"y": 1,"z": 1},{"x": 2,"y": 2,"z": 1},{"x": 2,"y": 3,"z": 1},{"x": 2,"y": 4,"z": 1},{"x": 2,"y": 5,"z": 1},{"x": 3,"y": 1,"z": 1},{"x": 3,"y": 2,"z": 1},{"x": 3,"y": 3,"z": 1},{"x": 3,"y": 4,"z": 1},{"x": 3,"y": 5,"z": 1},{"x": 4,"y": 1,"z": 1},{"x": 4,"y": 2,"z": 1},{"x": 4,"y": 3,"z": 1},{"x": 4,"y": 4,"z": 1},{"x": 4,"y": 5,"z": 1},{"x": 5,"y": 1,"z": 1},{"x": 5,"y": 2,"z": 1},{"x": 5,"y": 3,"z": 1},{"x": 5,"y": 4,"z": 1},{"x": 5,"y": 5,"z": 1}],
+      "area": 25,
+      "description": "Rectangle of size 5x5."},
+    "pieceSupply": [["T",-1]],
+    "constraint_flags": {},
+    "key": "Clones_Tile_A_Square_Simple",
+    "template": "Clones_Tile_A_Square_Simple"},
+  "Clones_Tile_A_Square_Simple_rect6x6_T": {
+    "name": "Clones Tile A Rectangle",
+    "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
+    "type": "Generated",
+    "board": {
+      "key": "rect6x6",
+      "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 6,"y": 6,"z": 1}]],
+      "points": [{"x": 1,"y": 1,"z": 1},{"x": 1,"y": 2,"z": 1},{"x": 1,"y": 3,"z": 1},{"x": 1,"y": 4,"z": 1},{"x": 1,"y": 5,"z": 1},{"x": 1,"y": 6,"z": 1},{"x": 2,"y": 1,"z": 1},{"x": 2,"y": 2,"z": 1},{"x": 2,"y": 3,"z": 1},{"x": 2,"y": 4,"z": 1},{"x": 2,"y": 5,"z": 1},{"x": 2,"y": 6,"z": 1},{"x": 3,"y": 1,"z": 1},{"x": 3,"y": 2,"z": 1},{"x": 3,"y": 3,"z": 1},{"x": 3,"y": 4,"z": 1},{"x": 3,"y": 5,"z": 1},{"x": 3,"y": 6,"z": 1},{"x": 4,"y": 1,"z": 1},{"x": 4,"y": 2,"z": 1},{"x": 4,"y": 3,"z": 1},{"x": 4,"y": 4,"z": 1},{"x": 4,"y": 5,"z": 1},{"x": 4,"y": 6,"z": 1},{"x": 5,"y": 1,"z": 1},{"x": 5,"y": 2,"z": 1},{"x": 5,"y": 3,"z": 1},{"x": 5,"y": 4,"z": 1},{"x": 5,"y": 5,"z": 1},{"x": 5,"y": 6,"z": 1},{"x": 6,"y": 1,"z": 1},{"x": 6,"y": 2,"z": 1},{"x": 6,"y": 3,"z": 1},{"x": 6,"y": 4,"z": 1},{"x": 6,"y": 5,"z": 1},{"x": 6,"y": 6,"z": 1}],
+      "area": 36,
+      "description": "Rectangle of size 6x6."},
+    "pieceSupply": [["T",-1]],
+    "constraint_flags": {},
+    "key": "Clones_Tile_A_Square_Simple",
+    "template": "Clones_Tile_A_Square_Simple"}}

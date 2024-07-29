@@ -49,20 +49,28 @@
       "allowUnusedPieces": false,
       "allowUnusedOrientations": true},
     "key": "Tiling_Default"},
-  "Clones_Tile_A_Square": {
-    "name": "Block City / Clones Tile A Square / Rectangle",
-    "description": "Many copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
-    "type": "Template",
-    "board": "varies",
-    "pieceSupply": "varies",
-    "constraint_flags": {
-      "colorByOrientation": true,
-      "allowColorVertexNeighbors": false,
-      "allowUpwardOverflow": true},
-    "key": "Clones_Tile_A_Square"},
-  "Overhang_City": {
+    "Clones_Tile_A_Square_Simple": {
+      "name": "Clones Tile A Rectangle - Simple Version",
+      "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
+      "type": "Template",
+      "board": "varies",
+      "pieceSupply": "varies",
+      "constraint_flags": {},
+      "key": "Clones_Tile_A_Square"},
+      "Clones_Tile_A_Square": {
+        "name": "Clones Tile A Rectangle - Restricted Neighbors",
+        "description": "Copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
+        "type": "Template",
+        "board": "varies",
+        "pieceSupply": "varies",
+        "constraint_flags": {
+          "colorByOrientation": true,
+          "allowColorVertexNeighbors": false,
+          "allowUpwardOverflow": true},
+        "key": "Clones_Tile_A_Square"},
+        "Overhang_City": {
     "name": "Overhang City",
-    "description": "Many copies of a polycube tile a rectangle board and can overhang.",
+    "description": "Copies of a polycube tile a rectangle board and can overhang.",
     "type": "Template",
     "board": "varies",
     "pieceSupply": "varies",

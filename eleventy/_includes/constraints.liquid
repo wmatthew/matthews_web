@@ -9,6 +9,9 @@
 <p>Board: {{constraints.board}}</p>
 <p>Pieces: {{constraints.pieceSupply | json | stripOuterChars }}</p>
 <h4>Constraints:</h4>
+{% if constraints.constraint_flags.size == 0 %}
+  No custom constraint flags. This one uses only default settings.
+{% endif %}
 {% for setting in constraints.constraint_flags %}
     {% assign isDefault = setting[1] == defaultConstraints.constraint_flags[setting[0]] %}
       {{ icons[setting[0]] }} {{ setting[0] }}: {% if isDefault %}{{ constraints.constraint_flags[setting[0]] }} (default){% else %}<b>{{ constraints.constraint_flags[setting[0]] }}</b>{% endif %}

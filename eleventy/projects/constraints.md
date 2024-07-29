@@ -84,6 +84,7 @@ Leftover Material
 {% include constraints constraints:constraints-templates.Locked_Triangles %}
 
 ## 3D Puzzles
+{% include constraints constraints:constraints-templates.Clones_Tile_A_Square_Simple %}
 
 {% include constraints constraints:constraints-templates.Clones_Tile_A_Square %}
 

@@ -45,7 +45,14 @@ var parentKey = "Clones_Tile_A_Square";
 for (var size=1; size<=10; size++) {
     var childSupply = [["PLR", infinitePieces]];
     var childBoard = "rect"+size+"x"+size;
-    addClone(parentKey, childBoard, childSupply);
+    addClone(parentKey, childBoard, childSupply, ["PLR"]);
+}
+
+var parentKey = "Clones_Tile_A_Square_Simple";
+for (var size=1; size<=6; size++) {
+    var childSupply = [["T", infinitePieces]];
+    var childBoard = "rect"+size+"x"+size;
+    addClone(parentKey, childBoard, childSupply, ["T"]);
 }
 
 //==========================================
@@ -58,11 +65,11 @@ console.log("Generated " + numGenerated + " constraints from " + numTemplates + 
 
 //==========================================
 // Helper Functions
-function addClone(parentKey, childBoardKey, childSupply) {
+function addClone(parentKey, childBoardKey, childSupply, extraFieldsForKey=[]) {
     var clone = structuredClone(constraintTemplates[parentKey]);
     clone.board = Board.boardFromKey(childBoardKey);
     clone.pieceSupply = childSupply;
-    var childKey = parentKey + "_" + childBoard;
+    var childKey = [parentKey, childBoardKey, ...extraFieldsForKey].join("_");
     clone.type = "Generated";
     clone.template = parentKey;
     //console.log(clone);

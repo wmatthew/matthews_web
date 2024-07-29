@@ -70,4 +70,4 @@ function pt(x1,y1,z1) {
 
 //==========================================
 fs.writeFileSync("_data/board-library.json", jsonFormatter.formatJSON(boardLibrary));
-console.log("...Generated " + Object.keys(boardLibrary).length + " boards.");
+console.log("Generated " + Object.keys(boardLibrary).length + " boards.");

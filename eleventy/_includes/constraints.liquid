@@ -5,6 +5,9 @@
 <h3>{{constraints.name}}</h3>
 <p>{{constraints.description}}</p>
 <p>Key: {{constraints.key}}</p>
+{% if constraints.parentKey %}
+<p>Parent: {{constraints.parentKey}}</p>
+{% endif %}
 <p>Type: {{constraints.type}}</p>
 <p>Board: {{constraints.board}}</p>
 <p>Pieces: {{constraints.pieceSupply | json | stripOuterChars }}</p>

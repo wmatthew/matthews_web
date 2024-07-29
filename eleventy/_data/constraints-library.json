@@ -8,7 +8,8 @@
     "constraint_flags": {
       "allowSkyPieces": true,
       "allowSupportedOverhangs": true},
-    "key": "Angel_Cube"},
+    "key": "Angel_Cube",
+    "parentKey": false},
   "Tatami_rect4x4": {
     "name": "Tatami Tiling - Classic",
     "description": "Tiling 2x1 rectangles.",
@@ -23,7 +24,8 @@
     "constraint_flags": {
       "allow4PieceEdgeIntersections": false,
       "allowPieceOrienting": false},
-    "key": "Tatami",
+    "key": "Tatami_rect4x4",
+    "parentKey": "Tatami",
     "template": "Tatami"},
   "Clones_Tile_A_Square_rect1x1_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors",
@@ -40,7 +42,8 @@
       "colorByOrientation": true,
       "allowColorVertexNeighbors": false,
       "allowUpwardOverflow": true},
-    "key": "Clones_Tile_A_Square",
+    "key": "Clones_Tile_A_Square_rect1x1_PLR",
+    "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect2x2_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors",
@@ -57,7 +60,8 @@
       "colorByOrientation": true,
       "allowColorVertexNeighbors": false,
       "allowUpwardOverflow": true},
-    "key": "Clones_Tile_A_Square",
+    "key": "Clones_Tile_A_Square_rect2x2_PLR",
+    "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect3x3_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors",
@@ -74,7 +78,8 @@
       "colorByOrientation": true,
       "allowColorVertexNeighbors": false,
       "allowUpwardOverflow": true},
-    "key": "Clones_Tile_A_Square",
+    "key": "Clones_Tile_A_Square_rect3x3_PLR",
+    "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect4x4_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors",
@@ -91,7 +96,8 @@
       "colorByOrientation": true,
       "allowColorVertexNeighbors": false,
       "allowUpwardOverflow": true},
-    "key": "Clones_Tile_A_Square",
+    "key": "Clones_Tile_A_Square_rect4x4_PLR",
+    "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect5x5_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors",
@@ -108,7 +114,8 @@
       "colorByOrientation": true,
       "allowColorVertexNeighbors": false,
       "allowUpwardOverflow": true},
-    "key": "Clones_Tile_A_Square",
+    "key": "Clones_Tile_A_Square_rect5x5_PLR",
+    "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect6x6_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors",
@@ -125,7 +132,8 @@
       "colorByOrientation": true,
       "allowColorVertexNeighbors": false,
       "allowUpwardOverflow": true},
-    "key": "Clones_Tile_A_Square",
+    "key": "Clones_Tile_A_Square_rect6x6_PLR",
+    "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect7x7_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors",
@@ -142,7 +150,8 @@
       "colorByOrientation": true,
       "allowColorVertexNeighbors": false,
       "allowUpwardOverflow": true},
-    "key": "Clones_Tile_A_Square",
+    "key": "Clones_Tile_A_Square_rect7x7_PLR",
+    "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect8x8_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors",
@@ -159,7 +168,8 @@
       "colorByOrientation": true,
       "allowColorVertexNeighbors": false,
       "allowUpwardOverflow": true},
-    "key": "Clones_Tile_A_Square",
+    "key": "Clones_Tile_A_Square_rect8x8_PLR",
+    "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect9x9_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors",
@@ -176,7 +186,8 @@
       "colorByOrientation": true,
       "allowColorVertexNeighbors": false,
       "allowUpwardOverflow": true},
-    "key": "Clones_Tile_A_Square",
+    "key": "Clones_Tile_A_Square_rect9x9_PLR",
+    "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect10x10_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors",
@@ -193,7 +204,8 @@
       "colorByOrientation": true,
       "allowColorVertexNeighbors": false,
       "allowUpwardOverflow": true},
-    "key": "Clones_Tile_A_Square",
+    "key": "Clones_Tile_A_Square_rect10x10_PLR",
+    "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_Simple_rect1x1_T": {
     "name": "Clones Tile A Rectangle - Simple Version",
@@ -207,7 +219,8 @@
       "description": "Rectangle of size 1x1."},
     "pieceSupply": [["T",-1]],
     "constraint_flags": {},
-    "key": "Clones_Tile_A_Square_Simple",
+    "key": "Clones_Tile_A_Square_Simple_rect1x1_T",
+    "parentKey": "Clones_Tile_A_Square_Simple",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect2x2_T": {
     "name": "Clones Tile A Rectangle - Simple Version",
@@ -221,7 +234,8 @@
       "description": "Rectangle of size 2x2."},
     "pieceSupply": [["T",-1]],
     "constraint_flags": {},
-    "key": "Clones_Tile_A_Square_Simple",
+    "key": "Clones_Tile_A_Square_Simple_rect2x2_T",
+    "parentKey": "Clones_Tile_A_Square_Simple",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect3x3_T": {
     "name": "Clones Tile A Rectangle - Simple Version",
@@ -235,7 +249,8 @@
       "description": "Rectangle of size 3x3."},
     "pieceSupply": [["T",-1]],
     "constraint_flags": {},
-    "key": "Clones_Tile_A_Square_Simple",
+    "key": "Clones_Tile_A_Square_Simple_rect3x3_T",
+    "parentKey": "Clones_Tile_A_Square_Simple",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect4x4_T": {
     "name": "Clones Tile A Rectangle - Simple Version",
@@ -249,7 +264,8 @@
       "description": "Rectangle of size 4x4."},
     "pieceSupply": [["T",-1]],
     "constraint_flags": {},
-    "key": "Clones_Tile_A_Square_Simple",
+    "key": "Clones_Tile_A_Square_Simple_rect4x4_T",
+    "parentKey": "Clones_Tile_A_Square_Simple",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect5x5_T": {
     "name": "Clones Tile A Rectangle - Simple Version",
@@ -263,7 +279,8 @@
       "description": "Rectangle of size 5x5."},
     "pieceSupply": [["T",-1]],
     "constraint_flags": {},
-    "key": "Clones_Tile_A_Square_Simple",
+    "key": "Clones_Tile_A_Square_Simple_rect5x5_T",
+    "parentKey": "Clones_Tile_A_Square_Simple",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect6x6_T": {
     "name": "Clones Tile A Rectangle - Simple Version",
@@ -277,5 +294,6 @@
       "description": "Rectangle of size 6x6."},
     "pieceSupply": [["T",-1]],
     "constraint_flags": {},
-    "key": "Clones_Tile_A_Square_Simple",
+    "key": "Clones_Tile_A_Square_Simple_rect6x6_T",
+    "parentKey": "Clones_Tile_A_Square_Simple",
     "template": "Clones_Tile_A_Square_Simple"}}

@@ -19,6 +19,7 @@ var infinitePieces = -1;
 // Set the 'key' field for each object
 for (var key in constraintTemplates) {
     constraintTemplates[key].key = key;
+    constraintTemplates[key].parentKey = false;
 }
 
 //==========================================
@@ -66,10 +67,15 @@ console.log("Generated " + numGenerated + " constraints from " + numTemplates + 
 //==========================================
 // Helper Functions
 function addClone(parentKey, childBoardKey, childSupply, extraFieldsForKey=[]) {
+
     var clone = structuredClone(constraintTemplates[parentKey]);
-    clone.board = Board.boardFromKey(childBoardKey);
+
+    clone.board = Board.boardFromKey(childBoardKey); // TODO: just keep as the key?
     clone.pieceSupply = childSupply;
+
     var childKey = [parentKey, childBoardKey, ...extraFieldsForKey].join("_");
+    clone.parentKey = parentKey;
+    clone.key = childKey;
     clone.type = "Generated";
     clone.template = parentKey;
     //console.log(clone);

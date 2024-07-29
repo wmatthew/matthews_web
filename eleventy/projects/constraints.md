@@ -7,7 +7,7 @@ eleventyNavigation:
 tags:
   - tiling
   - investigation
-permalink: tiling/constraints
+permalink: tiling/constraints/
 ---
 # {{title}}
 

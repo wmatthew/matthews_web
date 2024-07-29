@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Constraints | </title>
+    <link rel="stylesheet" href="/css/bundle.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#969696">
+  </head>
+  <body>
+    
+    <div class="content">
+    <h1>Constraints</h1>
+<p>Constraints are sets of values that define a puzzle under investigation. They include a board, a set of pieces, and a list of true/false flags that define rules for the puzzle. Constraints are passed to a solver program that finds and records all solutions to a puzzle.</p>
+<p>These are meant for tiling puzzles (use polycubes/polyominos to fill a footprint with no gaps or overlaps) and packing puzzles (pack a set of polycubes into a specified volume)</p>
+<h2>Constraint Type</h2>
+<p>Types of constraints:</p>
+<ul>
+<li>Defaults: Fallback values for settings that are not specified.</li>
+<li>Custom: A concrete puzzle definition. Fixed values for settings, entered by hand.</li>
+<li>Template: An abstract puzzle definition. Values vary when generated (eg: same puzzle, different board sizes)</li>
+<li>Generated: A concrete puzzle definition. Fixed values for all settings, generated from template</li>
+</ul>
+<h2>Board and Piece Supply</h2>
+<p>The board is a list of coordinates that define a 2D or 3D space that will be filled by pieces.</p>
+<p>The piece supply is the set of pieces that fill the board.</p>
+<h2>Constraint Flags</h2>
+<p>Constraint flags are true/false values defining rules for a puzzle. Here's a list of constraint flags and what they mean.</p>
+<p>Each constraint has a default value. &quot;⭐️&quot; indicates constraint values that are overridden for some puzzles (so: they do not always take on the same value)</p>
+<p>Gaps</p>
+<ul>
+<li>🕳️ allowGaps: if true, pieces don't have to fully cover the board.</li>
+</ul>
+<p>Overflow: Pieces extending beyond their board's footprint</p>
+<ul>
+<li>🌊 allowGroundLevelOverflow: if true, pieces can extend beyond the footprint of their board, on the level closest to the board.</li>
+<li>🌧️ allowSkyLevelOverflow: if true, pieces can extend beyond the footprint of their board, above the level closest to the board.</li>
+<li>⭐️ 🚀 allowUpwardOverflow: if true, pieces can extend upward. This lets us reuse a simple 2D board for 3D puzzles of any height, as long as they don't need a ceiling.</li>
+</ul>
+<p>Overhangs: where a piece (or part of a piece) is above a different piece or empty space.</p>
+<ul>
+<li>🪑 allowUnsupportedOverhangs: if true, overhangs over empty space are allowed.</li>
+<li>⭐️ 💺 allowSupportedOverhangs: if true, overhangs over other pieces are allowed.</li>
+<li>⭐️ ✈️ allowSkyPieces: if true, pieces can be placed without any part touching the ground level.</li>
+</ul>
+<p>Coloring: preventing similar pieces from being placed together.</p>
+<ul>
+<li>⭐️ 🎨🧩 colorByPiece: if true, each piece is assigned its own color. If a piece is added to supply multiple times, each gets its own color.</li>
+<li>⭐️ 🎨🎲 colorByOrientation: if true, each distinct piece orientation gives the piece its own color (up to 6 colors per piece. a cube would have 1 color).</li>
+</ul>
+<p>Coloring: how close is allowed?
+(note that if all of these are true, coloring has no effect)</p>
+<ul>
+<li>⭐️ 👉🏘️ allowColorVertexNeighbors: if true, same colors can meet at a vertex.</li>
+<li>🔪🏘️ allowColorEdgeNeighbors&quot;: if true, same colors can meet at an edge.</li>
+<li>😡🏘️ allowColorFaceNeighbors&quot;: if true, same colors can meet on a face.</li>
+<li>🙈 allowHiddenNeighborsToBreakColorRules: if true, color rules are not applied to pieces where the relevant meeting is buried/hidden in the solved state.</li>
+</ul>
+<p>Other Restrictions on how pieces meet:</p>
+<ul>
+<li>⭐️ ⊞ allow4PieceEdgeIntersections: if true, four pieces are allowed to meet at an intersection. Used in flat 2D puzzles.</li>
+</ul>
+<p>Turning Pieces</p>
+<ul>
+<li>⭐️ ♻️ allowPieceRotation: if true, pieces can be rotated in place (ie, keeping the same face down)</li>
+<li>⭐️ 🎲 allowPieceOrienting: if true, pieces can be flipped to a different face (like rolling dice).</li>
+</ul>
+<p>Leftover Material</p>
+<ul>
+<li>⭐️ 🗑️🧩 allowUnusedPieces: if true, the solution can omit pieces.</li>
+<li>🗑️🎲 allowUnusedOrientations: if true, the solution can omit piece orientations. This allows for &quot;2D&quot; puzzles.</li>
+</ul>
+<h2>Default Values</h2>
+<div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
+<h3>Tiling Defaults</h3>
+<p>This is not a puzzle. This is a listing of the default settings for a tiling puzzle.</p>
+<p>Key: Tiling_Default</p>
+<p>Type: Defaults</p>
+<p>Board: sq4</p>
+<p>Pieces: ["T",2],["O",2],["I4",2],["L",2],["S",2]</p>
+<h4>Constraints:</h4>
+<p>allowGaps: <b>false</b></p>
+<p>allowGroundLevelOverflow: <b>false</b></p>
+<p>allowSkyLevelOverflow: <b>false</b></p>
+<p>allowUpwardOverflow: <b>false</b></p>
+<p>allowUnsupportedOverhangs: <b>false</b></p>
+<p>allowSupportedOverhangs: <b>false</b></p>
+<p>allowSkyPieces: <b>false</b></p>
+<p>colorByPiece: <b>false</b></p>
+<p>colorByOrientation: <b>false</b></p>
+<p>allowColorVertexNeighbors: <b>true</b></p>
+<p>allowColorEdgeNeighbors: <b>true</b></p>
+<p>allowColorFaceNeighbors: <b>true</b></p>
+<p>allowHiddenNeighborsToBreakColorRules: <b>true</b></p>
+<p>allow4PieceEdgeIntersections: <b>true</b></p>
+<p>allowPieceRotation: <b>true</b></p>
+<p>allowPieceOrienting: <b>true</b></p>
+<p>allowUnusedPieces: <b>false</b></p>
+<p>allowUnusedOrientations: <b>true</b></p>
+</div>
+<h2>2D Puzzles</h2>
+<div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
+<h3>Tatami Tiling - Classic</h3>
+<p>Tiling 2x1 rectangles.</p>
+<p>Key: Tatami</p>
+<p>Type: Template</p>
+<p>Board: varies</p>
+<p>Pieces: varies</p>
+<h4>Constraints:</h4>
+<p>allow4PieceEdgeIntersections: <b>false</b></p>
+<p>allowPieceOrienting: <b>false</b></p>
+</div>
+<div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
+<h3>Tatami Tiling - 3 color variation</h3>
+<p>Tiling 2x1 rectangles, 3-colorable.</p>
+<p>Key: Tatami_3color</p>
+<p>Type: Template</p>
+<p>Board: varies</p>
+<p>Pieces: varies</p>
+<h4>Constraints:</h4>
+<p>allowPieceOrienting: <b>false</b></p>
+<p>colorByPiece: <b>true</b></p>
+<p>allowColorVertexNeighbors: <b>false</b></p>
+<p>allowUnusedPieces: <b>true</b></p>
+</div>
+<div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
+<h3>P-Pentominos</h3>
+<p>P-Pentomino Rep-Tiling.</p>
+<p>Key: P_Pentominos</p>
+<p>Type: Template</p>
+<p>Board: varies</p>
+<p>Pieces: varies</p>
+<h4>Constraints:</h4>
+<p>allowPieceOrienting: <b>false</b></p>
+</div>
+<div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
+<h3>Locked Triangles</h3>
+<p>Pieces that can't turn. eg 36 Triangles Puzzle.</p>
+<p>Key: Locked_Triangles</p>
+<p>Type: Template</p>
+<p>Board: varies</p>
+<p>Pieces: varies</p>
+<h4>Constraints:</h4>
+<p>allowPieceRotation: <b>false</b></p>
+<p>allowPieceOrienting: <b>false</b></p>
+</div>
+<h2>3D Puzzles</h2>
+<div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
+<h3>Clones Tile A Rectangle - Simple Version</h3>
+<p>Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.</p>
+<p>Key: Clones_Tile_A_Square</p>
+<p>Type: Template</p>
+<p>Board: varies</p>
+<p>Pieces: varies</p>
+<h4>Constraints:</h4>
+<p>No custom constraint flags. This one uses only default settings.</p>
+</div>
+<div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
+<h3>Clones Tile A Rectangle - Restricted Neighbors</h3>
+<p>Copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.</p>
+<p>Key: Clones_Tile_A_Square</p>
+<p>Type: Template</p>
+<p>Board: varies</p>
+<p>Pieces: varies</p>
+<h4>Constraints:</h4>
+<p>colorByOrientation: <b>true</b></p>
+<p>allowColorVertexNeighbors: <b>false</b></p>
+<p>allowUpwardOverflow: <b>true</b></p>
+</div>
+<div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
+<h3>Overhang City</h3>
+<p>Copies of a polycube tile a rectangle board and can overhang.</p>
+<p>Key: Overhang_City</p>
+<p>Type: Template</p>
+<p>Board: varies</p>
+<p>Pieces: varies</p>
+<h4>Constraints:</h4>
+<p>allowSupportedOverhangs: <b>true</b></p>
+<p>allowUpwardOverflow: <b>true</b></p>
+</div>
+<div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
+<h3>Angel Cube</h3>
+<p>Fill a cube with pieces.</p>
+<p>Key: Angel_Cube</p>
+<p>Type: Custom</p>
+<p>Board: cube4</p>
+<p>Pieces: ["T",8],["S2",4]</p>
+<h4>Constraints:</h4>
+<p>allowSkyPieces: <b>true</b></p>
+<p>allowSupportedOverhangs: <b>true</b></p>
+</div>
+<h2>Not currently supported</h2>
+<ul>
+<li>Spike city: like block city but towers (any structure beyond ground level) can't touch eachother. This would require an additional flag. Maybe &quot;allowGroundFloorToBreakColorRules&quot;</li>
+</ul>
+
+    <ul class="tags">
+
+  <li><a class="taglink" href="/posts/tagged/with/tiling/"><span class="tag">tiling</span></a></li>
+
+  <li><a class="taglink" href="/posts/tagged/with/investigation/"><span class="tag">investigation</span></a></li>
+
+</ul>
+    </div>
+  </body>
+</html>

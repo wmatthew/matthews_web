@@ -1,6 +1,6 @@
 // Pretty JSON formatting.
 // If a line starts with one of these, start a new line.
-var importantSubstrings = ["p", "b", "c", "a", "r", "d", "_"];
+var importantSubstrings = ["p", "b", "c", "a", "r", "d", "s", "_"];
 
 // Takes in either a string or an object and returns a formatted JSON string.
 module.exports = class JSONFormatter {

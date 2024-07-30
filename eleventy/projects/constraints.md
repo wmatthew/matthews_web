@@ -47,12 +47,11 @@ Overhangs: where a piece (or part of a piece) is above a different piece or empt
 * ⭐️ 💺 allowSupportedOverhangs: if true, overhangs over other pieces are allowed.
 * ⭐️ ✈️ allowSkyPieces: if true, pieces can be placed without any part touching the ground level.
 
-Coloring: preventing similar pieces from being placed together.
+Coloring: preventing similar pieces from being placed together. If none of these are true and there are color restrictions enabled, all pieces get the same color.
 * ⭐️ 🎨🧩 colorByPiece: if true, each piece is assigned its own color. If a piece is added to supply multiple times, each gets its own color.
 * ⭐️ 🎨🎲 colorByOrientation: if true, each distinct piece orientation gives the piece its own color (up to 6 colors per piece. a cube would have 1 color). 
 
-Coloring: how close is allowed?
-(note that if all of these are true, coloring has no effect)
+Color-Based Restrictions: how close is allowed? If all of these are true, coloring has no effect.
 * ⭐️ 👉🏘️ allowColorVertexNeighbors: if true, same colors can meet at a vertex.
 * 🔪🏘️ allowColorEdgeNeighbors": if true, same colors can meet at an edge.
 * 😡🏘️ allowColorFaceNeighbors": if true, same colors can meet on a face.

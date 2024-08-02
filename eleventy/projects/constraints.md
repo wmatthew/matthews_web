@@ -47,7 +47,7 @@ Overhangs: where a piece (or part of a piece) is above a different piece or empt
 * ⭐️ 💺 allowSupportedOverhangs: if true, overhangs over other pieces are allowed.
 * ⭐️ ✈️ allowSkyPieces: if true, pieces can be placed without any part touching the ground level.
 
-Coloring: preventing similar pieces from being placed together. If none of these are true and there are color restrictions enabled, all pieces get the same color.
+Coloring: preventing similar pieces from being placed together. At most one of these can be true. If none of these are true and there are color restrictions enabled, all pieces get the same color.
 * ⭐️ 🎨🧩 colorByPiece: if true, each piece is assigned its own color. If a piece is added to supply multiple times, each gets its own color.
 * ⭐️ 🎨🎲 colorByOrientation: if true, each distinct piece orientation gives the piece its own color (up to 6 colors per piece. a cube would have 1 color). 
 
@@ -73,6 +73,7 @@ Leftover Material
 {% include constraints constraints:constraints-templates.Tiling_Default %}
 
 ## 2D Puzzles
+{% include constraints constraints:constraints-templates.Clones_Tile_A_Square_Simple %}
 
 {% include constraints constraints:constraints-templates.Tatami %}
 
@@ -83,8 +84,6 @@ Leftover Material
 {% include constraints constraints:constraints-templates.Locked_Triangles %}
 
 ## 3D Puzzles
-{% include constraints constraints:constraints-templates.Clones_Tile_A_Square_Simple %}
-
 {% include constraints constraints:constraints-templates.Clones_Tile_A_Square %}
 
 {% include constraints constraints:constraints-templates.Overhang_City %}
@@ -94,3 +93,5 @@ Leftover Material
 ## Not currently supported
 
 * Spike city: like block city but towers (any structure beyond ground level) can't touch eachother. This would require an additional flag. Maybe "allowGroundFloorToBreakColorRules"
+
+* Does a 1x2x3 piece have 3 orientations or 6? Should there be a flag to decide this? (ie: instead of colorByOrientation, have colorEveryOrientation + colorEveryDistinctOrientation)

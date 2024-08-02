@@ -2,6 +2,7 @@
 // Regenerates constraint-library.json from constraint-templates.json.
 // To run: node backendJS/generateConstraints.js
 const Board = require('./Board.js');
+const PieceSupply = require('./PieceSupply.js');
 const jsonFormatter = require('./jsonFormatter.js');
 const fs = require('fs');
 
@@ -12,8 +13,6 @@ var filePath = "_data/constraints-templates.json";
 var rawString = fs.readFileSync(filePath, 'utf8')
 var constraintTemplates = JSON.parse(rawString);
 var constraintLibrary = {};
-
-var infinitePieces = -1;
 
 //==========================================
 // Set the 'key' field for each object
@@ -44,14 +43,14 @@ addClone(parentKey, childBoard, childSupply);
 // Clones tile a square
 var parentKey = "Clones_Tile_A_Square";
 for (var size=1; size<=10; size++) {
-    var childSupply = [["PLR", infinitePieces]];
+    var childSupply = [["PLR", PieceSupply.INFINITE_PIECES]];
     var childBoard = "rect"+size+"x"+size;
     addClone(parentKey, childBoard, childSupply, ["PLR"]);
 }
 
 var parentKey = "Clones_Tile_A_Square_Simple";
-for (var size=1; size<=6; size++) {
-    var childSupply = [["T", infinitePieces]];
+for (var size=1; size<=8; size++) {
+    var childSupply = [["T", PieceSupply.INFINITE_PIECES]];
     var childBoard = "rect"+size+"x"+size;
     addClone(parentKey, childBoard, childSupply, ["T"]);
 }

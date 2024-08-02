@@ -50,7 +50,7 @@
 <li>⭐️ 💺 allowSupportedOverhangs: if true, overhangs over other pieces are allowed.</li>
 <li>⭐️ ✈️ allowSkyPieces: if true, pieces can be placed without any part touching the ground level.</li>
 </ul>
-<p>Coloring: preventing similar pieces from being placed together. If none of these are true and there are color restrictions enabled, all pieces get the same color.</p>
+<p>Coloring: preventing similar pieces from being placed together. At most one of these can be true. If none of these are true and there are color restrictions enabled, all pieces get the same color.</p>
 <ul>
 <li>⭐️ 🎨🧩 colorByPiece: if true, each piece is assigned its own color. If a piece is added to supply multiple times, each gets its own color.</li>
 <li>⭐️ 🎨🎲 colorByOrientation: if true, each distinct piece orientation gives the piece its own color (up to 6 colors per piece. a cube would have 1 color).</li>
@@ -106,6 +106,16 @@
 </div>
 <h2>2D Puzzles</h2>
 <div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
+<h3>Clones Tile A Rectangle - Simple Version</h3>
+<p>Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.</p>
+<p>Key: Clones_Tile_A_Square</p>
+<p>Type: Template</p>
+<p>Board: varies</p>
+<p>Pieces: varies</p>
+<h4>Constraints:</h4>
+<p>No custom constraint flags. This one uses only default settings.</p>
+</div>
+<div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
 <h3>Tatami Tiling - Classic</h3>
 <p>Tiling 2x1 rectangles.</p>
 <p>Key: Tatami</p>
@@ -152,16 +162,6 @@
 </div>
 <h2>3D Puzzles</h2>
 <div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
-<h3>Clones Tile A Rectangle - Simple Version</h3>
-<p>Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.</p>
-<p>Key: Clones_Tile_A_Square</p>
-<p>Type: Template</p>
-<p>Board: varies</p>
-<p>Pieces: varies</p>
-<h4>Constraints:</h4>
-<p>No custom constraint flags. This one uses only default settings.</p>
-</div>
-<div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
 <h3>Clones Tile A Rectangle - Restricted Neighbors</h3>
 <p>Copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.</p>
 <p>Key: Clones_Tile_A_Square</p>
@@ -197,7 +197,12 @@
 </div>
 <h2>Not currently supported</h2>
 <ul>
-<li>Spike city: like block city but towers (any structure beyond ground level) can't touch eachother. This would require an additional flag. Maybe &quot;allowGroundFloorToBreakColorRules&quot;</li>
+<li>
+<p>Spike city: like block city but towers (any structure beyond ground level) can't touch eachother. This would require an additional flag. Maybe &quot;allowGroundFloorToBreakColorRules&quot;</p>
+</li>
+<li>
+<p>Does a 1x2x3 piece have 3 orientations or 6? Should there be a flag to decide this? (ie: instead of colorByOrientation, have colorEveryOrientation + colorEveryDistinctOrientation)</p>
+</li>
 </ul>
 
     <ul class="tags">

@@ -1,6 +1,7 @@
 {% assign defaultConstraints = constraints-templates.Tiling_Default %} 
 {% assign icons = constraints-templates.Icons %} 
 {% assign constraints = constraints | setSolutionField %}
+{% assign children = constraints.key | getChildConstraints %}
 
 <div class="constraints" style="border: #e4ade6 solid 4px; padding: 15px;">
 <h3>{{constraints.name}}</h3>
@@ -28,7 +29,8 @@
 {% if constraints.type == "Generated" %}
   <p>Solution: {{constraints.solution.solutionsTotal[0] | json }}</p>
 {% endif %}
-{% if constraints.type == "Template" %}
+{% if children.size > 0 %}
+  <p>Children: {% include linkList, links:children %}</p>
 {% endif %}
 
 </div>

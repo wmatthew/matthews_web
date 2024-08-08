@@ -19,8 +19,9 @@
     "allowPieceRotation": "if true, pieces can be rotated in place (ie, keeping the same face down)",
     "allowPieceOrienting": "if true, pieces can be flipped to a different face (like rolling dice).",
     "allowUnusedPieces": "if true, the solution can omit entire pieces.",
-    "allowUnusedOrientations": "if true, the solution can omit piece orientations. This allows for 2D puzzles."
-  },
+    "allowUnusedOrientations": "if true, the solution can omit piece orientations. This allows for 2D puzzles.",
+    "key": "Descriptions",
+    "parentKey": false},
   "Icons": {
     "board": "🐗",
     "pieceSupply": "🧩",
@@ -42,7 +43,8 @@
     "allowPieceOrienting": "🎲",
     "allowUnusedPieces": "🗑️",
     "allowUnusedOrientations": "🛗",
-    "key": "Icons"},
+    "key": "Icons",
+    "parentKey": false},
   "Tiling_Default": {
     "name": "Tiling Defaults",
     "description": "This is not a puzzle. This is a listing of the default settings for a tiling puzzle.",
@@ -68,36 +70,40 @@
       "allowPieceOrienting": true,
       "allowUnusedPieces": false,
       "allowUnusedOrientations": true},
-    "key": "Tiling_Default"},
-    "Clones_Tile_A_Square_Simple": {
-      "name": "Clones Tile A Rectangle - Simple Version",
-      "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
-      "type": "Template",
-      "board": "varies",
-      "pieceSupply": "varies",
-      "constraint_flags": {},
-      "key": "Clones_Tile_A_Square"},
-      "Clones_Tile_A_Square": {
-        "name": "Clones Tile A Rectangle - Restricted Neighbors",
-        "description": "Copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
-        "type": "Template",
-        "board": "varies",
-        "pieceSupply": "varies",
-        "constraint_flags": {
-          "colorByOrientation": true,
-          "allowColorVertexNeighbors": false,
-          "allowUpwardOverflow": true},
-        "key": "Clones_Tile_A_Square"},
-        "Overhang_City": {
-    "name": "Overhang City",
-    "description": "Copies of a polycube tile a rectangle board and can overhang.",
+    "key": "Tiling_Default",
+    "parentKey": false},
+  "Clones_Tile_A_Square_Simple": {
+    "name": "Clones Tile A Rectangle - Simple Version",
+    "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
+    "type": "Template",
+    "board": "varies",
+    "pieceSupply": [["T",-1]],
+    "constraint_flags": {},
+    "key": "Clones_Tile_A_Square_Simple",
+    "parentKey": false},
+  "Clones_Tile_A_Square": {
+    "name": "Clones Tile A Rectangle - Restricted Neighbors",
+    "description": "Copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Template",
     "board": "varies",
     "pieceSupply": "varies",
     "constraint_flags": {
+      "colorByOrientation": true,
+      "allowColorVertexNeighbors": false,
+      "allowUpwardOverflow": true},
+    "key": "Clones_Tile_A_Square",
+    "parentKey": false},
+  "Overhang_City": {
+    "name": "Overhang City",
+    "description": "Copies of a polycube tile a rectangle board and can overhang.",
+    "type": "Template",
+    "board": "varies",
+    "pieceSupply": [["T",-1],["L",-1],["S",-1]],
+    "constraint_flags": {
       "allowSupportedOverhangs": true,
       "allowUpwardOverflow": true},
-    "key": "Overhang_City"},
+    "key": "Overhang_City",
+    "parentKey": false},
   "Tatami": {
     "name": "Tatami Tiling - Classic",
     "description": "Tiling 2x1 rectangles.",
@@ -107,7 +113,8 @@
     "constraint_flags": {
       "allow4PieceEdgeIntersections": false,
       "allowPieceOrienting": false},
-    "key": "Tatami"},
+    "key": "Tatami",
+    "parentKey": false},
   "Tatami_3color": {
     "name": "Tatami Tiling - 3 color variation",
     "description": "Tiling 2x1 rectangles, 3-colorable.",
@@ -119,7 +126,8 @@
       "colorByPiece": true,
       "allowColorVertexNeighbors": false,
       "allowUnusedPieces": true},
-    "key": "Tatami_3color"},
+    "key": "Tatami_3color",
+    "parentKey": false},
   "P_Pentominos": {
     "name": "P-Pentominos",
     "description": "P-Pentomino Rep-Tiling.",
@@ -128,7 +136,8 @@
     "pieceSupply": "varies",
     "constraint_flags": {
       "allowPieceOrienting": false},
-    "key": "P_Pentominos"},
+    "key": "P_Pentominos",
+    "parentKey": false},
   "Locked_Triangles": {
     "name": "Locked Triangles",
     "description": "Pieces that can't turn. eg 36 Triangles Puzzle.",
@@ -138,7 +147,8 @@
     "constraint_flags": {
       "allowPieceRotation": false,
       "allowPieceOrienting": false},
-    "key": "Locked_Triangles"},
+    "key": "Locked_Triangles",
+    "parentKey": false},
   "Angel_Cube": {
     "name": "Angel Cube",
     "description": "Fill a cube with pieces.",
@@ -148,4 +158,5 @@
     "constraint_flags": {
       "allowSkyPieces": true,
       "allowSupportedOverhangs": true},
-    "key": "Angel_Cube"}}
+    "key": "Angel_Cube",
+    "parentKey": false}}

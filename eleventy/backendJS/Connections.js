@@ -4,22 +4,29 @@ var constraintLibrary = JSON.parse(fs.readFileSync("_data/constraints-library.js
 var boardLib = JSON.parse(fs.readFileSync("_data/board-library.json", 'utf8'));
 var pieceLib = JSON.parse(fs.readFileSync("_data/piece-library.json", 'utf8'));
 
+var justTheTemplates = {}
+Object.values(constraintTemplates).filter(obj => "type" in obj && obj.type == "Template").forEach(obj => { justTheTemplates[obj.key] = obj; });
+
 module.exports = class Connections {
 
     static getUrl(key) {
         // Figure out if this is a board, constraint, constraintKey, or piece and return the right URL for it.
         if (key in boardLib) {
+            // TODO: jump to the right item
             return "/board/gallery/";
         }
 
-        if (key in constraintLibrary) {
-            return "/investigations/";
+
+        // TODO: unit test: make sure no two entities share the same key.
+        if (key in justTheTemplates) {
+            var name = justTheTemplates[key].name;
+            name = name.replace("-", "%2D"); // https://web.dev/articles/text-fragments#:~:text=This%20is%20especially%20important
+            return "/investigations/#:~:text=" + name;
         }
 
-        if (key in constraintTemplates) {
-            var name = constraintTemplates[key].name;
-            name = name.replace("-", "%2D");
-            return "/investigations/#:~:text=" + name;
+        if (key in constraintLibrary) {
+            // TODO: jump to the right item
+            return "/investigations/#" + key;
         }
 
         if (key in pieceLib) {
@@ -33,7 +40,22 @@ module.exports = class Connections {
         throw new Error("Could not determine URL for key: " + key);
     }
 
+    static getThingsThatUsePiece(pieceKey) {
+        // TODO: deduplicate the results. eg: Angel Cube appears twice for piece T.
+        var result = Object.values(justTheTemplates).concat(Object.values(constraintLibrary)).filter(obj => {
+            return ("key" in obj) &&
+            ("type" in obj) &&
+            ("pieceSupply" in obj) &&
+            ["Template", "Custom"].includes(obj.type) &&
+            Array.isArray(obj.pieceSupply) &&
+            (obj.pieceSupply.map(p => p[0]).includes(pieceKey));
+        }
+        ).map(obj => {return {url:Connections.getUrl(obj.key), displayName:obj.name};});
+        return result;
+    }
+
     static getConstraintTemplatesThatUseKey(key) {
+        console.log("getConstraintTemplatesThatUseKey", key);
         var result = Object.values(constraintTemplates).filter(obj => {
             return ("key" in obj) &&
             ("type" in obj) &&
@@ -41,7 +63,21 @@ module.exports = class Connections {
             ("constraint_flags" in obj) &&
             (key in obj.constraint_flags);
         }
-        ).map(c => c.key);
+        ).map(obj => {return {url:Connections.getUrl(obj.key), displayName:obj.name};});
+        console.log(result);
+        return result;
+    }
+
+    // Given a parent template, find children.
+    static getChildConstraints(templateKey) {
+        var result = Object.values(constraintLibrary).filter(obj => {
+            return ("key" in obj) &&
+            ("type" in obj) &&
+            ("parentKey" in obj) &&
+            obj.type == "Generated" &&
+            obj.parentKey == templateKey;
+        }
+        ).map(obj => {return {url:Connections.getUrl(obj.key), displayName:obj.name};});
         return result;
     }
 }

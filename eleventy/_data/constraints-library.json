@@ -11,7 +11,7 @@
     "key": "Angel_Cube",
     "parentKey": false},
   "Tatami_rect4x4": {
-    "name": "Tatami Tiling - Classic",
+    "name": "Tatami Tiling - Classic (rect4x4)",
     "description": "Tiling 2x1 rectangles.",
     "type": "Generated",
     "board": {
@@ -28,7 +28,7 @@
     "parentKey": "Tatami",
     "template": "Tatami"},
   "Clones_Tile_A_Square_rect1x1_PLR": {
-    "name": "Clones Tile A Rectangle - Restricted Neighbors",
+    "name": "Clones Tile A Rectangle - Restricted Neighbors (rect1x1_PLR)",
     "description": "Copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -46,7 +46,7 @@
     "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect2x2_PLR": {
-    "name": "Clones Tile A Rectangle - Restricted Neighbors",
+    "name": "Clones Tile A Rectangle - Restricted Neighbors (rect2x2_PLR)",
     "description": "Copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -64,7 +64,7 @@
     "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect3x3_PLR": {
-    "name": "Clones Tile A Rectangle - Restricted Neighbors",
+    "name": "Clones Tile A Rectangle - Restricted Neighbors (rect3x3_PLR)",
     "description": "Copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -82,7 +82,7 @@
     "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect4x4_PLR": {
-    "name": "Clones Tile A Rectangle - Restricted Neighbors",
+    "name": "Clones Tile A Rectangle - Restricted Neighbors (rect4x4_PLR)",
     "description": "Copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -100,7 +100,7 @@
     "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect5x5_PLR": {
-    "name": "Clones Tile A Rectangle - Restricted Neighbors",
+    "name": "Clones Tile A Rectangle - Restricted Neighbors (rect5x5_PLR)",
     "description": "Copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -118,7 +118,7 @@
     "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect6x6_PLR": {
-    "name": "Clones Tile A Rectangle - Restricted Neighbors",
+    "name": "Clones Tile A Rectangle - Restricted Neighbors (rect6x6_PLR)",
     "description": "Copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -136,7 +136,7 @@
     "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect7x7_PLR": {
-    "name": "Clones Tile A Rectangle - Restricted Neighbors",
+    "name": "Clones Tile A Rectangle - Restricted Neighbors (rect7x7_PLR)",
     "description": "Copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -154,7 +154,7 @@
     "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect8x8_PLR": {
-    "name": "Clones Tile A Rectangle - Restricted Neighbors",
+    "name": "Clones Tile A Rectangle - Restricted Neighbors (rect8x8_PLR)",
     "description": "Copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -172,7 +172,7 @@
     "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect9x9_PLR": {
-    "name": "Clones Tile A Rectangle - Restricted Neighbors",
+    "name": "Clones Tile A Rectangle - Restricted Neighbors (rect9x9_PLR)",
     "description": "Copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -190,7 +190,7 @@
     "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect10x10_PLR": {
-    "name": "Clones Tile A Rectangle - Restricted Neighbors",
+    "name": "Clones Tile A Rectangle - Restricted Neighbors (rect10x10_PLR)",
     "description": "Copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.",
     "type": "Generated",
     "board": {
@@ -208,7 +208,7 @@
     "parentKey": "Clones_Tile_A_Square",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_Simple_rect1x1_T": {
-    "name": "Clones Tile A Rectangle - Simple Version",
+    "name": "Clones Tile A Rectangle - Simple Version (rect1x1_T)",
     "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
     "type": "Generated",
     "board": {
@@ -223,7 +223,7 @@
     "parentKey": "Clones_Tile_A_Square_Simple",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect2x2_T": {
-    "name": "Clones Tile A Rectangle - Simple Version",
+    "name": "Clones Tile A Rectangle - Simple Version (rect2x2_T)",
     "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
     "type": "Generated",
     "board": {
@@ -238,7 +238,7 @@
     "parentKey": "Clones_Tile_A_Square_Simple",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect3x3_T": {
-    "name": "Clones Tile A Rectangle - Simple Version",
+    "name": "Clones Tile A Rectangle - Simple Version (rect3x3_T)",
     "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
     "type": "Generated",
     "board": {
@@ -253,7 +253,7 @@
     "parentKey": "Clones_Tile_A_Square_Simple",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect4x4_T": {
-    "name": "Clones Tile A Rectangle - Simple Version",
+    "name": "Clones Tile A Rectangle - Simple Version (rect4x4_T)",
     "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
     "type": "Generated",
     "board": {
@@ -268,7 +268,7 @@
     "parentKey": "Clones_Tile_A_Square_Simple",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect5x5_T": {
-    "name": "Clones Tile A Rectangle - Simple Version",
+    "name": "Clones Tile A Rectangle - Simple Version (rect5x5_T)",
     "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
     "type": "Generated",
     "board": {
@@ -283,7 +283,7 @@
     "parentKey": "Clones_Tile_A_Square_Simple",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect6x6_T": {
-    "name": "Clones Tile A Rectangle - Simple Version",
+    "name": "Clones Tile A Rectangle - Simple Version (rect6x6_T)",
     "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
     "type": "Generated",
     "board": {
@@ -298,7 +298,7 @@
     "parentKey": "Clones_Tile_A_Square_Simple",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect7x7_T": {
-    "name": "Clones Tile A Rectangle - Simple Version",
+    "name": "Clones Tile A Rectangle - Simple Version (rect7x7_T)",
     "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
     "type": "Generated",
     "board": {
@@ -313,7 +313,7 @@
     "parentKey": "Clones_Tile_A_Square_Simple",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect8x8_T": {
-    "name": "Clones Tile A Rectangle - Simple Version",
+    "name": "Clones Tile A Rectangle - Simple Version (rect8x8_T)",
     "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
     "type": "Generated",
     "board": {

@@ -50,6 +50,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("setSolutionField", Constraints.setSolutionField );
   eleventyConfig.addFilter("getUrl", Connections.getUrl );
   eleventyConfig.addFilter("getConstraintTemplatesThatUseKey", Connections.getConstraintTemplatesThatUseKey );
+  eleventyConfig.addFilter("getThingsThatUsePiece", Connections.getThingsThatUsePiece );
+  eleventyConfig.addFilter("getChildConstraints", Connections.getChildConstraints );
     
   return {
     dir: {

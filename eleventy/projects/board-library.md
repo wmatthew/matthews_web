@@ -11,3 +11,4 @@ tags:
 # {{title}}
 A gallery of boards.
 
+* {% include boardReport key:"rect4x4" %}

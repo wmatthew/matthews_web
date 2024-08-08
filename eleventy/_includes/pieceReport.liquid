@@ -1,22 +1,24 @@
-{% assign piece = piece-library[key] | hydratePiece %} 
+{% assign piece = piece-library[key] | hydratePiece %}
+{% assign usages = key | getThingsThatUsePiece %} 
 ## {{key}}
+
 <div style="overflow-wrap: break-word;">
 
 * Compact: {{ piece.compact }}
 * {{ piece.volume }} Points: {{ piece.pointsPretty }}
-* Bounds: {{ piece.width}}x{{ piece.height}}x{{ piece.depth }} ({{ piece.minX }}-{{ piece.maxX }}, {{ piece.minY }}-{{ piece.maxY }}, {{ piece.minZ }}-{{ piece.maxZ }})
-{% if piece.note %}* Note: {{ piece.note }}{% endif %}
+* Bounds: {{ piece.width}}x{{ piece.height}}x{{ piece.depth }} ({{ piece.minX }}-{{ piece.maxX }}, {{ piece.minY }}-{{ piece.maxY }}, {{ piece.minZ }}-{{ piece.maxZ }}){% # no newline
+%}{% if usages.size > 0 %}
+* Used by {% include linkList, links:usages %}{% endif %}{% # no newline
+%}{% if piece.note %}
+* Note: {{ piece.note }}{% endif %}
 </div>
 
 <div style="">
 <div style="float:left">
-
 {% include pieceElevation, key:key, color:1, size:"small" %}
-
 </div>
 
 {% include piece3d, key:key, color:1, size:"small" %}
 
 <div style="clear:both">
-
 </div>

@@ -16,6 +16,12 @@ module.exports = class Connections {
             return "/investigations/";
         }
 
+        if (key in constraintTemplates) {
+            var name = constraintTemplates[key].name;
+            name = name.replace("-", "%2D");
+            return "/investigations/#:~:text=" + name;
+        }
+
         if (key in pieceLib) {
             return "/polycube/gallery/#:~:text=" + key;
         }
@@ -25,5 +31,17 @@ module.exports = class Connections {
         }
 
         throw new Error("Could not determine URL for key: " + key);
+    }
+
+    static getConstraintTemplatesThatUseKey(key) {
+        var result = Object.values(constraintTemplates).filter(obj => {
+            return ("key" in obj) &&
+            ("type" in obj) &&
+            obj.type == "Template" &&
+            ("constraint_flags" in obj) &&
+            (key in obj.constraint_flags);
+        }
+        ).map(c => c.key);
+        return result;
     }
 }

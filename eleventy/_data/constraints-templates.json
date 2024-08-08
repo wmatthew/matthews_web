@@ -2,7 +2,6 @@
   "TODO - this is a comment": [
     "Can add notes here since JSON isn't great w comments...",""],
   "Descriptions": {
-    "pieceSupply": "🧩",
     "allowGaps": "if true, pieces don't have to fully cover the board.",
     "allowGroundLevelOverflow": "if true, pieces can extend beyond the footprint of their board, on the level closest to the board.",
     "allowSkyLevelOverflow": "if true, pieces can extend beyond the footprint of their board, above the level closest to the board.",

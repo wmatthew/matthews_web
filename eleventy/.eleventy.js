@@ -49,7 +49,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("stripOuterChars", function (str) { return str.slice(1, -1);  } );
   eleventyConfig.addFilter("setSolutionField", Constraints.setSolutionField );
   eleventyConfig.addFilter("getUrl", Connections.getUrl );
-  
+  eleventyConfig.addFilter("getConstraintTemplatesThatUseKey", Connections.getConstraintTemplatesThatUseKey );
+    
   return {
     dir: {
       input: ".",

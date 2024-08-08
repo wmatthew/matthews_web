@@ -1,4 +1,6 @@
 {% assign defaultValue = constraints-templates.Tiling_Default.constraint_flags[key]
 %}{% assign icon = constraints-templates.Icons[key]
+%}{% assign usedBy = key | getConstraintTemplatesThatUseKey
 %}{% assign description = constraints-templates.Descriptions[key]
-%}<span style="font-size: x-large;">{{ icon }}</span> <b>{{key}}</b>: {{ description }} (default {{ defaultValue }})
+%}<span style="font-size: x-large;">{{ icon }}</span> <b>{{key}}</b>: {{ description }} Default {{ defaultValue }}.
+{% for challenge in usedBy %}{% if forloop.first %}Used by {% endif %}<a href="{{ challenge | getUrl }}">{{ challenge }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}

@@ -1,7 +1,8 @@
-{% assign defaultConstraints = constraints-library.Tiling_Default %} 
-{% assign icons = constraints-library.Icons %} 
+{% assign defaultConstraints = constraints-templates.Tiling_Default %} 
+{% assign icons = constraints-templates.Icons %} 
+{% assign constraints = constraints | setSolutionField %}
 
-<div class="constraints" style="border: #e4ade6 solid 2px; padding: 15px;">
+<div class="constraints" style="border: #e4ade6 solid 4px; padding: 15px;">
 <h3>{{constraints.name}}</h3>
 <p>{{constraints.description}}</p>
 <p>Key: {{constraints.key}}</p>
@@ -9,14 +10,25 @@
 <p>Parent: {{constraints.parentKey}}</p>
 {% endif %}
 <p>Type: {{constraints.type}}</p>
-<p>Board: {{constraints.board}}</p>
-<p>Pieces: {{constraints.pieceSupply | json | stripOuterChars }}</p>
-<h4>Constraints:</h4>
-{% if constraints.constraint_flags.size == 0 %}
-  No custom constraint flags. This one uses only default settings.
+{% if constraints.board == "varies" %}
+<p>Board: varies</p>
+{% elsif constraints.board[0] %}
+<p>Board: <a href="{{constraints.board | getUrl }}">{{constraints.board }}</a></p>
+{% else %}
+<p>Board: <a href="{{constraints.board.key | getUrl }}">{{constraints.board.key }}</a></p>
 {% endif %}
-{% for setting in constraints.constraint_flags %}
-    {% assign isDefault = setting[1] == defaultConstraints.constraint_flags[setting[0]] %}
-      {{ icons[setting[0]] }} {{ setting[0] }}: {% if isDefault %}{{ constraints.constraint_flags[setting[0]] }} (default){% else %}<b>{{ constraints.constraint_flags[setting[0]] }}</b>{% endif %}
-{% endfor %}
+{% if constraints.pieceSupply == "varies" %}
+<p>Pieces: varies</p>
+{% else %}
+<p>Pieces: {% for piecePair in constraints.pieceSupply %}<a href="{{piecePair[0] | getUrl}}">{{piecePair[0]}} x {% if piecePair[1] == -1 %}∞{%else%}{{piecePair[1]}}{%endif%}</a>{% if forloop.last == false %}, {%endif%}{%endfor%}</p>
+{% endif %}
+<p>Constraints: {% if constraints.constraint_flags.size == 0 %}defaults.{% endif %}
+{% for setting in constraints.constraint_flags %}<a href="{{ setting[0] | getUrl }}" style="font-size:x-large;">{{ icons[setting[0]] }}</a> {% endfor %}
+</p>
+{% if constraints.type == "Generated" %}
+  <p>Solution: {{constraints.solution.solutionsTotal[0] | json }}</p>
+{% endif %}
+{% if constraints.type == "Template" %}
+{% endif %}
+
 </div>

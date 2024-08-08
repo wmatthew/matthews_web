@@ -1,0 +1,4 @@
+{% assign defaultValue = constraints-templates.Tiling_Default.constraint_flags[key]
+%}{% assign icon = constraints-templates.Icons[key]
+%}{% assign description = constraints-templates.Descriptions[key]
+%}<span style="font-size: x-large;">{{ icon }}</span> <b>{{key}}</b>: {{ description }} (default {{ defaultValue }})

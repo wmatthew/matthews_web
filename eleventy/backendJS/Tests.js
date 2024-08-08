@@ -5,3 +5,5 @@ const Piece = require('./Piece.js');
 
 Board.tests();
 Piece.tests();
+
+// TODO: make sure all constraints set are not set to defaults.

@@ -1,8 +1,6 @@
 const fs = require('fs');
 
-var filePath = "_data/piece-library.json";
-var rawString = fs.readFileSync(filePath, 'utf8')
-var pieceLib = JSON.parse(rawString);
+var pieceLib = JSON.parse(fs.readFileSync("_data/piece-library.json", 'utf8'));
 const Hydrator = require('./pieceHydrator.js');
 
 module.exports = class Piece {

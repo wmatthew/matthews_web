@@ -22,6 +22,11 @@ For what pieces and values B, N is this a good puzzle?
 
 {% include constraints constraints:constraints-templates.Clones_Tile_A_Square %}
 
+
+...
+
+{% include constraints constraints:constraints-library.Clones_Tile_A_Square_Simple_rect4x4_T %}
+
 ## Pieces
 
 Here's the piece you start with. We'll examine 1-25 of these.

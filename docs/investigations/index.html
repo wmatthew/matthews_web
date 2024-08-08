@@ -20,6 +20,96 @@
     <h1>Investigations</h1>
 <p>Research and Development. Things that might become puzzles or games in the future.</p>
 <ul><li><a href="/36/triangles/puzzle/">36 Triangles</a></li><li><a href="/polycube/clones/tile/a/square/">Clones Tile A Square</a></li><li><a href="/block/city">Block City</a></li><li><a href="/tiling/constraints/">Constraints</a></li><li><a href="/scoring/tiling/puzzles">Scoring</a></li><li><a href="/tatami/tiling/">Tatami Tiling</a></li></ul>
+<h2>2D Puzzles</h2>
+<div class="constraints" style="border: #e4ade6 solid 4px; padding: 15px;">
+<h3>Clones Tile A Rectangle - Simple Version</h3>
+<p>Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.</p>
+<p>Key: Clones_Tile_A_Square</p>
+<p>Type: Template</p>
+<p>Board: varies</p>
+<p>Pieces: varies</p>
+<p>Constraints: defaults.
+</p>
+</div>
+<div class="constraints" style="border: #e4ade6 solid 4px; padding: 15px;">
+<h3>Tatami Tiling - Classic</h3>
+<p>Tiling 2x1 rectangles.</p>
+<p>Key: Tatami</p>
+<p>Type: Template</p>
+<p>Board: varies</p>
+<p>Pieces: varies</p>
+<p>Constraints: 
+<a href="/tiling/constraints/#:~:text=allow4PieceEdgeIntersections" style="font-size:x-large;">🚦</a> <a href="/tiling/constraints/#:~:text=allowPieceOrienting" style="font-size:x-large;">🎲</a> 
+</p>
+</div>
+<div class="constraints" style="border: #e4ade6 solid 4px; padding: 15px;">
+<h3>Tatami Tiling - 3 color variation</h3>
+<p>Tiling 2x1 rectangles, 3-colorable.</p>
+<p>Key: Tatami_3color</p>
+<p>Type: Template</p>
+<p>Board: varies</p>
+<p>Pieces: varies</p>
+<p>Constraints: 
+<a href="/tiling/constraints/#:~:text=allowPieceOrienting" style="font-size:x-large;">🎲</a> <a href="/tiling/constraints/#:~:text=colorByPiece" style="font-size:x-large;">🍏</a> <a href="/tiling/constraints/#:~:text=allowColorVertexNeighbors" style="font-size:x-large;">👉</a> <a href="/tiling/constraints/#:~:text=allowUnusedPieces" style="font-size:x-large;">🗑️</a> 
+</p>
+</div>
+<div class="constraints" style="border: #e4ade6 solid 4px; padding: 15px;">
+<h3>P-Pentominos</h3>
+<p>P-Pentomino Rep-Tiling.</p>
+<p>Key: P_Pentominos</p>
+<p>Type: Template</p>
+<p>Board: varies</p>
+<p>Pieces: varies</p>
+<p>Constraints: 
+<a href="/tiling/constraints/#:~:text=allowPieceOrienting" style="font-size:x-large;">🎲</a> 
+</p>
+</div>
+<div class="constraints" style="border: #e4ade6 solid 4px; padding: 15px;">
+<h3>Locked Triangles</h3>
+<p>Pieces that can't turn. eg 36 Triangles Puzzle.</p>
+<p>Key: Locked_Triangles</p>
+<p>Type: Template</p>
+<p>Board: varies</p>
+<p>Pieces: varies</p>
+<p>Constraints: 
+<a href="/tiling/constraints/#:~:text=allowPieceRotation" style="font-size:x-large;">🌪️</a> <a href="/tiling/constraints/#:~:text=allowPieceOrienting" style="font-size:x-large;">🎲</a> 
+</p>
+</div>
+<h2>3D Puzzles</h2>
+<div class="constraints" style="border: #e4ade6 solid 4px; padding: 15px;">
+<h3>Clones Tile A Rectangle - Restricted Neighbors</h3>
+<p>Copies of a single polycube tile a square/rectangle board. Matching orientations can't touch.</p>
+<p>Key: Clones_Tile_A_Square</p>
+<p>Type: Template</p>
+<p>Board: varies</p>
+<p>Pieces: varies</p>
+<p>Constraints: 
+<a href="/tiling/constraints/#:~:text=colorByOrientation" style="font-size:x-large;">🧃</a> <a href="/tiling/constraints/#:~:text=allowColorVertexNeighbors" style="font-size:x-large;">👉</a> <a href="/tiling/constraints/#:~:text=allowUpwardOverflow" style="font-size:x-large;">🏙️</a> 
+</p>
+</div>
+<div class="constraints" style="border: #e4ade6 solid 4px; padding: 15px;">
+<h3>Overhang City</h3>
+<p>Copies of a polycube tile a rectangle board and can overhang.</p>
+<p>Key: Overhang_City</p>
+<p>Type: Template</p>
+<p>Board: varies</p>
+<p>Pieces: varies</p>
+<p>Constraints: 
+<a href="/tiling/constraints/#:~:text=allowSupportedOverhangs" style="font-size:x-large;">💺</a> <a href="/tiling/constraints/#:~:text=allowUpwardOverflow" style="font-size:x-large;">🏙️</a> 
+</p>
+</div>
+<div class="constraints" style="border: #e4ade6 solid 4px; padding: 15px;">
+<h3>Angel Cube</h3>
+<p>Fill a cube with pieces.</p>
+<p>Key: Angel_Cube</p>
+<p>Type: Custom</p>
+<p>Board: <a href="/board/gallery/">cube4</a></p>
+<p>Pieces: <a href="/polycube/gallery/#:~:text=T">T x 8</a>, <a href="/polycube/gallery/#:~:text=S2">S2 x 4</a></p>
+<p>Constraints: 
+<a href="/tiling/constraints/#:~:text=allowSkyPieces" style="font-size:x-large;">✈️</a> <a href="/tiling/constraints/#:~:text=allowSupportedOverhangs" style="font-size:x-large;">💺</a> 
+</p>
+</div>
+
     <ul class="tags">
 
 </ul>

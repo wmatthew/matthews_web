@@ -8,6 +8,7 @@
     "I4": { "compact": "1111" },
     "L": { "compact": "1/1/11" },
     "S": { "compact": "011/11" },
+    "S2": { "compact": "022/22" },
     "P": { "compact": "11/11/1" },
     "A": { "compact": "111/11/1" },
     "PLR": { "compact": "221/1" },

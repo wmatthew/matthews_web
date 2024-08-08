@@ -1,6 +1,7 @@
 const fs = require('fs');
 var constraintTemplates = JSON.parse(fs.readFileSync("_data/constraints-templates.json", 'utf8'));
 var constraintLibrary = JSON.parse(fs.readFileSync("_data/constraints-library.json", 'utf8'));
+var solutions = JSON.parse(fs.readFileSync("_data/solutions.json", 'utf8'));
 
 module.exports = class Constraints {
 
@@ -42,4 +43,14 @@ module.exports = class Constraints {
         }
         return flagHash[constraintKey];
     }
+
+    static setSolutionField(constraintObject) {
+        var key = constraintObject.key;
+        if (key in solutions) {
+            constraintObject.solution = solutions[key];
+        } else {
+            constraintObject.solution = "n/a";
+        }
+    }
 }
+

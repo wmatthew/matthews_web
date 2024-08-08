@@ -1,6 +1,8 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const Image = require("@11ty/eleventy-img");
 const Hydrator = require("./backendJS/pieceHydrator.js");
+const Constraints = require("./backendJS/Constraints.js");
+const Connections = require("./backendJS/Connections.js");
 
 module.exports = function (eleventyConfig) {
 
@@ -45,6 +47,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("fixCoordinates", Hydrator.fixCoordinates );
   eleventyConfig.addFilter("rotatePiece", Hydrator.rotatePiece );
   eleventyConfig.addFilter("stripOuterChars", function (str) { return str.slice(1, -1);  } );
+  eleventyConfig.addFilter("setSolutionField", Constraints.setSolutionField );
+  eleventyConfig.addFilter("getUrl", Connections.getUrl );
   
   return {
     dir: {

@@ -12,7 +12,6 @@ module.exports = class Connections {
     static getUrl(key) {
         // Figure out if this is a board, constraint, constraintKey, or piece and return the right URL for it.
         if (key in boardLib) {
-            // TODO: jump to the right item
             return "/board/gallery/#:~:text=" + key;
         }
 

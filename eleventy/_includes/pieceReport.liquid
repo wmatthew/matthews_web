@@ -7,11 +7,13 @@
 * Key: {{ key }}
 * Compact: {{ piece.compact }}
 * {{ piece.volume }} Points: {{ piece.pointsPretty }}
-* Bounds: {{ piece.width}}x{{ piece.height}}x{{ piece.depth }} ({{ piece.minX }}-{{ piece.maxX }}, {{ piece.minY }}-{{ piece.maxY }}, {{ piece.minZ }}-{{ piece.maxZ }}){% # no newline
-%}{% if usages.size > 0 %}
-* Used by {% include linkList, links:usages %}{% endif %}{% # no newline
-%}{% if piece.note %}
-* Note: {{ piece.note }}{% endif %}
+* Bounds: {{ piece.width}}x{{ piece.height}}x{{ piece.depth }} ({{ piece.minX }}-{{ piece.maxX }}, {{ piece.minY }}-{{ piece.maxY }}, {{ piece.minZ }}-{{ piece.maxZ }})
+{%- if usages.size > 0 %}
+* Used by {% include linkList, links:usages %}
+{%- endif -%}
+{% if piece.note %}
+* Note: {{ piece.note }}
+{%- endif -%}
 </div>
 
 <div style="">

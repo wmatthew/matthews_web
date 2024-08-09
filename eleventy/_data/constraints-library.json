@@ -1,15 +1,23 @@
 {
-  "Angel_Cube": {
-    "name": "Angel Cube",
+  "Angel_Cube_cube4": {
+    "name": "Angel Cube (cube4)",
     "description": "Fill a cube with pieces.",
-    "type": "Custom",
+    "type": "Generated",
     "boardKey": "cube4",
     "pieceSupply": [["T",8],["S2",4]],
     "constraint_flags": {
       "allowSkyPieces": true,
       "allowSupportedOverhangs": true},
-    "key": "Angel_Cube",
-    "parentKey": false},
+    "key": "Angel_Cube_cube4",
+    "parentKey": "Angel_Cube",
+    "board": {
+      "key": "cube4",
+      "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 4,"y": 4,"z": 4}]],
+      "points": [{"x": 1,"y": 1,"z": 1},{"x": 1,"y": 1,"z": 2},{"x": 1,"y": 1,"z": 3},{"x": 1,"y": 1,"z": 4},{"x": 1,"y": 2,"z": 1},{"x": 1,"y": 2,"z": 2},{"x": 1,"y": 2,"z": 3},{"x": 1,"y": 2,"z": 4},{"x": 1,"y": 3,"z": 1},{"x": 1,"y": 3,"z": 2},{"x": 1,"y": 3,"z": 3},{"x": 1,"y": 3,"z": 4},{"x": 1,"y": 4,"z": 1},{"x": 1,"y": 4,"z": 2},{"x": 1,"y": 4,"z": 3},{"x": 1,"y": 4,"z": 4},{"x": 2,"y": 1,"z": 1},{"x": 2,"y": 1,"z": 2},{"x": 2,"y": 1,"z": 3},{"x": 2,"y": 1,"z": 4},{"x": 2,"y": 2,"z": 1},{"x": 2,"y": 2,"z": 2},{"x": 2,"y": 2,"z": 3},{"x": 2,"y": 2,"z": 4},{"x": 2,"y": 3,"z": 1},{"x": 2,"y": 3,"z": 2},{"x": 2,"y": 3,"z": 3},{"x": 2,"y": 3,"z": 4},{"x": 2,"y": 4,"z": 1},{"x": 2,"y": 4,"z": 2},{"x": 2,"y": 4,"z": 3},{"x": 2,"y": 4,"z": 4},{"x": 3,"y": 1,"z": 1},{"x": 3,"y": 1,"z": 2},{"x": 3,"y": 1,"z": 3},{"x": 3,"y": 1,"z": 4},{"x": 3,"y": 2,"z": 1},{"x": 3,"y": 2,"z": 2},{"x": 3,"y": 2,"z": 3},{"x": 3,"y": 2,"z": 4},{"x": 3,"y": 3,"z": 1},{"x": 3,"y": 3,"z": 2},{"x": 3,"y": 3,"z": 3},{"x": 3,"y": 3,"z": 4},{"x": 3,"y": 4,"z": 1},{"x": 3,"y": 4,"z": 2},{"x": 3,"y": 4,"z": 3},{"x": 3,"y": 4,"z": 4},{"x": 4,"y": 1,"z": 1},{"x": 4,"y": 1,"z": 2},{"x": 4,"y": 1,"z": 3},{"x": 4,"y": 1,"z": 4},{"x": 4,"y": 2,"z": 1},{"x": 4,"y": 2,"z": 2},{"x": 4,"y": 2,"z": 3},{"x": 4,"y": 2,"z": 4},{"x": 4,"y": 3,"z": 1},{"x": 4,"y": 3,"z": 2},{"x": 4,"y": 3,"z": 3},{"x": 4,"y": 3,"z": 4},{"x": 4,"y": 4,"z": 1},{"x": 4,"y": 4,"z": 2},{"x": 4,"y": 4,"z": 3},{"x": 4,"y": 4,"z": 4}],
+      "area": 64,
+      "description": "Cube of side length 4.",
+      "category": "Cube"},
+    "template": "Angel_Cube"},
   "Tatami_rect4x4": {
     "name": "Tatami Tiling - Classic (rect4x4)",
     "description": "Tiling 2x1 rectangles.",

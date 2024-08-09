@@ -27,10 +27,11 @@ for (var key in constraintTemplates) {
 fs.writeFileSync("_data/constraints-templates.json", jsonFormatter.formatJSON(constraintTemplates));
 
 //==========================================
-// Copy over the custom entries as-is.
-Object.values(constraintTemplates).filter(t => t.type == "Custom").forEach(t => {
-    constraintLibrary[t.key] = t;
-});
+// Angel_Cube
+var parentKey = "Angel_Cube";
+var childBoard = "cube4";
+var childSupply = [["T",8],["S2",4]];
+addClone(parentKey, childBoard, childSupply);
 
 //==========================================
 // Tatami tilings

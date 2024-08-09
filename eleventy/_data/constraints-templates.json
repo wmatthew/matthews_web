@@ -79,7 +79,7 @@
   "Angel_Cube": {
     "name": "Angel Cube",
     "description": "Fill a cube with pieces.",
-    "type": "Custom",
+    "type": "Template",
     "boardKey": "cube4",
     "pieceSupply": [["T",8],["S2",4]],
     "constraint_flags": {

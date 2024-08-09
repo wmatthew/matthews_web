@@ -17,10 +17,8 @@ These are meant for tiling puzzles (use polycubes/polyominos to fill a footprint
 
 ## Constraint Type
 Types of constraints:
-* Defaults: Fallback values for settings that are not specified.
-* Custom: A concrete puzzle definition. Fixed values for settings, entered by hand.
-* Template: An abstract puzzle definition. Values vary when generated (eg: same puzzle, different board sizes)
-* Generated: A concrete puzzle definition. Fixed values for all settings, generated from template
+* Template: An abstract puzzle definition. Defines a category of puzzles (eg: same constraints and pieces, but over many different board sizes/shapes).
+* Generated: An instance of a template- a concrete puzzle definition. Fixed values for all settings.
 
 ## Board and Piece Supply
 

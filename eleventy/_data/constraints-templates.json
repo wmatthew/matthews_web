@@ -3,8 +3,6 @@
     "name": "Clones Tile A Rectangle - Simple Version",
     "description": "Copies of a single polycube tile a rectangle boardKey. Simplest config; no constraint flags.",
     "type": "Template",
-    "boardKey": "rect6x5",
-    "pieceSupply": [["T",-1]],
     "constraint_flags": {},
     "key": "Clones_Tile_A_Square_Simple",
     "parentKey": false},
@@ -12,8 +10,6 @@
     "name": "Clones Tile A Rectangle - Restricted Neighbors",
     "description": "Copies of a single polycube tile a rectangle boardKey. Matching orientations can't touch.",
     "type": "Template",
-    "boardKey": "rect6x7",
-    "pieceSupply": [["PLR",-1]],
     "constraint_flags": {
       "colorByOrientation": true,
       "allowColorVertexNeighbors": false,
@@ -24,8 +20,6 @@
     "name": "Overhang City",
     "description": "Copies of a polycube tile a rectangle boardKey and can overhang.",
     "type": "Template",
-    "boardKey": "rect6x7",
-    "pieceSupply": [["T",-1],["L",-1],["S",-1]],
     "constraint_flags": {
       "allowSupportedOverhangs": true,
       "allowUpwardOverflow": true},
@@ -35,8 +29,6 @@
     "name": "Tatami Tiling - Classic",
     "description": "Tiling 2x1 rectangles.",
     "type": "Template",
-    "boardKey": "rect6x10",
-    "pieceSupply": [["I2",-1]],
     "constraint_flags": {
       "allow4PieceEdgeIntersections": false,
       "allowPieceOrienting": false},
@@ -46,8 +38,6 @@
     "name": "Tatami Tiling - 3 color variation",
     "description": "Tiling 2x1 rectangles, 3-colorable.",
     "type": "Template",
-    "boardKey": "rect6x10",
-    "pieceSupply": [["I2",-1]],
     "constraint_flags": {
       "allowPieceOrienting": false,
       "colorByPiece": true,
@@ -59,8 +49,6 @@
     "name": "P-Pentominos",
     "description": "Use P-Pentominos to assemble a larger version of the same shape.",
     "type": "Template",
-    "boardKey": "pent3",
-    "pieceSupply": [["P",-1]],
     "constraint_flags": {
       "allowPieceOrienting": false},
     "key": "P_Pentominos",
@@ -69,8 +57,6 @@
     "name": "Locked Triangles",
     "description": "Pieces that can't turn. eg 36 Triangles Puzzle.",
     "type": "Template",
-    "boardKey": "rect10x10",
-    "pieceSupply": [],
     "constraint_flags": {
       "allowPieceRotation": false,
       "allowPieceOrienting": false},
@@ -80,8 +66,6 @@
     "name": "Angel Cube",
     "description": "Fill a cube with pieces.",
     "type": "Template",
-    "boardKey": "cube4",
-    "pieceSupply": [["T",8],["S2",4]],
     "constraint_flags": {
       "allowSkyPieces": true,
       "allowSupportedOverhangs": true},

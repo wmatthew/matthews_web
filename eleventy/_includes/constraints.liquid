@@ -6,15 +6,14 @@
 <div class="constraints" style="border: #e4ade6 solid 4px; padding: 15px;">
 <h3>{{constraints.name}}</h3>
 <p>{{constraints.description}}</p>
-<p>Key: {{constraints.key}}</p>
+<p>Key: {{constraints.key}} ({{constraints.type}})</p>
 {% if constraints.parentKey %}
 <p>Parent: <a href="{{constraints.parentKey | getUrl}}">{{constraints.parentKey}}</a></p>
 {% endif %}
-<p>Type: {{constraints.type}}</p>
+{% if constraints.board %}
 <p>Board: <a href="{{constraints.boardKey | getUrl }}">{{constraints.boardKey }}</a></p>
-{% if constraints.pieceSupply == "varies" %}
-<p>Pieces: varies</p>
-{% else %}
+{% endif %}
+{% if constraints.pieceSupply %}
 <p>Pieces: 
 {%- for piecePair in constraints.pieceSupply %}
 <a href="{{piecePair[0] | getUrl}}">

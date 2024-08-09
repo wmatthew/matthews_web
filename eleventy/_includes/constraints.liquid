@@ -7,7 +7,9 @@
 <h3>{{constraints.name}}</h3>
 <p>{{constraints.description}}</p>
 <p>Key: {{constraints.key}}</p>
-{% if constraints.parentKey %}<p>Parent: {{constraints.parentKey}}</p>{% endif %}
+{% if constraints.parentKey %}
+<p>Parent: <a href="{{constraints.parentKey | getUrl}}">{{constraints.parentKey}}</a></p>
+{% endif %}
 <p>Type: {{constraints.type}}</p>
 <p>Board: <a href="{{constraints.boardKey | getUrl }}">{{constraints.boardKey }}</a></p>
 {% if constraints.pieceSupply == "varies" %}
@@ -26,8 +28,8 @@
   <a href="{{ setting[0] | getUrl }}" style="font-size:x-large;">{{ icons[setting[0]] }}</a> 
 {% endfor -%}
 </p>
-{% if constraints.type == "Generated" %}
-  <p>Solution: {{constraints.solution.solutionsTotal[0] | json }}</p>
+{% if constraints.solution %}
+  <p>Solution: {{constraints.solution | json }}</p>
 {% endif %}
 {% if children.size > 0 %}
   <p>Children: {% include linkList, links:children %}</p>

@@ -50,7 +50,7 @@ module.exports = class Constraints {
         if (key in solutions) {
             constraintObject.solution = solutions[key];
         } else {
-            constraintObject.solution = "n/a";
+            constraintObject.solution = false;
         }
     }
 }

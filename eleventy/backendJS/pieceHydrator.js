@@ -9,7 +9,7 @@ module.exports = class Hydrator {
         }
 
         if (!piece.compact) {
-            piece.compact = "n/a";
+            piece.compact = false;
         }
 
         piece.pointsPretty = piece.points.map(p => p.join(",")).join("|");

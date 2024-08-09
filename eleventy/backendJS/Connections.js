@@ -33,10 +33,6 @@ module.exports = class Connections {
         throw new Error("Could not determine URL for key: " + key);
 
         function escape(rawString) {
-            if (rawString.includes("-")) {
-                console.log("escaping dashes: before: " + rawString);
-                console.log("escaping dashes: after: " + rawString.replace("-", "%2D"));
-            }
             return rawString.replace("-", "%2D"); // https://web.dev/articles/text-fragments#:~:text=This%20is%20especially%20
         }
     }

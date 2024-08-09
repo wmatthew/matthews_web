@@ -15,21 +15,10 @@ Research and Development. Things that might become puzzles or games in the futur
 {%- endfor -%}
 </ul>
 
-## 2D Templates
-{% include constraints constraints:constraints-templates.Clones_Tile_A_Square_Simple %}
-
-{% include constraints constraints:constraints-templates.Tatami %}
-
-{% include constraints constraints:constraints-templates.Tatami_3color %}
-
-{% include constraints constraints:constraints-templates.P_Pentominos %}
-
-{% include constraints constraints:constraints-templates.Locked_Triangles %}
-
-## 3D Templates
-{% include constraints constraints:constraints-templates.Clones_Tile_A_Square %}
-
-{% include constraints constraints:constraints-templates.Overhang_City %}
+## Templates
+{% for conPair in constraints-templates %}
+{% include constraints constraints:conPair[1] %}
+{% endfor %}
 
 ## Generated
 {% for conPair in constraints-library %}

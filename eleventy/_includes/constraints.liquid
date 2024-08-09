@@ -7,18 +7,24 @@
 <h3>{{constraints.name}}</h3>
 <p>{{constraints.description}}</p>
 <p>Key: {{constraints.key}}</p>
-{% if constraints.parentKey %}
-<p>Parent: {{constraints.parentKey}}</p>
-{% endif %}
+{% if constraints.parentKey %}<p>Parent: {{constraints.parentKey}}</p>{% endif %}
 <p>Type: {{constraints.type}}</p>
 <p>Board: <a href="{{constraints.boardKey | getUrl }}">{{constraints.boardKey }}</a></p>
 {% if constraints.pieceSupply == "varies" %}
 <p>Pieces: varies</p>
 {% else %}
-<p>Pieces: {% for piecePair in constraints.pieceSupply %}<a href="{{piecePair[0] | getUrl}}">{{piecePair[0]}} x {% if piecePair[1] == -1 %}∞{%else%}{{piecePair[1]}}{%endif%}</a>{% if forloop.last == false %}, {%endif%}{%endfor%}</p>
+<p>Pieces: 
+{%- for piecePair in constraints.pieceSupply %}
+<a href="{{piecePair[0] | getUrl}}">
+{{piecePair[0]}} x 
+{% if piecePair[1] == -1 %}∞{%else%}{{piecePair[1]}}{%endif%}</a>
+{% if forloop.last == false %}, {%endif%}
+{%endfor%}</p>
 {% endif %}
 <p>Constraints: {% if constraints.constraint_flags.size == 0 %}defaults.{% endif %}
-{% for setting in constraints.constraint_flags %}<a href="{{ setting[0] | getUrl }}" style="font-size:x-large;">{{ icons[setting[0]] }}</a> {% endfor %}
+{% for setting in constraints.constraint_flags -%}
+  <a href="{{ setting[0] | getUrl }}" style="font-size:x-large;">{{ icons[setting[0]] }}</a> 
+{% endfor -%}
 </p>
 {% if constraints.type == "Generated" %}
   <p>Solution: {{constraints.solution.solutionsTotal[0] | json }}</p>

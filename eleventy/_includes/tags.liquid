@@ -1,5 +1,5 @@
 <ul class="tags">
-{% for tag in tags %}
+{% for tag in tags -%}
   <li><a class="taglink" href="/posts/tagged/with/{{tag}}/"><span class="tag">{{tag}}</span></a></li>
-{% endfor %}
+{%- endfor %}
 </ul>

@@ -20,13 +20,7 @@
     <h1>Block City</h1>
 
     <ul class="tags">
-
-  <li><a class="taglink" href="/posts/tagged/with/tiling/"><span class="tag">tiling</span></a></li>
-
-  <li><a class="taglink" href="/posts/tagged/with/investigation/"><span class="tag">investigation</span></a></li>
-
-  <li><a class="taglink" href="/posts/tagged/with/3D printed/"><span class="tag">3D printed</span></a></li>
-
+<li><a class="taglink" href="/posts/tagged/with/tiling/"><span class="tag">tiling</span></a></li><li><a class="taglink" href="/posts/tagged/with/investigation/"><span class="tag">investigation</span></a></li><li><a class="taglink" href="/posts/tagged/with/3D printed/"><span class="tag">3D printed</span></a></li>
 </ul>
     </div>
   </body>

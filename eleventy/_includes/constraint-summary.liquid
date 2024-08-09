@@ -1,7 +1,7 @@
 {%- assign defaultValue = constraints-metadata.Tiling_Default.constraint_flags[key]%}
-{%- assign icon = constraints-templates.Icons[key]%}
+{%- assign icon = constraints-metadata.Icons[key]%}
 {%- assign usedBy = key | getConstraintTemplatesThatUseKey%}
-{%- assign description = constraints-templates.Descriptions[key]-%}
+{%- assign description = constraints-metadata.Descriptions[key]-%}
 
 <span style="font-size: x-large;">{{ icon }}</span>
 <b>{{key}}</b>:

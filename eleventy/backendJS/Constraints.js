@@ -1,6 +1,7 @@
 const fs = require('fs');
 var constraintTemplates = JSON.parse(fs.readFileSync("_data/constraints-templates.json", 'utf8'));
 var constraintLibrary = JSON.parse(fs.readFileSync("_data/constraints-library.json", 'utf8'));
+var constraintMetadata = JSON.parse(fs.readFileSync("_data/constraints-metadata.json", 'utf8'));
 var solutions = JSON.parse(fs.readFileSync("_data/solutions.json", 'utf8'));
 
 module.exports = class Constraints {
@@ -39,7 +40,7 @@ module.exports = class Constraints {
     static checkConstraint(newState, constraintKey) {
         var flagHash = newState.puzzle.constraint_flags;
         if (flagHash[constraintKey] == undefined) {
-            return constraintTemplates.Tiling_Default[constraintKey];
+            return constraintMetadata.Tiling_Default[constraintKey];
         }
         return flagHash[constraintKey];
     }

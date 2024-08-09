@@ -1,5 +1,5 @@
-{% assign defaultConstraints = constraints-templates.Tiling_Default %} 
-{% assign icons = constraints-templates.Icons %} 
+{% assign defaultConstraints = constraints-metadata.Tiling_Default %} 
+{% assign icons = constraints-metadata.Icons %} 
 {% assign constraints = constraints | setSolutionField %}
 {% assign children = constraints.key | getChildConstraints %}
 

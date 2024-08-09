@@ -182,8 +182,6 @@ Render a table from JSON data.
 
 ### List of puzzle constraints
 
-TODO: add cute icons for each constraint?
-
 {% include constraints constraints:constraints-templates.Clones_Tile_A_Square %}
 
 ### Hidden content

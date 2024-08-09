@@ -1,6 +1,7 @@
 const fs = require('fs');
 var constraintTemplates = JSON.parse(fs.readFileSync("_data/constraints-templates.json", 'utf8'));
 var constraintLibrary = JSON.parse(fs.readFileSync("_data/constraints-library.json", 'utf8'));
+var constraintMetadata = JSON.parse(fs.readFileSync("_data/constraints-metadata.json", 'utf8'));
 var boardLib = JSON.parse(fs.readFileSync("_data/board-library.json", 'utf8'));
 var pieceLib = JSON.parse(fs.readFileSync("_data/piece-library.json", 'utf8'));
 
@@ -31,7 +32,7 @@ module.exports = class Connections {
             return "/polycube/gallery/#:~:text=Key: " + key;
         }
 
-        if (key in constraintTemplates.Tiling_Default.constraint_flags) {
+        if (key in constraintMetadata.Tiling_Default.constraint_flags) {
             return "/tiling/constraints/#:~:text=" + key;
         }
 

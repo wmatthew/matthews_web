@@ -11,13 +11,7 @@
 <p>Parent: {{constraints.parentKey}}</p>
 {% endif %}
 <p>Type: {{constraints.type}}</p>
-{% if constraints.board == "varies" %}
-<p>Board: varies</p>
-{% elsif constraints.board[0] %}
-<p>Board: <a href="{{constraints.board | getUrl }}">{{constraints.board }}</a></p>
-{% else %}
-<p>Board: <a href="{{constraints.board.key | getUrl }}">{{constraints.board.key }}</a></p>
-{% endif %}
+<p>Board: <a href="{{constraints.boardKey | getUrl }}">{{constraints.boardKey }}</a></p>
 {% if constraints.pieceSupply == "varies" %}
 <p>Pieces: varies</p>
 {% else %}

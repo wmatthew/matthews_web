@@ -3,6 +3,7 @@ const Image = require("@11ty/eleventy-img");
 const Hydrator = require("./backendJS/pieceHydrator.js");
 const Constraints = require("./backendJS/Constraints.js");
 const Connections = require("./backendJS/Connections.js");
+const Board = require("./backendJS/Board.js");
 
 module.exports = function (eleventyConfig) {
 
@@ -52,7 +53,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("getConstraintTemplatesThatUseKey", Connections.getConstraintTemplatesThatUseKey );
   eleventyConfig.addFilter("getThingsThatUsePiece", Connections.getThingsThatUsePiece );
   eleventyConfig.addFilter("getChildConstraints", Connections.getChildConstraints );
-    
+  eleventyConfig.addFilter("getThingsThatUseBoard", Connections.getThingsThatUseBoard );
+  eleventyConfig.addFilter("groupBoardsByCategory", Board.groupBoardsByCategory );
+
   return {
     dir: {
       input: ".",

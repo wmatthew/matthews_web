@@ -13,9 +13,8 @@ module.exports = class Connections {
         // Figure out if this is a board, constraint, constraintKey, or piece and return the right URL for it.
         if (key in boardLib) {
             // TODO: jump to the right item
-            return "/board/gallery/";
+            return "/board/gallery/#:~:text=" + key;
         }
-
 
         // TODO: unit test: make sure no two entities share the same key.
         if (key in justTheTemplates) {
@@ -30,7 +29,7 @@ module.exports = class Connections {
         }
 
         if (key in pieceLib) {
-            return "/polycube/gallery/#:~:text=" + key;
+            return "/polycube/gallery/#:~:text=Key: " + key;
         }
 
         if (key in constraintTemplates.Tiling_Default.constraint_flags) {
@@ -41,12 +40,11 @@ module.exports = class Connections {
     }
 
     static getThingsThatUsePiece(pieceKey) {
-        // TODO: deduplicate the results. eg: Angel Cube appears twice for piece T.
         var result = Object.values(justTheTemplates).concat(Object.values(constraintLibrary)).filter(obj => {
             return ("key" in obj) &&
             ("type" in obj) &&
             ("pieceSupply" in obj) &&
-            ["Template", "Custom"].includes(obj.type) &&
+            ["Template", "Custom", "Generated"].includes(obj.type) &&
             Array.isArray(obj.pieceSupply) &&
             (obj.pieceSupply.map(p => p[0]).includes(pieceKey));
         }
@@ -54,8 +52,28 @@ module.exports = class Connections {
         return result;
     }
 
+    static getThingsThatUseBoard(boardKey) {
+        // TODO: inconsistent. In templates, board is a string. In library, board is an object.
+        // We should have two fields: boardKey and boardObject.
+
+        var result1 = Object.values(justTheTemplates).filter(obj => {
+            return ("key" in obj) &&
+            ("type" in obj) &&
+            ["Template", "Custom"].includes(obj.type) &&
+            obj.boardKey == boardKey;
+        }
+        ).map(obj => {return {url:Connections.getUrl(obj.key), displayName:obj.name};});
+
+        var result2 = Object.values(constraintLibrary).filter(obj => {
+            return ("key" in obj) &&
+            obj.boardKey == boardKey;
+        }
+        ).map(obj => {return {url:Connections.getUrl(obj.key), displayName:obj.name};});
+
+        return result1.concat(result2);
+    }
+
     static getConstraintTemplatesThatUseKey(key) {
-        console.log("getConstraintTemplatesThatUseKey", key);
         var result = Object.values(constraintTemplates).filter(obj => {
             return ("key" in obj) &&
             ("type" in obj) &&
@@ -64,7 +82,6 @@ module.exports = class Connections {
             (key in obj.constraint_flags);
         }
         ).map(obj => {return {url:Connections.getUrl(obj.key), displayName:obj.name};});
-        console.log(result);
         return result;
     }
 

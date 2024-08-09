@@ -2,19 +2,21 @@
   "Clones_Tile_A_Square_Simple_rect4x4_T": {
     "key": "Clones_Tile_A_Square_Simple_rect4x4_T",
     "constraints": {
-      "name": "Clones Tile A Rectangle - Simple Version",
-      "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
+      "name": "Clones Tile A Rectangle - Simple Version (rect4x4_T)",
+      "description": "Copies of a single polycube tile a rectangle boardKey. Simplest config; no constraint flags.",
       "type": "Generated",
+      "boardKey": "rect4x4",
+      "pieceSupply": [["T",-1]],
+      "constraint_flags": {},
+      "key": "Clones_Tile_A_Square_Simple_rect4x4_T",
+      "parentKey": "Clones_Tile_A_Square_Simple",
       "board": {
         "key": "rect4x4",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 4,"y": 4,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1},{"x": 1,"y": 2,"z": 1},{"x": 1,"y": 3,"z": 1},{"x": 1,"y": 4,"z": 1},{"x": 2,"y": 1,"z": 1},{"x": 2,"y": 2,"z": 1},{"x": 2,"y": 3,"z": 1},{"x": 2,"y": 4,"z": 1},{"x": 3,"y": 1,"z": 1},{"x": 3,"y": 2,"z": 1},{"x": 3,"y": 3,"z": 1},{"x": 3,"y": 4,"z": 1},{"x": 4,"y": 1,"z": 1},{"x": 4,"y": 2,"z": 1},{"x": 4,"y": 3,"z": 1},{"x": 4,"y": 4,"z": 1}],
         "area": 16,
-        "description": "Rectangle of size 4x4."},
-      "pieceSupply": [["T",-1]],
-      "constraint_flags": {},
-      "key": "Clones_Tile_A_Square_Simple_rect4x4_T",
-      "parentKey": "Clones_Tile_A_Square_Simple",
+        "description": "Rectangle of size 4x4.",
+        "category": "Rectangle"},
       "template": "Clones_Tile_A_Square_Simple"},
     "solverVersion": "0.1",
     "solutionsTotal": [{
@@ -86,7 +88,8 @@
             "orientation": "A3",
             "id": 4}],
         "area": 16,
-        "description": "Rectangle of size 4x4."},{
+        "description": "Rectangle of size 4x4.",
+        "category": "Rectangle"},{
         "key": "rect4x4",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 4,"y": 4,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -155,7 +158,8 @@
             "orientation": "A2",
             "id": 3}],
         "area": 16,
-        "description": "Rectangle of size 4x4."}],
+        "description": "Rectangle of size 4x4.",
+        "category": "Rectangle"}],
     "solutionsUnique": {
       "uniquekey_[0,0,0,1,T;0,1,0,1,T;0,2,0,1,T;0,3,0,2,T;1,0,0,3,T;1,1,0,1,T;1,2,0,2,T;1,3,0,2,T;2,0,0,3,T;2,1,0,3,T;2,2,0,4,T;2,3,0,2,T;3,0,0,3,T;3,1,0,4,T;3,2,0,4,T;3,3,0,4,T]": {
         "key": "rect4x4",
@@ -226,29 +230,32 @@
             "orientation": "A2",
             "id": 3}],
         "area": 16,
-        "description": "Rectangle of size 4x4."}},
+        "description": "Rectangle of size 4x4.",
+        "category": "Rectangle"}},
     "numSolutionsTotal": 2,
     "numSolutionsUnique": 1,
     "numSteps": 9,
     "didWeBailOutEarly": false,
     "solveTimeSeconds": 0,
-    "solveDate": "8/7/2024"},
+    "solveDate": "8/8/2024"},
   "Clones_Tile_A_Square_Simple_rect6x6_T": {
     "key": "Clones_Tile_A_Square_Simple_rect6x6_T",
     "constraints": {
-      "name": "Clones Tile A Rectangle - Simple Version",
-      "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
+      "name": "Clones Tile A Rectangle - Simple Version (rect6x6_T)",
+      "description": "Copies of a single polycube tile a rectangle boardKey. Simplest config; no constraint flags.",
       "type": "Generated",
+      "boardKey": "rect6x6",
+      "pieceSupply": [["T",-1]],
+      "constraint_flags": {},
+      "key": "Clones_Tile_A_Square_Simple_rect6x6_T",
+      "parentKey": "Clones_Tile_A_Square_Simple",
       "board": {
         "key": "rect6x6",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 6,"y": 6,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1},{"x": 1,"y": 2,"z": 1},{"x": 1,"y": 3,"z": 1},{"x": 1,"y": 4,"z": 1},{"x": 1,"y": 5,"z": 1},{"x": 1,"y": 6,"z": 1},{"x": 2,"y": 1,"z": 1},{"x": 2,"y": 2,"z": 1},{"x": 2,"y": 3,"z": 1},{"x": 2,"y": 4,"z": 1},{"x": 2,"y": 5,"z": 1},{"x": 2,"y": 6,"z": 1},{"x": 3,"y": 1,"z": 1},{"x": 3,"y": 2,"z": 1},{"x": 3,"y": 3,"z": 1},{"x": 3,"y": 4,"z": 1},{"x": 3,"y": 5,"z": 1},{"x": 3,"y": 6,"z": 1},{"x": 4,"y": 1,"z": 1},{"x": 4,"y": 2,"z": 1},{"x": 4,"y": 3,"z": 1},{"x": 4,"y": 4,"z": 1},{"x": 4,"y": 5,"z": 1},{"x": 4,"y": 6,"z": 1},{"x": 5,"y": 1,"z": 1},{"x": 5,"y": 2,"z": 1},{"x": 5,"y": 3,"z": 1},{"x": 5,"y": 4,"z": 1},{"x": 5,"y": 5,"z": 1},{"x": 5,"y": 6,"z": 1},{"x": 6,"y": 1,"z": 1},{"x": 6,"y": 2,"z": 1},{"x": 6,"y": 3,"z": 1},{"x": 6,"y": 4,"z": 1},{"x": 6,"y": 5,"z": 1},{"x": 6,"y": 6,"z": 1}],
         "area": 36,
-        "description": "Rectangle of size 6x6."},
-      "pieceSupply": [["T",-1]],
-      "constraint_flags": {},
-      "key": "Clones_Tile_A_Square_Simple_rect6x6_T",
-      "parentKey": "Clones_Tile_A_Square_Simple",
+        "description": "Rectangle of size 6x6.",
+        "category": "Rectangle"},
       "template": "Clones_Tile_A_Square_Simple"},
     "solverVersion": "0.1",
     "solutionsTotal": [],
@@ -258,7 +265,7 @@
     "numSteps": 14,
     "didWeBailOutEarly": false,
     "solveTimeSeconds": 0,
-    "solveDate": "8/7/2024"},
+    "solveDate": "8/8/2024"},
   "Clones_Tile_A_Square_Simple_rect5x5_T": {
     "key": "Clones_Tile_A_Square_Simple_rect5x5_T",
     "constraints": {
@@ -288,19 +295,21 @@
   "Clones_Tile_A_Square_Simple_rect8x8_T": {
     "key": "Clones_Tile_A_Square_Simple_rect8x8_T",
     "constraints": {
-      "name": "Clones Tile A Rectangle - Simple Version",
-      "description": "Copies of a single polycube tile a square/rectangle board. Simplest config; no constraint flags.",
+      "name": "Clones Tile A Rectangle - Simple Version (rect8x8_T)",
+      "description": "Copies of a single polycube tile a rectangle boardKey. Simplest config; no constraint flags.",
       "type": "Generated",
+      "boardKey": "rect8x8",
+      "pieceSupply": [["T",-1]],
+      "constraint_flags": {},
+      "key": "Clones_Tile_A_Square_Simple_rect8x8_T",
+      "parentKey": "Clones_Tile_A_Square_Simple",
       "board": {
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1},{"x": 1,"y": 2,"z": 1},{"x": 1,"y": 3,"z": 1},{"x": 1,"y": 4,"z": 1},{"x": 1,"y": 5,"z": 1},{"x": 1,"y": 6,"z": 1},{"x": 1,"y": 7,"z": 1},{"x": 1,"y": 8,"z": 1},{"x": 2,"y": 1,"z": 1},{"x": 2,"y": 2,"z": 1},{"x": 2,"y": 3,"z": 1},{"x": 2,"y": 4,"z": 1},{"x": 2,"y": 5,"z": 1},{"x": 2,"y": 6,"z": 1},{"x": 2,"y": 7,"z": 1},{"x": 2,"y": 8,"z": 1},{"x": 3,"y": 1,"z": 1},{"x": 3,"y": 2,"z": 1},{"x": 3,"y": 3,"z": 1},{"x": 3,"y": 4,"z": 1},{"x": 3,"y": 5,"z": 1},{"x": 3,"y": 6,"z": 1},{"x": 3,"y": 7,"z": 1},{"x": 3,"y": 8,"z": 1},{"x": 4,"y": 1,"z": 1},{"x": 4,"y": 2,"z": 1},{"x": 4,"y": 3,"z": 1},{"x": 4,"y": 4,"z": 1},{"x": 4,"y": 5,"z": 1},{"x": 4,"y": 6,"z": 1},{"x": 4,"y": 7,"z": 1},{"x": 4,"y": 8,"z": 1},{"x": 5,"y": 1,"z": 1},{"x": 5,"y": 2,"z": 1},{"x": 5,"y": 3,"z": 1},{"x": 5,"y": 4,"z": 1},{"x": 5,"y": 5,"z": 1},{"x": 5,"y": 6,"z": 1},{"x": 5,"y": 7,"z": 1},{"x": 5,"y": 8,"z": 1},{"x": 6,"y": 1,"z": 1},{"x": 6,"y": 2,"z": 1},{"x": 6,"y": 3,"z": 1},{"x": 6,"y": 4,"z": 1},{"x": 6,"y": 5,"z": 1},{"x": 6,"y": 6,"z": 1},{"x": 6,"y": 7,"z": 1},{"x": 6,"y": 8,"z": 1},{"x": 7,"y": 1,"z": 1},{"x": 7,"y": 2,"z": 1},{"x": 7,"y": 3,"z": 1},{"x": 7,"y": 4,"z": 1},{"x": 7,"y": 5,"z": 1},{"x": 7,"y": 6,"z": 1},{"x": 7,"y": 7,"z": 1},{"x": 7,"y": 8,"z": 1},{"x": 8,"y": 1,"z": 1},{"x": 8,"y": 2,"z": 1},{"x": 8,"y": 3,"z": 1},{"x": 8,"y": 4,"z": 1},{"x": 8,"y": 5,"z": 1},{"x": 8,"y": 6,"z": 1},{"x": 8,"y": 7,"z": 1},{"x": 8,"y": 8,"z": 1}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},
-      "pieceSupply": [["T",-1]],
-      "constraint_flags": {},
-      "key": "Clones_Tile_A_Square_Simple_rect8x8_T",
-      "parentKey": "Clones_Tile_A_Square_Simple",
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},
       "template": "Clones_Tile_A_Square_Simple"},
     "solverVersion": "0.1",
     "solutionsTotal": [{
@@ -564,7 +573,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -825,7 +835,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -1086,7 +1097,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -1347,7 +1359,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -1608,7 +1621,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -1869,7 +1883,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -2130,7 +2145,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -2391,7 +2407,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -2652,7 +2669,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -2913,7 +2931,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -3174,7 +3193,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -3435,7 +3455,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -3696,7 +3717,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -3957,7 +3979,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -4218,7 +4241,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -4479,7 +4503,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -4740,7 +4765,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -5001,7 +5027,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -5262,7 +5289,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -5523,7 +5551,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -5784,7 +5813,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -6045,7 +6075,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -6306,7 +6337,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -6567,7 +6599,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -6828,7 +6861,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -7089,7 +7123,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -7350,7 +7385,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -7611,7 +7647,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -7872,7 +7909,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -8133,7 +8171,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -8394,7 +8433,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -8655,7 +8695,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -8916,7 +8957,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -9177,7 +9219,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -9438,7 +9481,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -9699,7 +9743,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -9960,7 +10005,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -10221,7 +10267,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -10482,7 +10529,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -10743,7 +10791,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -11004,7 +11053,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -11265,7 +11315,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -11526,7 +11577,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -11787,7 +11839,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -12048,7 +12101,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -12309,7 +12363,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -12570,7 +12625,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -12831,7 +12887,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -13092,7 +13149,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -13353,7 +13411,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -13614,7 +13673,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -13875,7 +13935,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -14136,7 +14197,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -14397,7 +14459,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -14658,7 +14721,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -14919,7 +14983,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -15180,7 +15245,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -15441,7 +15507,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -15702,7 +15769,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -15963,7 +16031,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -16224,7 +16293,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -16485,7 +16555,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -16746,7 +16817,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -17007,7 +17079,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -17268,7 +17341,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -17529,7 +17603,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -17790,7 +17865,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -18051,7 +18127,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -18312,7 +18389,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -18573,7 +18651,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -18834,7 +18913,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -19095,7 +19175,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -19356,7 +19437,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -19617,7 +19699,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -19878,7 +19961,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -20139,7 +20223,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -20400,7 +20485,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -20661,7 +20747,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -20922,7 +21009,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -21183,7 +21271,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -21444,7 +21533,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -21705,7 +21795,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -21966,7 +22057,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},{
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
         "points": [{"x": 1,"y": 1,"z": 1,
@@ -22227,7 +22319,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."}],
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"}],
     "solutionsUnique": {
       "uniquekey_[0,0,0,1,T;0,1,0,1,T;0,2,0,1,T;0,3,0,2,T;0,4,0,3,T;0,5,0,3,T;0,6,0,3,T;0,7,0,4,T;1,0,0,5,T;1,1,0,1,T;1,2,0,2,T;1,3,0,2,T;1,4,0,2,T;1,5,0,3,T;1,6,0,4,T;1,7,0,4,T;2,0,0,5,T;2,1,0,5,T;2,2,0,6,T;2,3,0,7,T;2,4,0,7,T;2,5,0,7,T;2,6,0,8,T;2,7,0,4,T;3,0,0,5,T;3,1,0,6,T;3,2,0,6,T;3,3,0,6,T;3,4,0,7,T;3,5,0,8,T;3,6,0,8,T;3,7,0,8,T;4,0,0,9,T;4,1,0,9,T;4,2,0,9,T;4,3,0,10,T;4,4,0,11,T;4,5,0,11,T;4,6,0,11,T;4,7,0,12,T;5,0,0,13,T;5,1,0,9,T;5,2,0,10,T;5,3,0,10,T;5,4,0,10,T;5,5,0,11,T;5,6,0,12,T;5,7,0,12,T;6,0,0,13,T;6,1,0,13,T;6,2,0,14,T;6,3,0,15,T;6,4,0,15,T;6,5,0,15,T;6,6,0,16,T;6,7,0,12,T;7,0,0,13,T;7,1,0,14,T;7,2,0,14,T;7,3,0,14,T;7,4,0,15,T;7,5,0,16,T;7,6,0,16,T;7,7,0,16,T]": {
         "key": "rect8x8",
@@ -22490,7 +22583,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},
       "uniquekey_[0,0,0,1,T;0,1,0,1,T;0,2,0,1,T;0,3,0,2,T;0,4,0,3,T;0,5,0,3,T;0,6,0,3,T;0,7,0,4,T;1,0,0,5,T;1,1,0,1,T;1,2,0,2,T;1,3,0,2,T;1,4,0,2,T;1,5,0,3,T;1,6,0,4,T;1,7,0,4,T;2,0,0,5,T;2,1,0,5,T;2,2,0,6,T;2,3,0,7,T;2,4,0,7,T;2,5,0,7,T;2,6,0,8,T;2,7,0,4,T;3,0,0,5,T;3,1,0,6,T;3,2,0,6,T;3,3,0,6,T;3,4,0,7,T;3,5,0,8,T;3,6,0,8,T;3,7,0,8,T;4,0,0,9,T;4,1,0,9,T;4,2,0,9,T;4,3,0,10,T;4,4,0,11,T;4,5,0,11,T;4,6,0,11,T;4,7,0,12,T;5,0,0,13,T;5,1,0,9,T;5,2,0,10,T;5,3,0,10,T;5,4,0,14,T;5,5,0,11,T;5,6,0,12,T;5,7,0,12,T;6,0,0,13,T;6,1,0,13,T;6,2,0,15,T;6,3,0,10,T;6,4,0,14,T;6,5,0,14,T;6,6,0,16,T;6,7,0,12,T;7,0,0,13,T;7,1,0,15,T;7,2,0,15,T;7,3,0,15,T;7,4,0,14,T;7,5,0,16,T;7,6,0,16,T;7,7,0,16,T]": {
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
@@ -22752,7 +22846,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},
       "uniquekey_[0,0,0,1,T;0,1,0,1,T;0,2,0,1,T;0,3,0,2,T;0,4,0,3,T;0,5,0,3,T;0,6,0,3,T;0,7,0,4,T;1,0,0,5,T;1,1,0,1,T;1,2,0,2,T;1,3,0,2,T;1,4,0,2,T;1,5,0,3,T;1,6,0,4,T;1,7,0,4,T;2,0,0,5,T;2,1,0,5,T;2,2,0,6,T;2,3,0,7,T;2,4,0,7,T;2,5,0,7,T;2,6,0,8,T;2,7,0,4,T;3,0,0,5,T;3,1,0,6,T;3,2,0,6,T;3,3,0,6,T;3,4,0,7,T;3,5,0,8,T;3,6,0,8,T;3,7,0,8,T;4,0,0,9,T;4,1,0,9,T;4,2,0,9,T;4,3,0,10,T;4,4,0,11,T;4,5,0,12,T;4,6,0,12,T;4,7,0,12,T;5,0,0,13,T;5,1,0,9,T;5,2,0,10,T;5,3,0,10,T;5,4,0,11,T;5,5,0,11,T;5,6,0,12,T;5,7,0,14,T;6,0,0,13,T;6,1,0,13,T;6,2,0,15,T;6,3,0,10,T;6,4,0,11,T;6,5,0,16,T;6,6,0,14,T;6,7,0,14,T;7,0,0,13,T;7,1,0,15,T;7,2,0,15,T;7,3,0,15,T;7,4,0,16,T;7,5,0,16,T;7,6,0,16,T;7,7,0,14,T]": {
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
@@ -23014,7 +23109,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},
       "uniquekey_[0,0,0,1,T;0,1,0,1,T;0,2,0,1,T;0,3,0,2,T;0,4,0,3,T;0,5,0,3,T;0,6,0,3,T;0,7,0,4,T;1,0,0,5,T;1,1,0,1,T;1,2,0,2,T;1,3,0,2,T;1,4,0,2,T;1,5,0,3,T;1,6,0,4,T;1,7,0,4,T;2,0,0,5,T;2,1,0,5,T;2,2,0,6,T;2,3,0,7,T;2,4,0,7,T;2,5,0,7,T;2,6,0,8,T;2,7,0,4,T;3,0,0,5,T;3,1,0,6,T;3,2,0,6,T;3,3,0,6,T;3,4,0,7,T;3,5,0,8,T;3,6,0,8,T;3,7,0,8,T;4,0,0,9,T;4,1,0,10,T;4,2,0,10,T;4,3,0,10,T;4,4,0,11,T;4,5,0,12,T;4,6,0,12,T;4,7,0,12,T;5,0,0,9,T;5,1,0,9,T;5,2,0,10,T;5,3,0,11,T;5,4,0,11,T;5,5,0,11,T;5,6,0,12,T;5,7,0,13,T;6,0,0,9,T;6,1,0,14,T;6,2,0,15,T;6,3,0,15,T;6,4,0,15,T;6,5,0,16,T;6,6,0,13,T;6,7,0,13,T;7,0,0,14,T;7,1,0,14,T;7,2,0,14,T;7,3,0,15,T;7,4,0,16,T;7,5,0,16,T;7,6,0,16,T;7,7,0,13,T]": {
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
@@ -23276,7 +23372,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},
       "uniquekey_[0,0,0,1,T;0,1,0,1,T;0,2,0,1,T;0,3,0,2,T;0,4,0,3,T;0,5,0,3,T;0,6,0,3,T;0,7,0,4,T;1,0,0,5,T;1,1,0,1,T;1,2,0,2,T;1,3,0,2,T;1,4,0,2,T;1,5,0,3,T;1,6,0,4,T;1,7,0,4,T;2,0,0,5,T;2,1,0,5,T;2,2,0,6,T;2,3,0,7,T;2,4,0,7,T;2,5,0,7,T;2,6,0,8,T;2,7,0,4,T;3,0,0,5,T;3,1,0,6,T;3,2,0,6,T;3,3,0,6,T;3,4,0,7,T;3,5,0,8,T;3,6,0,8,T;3,7,0,8,T;4,0,0,9,T;4,1,0,10,T;4,2,0,10,T;4,3,0,10,T;4,4,0,11,T;4,5,0,11,T;4,6,0,11,T;4,7,0,12,T;5,0,0,9,T;5,1,0,9,T;5,2,0,10,T;5,3,0,13,T;5,4,0,14,T;5,5,0,11,T;5,6,0,12,T;5,7,0,12,T;6,0,0,9,T;6,1,0,15,T;6,2,0,13,T;6,3,0,13,T;6,4,0,14,T;6,5,0,14,T;6,6,0,16,T;6,7,0,12,T;7,0,0,15,T;7,1,0,15,T;7,2,0,15,T;7,3,0,13,T;7,4,0,14,T;7,5,0,16,T;7,6,0,16,T;7,7,0,16,T]": {
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
@@ -23538,7 +23635,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},
       "uniquekey_[0,0,0,1,T;0,1,0,1,T;0,2,0,1,T;0,3,0,2,T;0,4,0,3,T;0,5,0,3,T;0,6,0,3,T;0,7,0,4,T;1,0,0,5,T;1,1,0,1,T;1,2,0,2,T;1,3,0,2,T;1,4,0,2,T;1,5,0,3,T;1,6,0,4,T;1,7,0,4,T;2,0,0,5,T;2,1,0,5,T;2,2,0,6,T;2,3,0,7,T;2,4,0,7,T;2,5,0,7,T;2,6,0,8,T;2,7,0,4,T;3,0,0,5,T;3,1,0,6,T;3,2,0,6,T;3,3,0,6,T;3,4,0,7,T;3,5,0,8,T;3,6,0,8,T;3,7,0,8,T;4,0,0,9,T;4,1,0,10,T;4,2,0,10,T;4,3,0,10,T;4,4,0,11,T;4,5,0,12,T;4,6,0,12,T;4,7,0,12,T;5,0,0,9,T;5,1,0,9,T;5,2,0,10,T;5,3,0,13,T;5,4,0,11,T;5,5,0,11,T;5,6,0,12,T;5,7,0,14,T;6,0,0,9,T;6,1,0,15,T;6,2,0,13,T;6,3,0,13,T;6,4,0,11,T;6,5,0,16,T;6,6,0,14,T;6,7,0,14,T;7,0,0,15,T;7,1,0,15,T;7,2,0,15,T;7,3,0,13,T;7,4,0,16,T;7,5,0,16,T;7,6,0,16,T;7,7,0,14,T]": {
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
@@ -23800,7 +23898,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},
       "uniquekey_[0,0,0,1,T;0,1,0,1,T;0,2,0,1,T;0,3,0,2,T;0,4,0,3,T;0,5,0,3,T;0,6,0,3,T;0,7,0,4,T;1,0,0,5,T;1,1,0,1,T;1,2,0,2,T;1,3,0,2,T;1,4,0,2,T;1,5,0,3,T;1,6,0,4,T;1,7,0,4,T;2,0,0,5,T;2,1,0,5,T;2,2,0,6,T;2,3,0,7,T;2,4,0,7,T;2,5,0,7,T;2,6,0,8,T;2,7,0,4,T;3,0,0,5,T;3,1,0,6,T;3,2,0,6,T;3,3,0,6,T;3,4,0,7,T;3,5,0,9,T;3,6,0,8,T;3,7,0,8,T;4,0,0,10,T;4,1,0,10,T;4,2,0,10,T;4,3,0,11,T;4,4,0,9,T;4,5,0,9,T;4,6,0,8,T;4,7,0,12,T;5,0,0,13,T;5,1,0,10,T;5,2,0,11,T;5,3,0,11,T;5,4,0,11,T;5,5,0,9,T;5,6,0,12,T;5,7,0,12,T;6,0,0,13,T;6,1,0,13,T;6,2,0,14,T;6,3,0,15,T;6,4,0,15,T;6,5,0,15,T;6,6,0,16,T;6,7,0,12,T;7,0,0,13,T;7,1,0,14,T;7,2,0,14,T;7,3,0,14,T;7,4,0,15,T;7,5,0,16,T;7,6,0,16,T;7,7,0,16,T]": {
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
@@ -24062,7 +24161,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},
       "uniquekey_[0,0,0,1,T;0,1,0,1,T;0,2,0,1,T;0,3,0,2,T;0,4,0,3,T;0,5,0,3,T;0,6,0,3,T;0,7,0,4,T;1,0,0,5,T;1,1,0,1,T;1,2,0,2,T;1,3,0,2,T;1,4,0,2,T;1,5,0,3,T;1,6,0,4,T;1,7,0,4,T;2,0,0,5,T;2,1,0,5,T;2,2,0,6,T;2,3,0,7,T;2,4,0,7,T;2,5,0,7,T;2,6,0,8,T;2,7,0,4,T;3,0,0,5,T;3,1,0,6,T;3,2,0,6,T;3,3,0,6,T;3,4,0,7,T;3,5,0,9,T;3,6,0,8,T;3,7,0,8,T;4,0,0,10,T;4,1,0,10,T;4,2,0,10,T;4,3,0,11,T;4,4,0,9,T;4,5,0,9,T;4,6,0,8,T;4,7,0,12,T;5,0,0,13,T;5,1,0,10,T;5,2,0,11,T;5,3,0,11,T;5,4,0,14,T;5,5,0,9,T;5,6,0,12,T;5,7,0,12,T;6,0,0,13,T;6,1,0,13,T;6,2,0,15,T;6,3,0,11,T;6,4,0,14,T;6,5,0,14,T;6,6,0,16,T;6,7,0,12,T;7,0,0,13,T;7,1,0,15,T;7,2,0,15,T;7,3,0,15,T;7,4,0,14,T;7,5,0,16,T;7,6,0,16,T;7,7,0,16,T]": {
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
@@ -24324,7 +24424,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},
       "uniquekey_[0,0,0,1,T;0,1,0,1,T;0,2,0,1,T;0,3,0,2,T;0,4,0,3,T;0,5,0,3,T;0,6,0,3,T;0,7,0,4,T;1,0,0,5,T;1,1,0,1,T;1,2,0,2,T;1,3,0,2,T;1,4,0,2,T;1,5,0,3,T;1,6,0,4,T;1,7,0,4,T;2,0,0,5,T;2,1,0,5,T;2,2,0,6,T;2,3,0,7,T;2,4,0,7,T;2,5,0,7,T;2,6,0,8,T;2,7,0,4,T;3,0,0,5,T;3,1,0,6,T;3,2,0,6,T;3,3,0,6,T;3,4,0,7,T;3,5,0,9,T;3,6,0,8,T;3,7,0,8,T;4,0,0,10,T;4,1,0,11,T;4,2,0,11,T;4,3,0,11,T;4,4,0,9,T;4,5,0,9,T;4,6,0,8,T;4,7,0,12,T;5,0,0,10,T;5,1,0,10,T;5,2,0,11,T;5,3,0,13,T;5,4,0,14,T;5,5,0,9,T;5,6,0,12,T;5,7,0,12,T;6,0,0,10,T;6,1,0,15,T;6,2,0,13,T;6,3,0,13,T;6,4,0,14,T;6,5,0,14,T;6,6,0,16,T;6,7,0,12,T;7,0,0,15,T;7,1,0,15,T;7,2,0,15,T;7,3,0,13,T;7,4,0,14,T;7,5,0,16,T;7,6,0,16,T;7,7,0,16,T]": {
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
@@ -24586,7 +24687,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},
       "uniquekey_[0,0,0,1,T;0,1,0,1,T;0,2,0,1,T;0,3,0,2,T;0,4,0,3,T;0,5,0,3,T;0,6,0,3,T;0,7,0,4,T;1,0,0,5,T;1,1,0,1,T;1,2,0,2,T;1,3,0,2,T;1,4,0,2,T;1,5,0,3,T;1,6,0,4,T;1,7,0,4,T;2,0,0,5,T;2,1,0,5,T;2,2,0,6,T;2,3,0,6,T;2,4,0,6,T;2,5,0,7,T;2,6,0,8,T;2,7,0,4,T;3,0,0,5,T;3,1,0,9,T;3,2,0,10,T;3,3,0,6,T;3,4,0,7,T;3,5,0,7,T;3,6,0,8,T;3,7,0,8,T;4,0,0,9,T;4,1,0,9,T;4,2,0,10,T;4,3,0,10,T;4,4,0,11,T;4,5,0,7,T;4,6,0,8,T;4,7,0,12,T;5,0,0,13,T;5,1,0,9,T;5,2,0,10,T;5,3,0,11,T;5,4,0,11,T;5,5,0,11,T;5,6,0,12,T;5,7,0,12,T;6,0,0,13,T;6,1,0,13,T;6,2,0,14,T;6,3,0,15,T;6,4,0,15,T;6,5,0,15,T;6,6,0,16,T;6,7,0,12,T;7,0,0,13,T;7,1,0,14,T;7,2,0,14,T;7,3,0,14,T;7,4,0,15,T;7,5,0,16,T;7,6,0,16,T;7,7,0,16,T]": {
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
@@ -24848,7 +24950,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},
       "uniquekey_[0,0,0,1,T;0,1,0,1,T;0,2,0,1,T;0,3,0,2,T;0,4,0,3,T;0,5,0,3,T;0,6,0,3,T;0,7,0,4,T;1,0,0,5,T;1,1,0,1,T;1,2,0,2,T;1,3,0,2,T;1,4,0,2,T;1,5,0,3,T;1,6,0,4,T;1,7,0,4,T;2,0,0,5,T;2,1,0,5,T;2,2,0,6,T;2,3,0,7,T;2,4,0,7,T;2,5,0,7,T;2,6,0,8,T;2,7,0,4,T;3,0,0,5,T;3,1,0,9,T;3,2,0,6,T;3,3,0,6,T;3,4,0,7,T;3,5,0,10,T;3,6,0,8,T;3,7,0,8,T;4,0,0,9,T;4,1,0,9,T;4,2,0,6,T;4,3,0,11,T;4,4,0,10,T;4,5,0,10,T;4,6,0,8,T;4,7,0,12,T;5,0,0,13,T;5,1,0,9,T;5,2,0,11,T;5,3,0,11,T;5,4,0,11,T;5,5,0,10,T;5,6,0,12,T;5,7,0,12,T;6,0,0,13,T;6,1,0,13,T;6,2,0,14,T;6,3,0,15,T;6,4,0,15,T;6,5,0,15,T;6,6,0,16,T;6,7,0,12,T;7,0,0,13,T;7,1,0,14,T;7,2,0,14,T;7,3,0,14,T;7,4,0,15,T;7,5,0,16,T;7,6,0,16,T;7,7,0,16,T]": {
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
@@ -25110,7 +25213,8 @@
             "orientation": "A2",
             "id": 13}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},
       "uniquekey_[0,0,0,1,T;0,1,0,1,T;0,2,0,1,T;0,3,0,2,T;0,4,0,3,T;0,5,0,3,T;0,6,0,3,T;0,7,0,4,T;1,0,0,5,T;1,1,0,1,T;1,2,0,2,T;1,3,0,2,T;1,4,0,6,T;1,5,0,3,T;1,6,0,4,T;1,7,0,4,T;2,0,0,5,T;2,1,0,5,T;2,2,0,7,T;2,3,0,2,T;2,4,0,6,T;2,5,0,6,T;2,6,0,8,T;2,7,0,4,T;3,0,0,5,T;3,1,0,7,T;3,2,0,7,T;3,3,0,7,T;3,4,0,6,T;3,5,0,8,T;3,6,0,8,T;3,7,0,8,T;4,0,0,9,T;4,1,0,9,T;4,2,0,9,T;4,3,0,10,T;4,4,0,11,T;4,5,0,11,T;4,6,0,11,T;4,7,0,12,T;5,0,0,13,T;5,1,0,9,T;5,2,0,10,T;5,3,0,10,T;5,4,0,14,T;5,5,0,11,T;5,6,0,12,T;5,7,0,12,T;6,0,0,13,T;6,1,0,13,T;6,2,0,15,T;6,3,0,10,T;6,4,0,14,T;6,5,0,14,T;6,6,0,16,T;6,7,0,12,T;7,0,0,13,T;7,1,0,15,T;7,2,0,15,T;7,3,0,15,T;7,4,0,14,T;7,5,0,16,T;7,6,0,16,T;7,7,0,16,T]": {
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
@@ -25372,7 +25476,8 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},
       "uniquekey_[0,0,0,1,T;0,1,0,1,T;0,2,0,1,T;0,3,0,2,T;0,4,0,3,T;0,5,0,3,T;0,6,0,3,T;0,7,0,4,T;1,0,0,5,T;1,1,0,1,T;1,2,0,2,T;1,3,0,2,T;1,4,0,6,T;1,5,0,3,T;1,6,0,4,T;1,7,0,4,T;2,0,0,5,T;2,1,0,5,T;2,2,0,7,T;2,3,0,2,T;2,4,0,6,T;2,5,0,6,T;2,6,0,8,T;2,7,0,4,T;3,0,0,5,T;3,1,0,7,T;3,2,0,7,T;3,3,0,7,T;3,4,0,6,T;3,5,0,8,T;3,6,0,8,T;3,7,0,8,T;4,0,0,9,T;4,1,0,10,T;4,2,0,10,T;4,3,0,10,T;4,4,0,11,T;4,5,0,11,T;4,6,0,11,T;4,7,0,12,T;5,0,0,9,T;5,1,0,9,T;5,2,0,10,T;5,3,0,13,T;5,4,0,14,T;5,5,0,11,T;5,6,0,12,T;5,7,0,12,T;6,0,0,9,T;6,1,0,15,T;6,2,0,13,T;6,3,0,13,T;6,4,0,14,T;6,5,0,14,T;6,6,0,16,T;6,7,0,12,T;7,0,0,15,T;7,1,0,15,T;7,2,0,15,T;7,3,0,13,T;7,4,0,14,T;7,5,0,16,T;7,6,0,16,T;7,7,0,16,T]": {
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
@@ -25634,7 +25739,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},
       "uniquekey_[0,0,0,1,T;0,1,0,1,T;0,2,0,1,T;0,3,0,2,T;0,4,0,3,T;0,5,0,3,T;0,6,0,3,T;0,7,0,4,T;1,0,0,5,T;1,1,0,1,T;1,2,0,2,T;1,3,0,2,T;1,4,0,6,T;1,5,0,3,T;1,6,0,4,T;1,7,0,4,T;2,0,0,5,T;2,1,0,5,T;2,2,0,7,T;2,3,0,2,T;2,4,0,6,T;2,5,0,6,T;2,6,0,8,T;2,7,0,4,T;3,0,0,5,T;3,1,0,7,T;3,2,0,7,T;3,3,0,7,T;3,4,0,6,T;3,5,0,8,T;3,6,0,8,T;3,7,0,8,T;4,0,0,9,T;4,1,0,10,T;4,2,0,10,T;4,3,0,10,T;4,4,0,11,T;4,5,0,12,T;4,6,0,12,T;4,7,0,12,T;5,0,0,9,T;5,1,0,9,T;5,2,0,10,T;5,3,0,13,T;5,4,0,11,T;5,5,0,11,T;5,6,0,12,T;5,7,0,14,T;6,0,0,9,T;6,1,0,15,T;6,2,0,13,T;6,3,0,13,T;6,4,0,11,T;6,5,0,16,T;6,6,0,14,T;6,7,0,14,T;7,0,0,15,T;7,1,0,15,T;7,2,0,15,T;7,3,0,13,T;7,4,0,16,T;7,5,0,16,T;7,6,0,16,T;7,7,0,14,T]": {
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
@@ -25896,7 +26002,8 @@
             "orientation": "A3",
             "id": 16}],
         "area": 64,
-        "description": "Rectangle of size 8x8."},
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"},
       "uniquekey_[0,0,0,1,T;0,1,0,1,T;0,2,0,1,T;0,3,0,2,T;0,4,0,3,T;0,5,0,4,T;0,6,0,4,T;0,7,0,4,T;1,0,0,5,T;1,1,0,1,T;1,2,0,2,T;1,3,0,2,T;1,4,0,3,T;1,5,0,3,T;1,6,0,4,T;1,7,0,6,T;2,0,0,5,T;2,1,0,5,T;2,2,0,7,T;2,3,0,2,T;2,4,0,3,T;2,5,0,8,T;2,6,0,6,T;2,7,0,6,T;3,0,0,5,T;3,1,0,7,T;3,2,0,7,T;3,3,0,7,T;3,4,0,8,T;3,5,0,8,T;3,6,0,8,T;3,7,0,6,T;4,0,0,9,T;4,1,0,10,T;4,2,0,10,T;4,3,0,10,T;4,4,0,11,T;4,5,0,11,T;4,6,0,11,T;4,7,0,12,T;5,0,0,9,T;5,1,0,9,T;5,2,0,10,T;5,3,0,13,T;5,4,0,14,T;5,5,0,11,T;5,6,0,12,T;5,7,0,12,T;6,0,0,9,T;6,1,0,15,T;6,2,0,13,T;6,3,0,13,T;6,4,0,14,T;6,5,0,14,T;6,6,0,16,T;6,7,0,12,T;7,0,0,15,T;7,1,0,15,T;7,2,0,15,T;7,3,0,13,T;7,4,0,14,T;7,5,0,16,T;7,6,0,16,T;7,7,0,16,T]": {
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],
@@ -26158,10 +26265,11 @@
             "orientation": "A2",
             "id": 14}],
         "area": 64,
-        "description": "Rectangle of size 8x8."}},
+        "description": "Rectangle of size 8x8.",
+        "category": "Rectangle"}},
     "numSolutionsTotal": 84,
     "numSolutionsUnique": 15,
     "numSteps": 1007,
     "didWeBailOutEarly": false,
-    "solveTimeSeconds": 1,
-    "solveDate": "8/7/2024"}}
+    "solveTimeSeconds": 2,
+    "solveDate": "8/8/2024"}}

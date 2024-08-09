@@ -1,3 +1,10 @@
 {% assign board = board-library[key] %}
-<b>{{key}}</b>
-* Used by: ____
+{% assign usages = key | getThingsThatUseBoard %}
+
+<b>{{key}}</b> {{board.description}} {{board.area}} point{% if board.area != 1%}s{%endif%}.{% # no newline
+%}{% if usages.size > 0 %}
+Used by {% include linkList, links:usages %}{% endif %}{% # no newline
+%}
+
+{% #* Category = {{board.category}} %}
+{% #* JSON = {{ board | json }}     %}

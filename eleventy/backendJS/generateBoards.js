@@ -13,18 +13,18 @@ var boardLibrary = {};
 //==========================================
 // P-Pentomino Boards
 for (var i=1; i<=8; i++) {
-    var description = i==1 ? "Pentomino" : "Pentomino scaled up " + i + "x.";
+    var description = i==1 ? "Pentomino." : "Pentomino scaled up " + i + "x.";
     var key = "pent" + i;
     var points = [];
     points.push([pt(1, 1, 1), pt(2*i, 2*i, 1)]);
     points.push([pt(1, 2*i+1, 1), pt(i, 3*i, 1)]);
-    add(key, points, description);
+    add(key, points, description, "Pentomino");
 }
 
 //==========================================
 // Cube Boards
 for (var i=1; i<=6; i++) {
-    add("cube" + i, [[pt(1, 1, 1), pt(i, i, i)]], "Cube of side length " + i + ".");
+    add("cube" + i, [[pt(1, 1, 1), pt(i, i, i)]], "Cube of side length " + i + ".", "Cube");
 }
 
 //==========================================
@@ -34,12 +34,12 @@ var RECT_MAX_SIZE = 16;
 for (var i=1; i<=RECT_MAX_SIZE; i++) {
     for (var j=1; j<=RECT_MAX_SIZE; j++) {
         var description = "Rectangle of size " + i + "x" + j + ".";
-        add("rect" + i + "x" + j, [[pt(1, 1, 1), pt(i, j, 1)]], description);
+        add("rect" + i + "x" + j, [[pt(1, 1, 1), pt(i, j, 1)]], description, "Rectangle");
     }
 }
 
 //==========================================
-function add(key, value, description) {
+function add(key, value, description, category) {
     //console.log(key);
     //console.log(JSON.stringify(value));
     var points = [];
@@ -60,7 +60,8 @@ function add(key, value, description) {
         "boxes": value,
         "points": points,
         "area": points.length,
-        "description": description
+        "description": description,
+        "category": category
     };
 }
 

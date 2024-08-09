@@ -35,18 +35,18 @@
 <p>Constraint flags are true/false values defining rules for a puzzle. Here's a list of constraint flags and what they mean.</p>
 <p>Gaps</p>
 <ul>
-<li><span style="font-size: x-large;">🫥</span> <b>allowGaps</b>: if true, pieces don't have to fully cover the board. Default false.</li>
+<li><span style="font-size: x-large;">🫥</span> <b>allowGaps</b>: if true, pieces don't have to fully cover the boardKey. Default false.</li>
 </ul>
 <p>Overflow: Pieces extending beyond their board's footprint.</p>
 <ul>
 <li>
-<p><span style="font-size: x-large;">🌊</span> <b>allowGroundLevelOverflow</b>: if true, pieces can extend beyond the footprint of their board, on the level closest to the board. Default false.</p>
+<p><span style="font-size: x-large;">🌊</span> <b>allowGroundLevelOverflow</b>: if true, pieces can extend beyond the footprint of their boardKey, on the level closest to the boardKey. Default false.</p>
 </li>
 <li>
-<p><span style="font-size: x-large;">🌧️</span> <b>allowSkyLevelOverflow</b>: if true, pieces can extend beyond the footprint of their board, above the level closest to the board. Default false.</p>
+<p><span style="font-size: x-large;">🌧️</span> <b>allowSkyLevelOverflow</b>: if true, pieces can extend beyond the footprint of their boardKey, above the level closest to the boardKey. Default false.</p>
 </li>
 <li>
-<p><span style="font-size: x-large;">🏙️</span> <b>allowUpwardOverflow</b>: if true, pieces can extend upward. This lets us reuse a simple 2D board for 3D puzzles of any height, as long as they don't need a ceiling. Default false.
+<p><span style="font-size: x-large;">🏙️</span> <b>allowUpwardOverflow</b>: if true, pieces can extend upward. This lets us reuse a simple 2D boardKey for 3D puzzles of any height, as long as they don't need a ceiling. Default false.
 Used by <a href="/investigations/#:~:text=Clones Tile A Rectangle %2D Restricted Neighbors">Clones Tile A Rectangle - Restricted Neighbors</a>, <a href="/investigations/#:~:text=Overhang City">Overhang City</a></p>
 </li>
 </ul>

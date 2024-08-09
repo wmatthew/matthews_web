@@ -7,6 +7,13 @@ const Vector = require('./Vector.js');
 
 module.exports = class Board {
 
+    // TODO: unused
+    static groupBoardsByCategory(boards) {
+        var result = Object.values(boards).groupBy((b) => b.category);
+        console.log(JSON.stringify(result));
+        return result;
+    }
+
     static boardFromKey(key) {
         return boardLib[key];
     }

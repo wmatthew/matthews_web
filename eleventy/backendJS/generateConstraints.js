@@ -69,7 +69,8 @@ function addClone(parentKey, childBoardKey, childSupply, extraFieldsForKey=[]) {
 
     var clone = structuredClone(constraintTemplates[parentKey]);
 
-    clone.board = Board.boardFromKey(childBoardKey); // TODO: just keep as the key?
+    clone.board = Board.boardFromKey(childBoardKey);
+    clone.boardKey = childBoardKey; // essential to copy this over! parent may be wrong.
     clone.pieceSupply = childSupply;
 
     var childKey = [parentKey, childBoardKey, ...extraFieldsForKey].join("_");

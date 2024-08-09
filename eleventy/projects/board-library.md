@@ -11,4 +11,6 @@ tags:
 # {{title}}
 A gallery of boards.
 
-* {% include boardReport key:"rect4x4" %}
+{% for boardKeyValuePair in board-library %}
+  {% include boardReport key:boardKeyValuePair[0] %}
+{%endfor%}

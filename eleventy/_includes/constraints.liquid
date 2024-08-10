@@ -28,14 +28,20 @@
 {%endfor%}</p>
 {% endif -%}
 
-<p>Constraints: {% if constraints.constraint_flags.size == 0 %}defaults.{% endif %}
+{% if constraints.constraint_flags.size == 0 %}
+<p>Constraints: defaults.
+{% else %}
+<p>Constraints: 
 {% for setting in constraints.constraint_flags -%}
   <a href="{{ setting[0] | getUrl }}" style="font-size:x-large;">{{ icons[setting[0]] }}</a> 
 {% endfor -%}
 </p>
+{% endif %}
 
 {%- if constraints.solution %}
-  <p>Solution: {{constraints.solution | json }}</p>
+  <hr>
+  <b>Result</b>
+  {% include result, solution:constraints.solution%}
 {% endif %}
 
 {%- if children.size > 0 %}

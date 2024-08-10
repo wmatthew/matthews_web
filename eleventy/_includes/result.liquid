@@ -1,0 +1,15 @@
+
+Found {{solution.solutionsUnique.size}} solution(s).
+
+In {{solution.solveTimeSeconds}} seconds and {{solution.numSteps}} steps, 
+solver v{{solution.solverVersion}} ran on {{solution.solveDate}} and
+found {{solution.solutionsTotal.size}} total solutions,
+which reduced to {{solution.solutionsUnique.size}} unique solutions.
+
+{%- if solution.didWeBailOutEarly %}
+Bailed out early due to {{ solution.didWeBailOutEarly }}
+{% else %}
+Completed without bailing early.
+{% endif %}
+
+Solution Map: ____

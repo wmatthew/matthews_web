@@ -1,5 +1,7 @@
 
-Found {{solution.solutionsUnique.size}} solution(s).
+Found {{solution.solutionsUnique.size}} solution
+{%- if solution.solutionsUnique.size != 1 -%}
+s{% endif %}.
 
 In {{solution.solveTimeSeconds}} seconds and {{solution.numSteps}} steps, 
 solver v{{solution.solverVersion}} ran on {{solution.solveDate}} and
@@ -12,4 +14,8 @@ Bailed out early due to {{ solution.didWeBailOutEarly }}
 Completed without bailing early.
 {% endif %}
 
-Solution Map: ____
+{%- if solution.solutionsUnique.size > 0 %}
+{% for sol in solution.solutionsUnique %}
+MAP: {{sol[1].points.size }}
+{% endfor %}
+{% endif %}

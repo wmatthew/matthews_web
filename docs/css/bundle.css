@@ -534,3 +534,12 @@ div.caption {
     border: 1px solid #ccc;
     resize: none;
   }
+.constraintsTemplate {
+    border: #d579d8 solid 4px; padding: 15px;
+}
+
+.constraintsGenerated {
+    border: #4467da solid 4px; padding: 15px;
+}
+
+

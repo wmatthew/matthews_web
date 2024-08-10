@@ -5,6 +5,8 @@ var constraintMetadata = JSON.parse(fs.readFileSync("_data/constraints-metadata.
 var boardLib = JSON.parse(fs.readFileSync("_data/board-library.json", 'utf8'));
 var pieceLib = JSON.parse(fs.readFileSync("_data/piece-library.json", 'utf8'));
 
+const TestUtil = require('./TestUtil.js');
+
 module.exports = class Connections {
 
     static getUrl(key) {
@@ -40,9 +42,7 @@ module.exports = class Connections {
     static getThingsThatUsePiece(pieceKey) {
         var result = Object.values(constraintTemplates).concat(Object.values(constraintLibrary)).filter(obj => {
             return ("key" in obj) &&
-            ("type" in obj) &&
             ("pieceSupply" in obj) &&
-            ["Template", "Generated"].includes(obj.type) &&
             Array.isArray(obj.pieceSupply) &&
             (obj.pieceSupply.map(p => p[0]).includes(pieceKey));
         }
@@ -84,5 +84,13 @@ module.exports = class Connections {
         }
         ).map(obj => {return {url:Connections.getUrl(obj.key), displayName:obj.name};});
         return result;
+    }
+
+    static tests() {
+        console.log("Connections.js");
+        TestUtil.assert(Connections.getThingsThatUsePiece("T").length > 0, "getThingsThatUsePiece");
+        TestUtil.assert(Connections.getThingsThatUseBoard("rect4x4").length > 0, "getThingsThatUseBoard");
+        TestUtil.assert(Connections.getConstraintTemplatesThatUseKey("colorByOrientation").length > 0, "getConstraintTemplatesThatUseKey");
+        TestUtil.assert(Connections.getChildConstraints("Clones_Tile_A_Square_Simple").length > 0, "getChildConstraints");
     }
 }

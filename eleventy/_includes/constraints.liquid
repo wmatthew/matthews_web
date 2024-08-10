@@ -3,7 +3,7 @@
 {% assign constraints = constraints | setSolutionField %}
 {% assign children = constraints.key | getChildConstraints %}
 
-<div class="constraints" style="border: #e4ade6 solid 4px; padding: 15px;">
+<div class="constraints{{constraints.type}}">
 <h3>{{constraints.name}}</h3>
 <p>{{constraints.description}}</p>
 <p>Key: {{constraints.key}} ({{constraints.type}})</p>

@@ -22,8 +22,8 @@ for (var key in constraintTemplates) {
 }
 
 //==========================================
-// Write constraintTemplates JSON file
-// Only necessary when we want to reformat this file, or make sure the key field is set on all entries.
+// Write constraintTemplates.
+// Reformats this file, and makes sure the key field is set on all entries.
 fs.writeFileSync("_data/constraints-templates.json", jsonFormatter.formatJSON(constraintTemplates));
 
 //==========================================
@@ -71,15 +71,15 @@ function addClone(parentKey, childBoardKey, childSupply, extraFieldsForKey=[]) {
     var clone = structuredClone(constraintTemplates[parentKey]);
 
     clone.board = Board.boardFromKey(childBoardKey);
-    clone.boardKey = childBoardKey; // essential to copy this over! parent may be wrong.
+    clone.boardKey = childBoardKey;
     clone.pieceSupply = childSupply;
 
     var childKey = [parentKey, childBoardKey, ...extraFieldsForKey].join("_");
-    clone.parentKey = parentKey;
     clone.key = childKey;
+    clone.parentKey = parentKey;
     clone.type = "Generated";
     clone.name = clone.name + " (" + [childBoardKey, ...extraFieldsForKey].join("_") + ")";
     clone.template = parentKey;
-    //console.log(clone);
+
     constraintLibrary[childKey] = clone;
 }

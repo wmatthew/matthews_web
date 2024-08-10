@@ -4,6 +4,7 @@ const Constraints = require('./Constraints.js');
 const PieceSupply = require('./PieceSupply.js');
 const Piece = require('./Piece.js');
 const Vector = require('./Vector.js');
+const TestUtil = require('./TestUtil.js');
 
 module.exports = class Board {
 
@@ -210,28 +211,18 @@ module.exports = class Board {
     }
 
     static tests() {
-        console.log("Testing Board.js");
+        console.log("Board.js");
         var board = Board.boardFromKey("rect2x4");
         board.points.map(p => {
             p.empty = true;
         });
         
-        assert(board.points.length == 8, "rect2x4 has 8 points");
+        TestUtil.assert(board.points.length == 8, "rect2x4 has 8 points");
         var uniqueKey = Board.getUniqueKey(board);
-        assert(uniqueKey == "uniquekey_[]", "uniqueKey is correct for empty board");
+        TestUtil.assert(uniqueKey == "uniquekey_[]", "uniqueKey is correct for empty board");
 
         // TODO: need to expose more from Solver.js to test this.
         // var successors = Board.getSuccessorPartials(currentPartial, puzzleState);
-
-        // TODO: move to shared util function
-        function assert(condition, message) {
-            if (!condition) {
-                throw new Error("❌ Assertion failed: " + message);
-            } else {
-                console.log("✅ " + message);
-            }
-        }
-
     }
 
 

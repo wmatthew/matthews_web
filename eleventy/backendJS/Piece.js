@@ -2,6 +2,7 @@ const fs = require('fs');
 
 var pieceLib = JSON.parse(fs.readFileSync("_data/piece-library.json", 'utf8'));
 const Hydrator = require('./pieceHydrator.js');
+const TestUtil = require('./TestUtil.js');
 
 module.exports = class Piece {
 
@@ -53,21 +54,8 @@ module.exports = class Piece {
     }
 
     static tests() {
-        console.log("Testing Piece.js");
-
+        console.log("Piece.js");
         var tPiece = Piece.pieceFromKey("T");
-        console.log(JSON.stringify(tPiece));
-
-        assert(true, "TODO: getOrientations");
-
-                // TODO: move to shared util function
-                function assert(condition, message) {
-                    if (!condition) {
-                        throw new Error("❌ Assertion failed: " + message);
-                    } else {
-                        console.log("✅ " + message);
-                    }
-                }
-        
+        TestUtil.assert(true, "TODO: getOrientations");
     }
 }

@@ -7,30 +7,38 @@
 <h3>{{constraints.name}}</h3>
 <p>{{constraints.description}}</p>
 <p>Key: {{constraints.key}} ({{constraints.type}})</p>
-{% if constraints.parentKey %}
+
+{%- if constraints.parentKey %}
 <p>Parent: <a href="{{constraints.parentKey | getUrl}}">{{constraints.parentKey}}</a></p>
 {% endif %}
-{% if constraints.board %}
+
+{%- if constraints.board %}
 <p>Board: <a href="{{constraints.boardKey | getUrl }}">{{constraints.boardKey }}</a></p>
 {% endif %}
-{% if constraints.pieceSupply %}
+
+{%- if constraints.pieceSupply %}
 <p>Pieces: 
 {%- for piecePair in constraints.pieceSupply %}
 <a href="{{piecePair[0] | getUrl}}">
 {{piecePair[0]}} x 
-{% if piecePair[1] == -1 %}∞{%else%}{{piecePair[1]}}{%endif%}</a>
+{% if piecePair[1] == -1 -%}∞
+{%- else%}{{piecePair[1]}}
+{%- endif%}</a>
 {% if forloop.last == false %}, {%endif%}
 {%endfor%}</p>
-{% endif %}
+{% endif -%}
+
 <p>Constraints: {% if constraints.constraint_flags.size == 0 %}defaults.{% endif %}
 {% for setting in constraints.constraint_flags -%}
   <a href="{{ setting[0] | getUrl }}" style="font-size:x-large;">{{ icons[setting[0]] }}</a> 
 {% endfor -%}
 </p>
-{% if constraints.solution %}
+
+{%- if constraints.solution %}
   <p>Solution: {{constraints.solution | json }}</p>
 {% endif %}
-{% if children.size > 0 %}
+
+{%- if children.size > 0 %}
   <p>Children: {% include linkList, links:children %}</p>
 {% endif %}
 

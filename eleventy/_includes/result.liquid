@@ -15,7 +15,7 @@ Completed without bailing early.
 {% endif %}
 
 {%- if solution.solutionsUnique.size > 0 %}
-{% for sol in solution.solutionsUnique %}
-MAP: {{sol[1].points.size }}
+{% for sol in solution.solutionsUnique limit:3 %}
+{% include solution points:sol[1].points, caption:forloop.index %}
 {% endfor %}
 {% endif %}

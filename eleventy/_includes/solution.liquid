@@ -3,7 +3,7 @@
 <div class="map {{size}}">
 <div class="actualMap">
 {% for pos in points %}
-  {% include square, x: pos.x, y: pos.y, color:pos.id  %}
+  {% include square, x: pos.x, y: pos.y, color:pos.color  %}
 {% endfor %}
 </div>
 {% if caption %}

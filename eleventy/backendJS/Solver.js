@@ -4,6 +4,7 @@
 const solverVersion = "0.1";
 const jsonFormatter = require('./jsonFormatter.js');
 const Board = require('./Board.js');
+const Painter = require('./Painter.js');
 const fs = require('fs');
 
 const bailAfterThisManyUniqueSolutionsFound = Infinity;
@@ -81,7 +82,7 @@ function solveThisPuzzle(constraintKey) {
     };
     
     solutions[puzzle.key] = result;
-    console.log("Solved  " + puzzle.key + " in " + result.solveTimeSeconds + " seconds (" + result.numSteps + " steps).");
+    console.log(" Solved " + puzzle.key + " in " + result.solveTimeSeconds + " seconds (" + result.numSteps + " steps).");
     console.log(" Found " + result.numSolutionsTotal + " total solutions.");
     console.log(" Found " + result.numSolutionsUnique + " unique solutions.");
 }
@@ -110,6 +111,10 @@ function stepSolverForward(oldState) {
         // Save this new solution to an array and hash.
         newState.completedBoards.push(candidate.board);
         var key = Board.getUniqueKey(candidate.board);
+
+        // Paint it. Can always repaint later/display differently if needed.
+        Painter.paintPoints(candidate.board.points);
+
         newState.completedBoardsUnique[key] = candidate.board;
 
     } else {

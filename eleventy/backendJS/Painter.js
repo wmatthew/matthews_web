@@ -29,9 +29,9 @@ module.exports = class Painter {
             idMap[point.id].neighbors = idMap[point.id].neighbors.concat(newNeighborIds).filter(onlyUnique);
         });
 
-        updateNeighborColors();
-
         while (unpaintedIds().length > 0) {
+
+            updateNeighborColors();
 
             var targetId = unpaintedIds().sort(idComparator)[0];
 
@@ -47,8 +47,6 @@ module.exports = class Painter {
                 var selectedColor = colorOptions.sort(colorComparator)[0];
                 paintOneId(targetId, selectedColor);
             }
-
-            updateNeighborColors();
         }
 
         return points;

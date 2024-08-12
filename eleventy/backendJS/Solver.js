@@ -1,7 +1,6 @@
 //==========================================
 // Solves things in constraint-library.json.
 // To run: node backendJS/Solver.js
-const solverVersion = "0.1";
 const jsonFormatter = require('./jsonFormatter.js');
 const Board = require('./Board.js');
 const Painter = require('./Painter.js');
@@ -12,6 +11,11 @@ const bailAfterThisManySteps = 10000;
 const BAILED_TOO_MANY_STEPS = "too many steps";
 const BAILED_TOO_MANY_SOLUTIONS = "too many solutions";
 const BAILED_ERRORS = "errors";
+
+//==========================================
+// Solver version log
+// 0.1.x: Initial version. No flags supported.
+const solverVersion = "0.1.1";
 
 //==========================================
 // Read existing constraints + solutions
@@ -26,14 +30,15 @@ solveThisPuzzle("Clones_Tile_A_Square_Simple_rect8x8_T");
 
 //==========================================
 // Write solutions file
-console.log("Writing to solutions.json.");
 fs.writeFileSync("_data/solutions.json", jsonFormatter.formatJSON(solutions));
-console.log("Solver complete.");
+console.log("Wrote to solutions.json. Solver complete.");
 
 //==========================================
 // Helper Functions
 function solveThisPuzzle(constraintKey) {
     console.log("Solving " + constraintKey);
+
+    // TODO: check cache.
 
     var startTime = new Date();
     const puzzleReferenceCopy = constraintsLibrary[constraintKey];
@@ -59,9 +64,6 @@ function solveThisPuzzle(constraintKey) {
     }
     
     var result = {
-        // debug
-        // "debug": currentState,
-
         // inputs
         "key": puzzle.key,
         "constraints": puzzleReferenceCopy,
@@ -82,9 +84,9 @@ function solveThisPuzzle(constraintKey) {
     };
     
     solutions[puzzle.key] = result;
+    console.log(" " + result.numSolutionsTotal + " total solutions.");
+    console.log(" " + result.numSolutionsUnique + " unique solutions.");
     console.log(" Solved " + puzzle.key + " in " + result.solveTimeSeconds + " seconds (" + result.numSteps + " steps).");
-    console.log(" Found " + result.numSolutionsTotal + " total solutions.");
-    console.log(" Found " + result.numSolutionsUnique + " unique solutions.");
 }
 
 // Advance the partials and add findings to completedBoards.

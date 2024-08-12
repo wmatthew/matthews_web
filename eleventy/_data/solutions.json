@@ -18,7 +18,7 @@
       "boardKey": "rect4x4",
       "pieceSupply": [["T",-1]],
       "template": "Clones_Tile_A_Square_Simple"},
-    "solverVersion": "0.1",
+    "solverVersion": "0.1.1",
     "solutionsTotal": [{
         "key": "rect4x4",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 4,"y": 4,"z": 1}]],
@@ -305,7 +305,7 @@
       "boardKey": "rect6x6",
       "pieceSupply": [["T",-1]],
       "template": "Clones_Tile_A_Square_Simple"},
-    "solverVersion": "0.1",
+    "solverVersion": "0.1.1",
     "solutionsTotal": [],
     "solutionsUnique": {},
     "numSolutionsTotal": 0,
@@ -359,7 +359,7 @@
       "boardKey": "rect8x8",
       "pieceSupply": [["T",-1]],
       "template": "Clones_Tile_A_Square_Simple"},
-    "solverVersion": "0.1",
+    "solverVersion": "0.1.1",
     "solutionsTotal": [{
         "key": "rect8x8",
         "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 8,"y": 8,"z": 1}]],

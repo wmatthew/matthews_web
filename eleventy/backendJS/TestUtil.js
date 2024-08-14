@@ -6,4 +6,11 @@ module.exports = class TestUtil {
             console.log("  ✅ " + message);
         }
     }
+    static assertEqual(actual, expected, message) {
+        if (actual !== expected) {
+            console.log("  ❌ " + message + " got: " + actual + "; expected " + expected + "");
+        } else {
+            console.log("  ✅ " + message);
+        }
+    }
 }

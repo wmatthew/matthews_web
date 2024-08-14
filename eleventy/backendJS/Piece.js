@@ -5,6 +5,51 @@ const Hydrator = require('./pieceHydrator.js');
 const TestUtil = require('./TestUtil.js');
 
 module.exports = class Piece {
+    
+    // takes a hydrated piece as input.
+    // TODO: consolidate hydration and transform into one function?
+    static transformPiece(piece, transform) {
+        //console.log("transformPiece: " + transform + ", " + piece.points.length);
+        //console.log("before:  " + JSON.stringify(piece.points));
+
+        var newPiece = structuredClone(piece);
+
+        var bottom = transform.split("")[0];
+
+        if (bottom == "A") {
+            // do nothing
+        } else if (bottom == "N") {
+            newPiece.points.forEach(p => { [p.z, p.y] = [p.y, p.z * -1]; });
+        } else if (bottom == "E") {
+            newPiece.points.forEach(p => { [p.z, p.x] = [p.x * -1, p.z]; });
+        } else if (bottom == "W") {
+            newPiece.points.forEach(p => { [p.z, p.x] = [p.x, p.z * -1]; });
+        } else if (bottom == "S") {
+            newPiece.points.forEach(p => { [p.z, p.y] = [p.y * -1, p.z]; });
+        } else if (bottom == "U") {
+            newPiece.points.forEach(p => { [p.x, p.z] = [p.x * -1, p.z * -1]; });
+        } else {
+            throw new Error("transformPiece: unknown transform: " + transform);
+        }
+
+        var turns = transform.split("")[1];
+        if (turns == 0) {
+            // do nothing
+        } else if (turns == 1) {
+            newPiece.points.forEach(p => { [p.x, p.y] = [p.y * -1, p.x]; });
+        } else if (turns == 2) {
+            newPiece.points.forEach(p => { [p.x, p.y] = [p.x * -1, p.y * -1]; });
+        } else if (turns == 3) {
+            newPiece.points.forEach(p => { [p.x, p.y] = [p.y, p.x * -1]; });
+        } else {
+            throw new Error("transformPiece: unknown turns: " + turns);
+        }
+
+        //console.log("after:  " + JSON.stringify(newPiece.points));
+
+        // rehydrate the piece since we changed it.
+        return Hydrator.hydrate(Hydrator.fixCoordinates(newPiece));
+    }
 
     // return a bunch of pieces that are modified versions of the input piece... with orientation set.
     static getOrientations(piece, constraints) {
@@ -41,21 +86,21 @@ module.exports = class Piece {
 
     static pieceFromKey(key) {
         // TODO: move hydrate function to this file?
-        var hydrated = Hydrator.hydrate(pieceLib[key]);
-
-        // TODO: hack alert!
-        hydrated.points.forEach(p => {
-            p.x = p[0];
-            p.y = p[1];
-            p.z = p[2];
-        });
-
-        return hydrated;
+        return Hydrator.hydrate(pieceLib[key]);
     }
 
     static tests() {
         console.log("Piece.js");
-        var tPiece = Piece.pieceFromKey("T");
-        TestUtil.assert(true, "TODO: getOrientations");
+        var rPiece = Piece.pieceFromKey("R");
+        TestUtil.assertEqual(JSON.stringify(rPiece.points), '[{"x":1,"y":1,"z":1},{"x":2,"y":1,"z":1},{"x":1,"y":2,"z":1}]', "rPiece stringify");
+        TestUtil.assertEqual(rPiece.pointsPretty, "1,1,1|2,1,1|1,2,1", "rPiece pretty");
+
+        TestUtil.assert(Piece.getOrientations(rPiece).length==4, "getOrientations");
+
+        TestUtil.assertEqual(Piece.transformPiece(rPiece, "A0").pointsPretty, "1,1,1|2,1,1|1,2,1", "r-A0");
+        TestUtil.assertEqual(Piece.transformPiece(rPiece, "A1").pointsPretty, "2,1,1|2,2,1|1,1,1", "r-A1");
+        TestUtil.assertEqual(Piece.transformPiece(rPiece, "A2").pointsPretty, "2,2,1|1,2,1|2,1,1", "r-A2");
+
+
     }
 }

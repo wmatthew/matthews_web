@@ -1,6 +1,7 @@
 // Precompute fields for a piece in the pieceLibrary
 module.exports = class Hydrator {
 
+    // modify the piece in place
     static hydrate(piece) {
         //console.log("Hydrating piece: ", piece);
         // generate points if we don't already have them
@@ -12,26 +13,29 @@ module.exports = class Hydrator {
             piece.compact = false;
         }
 
-        piece.pointsPretty = piece.points.map(p => p.join(",")).join("|");
+        piece.pointsPretty = piece.points.map(p => [p.x,p.y,p.z].join(",")).join("|");
 
         // filter out non-peak points
         // add labels, '?' for overhangs
-        piece.elevationMap = piece.points.filter(p => p[2] == Math.max(...piece.points.filter(a => a[0]==p[0]&&a[1]==p[1]).map(a => a[2])));
+        // TODO These next three lines assume coordinates start at (1,1) - that they're already fixed.
+        piece.elevationMap = piece.points.filter(p => p.z == Math.max(...piece.points.filter(a => a.x==p.x&&a.y==p.y).map(a => a.z)));
+        piece.hasOverhangs = piece.elevationMap.some(p => piece.points.filter(a => a.x==p.x&&a.y==p.y).length < p.z);
+        piece.footprintArea = piece.points.filter(p => p.z == 1).length;
 
         piece.volume = piece.points.length;
 
-        piece.maxX = Math.max(...piece.points.map(p => p[0]));
-        piece.minX = Math.min(...piece.points.map(p => p[0]));
-        piece.maxY = Math.max(...piece.points.map(p => p[1]));
-        piece.minY = Math.min(...piece.points.map(p => p[1]));
-        piece.maxZ = Math.max(...piece.points.map(p => p[2]));
-        piece.minZ = Math.min(...piece.points.map(p => p[2]));
+        piece.maxX = Math.max(...piece.points.map(p => p.x));
+        piece.minX = Math.min(...piece.points.map(p => p.x));
+        piece.maxY = Math.max(...piece.points.map(p => p.y));
+        piece.minY = Math.min(...piece.points.map(p => p.y));
+        piece.maxZ = Math.max(...piece.points.map(p => p.z));
+        piece.minZ = Math.min(...piece.points.map(p => p.z));
 
         piece.midX = (piece.maxX + piece.minX) / 2;
         piece.midY = (piece.maxY + piece.minY) / 2;
         piece.midZ = (piece.maxZ + piece.minZ) / 2;
 
-        piece.pointsRender = piece.points.map(p => transformStyle(p[0] +1 - piece.midX, p[1] +1 - piece.midY, p[2] +1 - piece.midZ)); // a series of transforms
+        piece.pointsRender = piece.points.map(p => transformStyle(p.x +1 - piece.midX, p.y +1 - piece.midY, p.z +1 - piece.midZ));
 
         piece.width = piece.maxX - piece.minX + 1;
         piece.height = piece.maxY - piece.minY + 1;
@@ -42,6 +46,7 @@ module.exports = class Hydrator {
         return piece;
 
         function transformStyle(x,y,z) {
+            // A series of CSS transforms.
             // note: Y and Z deliberately swapped here.
             return "transform: translateX(" +
                 x * 200 +
@@ -60,7 +65,7 @@ module.exports = class Hydrator {
             plane.split("/").forEach((row, y) => {
                 row.split("").forEach((cell, x) => {
                     for (var i = 1; i <= cell; i++) {
-                        points.push([x +1, y + 1, z + i ]);
+                        points.push({x: x + 1, y: y + 1, z:z + i });
                     }
                 });
             });
@@ -73,6 +78,7 @@ module.exports = class Hydrator {
     }
 
     // Make sure the coordinates start at (1,1)
+    // returns a clone
     static fixCoordinates(grid) {
         const newGrid = structuredClone(grid);
 
@@ -89,11 +95,12 @@ module.exports = class Hydrator {
     }
 
     static rotatePiece(piece) {
+        // TODO: replace this with a more general transform function
         const newPiece = structuredClone(piece);
         newPiece.points = piece.points.map(p => {
             const newP = structuredClone(p);
-            newP[0] = p[1];
-            newP[1] = -p[0];
+            newP.x = p.y;
+            newP.y = -p.x;
             return newP;
         });
         return Hydrator.fixCoordinates(newPiece);

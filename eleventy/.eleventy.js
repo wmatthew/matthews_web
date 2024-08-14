@@ -4,6 +4,7 @@ const Hydrator = require("./backendJS/pieceHydrator.js");
 const Constraints = require("./backendJS/Constraints.js");
 const Connections = require("./backendJS/Connections.js");
 const Board = require("./backendJS/Board.js");
+const Piece = require("./backendJS/Piece.js");
 
 module.exports = function (eleventyConfig) {
 
@@ -46,7 +47,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("hydratePiece", Hydrator.hydrate );
   eleventyConfig.addFilter("hideOneLabels", Hydrator.hideOneLabels );
   eleventyConfig.addFilter("fixCoordinates", Hydrator.fixCoordinates );
-  eleventyConfig.addFilter("rotatePiece", Hydrator.rotatePiece );
+  eleventyConfig.addFilter("rotatePiece", Hydrator.rotatePiece ); // TODO: deprecate in favor of transformPiece
+  eleventyConfig.addFilter("transformPiece", Piece.transformPiece );
   eleventyConfig.addFilter("stripOuterChars", function (str) { return str.slice(1, -1);  } );
   eleventyConfig.addFilter("setSolutionField", Constraints.setSolutionField );
   eleventyConfig.addFilter("getUrl", Connections.getUrl );

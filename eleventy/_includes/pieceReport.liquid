@@ -8,12 +8,15 @@
 * Compact: {{ piece.compact }}
 * {{ piece.volume }} Points: {{ piece.pointsPretty }}
 * Bounds: {{ piece.width}}x{{ piece.height}}x{{ piece.depth }} ({{ piece.minX }}-{{ piece.maxX }}, {{ piece.minY }}-{{ piece.maxY }}, {{ piece.minZ }}-{{ piece.maxZ }})
+* Has overhangs: {{ piece.hasOverhangs }}
+* Footprint area: {{ piece.footprintArea }}
 {%- if usages.size > 0 %}
 * Used by {% include linkList, links:usages %}
 {%- endif -%}
 {% if piece.note %}
 * Note: {{ piece.note }}
 {%- endif -%}
+
 </div>
 
 <div style="">

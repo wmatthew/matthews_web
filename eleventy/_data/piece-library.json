@@ -24,6 +24,7 @@
     "knot+1": { "compact": "422/31/11" },
     "hollowCube": { "compact": "333/313/333//0//0/01", "note": "3x3x3 cube, with middle spot empty." },
     "helix": { "compact": "02/011//1", "note": "Overhang in every direction."},
-    "kian": { "compact": "403/02/151", "note": "Kian shape"}
+    "kian": { "compact": "403/02/151", "note": "Kian shape"},
+    "OL": { "compact": "131/101/111//0//001", "note": "Used to show orientations"}
 }
 

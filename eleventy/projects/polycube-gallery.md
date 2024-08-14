@@ -1,15 +1,15 @@
 ---
 layout: layouts/base.liquid
-title: Polycube Gallery
+title: Pieces
 eleventyNavigation:
-  key: Polycube Gallery
+  key: Pieces
   parent: Tools
 permalink: polycube/gallery/
 tags:
   - tool
 ---
 # {{title}}
-A gallery of polycube shapes.
+A gallery of pieces used by puzzles. Each piece is a polycube shape.
 
 # Representing Polycubes
 ## Compact Notation

@@ -59,7 +59,8 @@ To help these load quickly, I try to minimize client side JS wherever possible.
 
 Piece rotated by in-template filter.
 
-{% include pieceElevation, key:"T", rotate:true, color:1, size:"small" %}
+{% # TODO: make sure transform works here %}
+{% include pieceElevation, key:"T", transform:"A1", color:1, size:"small" %}
 
 ---
 
@@ -105,7 +106,8 @@ See also: https://codepen.io/wmatthew/pen/ZEbNyVg
 
 Note that the coloring changes here. The side facing the user is still red, but it's a different side (3 red faces, instead of 5 above). This is because we rotated the underlying list of coordinates (before assigning colors to faces) instead of applying a CSS transform (after assigning colors to faces).
 
-{% include piece3d, key:"PLR", color:1, size:"small", rotate:true, spin:false, caption:"PLR piece, stationary" %}
+{% # TODO: make sure transform works here %}
+{% include piece3d, key:"PLR", color:1, size:"small", transform:"A1", spin:false, caption:"PLR piece, stationary" %}
 
 ### 3D Piece, rotating
 {% include piece3d, key:"PLR", color:1, size:"small", spin:true, caption:"PLR, rotating" %}

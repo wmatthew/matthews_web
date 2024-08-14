@@ -1,12 +1,7 @@
-{% assign piece = piece-library[key] | hydratePiece %} 
 {% assign is_spinning = spin | default:false %} 
 {% assign caption = caption | default:key %} 
-
-{% if rotate %}
-  {% assign piece2 = piece | rotatePiece | hydratePiece %} 
-{% else %}
-  {% assign piece2 = piece %} 
-{% endif %}
+{% assign transform = transform | default:"A0" %}
+{% assign piece = piece-library[key] | hydratePiece | transformPiece:transform %} 
 
 <div class="map" style="width:282px;">
 <div class="actualMap">
@@ -14,7 +9,7 @@
   <div class="zoomer">
     <div class="spinner {% if is_spinning %}is_spinning{% endif %}">
       <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
-      {% for computedStyle in piece2.pointsRender %}
+      {% for computedStyle in piece.pointsRender %}
         <div class="cube" style="{{ computedStyle }}">
           <div class="cube__face cube__face--front">front</div>
           <div class="cube__face cube__face--back">back</div>

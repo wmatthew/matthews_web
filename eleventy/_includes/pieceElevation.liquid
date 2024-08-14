@@ -10,9 +10,9 @@
 <div class="map {{size}}">
 <div class="actualMap">
 {% for pos in piece2.elevationMap %}
-  {% assign label = pos[2] | hideOneLabels %} 
-  {% assign adjustedColor = color | plus: pos[2] | plus: -1 %}
-  {% include square, x: pos[0], y: pos[1], color:adjustedColor, text:label %}
+  {% assign label = pos.z | hideOneLabels %} 
+  {% assign adjustedColor = color | plus: pos.z | plus: -1 %}
+  {% include square, x: pos.x, y: pos.y, color:adjustedColor, text:label %}
   {% else %}empty!
 {% endfor %}
 </div>

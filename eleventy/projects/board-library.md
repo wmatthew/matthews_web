@@ -2,14 +2,14 @@
 layout: layouts/base.liquid
 title: Board Gallery
 eleventyNavigation:
-  key: Board Gallery
+  key: Boards
   parent: Tools
 permalink: board/gallery/
 tags:
   - tool
 ---
 # {{title}}
-A gallery of boards.
+A list of boards and where they are used.
 
 {% for boardKeyValuePair in board-library %}
   {% include boardReport key:boardKeyValuePair[0] %}

@@ -2,7 +2,7 @@
 layout: layouts/base.liquid
 title: Color Gallery
 eleventyNavigation:
-  key: Color Gallery
+  key: Colors
   parent: Tools
 permalink: color/gallery/
 tags:

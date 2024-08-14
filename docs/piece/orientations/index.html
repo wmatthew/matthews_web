@@ -1,0 +1,2543 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Orientations</title>
+    <link rel="stylesheet" href="/css/bundle.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#969696">
+  </head>
+  <body>
+    
+    <div class="content">
+    <h1>Orientations</h1>
+<p>This is a naming scheme for piece orientations.</p>
+<p>We need to precisely describe orientations to describe puzzle solutions.</p>
+<h2>Axes</h2>
+<p>The legs of the piece below show the directions of the X, Y, Z axes.</p>
+<ul>
+<li>Positive X goes to the viewer's right.</li>
+<li>Positive Y goes toward the viewer and is the shortest leg.</li>
+<li>Positive Z goes upward and is the longest leg.</li>
+</ul>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(0px) translateZ(100px) translateY(100px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(100px) translateY(-100px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(100px) translateY(-300px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(100px) translateY(-500px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(100px) translateY(100px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(100px) translateY(100px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(300px) translateY(100px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">X, Y, Z axes.</div>
+</div>
+<h2>Orientation Names</h2>
+<p>Orientation names have two parts:</p>
+<ul>
+<li>A letter indicating the face that faces down (A,N,E,W,S,U). A means the bottom faces down. N, E, W, S are named after compass directions, where each of these sides face down. U is the upside-down orientation, equivalent to applying the E or W transform twice.</li>
+<li>A digit indicating the number of 90º clockwise turns around the Z axis (0,1,2,3)</li>
+</ul>
+<p>Thus, A0 is the identity orientation (no change).</p>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">A0 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">A1 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">A2 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">A3 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">N0 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">N1 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">N2 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">N3 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">E0 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">E1 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">E2 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">E3 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">W0 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">W1 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">W2 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">W3 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">S0 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">S1 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">S2 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">S3 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">U0 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">U1 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">U2 orientation</div>
+</div>
+<div class="map" style="width:282px;">
+<div class="actualMap">
+<div class="scene">
+  <div class="zoomer">
+    <div class="spinner ">
+      <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+<p><div class="cube" style="transform: translateX(0px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(-200px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(200px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(200px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(0px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(200px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(400px) translateZ(400px) translateY(-400px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p><div class="cube" style="transform: translateX(0px) translateZ(400px) translateY(0px);">
+<div class="cube__face cube__face--front">front</div>
+<div class="cube__face cube__face--back">back</div>
+<div class="cube__face cube__face--right">right</div>
+<div class="cube__face cube__face--left">left</div>
+<div class="cube__face cube__face--top">top</div>
+<div class="cube__face cube__face--bottom">bottom</div>
+</div></p>
+<p></div>
+</div></p>
+  </div>
+</div>
+</div>
+  <div class="caption" align="center">U3 orientation</div>
+</div>
+<h2>Evaluating Piece Orientations</h2>
+<ul>
+<li>Which orientations have overhangs?</li>
+<li>Which orientations are 2D (height=1)?</li>
+<li>What is the footprint of each orientation? (useful for pruning the decision tree when solving)</li>
+<li>Which orientations are duplicates? Which footprints are?</li>
+</ul>
+
+    <ul class="tags">
+<li><a class="taglink" href="/posts/tagged/with/tool/"><span class="tag">tool</span></a></li>
+</ul>
+    </div>
+  </body>
+</html>

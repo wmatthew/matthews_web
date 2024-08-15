@@ -168,3 +168,11 @@ More of the same: no unique solutions, and all but a few cases have multiple sol
 
 # Further Reading
 * [Rep-tile](https://en.wikipedia.org/wiki/Rep-tile) (wikipedia): a shape that can be dissected into smaller copies of the same shape.
+
+# Appendix: Constraints and Solutions
+
+{% for conPair in constraints-library %}
+ {% if conPair[1].parentKey == "P_Pentominos" %}
+  {% include constraints constraints:conPair[1] %}
+ {% endif %}
+{% endfor %}

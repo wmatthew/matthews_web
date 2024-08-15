@@ -23,6 +23,9 @@ module.exports = class ConstraintGenerator {
         for (var key in constraintTemplates) {
             constraintTemplates[key].key = key;
             constraintTemplates[key].parentKey = false;
+            if (!("url" in constraintTemplates[key])) {
+                constraintTemplates[key].url = false;
+            }
         }
 
         //==========================================
@@ -31,18 +34,38 @@ module.exports = class ConstraintGenerator {
         fs.writeFileSync("_data/constraints-templates.json", jsonFormatter.formatJSON(constraintTemplates));
 
         //==========================================
+        // Pentominos
+        {
+            var parentKey = "P_Pentominos";
+            for (var size=1; size<=4; size++) {
+                var childBoard = "pent" + size;
+                for (var numPs=0; numPs<=size*size; numPs++) {
+                    var numQs = size*size - numPs;
+                    var childSupply = [];
+                    if (numPs > 0) childSupply.push(["P",numPs]);
+                    if (numQs > 0) childSupply.push(["Q", numQs]);
+                    addClone(parentKey, childBoard, childSupply, ["Px"+numPs]);
+                }
+            }
+        }
+
+        //==========================================
         // Angel_Cube
-        var parentKey = "Angel_Cube";
-        var childBoard = "cube4";
-        var childSupply = [["T",8],["S2",4]];
-        addClone(parentKey, childBoard, childSupply);
+        {
+            var parentKey = "Angel_Cube";
+            var childBoard = "cube4";
+            var childSupply = [["T",8],["S2",4]];
+            addClone(parentKey, childBoard, childSupply);
+        }
 
         //==========================================
         // Tatami tilings
-        var parentKey = "Tatami";
-        var childBoard = "rect4x4";
-        var childSupply = [["I2", 8]];
-        addClone(parentKey, childBoard, childSupply);
+        {
+            var parentKey = "Tatami";
+            var childBoard = "rect4x4";
+            var childSupply = [["I2", 8]];
+            addClone(parentKey, childBoard, childSupply);
+        }
 
         //==========================================
         // Clones tile a square

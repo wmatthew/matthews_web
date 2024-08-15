@@ -22,5 +22,7 @@ Research and Development. Things that might become puzzles or games in the futur
 
 ## Generated
 {% for conPair in constraints-library %}
-{% include constraints constraints:conPair[1] %}
+ {% if conPair[1].url == false %}
+  {% include constraints constraints:conPair[1] %}
+ {% endif %}
 {% endfor %}

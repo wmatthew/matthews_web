@@ -9,7 +9,8 @@ found {{solution.solutionsTotal.size}} total solutions,
 which reduced to {{solution.solutionsUnique.size}} unique solutions.
 
 {%- if solution.didWeBailOutEarly %}
-Bailed out early due to {{ solution.didWeBailOutEarly }}
+
+⚠️ Bailed out early due to {{ solution.didWeBailOutEarly }} - findings are incomplete.
 {% else %}
 Completed without bailing early.
 {% endif %}

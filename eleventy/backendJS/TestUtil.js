@@ -13,4 +13,11 @@ module.exports = class TestUtil {
             console.log("  ✅ " + message);
         }
     }
+    static assertEqualStringify(actual, expected, message) {
+        if (JSON.stringify(actual) != JSON.stringify(expected)) {
+            console.log("  ❌ " + message + " got: " + actual + "; expected " + expected + "");
+        } else {
+            console.log("  ✅ " + message);
+        }
+    }
 }

@@ -14,22 +14,37 @@ module.exports = class Solver {
     static solverVersion = "0.1.1";
     static constraintsLibrary = JSON.parse(fs.readFileSync("_data/constraints-library.json", 'utf8'));
 
-    static calculateAndSaveToCache(constraintKey) {
-        var result = Solver.solveThisPuzzle(constraintKey);
+    static solveChildPuzzles(constraintTemplateKey, useCache=true) {
+        console.log("Solving for all children of: " + constraintTemplateKey);
+        Object.values(Solver.constraintsLibrary).filter(
+            c => c.parentKey == constraintTemplateKey
+        ).forEach(c => {
+            Solver.solvePuzzle(c.key, useCache);
+        })
+    }
+
+    static solvePuzzle(constraintKey, useCache=true) {
         var solutions = JSON.parse(fs.readFileSync("_data/solutions.json", 'utf8'));
 
-        // TODO: use a better key- based on constraint value.
+        // TODO: use a better key- based on constraint values.
+
+        if (useCache && solutions[constraintKey] && solutions[constraintKey].didWeBailOutEarly == false) {
+            console.log(constraintKey + " cached - skip. (was: " + solutions[constraintKey].solveTimeSeconds + "s)");
+            return;
+        }
+
+        var result = Solver.solveThisPuzzleWithoutLookingAtCache(constraintKey);
 
         solutions[constraintKey] = result;
         fs.writeFileSync("_data/solutions.json", jsonFormatter.formatJSON(solutions));
-        console.log(" Wrote to solutions.json.");
+        //console.log(" Wrote to solutions.json.");
     }
 
     // Advance the partials and add findings to completedBoards.
     static stepSolverForward(oldState) {
 
         const bailAfterThisManyUniqueSolutionsFound = Infinity;
-        const bailAfterThisManySteps = 10000;
+        const bailAfterThisManySteps = 100000;
         const BAILED_TOO_MANY_STEPS = "too many steps";
         const BAILED_TOO_MANY_SOLUTIONS = "too many solutions";
         const BAILED_ERRORS = "errors";
@@ -47,8 +62,6 @@ module.exports = class Solver {
         }
         
         var candidate = newState.partials.pop();
-
-        // console.log("Filled " + candidate.board.points.filter(p => !p.empty).length + " of " + candidate.board.points.length + " points.");
 
         if (Board.isSolution(candidate, newState)) {
             //console.log("🎉 Found a solution!");
@@ -70,10 +83,8 @@ module.exports = class Solver {
         return newState;
     }
     
-    static solveThisPuzzle(constraintKey) {
+    static solveThisPuzzleWithoutLookingAtCache(constraintKey) {
         console.log("Solving " + constraintKey);
-
-        // TODO: check cache.
 
         var startTime = new Date();
         const puzzleReferenceCopy = Solver.constraintsLibrary[constraintKey];
@@ -118,9 +129,8 @@ module.exports = class Solver {
             "solveDate": new Date().toLocaleDateString()
         };
         
-        console.log(" " + result.numSolutionsTotal + " total solutions.");
-        console.log(" " + result.numSolutionsUnique + " unique solutions.");
-        console.log(" Solved " + puzzle.key + " in " + result.solveTimeSeconds + " seconds (" + result.numSteps + " steps).");
+        //console.log("   " + result.numSolutionsTotal + " total solutions.");
+        console.log("   " + result.numSolutionsUnique + " unique solutions. " + result.solveTimeSeconds + " seconds, " + result.numSteps + " steps.");
         return result;
     }
 

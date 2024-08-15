@@ -21,6 +21,9 @@ module.exports = class Connections {
         }
 
         if (key in constraintLibrary) {
+            if (constraintLibrary[key].url) {
+                return constraintLibrary[key].url + "#:~:text=Key: " + escape(key);
+            }
             return "/investigations/#:~:text=Key: " + escape(key);
         }
 
@@ -32,7 +35,7 @@ module.exports = class Connections {
             return "/tiling/constraints/#:~:text=" + escape(key);
         }
 
-        throw new Error("Could not determine URL for key: " + key);
+        throw new Error("Connections.getUrl: Could not determine URL for key: " + key);
 
         function escape(rawString) {
             return rawString.replace("-", "%2D"); // https://web.dev/articles/text-fragments#:~:text=This%20is%20especially%20

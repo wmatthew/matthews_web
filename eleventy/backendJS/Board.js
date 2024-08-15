@@ -25,13 +25,23 @@ module.exports = class Board {
 
         // Select an empty point on the board to fill.
         // TODO: assess every target point on the board, not just the first one?
-        var targetPoint = currentPartial.board.points.find(p => p.empty);
-        var nextId = currentPartial.board.points.filter(p => p.id != undefined).reduce((max, p) => Math.max(max, p.id), 0) + 1;
-        //console.log("nextId: ", nextId);
+        var newPartials = currentPartial.board.points
+            .filter(p => p.empty)
+            .map(p => Board.getSuccessorPartialsForThisTargetPoint(currentPartial, puzzleState, p))
+            .sort((a,b) => a.length - b.length)
+            [0];
 
-        // TODO: why is ID null for some of the points?
-        //console.log("currentPartial.board.points: ", JSON.stringify(currentPartial.board.points));
-        //console.log("targetPoint: ", JSON.stringify(targetPoint));
+        // var newPartials = Board.getSuccessorPartialsForThisTargetPoint(currentPartial, puzzleState, targetPoint);
+        // console.log("Adding Partials: ", newPartials.length);
+        successorPartials.push(...newPartials);
+
+        return successorPartials;
+    }
+
+    // does not modify its input.
+    static getSuccessorPartialsForThisTargetPoint(currentPartial, puzzleState, targetPoint) {
+        var result = [];
+        var nextId = currentPartial.board.points.filter(p => p.id != undefined).reduce((max, p) => Math.max(max, p.id), 0) + 1;
 
         // For every piece...
         currentPartial.supply.forEach(pieceKeyAndQuantity => {
@@ -41,28 +51,19 @@ module.exports = class Board {
             // For every orientation of that piece...
             Piece.getOrientations(piece, puzzleState.puzzle.constraint_keys).forEach(orientedPiece => {
 
-                //console.log("trying orientation " + orientedPiece.points[0].orientation);
-
                 // For every insertionPoint (offet) within that oriented piece...
                 orientedPiece.points.forEach(insertionPoint => {
 
-                    //console.log(" trying insertionPoint " + JSON.stringify(insertionPoint));
-
-                    //console.log("currentPartial.board.points: ", JSON.stringify(currentPartial.board.points));
                     // If the piece fits there...
                     var itFits = orientedPiece.points.every(p => {
                         var target = Vector.minus(Vector.plus(targetPoint, p), insertionPoint);
-                        //console.log("   checking target: " + JSON.stringify(target));
                         var hit = currentPartial.board.points.find(a => a.x == target.x && a.y == target.y && a.z == target.z);
                         return !!hit && hit.empty;
                     });
 
                     if (!itFits) {
-                        //console.log("   did not fit.");
                         return;
                     }
-
-                    //console.log("   IT FITS!");
 
                     // ...create a successor partial, and add it to the list.
                     var newPartial = structuredClone(currentPartial);
@@ -78,22 +79,11 @@ module.exports = class Board {
 
                     // Decrement piece count in supply
                     PieceSupply.decrementPieceCount(newPartial.supply, pieceKey);
-
-                    successorPartials.push(newPartial);
+                    result.push(newPartial);
                 });
             });
-        });        
-
-        // points: {
-        //     x,y,z: (ints)
-        //     empty: (true/false)
-        //     id: (int),
-        //     pieceKey: (string),
-        //     orientation: (string?),
-        // }
-
-        //console.log("Returning successorPartials: ", successorPartials.length);
-        return successorPartials;
+        });    
+        return result;    
     }
 
     // An orientation-independent representation of the board. Used to deduplicate solutions.

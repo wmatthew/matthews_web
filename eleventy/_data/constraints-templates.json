@@ -5,7 +5,8 @@
     "type": "Template",
     "constraint_flags": {},
     "key": "Clones_Tile_A_Square_Simple",
-    "parentKey": false},
+    "parentKey": false,
+    "url": false},
   "Clones_Tile_A_Square": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors",
     "description": "Copies of a single polycube tile a rectangle boardKey. Matching orientations can't touch.",
@@ -15,7 +16,8 @@
       "allowColorVertexNeighbors": false,
       "allowUpwardOverflow": true},
     "key": "Clones_Tile_A_Square",
-    "parentKey": false},
+    "parentKey": false,
+    "url": false},
   "Overhang_City": {
     "name": "Overhang City",
     "description": "Copies of a polycube tile a rectangle boardKey and can overhang.",
@@ -24,7 +26,8 @@
       "allowSupportedOverhangs": true,
       "allowUpwardOverflow": true},
     "key": "Overhang_City",
-    "parentKey": false},
+    "parentKey": false,
+    "url": false},
   "Tatami": {
     "name": "Tatami Tiling - Classic",
     "description": "Tiling 2x1 rectangles.",
@@ -33,7 +36,8 @@
       "allow4PieceEdgeIntersections": false,
       "allowPieceOrienting": false},
     "key": "Tatami",
-    "parentKey": false},
+    "parentKey": false,
+    "url": false},
   "Tatami_3color": {
     "name": "Tatami Tiling - 3 color variation",
     "description": "Tiling 2x1 rectangles, 3-colorable.",
@@ -44,7 +48,8 @@
       "allowColorVertexNeighbors": false,
       "allowUnusedPieces": true},
     "key": "Tatami_3color",
-    "parentKey": false},
+    "parentKey": false,
+    "url": false},
   "P_Pentominos": {
     "name": "P-Pentominos",
     "description": "Use P-Pentominos to assemble a larger version of the same shape.",
@@ -52,6 +57,7 @@
     "constraint_flags": {
       "allowPieceOrienting": false},
     "key": "P_Pentominos",
+    "url": "/pentomino/puzzle/",
     "parentKey": false},
   "Locked_Triangles": {
     "name": "Locked Triangles",
@@ -61,7 +67,8 @@
       "allowPieceRotation": false,
       "allowPieceOrienting": false},
     "key": "Locked_Triangles",
-    "parentKey": false},
+    "parentKey": false,
+    "url": false},
   "Angel_Cube": {
     "name": "Angel Cube",
     "description": "Fill a cube with pieces.",
@@ -70,4 +77,5 @@
       "allowSkyPieces": true,
       "allowSupportedOverhangs": true},
     "key": "Angel_Cube",
-    "parentKey": false}}
+    "parentKey": false,
+    "url": false}}

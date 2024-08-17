@@ -24,7 +24,10 @@ module.exports = class Solver {
     }
 
     static solvePuzzle(constraintKey, useCache=true) {
-        var solutions = JSON.parse(fs.readFileSync("_data/solutions.json", 'utf8'));
+        var fileData = fs.readFileSync("_data/solutions.json", 'utf8');
+        console.log("About to parse " + Number(fileData.length).toLocaleString("en-US") + " characters of JSON.");
+        var solutions = JSON.parse(fileData);
+        console.log("Done parsing.");
 
         // TODO: use a better key- based on constraint values.
 

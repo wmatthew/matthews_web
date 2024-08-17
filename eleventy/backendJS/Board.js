@@ -21,38 +21,44 @@ module.exports = class Board {
 
     // We may want different selection logic here for different constraints.
     static getSuccessorPartials(currentPartial, puzzleState) {
-        var successorPartials = [];
+        var accInitialValue = {
+            "smallestArrayOfSuccessorsSoFar": [],
+            "smallestArrayOfSuccessorsSoFarLength": Infinity
+        };
 
-        // Select an empty point on the board to fill.
-        // TODO: assess every target point on the board, not just the first one?
-        var newPartials = currentPartial.board.points
-            .filter(p => p.empty)
-            .map(p => Board.getSuccessorPartialsForThisTargetPoint(currentPartial, puzzleState, p))
-            .sort((a,b) => a.length - b.length)
-            [0];
+        return currentPartial.board.points
+          .filter(p => p.empty)
+          .reduce(getSmallSuccessors, accInitialValue)
+          .smallestArrayOfSuccessorsSoFar;
 
-        // var newPartials = Board.getSuccessorPartialsForThisTargetPoint(currentPartial, puzzleState, targetPoint);
-        // console.log("Adding Partials: ", newPartials.length);
-        successorPartials.push(...newPartials);
-
-        return successorPartials;
+        function getSmallSuccessors(acc, targetPoint) {
+            var candidate = Board.getSuccessorPartialsForThisTargetPoint(currentPartial, puzzleState, targetPoint, acc.smallestArrayOfSuccessorsSoFarLength);
+            if (candidate && candidate.length < acc.smallestArrayOfSuccessorsSoFarLength) {
+                acc.smallestArrayOfSuccessorsSoFar = candidate;
+                acc.smallestArrayOfSuccessorsSoFarLength = candidate.length;
+            }
+            return acc;
+        }
     }
 
     // does not modify its input.
-    static getSuccessorPartialsForThisTargetPoint(currentPartial, puzzleState, targetPoint) {
+    static getSuccessorPartialsForThisTargetPoint(currentPartial, puzzleState, targetPoint, quitEarlyIfResultCountReaches=Infinity) {
         var result = [];
         var nextId = currentPartial.board.points.filter(p => p.id != undefined).reduce((max, p) => Math.max(max, p.id), 0) + 1;
 
         // For every piece...
         currentPartial.supply.forEach(pieceKeyAndQuantity => {
+            if (shouldQuitEarly()) return;
             var pieceKey = pieceKeyAndQuantity[0];
             var piece = Piece.pieceFromKey(pieceKey);
 
             // For every orientation of that piece...
             Piece.getOrientations(piece, puzzleState.puzzle.constraint_keys).forEach(orientedPiece => {
+                if (shouldQuitEarly()) return;
 
                 // For every insertionPoint (offet) within that oriented piece...
                 orientedPiece.points.forEach(insertionPoint => {
+                    if (shouldQuitEarly()) return;
 
                     // If the piece fits there...
                     var itFits = orientedPiece.points.every(p => {
@@ -83,7 +89,13 @@ module.exports = class Board {
                 });
             });
         });    
+
+        if (shouldQuitEarly()) return false;
         return result;    
+
+        function shouldQuitEarly() {
+            return result.length >= quitEarlyIfResultCountReaches;
+        }
     }
 
     // An orientation-independent representation of the board. Used to deduplicate solutions.

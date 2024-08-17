@@ -14,6 +14,23 @@ module.exports = class Solver {
     static solverVersion = "0.1.1";
     static constraintsLibrary = JSON.parse(fs.readFileSync("_data/constraints-library.json", 'utf8'));
 
+    // TODO: remove this after migration
+    static migrateSolutionToSeparateFile(constraintKey) {
+        // Find entry in solutions.json
+
+        // Remove from solutions.json and rewrite that file.
+
+        // Write to a new file.
+        var newPath = cachePath(constraintKey);
+        // TODO
+
+    }
+
+    static cachePath(constraintKey) {
+        var parentKey = Solver.constraintsLibrary[constraintKey].parentKey;
+        return "_data/solutions/" + parentKey + "/" + constraintKey + ".json";
+    }
+
     static solveChildPuzzles(constraintTemplateKey, useCache=true) {
         console.log("Solving for all children of: " + constraintTemplateKey);
         Object.values(Solver.constraintsLibrary).filter(
@@ -30,10 +47,24 @@ module.exports = class Solver {
         console.log("Done parsing.");
 
         // TODO: use a better key- based on constraint values.
+        if (useCache) {
+            var cacheHits = 0;
+            // old style cache
+            if (solutions[constraintKey] && solutions[constraintKey].didWeBailOutEarly == false) {
+                console.log(constraintKey + " cached - old - skip. (was: " + solutions[constraintKey].solveTimeSeconds + "s)");
+                cacheHits++;
+            }
+            // new style cache
+            if (false && "TODO: implement new style cache") {
+                console.log(constraintKey + " cached - new - skip. (was: " + solutions[constraintKey].solveTimeSeconds + "s)");
+                cacheHits++;
+            }
 
-        if (useCache && solutions[constraintKey] && solutions[constraintKey].didWeBailOutEarly == false) {
-            console.log(constraintKey + " cached - skip. (was: " + solutions[constraintKey].solveTimeSeconds + "s)");
-            return;
+
+            if (cacheHit > 0) {
+                console.log("Cache hit x" + cacheHit);
+                return;
+            }
         }
 
         var result = Solver.solveThisPuzzleWithoutLookingAtCache(constraintKey);

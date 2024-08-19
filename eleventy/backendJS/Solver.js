@@ -16,11 +16,11 @@ module.exports = class Solver {
 
     // TODO: remove this after migration
     static migrateSolutionToSeparateFile(constraintKey) {
-        // Find entry in solutions.json
+        // Find an entry in solutions.json
 
         // Remove from solutions.json and rewrite that file.
 
-        // Write to a new file.
+        // Create + write to a new file.
         var newPath = cachePath(constraintKey);
         // TODO
 
@@ -44,25 +44,30 @@ module.exports = class Solver {
         var fileData = fs.readFileSync("_data/solutions.json", 'utf8');
         console.log("About to parse " + Number(fileData.length).toLocaleString("en-US") + " characters of JSON.");
         var solutions = JSON.parse(fileData);
-        console.log("Done parsing.");
+        console.log("Done parsing. " + Object.keys(solutions).length + " entries.");
 
         // TODO: use a better key- based on constraint values.
         if (useCache) {
             var cacheHits = 0;
+
             // old style cache
             if (solutions[constraintKey] && solutions[constraintKey].didWeBailOutEarly == false) {
-                console.log(constraintKey + " cached - old - skip. (was: " + solutions[constraintKey].solveTimeSeconds + "s)");
+                console.log(constraintKey + " was found in old cache. (took " + solutions[constraintKey].solveTimeSeconds + "s)");
                 cacheHits++;
             }
+
             // new style cache
-            if (false && "TODO: implement new style cache") {
-                console.log(constraintKey + " cached - new - skip. (was: " + solutions[constraintKey].solveTimeSeconds + "s)");
-                cacheHits++;
+            if (fs.existsSync(Solver.cachePath(constraintKey))) {
+                var solutionData = fs.readFileSync(Solver.cachePath(constraintKey), 'utf8');
+                var solutionObj = JSON.parse(solutionData);
+                if (solutionObj.didWeBailOutEarly == false) {
+                    console.log(constraintKey + " was found in new cache. (took " + solutionObj.solveTimeSeconds + "s)");
+                    cacheHits++;
+                }
             }
 
-
-            if (cacheHit > 0) {
-                console.log("Cache hit x" + cacheHit);
+            if (cacheHits > 0) {
+                console.log("Cache hit x" + cacheHits + ". Skipping");
                 return;
             }
         }
@@ -71,7 +76,6 @@ module.exports = class Solver {
 
         solutions[constraintKey] = result;
         fs.writeFileSync("_data/solutions.json", jsonFormatter.formatJSON(solutions));
-        //console.log(" Wrote to solutions.json.");
     }
 
     // Advance the partials and add findings to completedBoards.

@@ -26,9 +26,20 @@ module.exports = class Solver {
 
     }
 
+    // the new cache
     static cachePath(constraintKey) {
         var parentKey = Solver.constraintsLibrary[constraintKey].parentKey;
         return "_data/solutions/" + parentKey + "/" + constraintKey + ".json";
+    }
+
+    // uses the new cache
+    static saveResult(constraintKey, result) {
+        var newPath = cachePath(constraintKey);
+        // TODO
+        // create file if it doesn't exist
+        fs.createWriteStream(newPath);
+
+        // write to it
     }
 
     static solveChildPuzzles(constraintTemplateKey, useCache=true) {

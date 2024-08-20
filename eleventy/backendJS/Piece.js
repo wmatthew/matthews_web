@@ -101,6 +101,10 @@ module.exports = class Piece {
         TestUtil.assertEqual(Piece.transformPiece(rPiece, "A1").pointsPretty, "2,1,1|2,2,1|1,1,1", "r-A1");
         TestUtil.assertEqual(Piece.transformPiece(rPiece, "A2").pointsPretty, "2,2,1|1,2,1|2,1,1", "r-A2");
 
+        //var a2 = 
+        TestUtil.assertEqual(
+            Piece.transformPiece(Piece.transformPiece(rPiece, "A2"), "A2").pointsPretty,
+            rPiece.pointsPretty, "A2 2x = A0");
 
     }
 }

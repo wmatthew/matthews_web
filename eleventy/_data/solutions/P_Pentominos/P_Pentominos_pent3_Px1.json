@@ -1,0 +1,30 @@
+{
+  "key": "P_Pentominos_pent3_Px1",
+  "constraints": {
+    "name": "P-Pentominos (pent3_Px1)",
+    "description": "Use P-Pentominos to assemble a larger version of the same shape.",
+    "type": "Generated",
+    "constraint_flags": {
+      "allowPieceOrienting": false},
+    "key": "P_Pentominos_pent3_Px1",
+    "url": "/pentomino/puzzle/",
+    "parentKey": "P_Pentominos",
+    "board": {
+      "key": "pent3",
+      "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 6,"y": 6,"z": 1}],[{"x": 1,"y": 7,"z": 1},{"x": 3,"y": 9,"z": 1}]],
+      "points": [{"x": 1,"y": 1,"z": 1},{"x": 1,"y": 2,"z": 1},{"x": 1,"y": 3,"z": 1},{"x": 1,"y": 4,"z": 1},{"x": 1,"y": 5,"z": 1},{"x": 1,"y": 6,"z": 1},{"x": 2,"y": 1,"z": 1},{"x": 2,"y": 2,"z": 1},{"x": 2,"y": 3,"z": 1},{"x": 2,"y": 4,"z": 1},{"x": 2,"y": 5,"z": 1},{"x": 2,"y": 6,"z": 1},{"x": 3,"y": 1,"z": 1},{"x": 3,"y": 2,"z": 1},{"x": 3,"y": 3,"z": 1},{"x": 3,"y": 4,"z": 1},{"x": 3,"y": 5,"z": 1},{"x": 3,"y": 6,"z": 1},{"x": 4,"y": 1,"z": 1},{"x": 4,"y": 2,"z": 1},{"x": 4,"y": 3,"z": 1},{"x": 4,"y": 4,"z": 1},{"x": 4,"y": 5,"z": 1},{"x": 4,"y": 6,"z": 1},{"x": 5,"y": 1,"z": 1},{"x": 5,"y": 2,"z": 1},{"x": 5,"y": 3,"z": 1},{"x": 5,"y": 4,"z": 1},{"x": 5,"y": 5,"z": 1},{"x": 5,"y": 6,"z": 1},{"x": 6,"y": 1,"z": 1},{"x": 6,"y": 2,"z": 1},{"x": 6,"y": 3,"z": 1},{"x": 6,"y": 4,"z": 1},{"x": 6,"y": 5,"z": 1},{"x": 6,"y": 6,"z": 1},{"x": 1,"y": 7,"z": 1},{"x": 1,"y": 8,"z": 1},{"x": 1,"y": 9,"z": 1},{"x": 2,"y": 7,"z": 1},{"x": 2,"y": 8,"z": 1},{"x": 2,"y": 9,"z": 1},{"x": 3,"y": 7,"z": 1},{"x": 3,"y": 8,"z": 1},{"x": 3,"y": 9,"z": 1}],
+      "area": 45,
+      "description": "Pentomino scaled up 3x.",
+      "category": "Pentomino"},
+    "boardKey": "pent3",
+    "pieceSupply": [["P",1],["Q",8]],
+    "template": "P_Pentominos"},
+  "solverVersion": "0.1.1",
+  "solutionsTotal": [],
+  "solutionsUnique": {},
+  "numSolutionsTotal": 0,
+  "numSolutionsUnique": 0,
+  "numSteps": 64,
+  "didWeBailOutEarly": false,
+  "solveTimeSeconds": 0,
+  "solveDate": "8/15/2024"}

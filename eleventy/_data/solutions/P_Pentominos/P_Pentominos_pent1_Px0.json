@@ -1,0 +1,30 @@
+{
+  "key": "P_Pentominos_pent1_Px0",
+  "constraints": {
+    "name": "P-Pentominos (pent1_Px0)",
+    "description": "Use P-Pentominos to assemble a larger version of the same shape.",
+    "type": "Generated",
+    "constraint_flags": {
+      "allowPieceOrienting": false},
+    "key": "P_Pentominos_pent1_Px0",
+    "url": "/pentomino/puzzle/",
+    "parentKey": "P_Pentominos",
+    "board": {
+      "key": "pent1",
+      "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 2,"y": 2,"z": 1}],[{"x": 1,"y": 3,"z": 1},{"x": 1,"y": 3,"z": 1}]],
+      "points": [{"x": 1,"y": 1,"z": 1},{"x": 1,"y": 2,"z": 1},{"x": 2,"y": 1,"z": 1},{"x": 2,"y": 2,"z": 1},{"x": 1,"y": 3,"z": 1}],
+      "area": 5,
+      "description": "Pentomino.",
+      "category": "Pentomino"},
+    "boardKey": "pent1",
+    "pieceSupply": [["Q",1]],
+    "template": "P_Pentominos"},
+  "solverVersion": "0.1.1",
+  "solutionsTotal": [],
+  "solutionsUnique": {},
+  "numSolutionsTotal": 0,
+  "numSolutionsUnique": 0,
+  "numSteps": 1,
+  "didWeBailOutEarly": false,
+  "solveTimeSeconds": 0,
+  "solveDate": "8/17/2024"}

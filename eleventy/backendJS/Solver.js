@@ -14,52 +14,27 @@ module.exports = class Solver {
     static solverVersion = "0.1.1";
     static constraintsLibrary = JSON.parse(fs.readFileSync("_data/constraints-library.json", 'utf8'));
 
-    // TODO: remove this after migration
-    static migrateSolutionToNewCache(constraintKey) {
-        console.log("🚀 migrateSolutionToSeparateFile for key: " + constraintKey);
-        var solutions = Solver.readSolutionsJSON();        
-        if (fs.existsSync(Solver.cachePath(constraintKey))) {
-            console.log("Item IN new cache. Quitting early.");
-            return;
-        } else {
-            console.log("Item NOT in new cache.");
+    static getSolution(constraintKey) {
+        console.log("Get solution for " + constraintKey);
+        if (!(constraintKey in Solver.constraintsLibrary)) {
+            // It's not in the library, probably because it's a template.
+            return false;
         }
-        if ((constraintKey in solutions )) {
-            console.log("Item IN old cache. (" + Object.keys(solutions).length + " entries)");
-        } else {
-            console.log("Item NOT in old cache. Quitting early.");
-            return;
+        var path = Solver.cachePath(constraintKey);
+        if (fs.existsSync(path) == false) {
+            console.log("No solution file found for " + constraintKey);
+            return false;
         }
-
-        var oldData = solutions[constraintKey];
-
-        // Create + write to a new file.
-        Solver.saveResult(constraintKey, oldData);
-
-        // Remove from solutions.json and rewrite that file.
-        delete solutions[constraintKey];
-        fs.writeFileSync("_data/solutions.json", jsonFormatter.formatJSON(solutions));
-
-        // Re-load + report on which cache has the entry.
-        console.log("migrateSolutionToSeparateFile done. Results for key: " + constraintKey);
-        var solutions = Solver.readSolutionsJSON();
-        if (fs.existsSync(Solver.cachePath(constraintKey))) {
-            console.log("Item IN new cache.");
-        } else {
-            console.log("Item NOT in new cache.");
-        }
-        if ((constraintKey in solutions )) {
-            console.log("Item IN old cache. (" + Object.keys(solutions).length + " entries)");
-        } else {
-            console.log("Item NOT in old cache. (" + Object.keys(solutions).length + " entries)");
-        }
-
+        console.log("Solution file found for " + constraintKey);
+        return JSON.parse(fs.readFileSync(path, 'utf8'));
     }
 
     // the new cache
     static cachePath(constraintKey) {
         var parentKey = Solver.constraintsLibrary[constraintKey].parentKey;
-        return "_data/solutions/" + parentKey + "/" + constraintKey + ".json";
+        var path = "_data/solutions/" + parentKey + "/" + constraintKey + ".json";
+        //console.log("path: " + path);
+        return path;
     }
 
     // uses the new cache
@@ -87,47 +62,19 @@ module.exports = class Solver {
         })
     }
 
-    static readSolutionsJSON() {
-        var fileData = fs.readFileSync("_data/solutions.json", 'utf8');
-        console.log("About to parse " + Number(fileData.length).toLocaleString("en-US") + " characters of JSON.");
-        var solutions = JSON.parse(fileData);
-        console.log("Done parsing. " + Object.keys(solutions).length + " entries.");
-        return solutions;
-    }
-
     static solvePuzzle(constraintKey, useCache=true) {
-        var solutions = Solver.readSolutionsJSON();
-
-        // TODO: use a better key- based on constraint values.
+        // TODO: use a better key- based on constraint values?
         if (useCache) {
-            var cacheHits = 0;
-
-            // check old cache
-            if (solutions[constraintKey] && solutions[constraintKey].didWeBailOutEarly == false) {
-                console.log(constraintKey + " was found in old cache. (took " + solutions[constraintKey].solveTimeSeconds + "s)");
-                cacheHits++;
-            }
-
-            // check new cache
-            if (fs.existsSync(Solver.cachePath(constraintKey))) {
-                var solutionData = fs.readFileSync(Solver.cachePath(constraintKey), 'utf8');
-                var solutionObj = JSON.parse(solutionData);
+            var solutionObj = Solver.getSolution(constraintKey);
+            if (solutionObj) {
                 if (solutionObj.didWeBailOutEarly == false) {
                     console.log(constraintKey + " was found in new cache. (took " + solutionObj.solveTimeSeconds + "s)");
-                    cacheHits++;
+                    return;
                 }
-            }
-
-            if (cacheHits > 0) {
-                console.log("Cache hit x" + cacheHits + ". Skipping");
-                return;
             }
         }
 
         var result = Solver.solveThisPuzzleWithoutLookingAtCache(constraintKey);
-
-        solutions[constraintKey] = result;
-        fs.writeFileSync("_data/solutions.json", jsonFormatter.formatJSON(solutions));
     }
 
     // Advance the partials and add findings to completedBoards.

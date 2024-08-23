@@ -4,6 +4,7 @@
 const jsonFormatter = require('./jsonFormatter.js');
 const Board = require('./Board.js');
 const Painter = require('./Painter.js');
+const Constraints = require('./Constraints.js');
 const fs = require('fs');
 
 module.exports = class Solver {
@@ -15,17 +16,15 @@ module.exports = class Solver {
     static constraintsLibrary = JSON.parse(fs.readFileSync("_data/constraints-library.json", 'utf8'));
 
     static getSolution(constraintKey) {
-        console.log("Get solution for " + constraintKey);
         if (!(constraintKey in Solver.constraintsLibrary)) {
             // It's not in the library, probably because it's a template.
             return false;
         }
         var path = Solver.cachePath(constraintKey);
         if (fs.existsSync(path) == false) {
-            console.log("No solution file found for " + constraintKey);
+            // console.log("No solution file found for " + constraintKey);
             return false;
         }
-        console.log("Solution file found for " + constraintKey);
         return JSON.parse(fs.readFileSync(path, 'utf8'));
     }
 
@@ -62,19 +61,21 @@ module.exports = class Solver {
         })
     }
 
+    // TODO: cache could use a better key- based on constraint values?
     static solvePuzzle(constraintKey, useCache=true) {
-        // TODO: use a better key- based on constraint values?
+        console.log("solvePuzzle: " + constraintKey);
+
         if (useCache) {
             var solutionObj = Solver.getSolution(constraintKey);
-            if (solutionObj) {
-                if (solutionObj.didWeBailOutEarly == false) {
-                    console.log(constraintKey + " was found in new cache. (took " + solutionObj.solveTimeSeconds + "s)");
-                    return;
-                }
+            if (solutionObj && solutionObj.didWeBailOutEarly == false) {
+                console.log(constraintKey + " found in cache. (took " + solutionObj.solveTimeSeconds + "s)");
+                return;
+            } else {
+                console.log(constraintKey + " not found in cache.");
             }
         }
 
-        var result = Solver.solveThisPuzzleWithoutLookingAtCache(constraintKey);
+        Solver.solveThisPuzzleWithoutLookingAtCache(constraintKey);
     }
 
     // Advance the partials and add findings to completedBoards.
@@ -121,10 +122,14 @@ module.exports = class Solver {
     }
     
     static solveThisPuzzleWithoutLookingAtCache(constraintKey) {
-        console.log("Solving " + constraintKey);
+        console.log("solveThisPuzzleWithoutLookingAtCache: " + constraintKey);
 
         var startTime = new Date();
         const puzzleReferenceCopy = Solver.constraintsLibrary[constraintKey];
+
+        // For now, warn only.
+        Constraints.areTheseConstraintsSupported(puzzleReferenceCopy.constraint_flags);
+
         var puzzle = structuredClone(puzzleReferenceCopy);
         puzzle.board.points.map(p => {
             p.empty = true;
@@ -153,9 +158,9 @@ module.exports = class Solver {
             "solverVersion": Solver.solverVersion,
         
             // outputs
-            "solutionsTotal": currentState.completedBoards, // TODO: remove. debugging only.
-            "solutionsUnique": currentState.completedBoardsUnique, // TODO: remove. debugging only.
-            //"solutionsUnique": Object.values(currentState.completedBoardsUnique).slice(0,5), // Up to 5 unique solutions
+            //"solutionsTotal": currentState.completedBoards, // debugging only.
+            //"solutionsUnique": currentState.completedBoardsUnique, // debugging only.
+            "solutionsUnique": Object.values(currentState.completedBoardsUnique).slice(0,5), // Only five unique solutions
             "numSolutionsTotal": currentState.completedBoards.length,
             "numSolutionsUnique": Object.keys(currentState.completedBoardsUnique).length,
         

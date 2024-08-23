@@ -3,15 +3,13 @@ const fs = require('fs');
 var pieceLib = JSON.parse(fs.readFileSync("_data/piece-library.json", 'utf8'));
 const Hydrator = require('./pieceHydrator.js');
 const TestUtil = require('./TestUtil.js');
+const Constraints = require('./Constraints.js');
 
 module.exports = class Piece {
     
     // takes a hydrated piece as input.
     // TODO: consolidate hydration and transform into one function?
     static transformPiece(piece, transform) {
-        //console.log("transformPiece: " + transform + ", " + piece.points.length);
-        //console.log("before:  " + JSON.stringify(piece.points));
-
         var newPiece = structuredClone(piece);
 
         var bottom = transform.split("")[0];
@@ -45,29 +43,30 @@ module.exports = class Piece {
             throw new Error("transformPiece: unknown turns: " + turns);
         }
 
-        //console.log("after:  " + JSON.stringify(newPiece.points));
-
         // rehydrate the piece since we changed it.
         return Hydrator.hydrate(Hydrator.fixCoordinates(newPiece));
     }
 
+    // does not modify input
     // return a bunch of pieces that are modified versions of the input piece... with orientation set.
     static getOrientations(piece, constraints) {
-        var orientations = [];
-        orientations.push(...Piece.fourRotations(piece, "A"));
-
-        // TODO: turn the piece to rest on the other faces. A+NEWS+U
-
-        return orientations;
+        var directions = ["A"];
+        if (Constraints.checkConstraint(constraints, "allowPieceOrienting")) {
+            directions = ["A", "N", "E", "W", "S", "U"];
+        }
+        
+        return directions.flatMap(direction => 
+            Piece.fourRotations(piece, direction)
+        );
     }
 
+    // does not mofify input
     static fourRotations(piece, direction) {
         var rotations = [];
         var newPiece = structuredClone(piece);
 
         for (var i = 0; i < 4; i++) {
             var orientationName = direction + i;
-            //console.log("newPiece: " + JSON.stringify(newPiece));
             newPiece.points.forEach(p => p.orientation = orientationName);
             rotations.push(newPiece);
             
@@ -95,13 +94,15 @@ module.exports = class Piece {
         TestUtil.assertEqual(JSON.stringify(rPiece.points), '[{"x":1,"y":1,"z":1},{"x":2,"y":1,"z":1},{"x":1,"y":2,"z":1}]', "rPiece stringify");
         TestUtil.assertEqual(rPiece.pointsPretty, "1,1,1|2,1,1|1,2,1", "rPiece pretty");
 
-        TestUtil.assert(Piece.getOrientations(rPiece).length==4, "getOrientations");
+        var disallowsOrienting = {allowPieceOrienting:false};
+        var allowsOrienting = {allowPieceOrienting:true};
+        TestUtil.assertEqual(Piece.getOrientations(rPiece, disallowsOrienting).length, 4, "getOrientations has 4 entries");        
+        TestUtil.assertEqual(Piece.getOrientations(rPiece, allowsOrienting).length, 24, "getOrientations has 24 entries");        
 
         TestUtil.assertEqual(Piece.transformPiece(rPiece, "A0").pointsPretty, "1,1,1|2,1,1|1,2,1", "r-A0");
         TestUtil.assertEqual(Piece.transformPiece(rPiece, "A1").pointsPretty, "2,1,1|2,2,1|1,1,1", "r-A1");
         TestUtil.assertEqual(Piece.transformPiece(rPiece, "A2").pointsPretty, "2,2,1|1,2,1|2,1,1", "r-A2");
 
-        //var a2 = 
         TestUtil.assertEqual(
             Piece.transformPiece(Piece.transformPiece(rPiece, "A2"), "A2").pointsPretty,
             rPiece.pointsPretty, "A2 2x = A0");

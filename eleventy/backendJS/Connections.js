@@ -11,7 +11,7 @@ module.exports = class Connections {
 
     static getUrl(key) {
         // Figure out if this is a board, constraint, constraintKey, or piece and return the right URL for it.
-        // TODO: unit test: make sure no two entities share the same key.
+        // TODO: add unit test: make sure no two entities share the same key.
         if (key in boardLib) {
             return "/board/gallery/#:~:text=" + key;
         }

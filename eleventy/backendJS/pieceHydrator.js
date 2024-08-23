@@ -95,7 +95,7 @@ module.exports = class Hydrator {
     }
 
     static rotatePiece(piece) {
-        // TODO: replace this with a more general transform function
+        // TODO: deprecate in favor of Piece.transformPiece
         const newPiece = structuredClone(piece);
         newPiece.points = piece.points.map(p => {
             const newP = structuredClone(p);

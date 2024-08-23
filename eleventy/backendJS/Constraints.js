@@ -28,19 +28,22 @@ module.exports = class Constraints {
 
     static areTheseConstraintsSupported(constraintKeys) {
         var supportedConstraints = [
-            // for now, we don't support any flags! add more here as we support constraint flags.
+            "allowPieceOrienting"
+            // add more here as we support constraint flags.
         ]; 
         var unsupportedFlags = Object.keys(constraintKeys).filter(f => !(supportedConstraints.includes(f)));
-        console.log(unsupportedFlags.length + " unsupported flags.");
-        return unsupportedFlagCount.length == 0;
+        if (unsupportedFlags.length > 0) {        
+          console.log("Warning: unsupported flags: " + unsupportedFlags);
+        }
+        return unsupportedFlags.length == 0;
     }
 
-    static checkConstraint(newState, constraintKey) {
-        var flagHash = newState.puzzle.constraint_flags;
-        if (flagHash[constraintKey] == undefined) {
+    static checkConstraint(constraintFlagHash, constraintKey) {
+        if (constraintKey in constraintFlagHash) {
+            return constraintFlagHash[constraintKey];
+        } else {
             return constraintMetadata.Tiling_Default[constraintKey];
         }
-        return flagHash[constraintKey];
     }
 
     static setSolutionField(constraintObject) {

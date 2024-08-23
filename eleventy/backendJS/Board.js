@@ -8,13 +8,6 @@ const TestUtil = require('./TestUtil.js');
 
 module.exports = class Board {
 
-    // TODO: unused
-    static groupBoardsByCategory(boards) {
-        var result = Object.values(boards).groupBy((b) => b.category);
-        console.log(JSON.stringify(result));
-        return result;
-    }
-
     static boardFromKey(key) {
         return boardLib[key];
     }
@@ -53,7 +46,7 @@ module.exports = class Board {
             var piece = Piece.pieceFromKey(pieceKey);
 
             // For every orientation of that piece...
-            Piece.getOrientations(piece, puzzleState.puzzle.constraint_keys).forEach(orientedPiece => {
+            Piece.getOrientations(piece, puzzleState.puzzle.constraint_flags).forEach(orientedPiece => {
                 if (shouldQuitEarly()) return;
 
                 // For every insertionPoint (offet) within that oriented piece...
@@ -149,7 +142,7 @@ module.exports = class Board {
             points.forEach(p => { p.x *= -1; });
         }
 
-        // TODO: share w similar function in Piece.js
+        // TODO: consolidate with Piece.transformPiece
         // modifies input!
         function rotate90(points) {
             points.forEach(p => {
@@ -206,7 +199,7 @@ module.exports = class Board {
     }
 
     static isSolution(currentPartial, puzzleState) {
-        if (Constraints.checkConstraint(puzzleState, Constraints.KEY.allowGaps) == true) {
+        if (Constraints.checkConstraint(puzzleState.puzzle.constraint_flags, Constraints.KEY.allowGaps) == true) {
             throw new Error("Board.isSolution not implemented when allowGaps is true.");
         }
         return currentPartial.board.points.every(p => !p.empty);
@@ -223,8 +216,7 @@ module.exports = class Board {
         var uniqueKey = Board.getUniqueKey(board);
         TestUtil.assert(uniqueKey == "uniquekey_[]", "uniqueKey is correct for empty board");
 
-        // TODO: need to expose more from Solver.js to test this.
-        // var successors = Board.getSuccessorPartials(currentPartial, puzzleState);
+        // TODO: add test for getSuccessorPartials
     }
 
 

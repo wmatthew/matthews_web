@@ -12,7 +12,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
 
   // Generate thumbnail images
-  // TODO: make this a shortcode / filter
+  // TODO: move thumbnail generation to shortcode / filter
   (async () => {
     let imgUrl = "img/castle-sq.jpg";
     let imgOptions = {

@@ -11,7 +11,6 @@ module.exports = class BoardGenerator {
 
     static generateBoards() {
 
-        console.log("Generating boards...");
         var boardLibrary = {};
 
         //==========================================

@@ -33,7 +33,7 @@ module.exports = class Constraints {
         ]; 
         var unsupportedFlags = Object.keys(constraintKeys).filter(f => !(supportedConstraints.includes(f)));
         if (unsupportedFlags.length > 0) {        
-          console.log("Warning: unsupported flags: " + unsupportedFlags);
+          console.log("⚠️  Warning: unsupported flags: " + unsupportedFlags);
         }
         return unsupportedFlags.length == 0;
     }

@@ -10,8 +10,6 @@ module.exports = class ConstraintGenerator {
 
     static generateConstraints() {
 
-        console.log("Generating constraints...");
-
         // Read in the list of constraint templates
         var filePath = "_data/constraints-templates.json";
         var rawString = fs.readFileSync(filePath, 'utf8')
@@ -71,16 +69,21 @@ module.exports = class ConstraintGenerator {
         // Clones tile a square
         var parentKey = "Clones_Tile_A_Square";
         for (var size=1; size<=10; size++) {
-            var childSupply = [["PLR", PieceSupply.INFINITE_PIECES]];
-            var childBoard = "rect"+size+"x"+size;
-            addClone(parentKey, childBoard, childSupply, ["PLR"]);
+            ["PLR"].forEach(p => {
+                var childSupply = [[p, PieceSupply.INFINITE_PIECES]];
+                var childBoard = "rect"+size+"x"+size;
+                addClone(parentKey, childBoard, childSupply, [p]);
+            });
         }
 
+        // (simplest version; no upward overflow allowed)
         var parentKey = "Clones_Tile_A_Square_Simple";
         for (var size=1; size<=8; size++) {
-            var childSupply = [["T", PieceSupply.INFINITE_PIECES]];
-            var childBoard = "rect"+size+"x"+size;
-            addClone(parentKey, childBoard, childSupply, ["T"]);
+            ["T"].forEach(p => {
+                var childSupply = [[p, PieceSupply.INFINITE_PIECES]];
+                var childBoard = "rect"+size+"x"+size;
+                addClone(parentKey, childBoard, childSupply, [p]);
+            });
         }
 
         //==========================================

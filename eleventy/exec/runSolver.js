@@ -1,3 +1,3 @@
 const Solver = require('../backendJS/Solver.js');
 
-Solver.solvePuzzle("P_Pentominos_pent2_Px2", false);
+Solver.solvePuzzle("Clones_Tile_A_Square_rect4x4_PLR");

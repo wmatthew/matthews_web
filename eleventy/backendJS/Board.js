@@ -50,11 +50,13 @@ module.exports = class Board {
                 if (shouldQuitEarly()) return;
 
                 // For every insertionPoint (offet) within that oriented piece...
-                orientedPiece.points.forEach(insertionPoint => {
+                var upwardFlow = Constraints.checkConstraint(puzzleState.puzzle.constraint_flags, Constraints.KEY.allowUpwardOverflow);
+                var insertionPoints = upwardFlow ? orientedPiece.floorPoints : orientedPiece.points;
+                insertionPoints.forEach(insertionPoint => {
                     if (shouldQuitEarly()) return;
 
                     // If the piece fits there...
-                    var itFits = orientedPiece.points.every(p => {
+                    var itFits = insertionPoints.every(p => {
                         var target = Vector.minus(Vector.plus(targetPoint, p), insertionPoint);
                         var hit = currentPartial.board.points.find(a => a.x == target.x && a.y == target.y && a.z == target.z);
                         return !!hit && hit.empty;
@@ -70,6 +72,13 @@ module.exports = class Board {
                         var target = Vector.minus(Vector.plus(targetPoint, p), insertionPoint);
                         //console.log("   checking target: " + JSON.stringify(target));
                         var hit = newPartial.board.points.find(a => a.x == target.x && a.y == target.y && a.z == target.z);
+                        if (hit == undefined) {
+                            hit = {x:target.x, y:target.y, z:target.z, empty:true};
+                            newPartial.board.points.push(hit);
+                        }
+                        // TODO: if we allow upward overflow we might be adding a point that's not in the board yet.
+                        // In that case, we should add it to the board.
+
                         hit.empty = false;
                         hit.pieceKey = pieceKey;
                         hit.orientation = p.orientation;

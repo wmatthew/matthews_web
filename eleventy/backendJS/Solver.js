@@ -75,7 +75,8 @@ module.exports = class Solver {
             }
         }
 
-        Solver.solveThisPuzzleWithoutLookingAtCache(constraintKey);
+        var result = Solver.solveThisPuzzleWithoutLookingAtCache(constraintKey);
+        Solver.saveResult(constraintKey, result);
     }
 
     // Advance the partials and add findings to completedBoards.
@@ -102,7 +103,7 @@ module.exports = class Solver {
         var candidate = newState.partials.pop();
 
         if (Board.isSolution(candidate, newState)) {
-            //console.log("🎉 Found a solution!");
+            console.log("🎉 Found a solution!");
             // Save this new solution to an array and hash.
             newState.completedBoards.push(candidate.board);
             var key = Board.getUniqueKey(candidate.board);
@@ -115,7 +116,6 @@ module.exports = class Solver {
         } else {
             // Push + Pop = stack = depth first search
             newState.partials.push(...Board.getSuccessorPartials(candidate, newState));
-            //console.log("🔍 " + newState.partials.length + " partials.");
         }
 
         return newState;
@@ -171,7 +171,6 @@ module.exports = class Solver {
             "solveDate": new Date().toLocaleDateString()
         };
         
-        //console.log("   " + result.numSolutionsTotal + " total solutions.");
         console.log("   " + result.numSolutionsUnique + " unique solutions. " + result.solveTimeSeconds + " seconds, " + result.numSteps + " steps.");
         return result;
     }

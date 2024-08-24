@@ -3,7 +3,6 @@ module.exports = class Hydrator {
 
     // modify the piece in place
     static hydrate(piece) {
-        //console.log("Hydrating piece: ", piece);
         // generate points if we don't already have them
         if (!piece.points) {
           piece.points = Hydrator.convertCompactToPoints(piece.compact);
@@ -20,7 +19,8 @@ module.exports = class Hydrator {
         // TODO These next three lines assume coordinates start at (1,1) - that they're already fixed.
         piece.elevationMap = piece.points.filter(p => p.z == Math.max(...piece.points.filter(a => a.x==p.x&&a.y==p.y).map(a => a.z)));
         piece.hasOverhangs = piece.elevationMap.some(p => piece.points.filter(a => a.x==p.x&&a.y==p.y).length < p.z);
-        piece.footprintArea = piece.points.filter(p => p.z == 1).length;
+        piece.floorPoints = piece.points.filter(p => p.z == 1);
+        piece.footprintArea = piece.floorPoints.length;
 
         piece.volume = piece.points.length;
 
@@ -42,7 +42,6 @@ module.exports = class Hydrator {
         piece.depth = piece.maxZ - piece.minZ + 1;
 
         piece["isHydrated"] = true;
-        //console.log("Hydrated piece: ", piece);
         return piece;
 
         function transformStyle(x,y,z) {

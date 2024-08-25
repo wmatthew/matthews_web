@@ -55,9 +55,12 @@ module.exports = class Piece {
             directions = ["A", "N", "E", "W", "S", "U"];
         }
         
-        return directions.flatMap(direction => 
+        var result = directions.flatMap(direction => 
             Piece.fourRotations(piece, direction)
         );
+
+        //console.log("getOrientations: " + result.length + " orientations");
+        return result;
     }
 
     // does not mofify input

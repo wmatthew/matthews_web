@@ -86,7 +86,7 @@ module.exports = class Solver {
         const bailAfterThisManySteps = 100000;
         const BAILED_TOO_MANY_STEPS = "too many steps";
         const BAILED_TOO_MANY_SOLUTIONS = "too many solutions";
-        const BAILED_ERRORS = "errors";
+        const BAILED_DUE_TO_ERRORS = "errors";
     
         var newState = structuredClone(oldState);
         newState.numSteps += 1;
@@ -103,7 +103,6 @@ module.exports = class Solver {
         var candidate = newState.partials.pop();
 
         if (Board.isSolution(candidate, newState)) {
-            console.log("🎉 Found a solution!");
             // Save this new solution to an array and hash.
             newState.completedBoards.push(candidate.board);
             var key = Board.getUniqueKey(candidate.board);
@@ -112,6 +111,8 @@ module.exports = class Solver {
             Painter.paintPoints(candidate.board.points);
 
             newState.completedBoardsUnique[key] = candidate.board;
+
+            console.log("🎉 Found a solution! now have " + newState.completedBoards.length + " (" + Object.keys(newState.completedBoardsUnique).length + " uniq)");
 
         } else {
             // Push + Pop = stack = depth first search
@@ -150,7 +151,13 @@ module.exports = class Solver {
         while (currentState.partials.length > 0 && currentState.didWeBailOutEarly == false) {
             currentState = Solver.stepSolverForward(currentState);
         }
-        
+
+        // Only five unique solutions
+        var truncatedUniqueSolutions = {};
+        Object.keys(currentState.completedBoardsUnique).slice(0,5).forEach(k => {
+            truncatedUniqueSolutions[k] = currentState.completedBoardsUnique[k];
+        });
+
         var result = {
             // inputs
             "key": puzzle.key,
@@ -160,7 +167,7 @@ module.exports = class Solver {
             // outputs
             //"solutionsTotal": currentState.completedBoards, // debugging only.
             //"solutionsUnique": currentState.completedBoardsUnique, // debugging only.
-            "solutionsUnique": Object.values(currentState.completedBoardsUnique).slice(0,5), // Only five unique solutions
+            "solutionsUnique": truncatedUniqueSolutions,
             "numSolutionsTotal": currentState.completedBoards.length,
             "numSolutionsUnique": Object.keys(currentState.completedBoardsUnique).length,
         

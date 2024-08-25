@@ -49,7 +49,7 @@ module.exports = class Board {
             Piece.getOrientations(piece, puzzleState.puzzle.constraint_flags).forEach(orientedPiece => {
                 if (shouldQuitEarly()) return;
 
-                // For every insertionPoint (offet) within that oriented piece...
+                // For every insertionPoint (offset) within that oriented piece...
                 var upwardFlow = Constraints.checkConstraint(puzzleState.puzzle.constraint_flags, Constraints.KEY.allowUpwardOverflow);
                 var insertionPoints = upwardFlow ? orientedPiece.floorPoints : orientedPiece.points;
                 insertionPoints.forEach(insertionPoint => {

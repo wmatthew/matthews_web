@@ -42,7 +42,7 @@ module.exports = class Constraints {
         if (constraintKey in constraintFlagHash) {
             return constraintFlagHash[constraintKey];
         } else {
-            return constraintMetadata.Tiling_Default[constraintKey];
+            return constraintMetadata.Tiling_Default.constraint_flags[constraintKey];
         }
     }
 

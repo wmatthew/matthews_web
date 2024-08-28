@@ -1,7 +1,7 @@
 {
   "Clones_Tile_A_Square_Simple": {
     "name": "Clones Tile A Rectangle - Simple Version",
-    "description": "Copies of a single polycube tile a rectangle boardKey. Simplest config; no constraint flags.",
+    "description": "Copies of a single polycube tile a rectangle. Simplest config; no constraint flags.",
     "type": "Template",
     "constraint_flags": {},
     "key": "Clones_Tile_A_Square_Simple",
@@ -9,7 +9,7 @@
     "url": false},
   "Clones_Tile_A_Square": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors",
-    "description": "Copies of a single polycube tile a rectangle boardKey. Matching orientations can't touch.",
+    "description": "Copies of a single polycube tile a rectangle. Matching orientations can't touch.",
     "type": "Template",
     "constraint_flags": {
       "colorByOrientation": true,
@@ -20,7 +20,7 @@
     "url": false},
   "Overhang_City": {
     "name": "Overhang City",
-    "description": "Copies of a polycube tile a rectangle boardKey and can overhang.",
+    "description": "Copies of a polycube tile a rectangle and can overhang.",
     "type": "Template",
     "constraint_flags": {
       "allowSupportedOverhangs": true,

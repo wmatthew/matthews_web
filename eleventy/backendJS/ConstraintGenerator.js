@@ -108,7 +108,8 @@ module.exports = class ConstraintGenerator {
             clone.key = childKey;
             clone.parentKey = parentKey;
             clone.type = "Generated";
-            clone.name = clone.name + " (" + [childBoardKey, ...extraFieldsForKey].join("_") + ")";
+            clone.childShortName = [childBoardKey, ...extraFieldsForKey].join("_");
+            clone.name = clone.name + " (" + clone.childShortName + ")";
             clone.template = parentKey;
 
             constraintLibrary[childKey] = clone;

@@ -43,15 +43,23 @@ module.exports = class Connections {
     }
 
     static getThingsThatUsePiece(pieceKey) {
-        var result = Object.values(constraintTemplates).concat(Object.values(constraintLibrary)).filter(obj => {
+        // Just return the templates, not every generated constraint.
+        var result = Object.values(constraintLibrary).filter(obj => {
             return ("key" in obj) &&
             ("pieceSupply" in obj) &&
             Array.isArray(obj.pieceSupply) &&
             (obj.pieceSupply.map(p => p[0]).includes(pieceKey));
-        }
-        ).map(obj => {return {url:Connections.getUrl(obj.key), displayName:obj.name};});
+        })
+        .map(childObj => constraintTemplates[childObj.parentKey])
+        .filter(onlyUnique)
+        .map(obj => {return {url:Connections.getUrl(obj.key), displayName:obj.name};});
         return result;
+
+        function onlyUnique(value, index, array) { // TODO: move to util file. This exists in at least 2 places.
+            return array.indexOf(value) === index;
+        }    
     }
+
 
     static getThingsThatUseBoard(boardKey) {
 
@@ -85,7 +93,9 @@ module.exports = class Connections {
             obj.type == "Generated" &&
             obj.parentKey == templateKey;
         }
-        ).map(obj => {return {url:Connections.getUrl(obj.key), displayName:obj.name};});
+        ).map(obj => {
+            return {url:Connections.getUrl(obj.key), displayName:obj.childShortName};
+        });
         return result;
     }
 

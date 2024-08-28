@@ -17,6 +17,7 @@
       "category": "Pentomino"},
     "boardKey": "pent1",
     "pieceSupply": [["Q",1]],
+    "childShortName": "pent1_Px0",
     "template": "P_Pentominos"},
   "P_Pentominos_pent1_Px1": {
     "name": "P-Pentominos (pent1_Px1)",
@@ -36,6 +37,7 @@
       "category": "Pentomino"},
     "boardKey": "pent1",
     "pieceSupply": [["P",1]],
+    "childShortName": "pent1_Px1",
     "template": "P_Pentominos"},
   "P_Pentominos_pent2_Px0": {
     "name": "P-Pentominos (pent2_Px0)",
@@ -55,6 +57,7 @@
       "category": "Pentomino"},
     "boardKey": "pent2",
     "pieceSupply": [["Q",4]],
+    "childShortName": "pent2_Px0",
     "template": "P_Pentominos"},
   "P_Pentominos_pent2_Px1": {
     "name": "P-Pentominos (pent2_Px1)",
@@ -74,6 +77,7 @@
       "category": "Pentomino"},
     "boardKey": "pent2",
     "pieceSupply": [["P",1],["Q",3]],
+    "childShortName": "pent2_Px1",
     "template": "P_Pentominos"},
   "P_Pentominos_pent2_Px2": {
     "name": "P-Pentominos (pent2_Px2)",
@@ -93,6 +97,7 @@
       "category": "Pentomino"},
     "boardKey": "pent2",
     "pieceSupply": [["P",2],["Q",2]],
+    "childShortName": "pent2_Px2",
     "template": "P_Pentominos"},
   "P_Pentominos_pent2_Px3": {
     "name": "P-Pentominos (pent2_Px3)",
@@ -112,6 +117,7 @@
       "category": "Pentomino"},
     "boardKey": "pent2",
     "pieceSupply": [["P",3],["Q",1]],
+    "childShortName": "pent2_Px3",
     "template": "P_Pentominos"},
   "P_Pentominos_pent2_Px4": {
     "name": "P-Pentominos (pent2_Px4)",
@@ -131,6 +137,7 @@
       "category": "Pentomino"},
     "boardKey": "pent2",
     "pieceSupply": [["P",4]],
+    "childShortName": "pent2_Px4",
     "template": "P_Pentominos"},
   "P_Pentominos_pent3_Px0": {
     "name": "P-Pentominos (pent3_Px0)",
@@ -150,6 +157,7 @@
       "category": "Pentomino"},
     "boardKey": "pent3",
     "pieceSupply": [["Q",9]],
+    "childShortName": "pent3_Px0",
     "template": "P_Pentominos"},
   "P_Pentominos_pent3_Px1": {
     "name": "P-Pentominos (pent3_Px1)",
@@ -169,6 +177,7 @@
       "category": "Pentomino"},
     "boardKey": "pent3",
     "pieceSupply": [["P",1],["Q",8]],
+    "childShortName": "pent3_Px1",
     "template": "P_Pentominos"},
   "P_Pentominos_pent3_Px2": {
     "name": "P-Pentominos (pent3_Px2)",
@@ -188,6 +197,7 @@
       "category": "Pentomino"},
     "boardKey": "pent3",
     "pieceSupply": [["P",2],["Q",7]],
+    "childShortName": "pent3_Px2",
     "template": "P_Pentominos"},
   "P_Pentominos_pent3_Px3": {
     "name": "P-Pentominos (pent3_Px3)",
@@ -207,6 +217,7 @@
       "category": "Pentomino"},
     "boardKey": "pent3",
     "pieceSupply": [["P",3],["Q",6]],
+    "childShortName": "pent3_Px3",
     "template": "P_Pentominos"},
   "P_Pentominos_pent3_Px4": {
     "name": "P-Pentominos (pent3_Px4)",
@@ -226,6 +237,7 @@
       "category": "Pentomino"},
     "boardKey": "pent3",
     "pieceSupply": [["P",4],["Q",5]],
+    "childShortName": "pent3_Px4",
     "template": "P_Pentominos"},
   "P_Pentominos_pent3_Px5": {
     "name": "P-Pentominos (pent3_Px5)",
@@ -245,6 +257,7 @@
       "category": "Pentomino"},
     "boardKey": "pent3",
     "pieceSupply": [["P",5],["Q",4]],
+    "childShortName": "pent3_Px5",
     "template": "P_Pentominos"},
   "P_Pentominos_pent3_Px6": {
     "name": "P-Pentominos (pent3_Px6)",
@@ -264,6 +277,7 @@
       "category": "Pentomino"},
     "boardKey": "pent3",
     "pieceSupply": [["P",6],["Q",3]],
+    "childShortName": "pent3_Px6",
     "template": "P_Pentominos"},
   "P_Pentominos_pent3_Px7": {
     "name": "P-Pentominos (pent3_Px7)",
@@ -283,6 +297,7 @@
       "category": "Pentomino"},
     "boardKey": "pent3",
     "pieceSupply": [["P",7],["Q",2]],
+    "childShortName": "pent3_Px7",
     "template": "P_Pentominos"},
   "P_Pentominos_pent3_Px8": {
     "name": "P-Pentominos (pent3_Px8)",
@@ -302,6 +317,7 @@
       "category": "Pentomino"},
     "boardKey": "pent3",
     "pieceSupply": [["P",8],["Q",1]],
+    "childShortName": "pent3_Px8",
     "template": "P_Pentominos"},
   "P_Pentominos_pent3_Px9": {
     "name": "P-Pentominos (pent3_Px9)",
@@ -321,6 +337,7 @@
       "category": "Pentomino"},
     "boardKey": "pent3",
     "pieceSupply": [["P",9]],
+    "childShortName": "pent3_Px9",
     "template": "P_Pentominos"},
   "P_Pentominos_pent4_Px0": {
     "name": "P-Pentominos (pent4_Px0)",
@@ -340,6 +357,7 @@
       "category": "Pentomino"},
     "boardKey": "pent4",
     "pieceSupply": [["Q",16]],
+    "childShortName": "pent4_Px0",
     "template": "P_Pentominos"},
   "P_Pentominos_pent4_Px1": {
     "name": "P-Pentominos (pent4_Px1)",
@@ -359,6 +377,7 @@
       "category": "Pentomino"},
     "boardKey": "pent4",
     "pieceSupply": [["P",1],["Q",15]],
+    "childShortName": "pent4_Px1",
     "template": "P_Pentominos"},
   "P_Pentominos_pent4_Px2": {
     "name": "P-Pentominos (pent4_Px2)",
@@ -378,6 +397,7 @@
       "category": "Pentomino"},
     "boardKey": "pent4",
     "pieceSupply": [["P",2],["Q",14]],
+    "childShortName": "pent4_Px2",
     "template": "P_Pentominos"},
   "P_Pentominos_pent4_Px3": {
     "name": "P-Pentominos (pent4_Px3)",
@@ -397,6 +417,7 @@
       "category": "Pentomino"},
     "boardKey": "pent4",
     "pieceSupply": [["P",3],["Q",13]],
+    "childShortName": "pent4_Px3",
     "template": "P_Pentominos"},
   "P_Pentominos_pent4_Px4": {
     "name": "P-Pentominos (pent4_Px4)",
@@ -416,6 +437,7 @@
       "category": "Pentomino"},
     "boardKey": "pent4",
     "pieceSupply": [["P",4],["Q",12]],
+    "childShortName": "pent4_Px4",
     "template": "P_Pentominos"},
   "P_Pentominos_pent4_Px5": {
     "name": "P-Pentominos (pent4_Px5)",
@@ -435,6 +457,7 @@
       "category": "Pentomino"},
     "boardKey": "pent4",
     "pieceSupply": [["P",5],["Q",11]],
+    "childShortName": "pent4_Px5",
     "template": "P_Pentominos"},
   "P_Pentominos_pent4_Px6": {
     "name": "P-Pentominos (pent4_Px6)",
@@ -454,6 +477,7 @@
       "category": "Pentomino"},
     "boardKey": "pent4",
     "pieceSupply": [["P",6],["Q",10]],
+    "childShortName": "pent4_Px6",
     "template": "P_Pentominos"},
   "P_Pentominos_pent4_Px7": {
     "name": "P-Pentominos (pent4_Px7)",
@@ -473,6 +497,7 @@
       "category": "Pentomino"},
     "boardKey": "pent4",
     "pieceSupply": [["P",7],["Q",9]],
+    "childShortName": "pent4_Px7",
     "template": "P_Pentominos"},
   "P_Pentominos_pent4_Px8": {
     "name": "P-Pentominos (pent4_Px8)",
@@ -492,6 +517,7 @@
       "category": "Pentomino"},
     "boardKey": "pent4",
     "pieceSupply": [["P",8],["Q",8]],
+    "childShortName": "pent4_Px8",
     "template": "P_Pentominos"},
   "P_Pentominos_pent4_Px9": {
     "name": "P-Pentominos (pent4_Px9)",
@@ -511,6 +537,7 @@
       "category": "Pentomino"},
     "boardKey": "pent4",
     "pieceSupply": [["P",9],["Q",7]],
+    "childShortName": "pent4_Px9",
     "template": "P_Pentominos"},
   "P_Pentominos_pent4_Px10": {
     "name": "P-Pentominos (pent4_Px10)",
@@ -530,6 +557,7 @@
       "category": "Pentomino"},
     "boardKey": "pent4",
     "pieceSupply": [["P",10],["Q",6]],
+    "childShortName": "pent4_Px10",
     "template": "P_Pentominos"},
   "P_Pentominos_pent4_Px11": {
     "name": "P-Pentominos (pent4_Px11)",
@@ -549,6 +577,7 @@
       "category": "Pentomino"},
     "boardKey": "pent4",
     "pieceSupply": [["P",11],["Q",5]],
+    "childShortName": "pent4_Px11",
     "template": "P_Pentominos"},
   "P_Pentominos_pent4_Px12": {
     "name": "P-Pentominos (pent4_Px12)",
@@ -568,6 +597,7 @@
       "category": "Pentomino"},
     "boardKey": "pent4",
     "pieceSupply": [["P",12],["Q",4]],
+    "childShortName": "pent4_Px12",
     "template": "P_Pentominos"},
   "P_Pentominos_pent4_Px13": {
     "name": "P-Pentominos (pent4_Px13)",
@@ -587,6 +617,7 @@
       "category": "Pentomino"},
     "boardKey": "pent4",
     "pieceSupply": [["P",13],["Q",3]],
+    "childShortName": "pent4_Px13",
     "template": "P_Pentominos"},
   "P_Pentominos_pent4_Px14": {
     "name": "P-Pentominos (pent4_Px14)",
@@ -606,6 +637,7 @@
       "category": "Pentomino"},
     "boardKey": "pent4",
     "pieceSupply": [["P",14],["Q",2]],
+    "childShortName": "pent4_Px14",
     "template": "P_Pentominos"},
   "P_Pentominos_pent4_Px15": {
     "name": "P-Pentominos (pent4_Px15)",
@@ -625,6 +657,7 @@
       "category": "Pentomino"},
     "boardKey": "pent4",
     "pieceSupply": [["P",15],["Q",1]],
+    "childShortName": "pent4_Px15",
     "template": "P_Pentominos"},
   "P_Pentominos_pent4_Px16": {
     "name": "P-Pentominos (pent4_Px16)",
@@ -644,6 +677,7 @@
       "category": "Pentomino"},
     "boardKey": "pent4",
     "pieceSupply": [["P",16]],
+    "childShortName": "pent4_Px16",
     "template": "P_Pentominos"},
   "Angel_Cube_cube4": {
     "name": "Angel Cube (cube4)",
@@ -664,6 +698,7 @@
       "category": "Cube"},
     "boardKey": "cube4",
     "pieceSupply": [["T",8],["S2",4]],
+    "childShortName": "cube4",
     "template": "Angel_Cube"},
   "Tatami_rect4x4": {
     "name": "Tatami Tiling - Classic (rect4x4)",
@@ -684,6 +719,7 @@
       "category": "Rectangle"},
     "boardKey": "rect4x4",
     "pieceSupply": [["I2",8]],
+    "childShortName": "rect4x4",
     "template": "Tatami"},
   "Clones_Tile_A_Square_rect1x1_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors (rect1x1_PLR)",
@@ -705,6 +741,7 @@
       "category": "Rectangle"},
     "boardKey": "rect1x1",
     "pieceSupply": [["PLR",-1]],
+    "childShortName": "rect1x1_PLR",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect2x2_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors (rect2x2_PLR)",
@@ -726,6 +763,7 @@
       "category": "Rectangle"},
     "boardKey": "rect2x2",
     "pieceSupply": [["PLR",-1]],
+    "childShortName": "rect2x2_PLR",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect3x3_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors (rect3x3_PLR)",
@@ -747,6 +785,7 @@
       "category": "Rectangle"},
     "boardKey": "rect3x3",
     "pieceSupply": [["PLR",-1]],
+    "childShortName": "rect3x3_PLR",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect4x4_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors (rect4x4_PLR)",
@@ -768,6 +807,7 @@
       "category": "Rectangle"},
     "boardKey": "rect4x4",
     "pieceSupply": [["PLR",-1]],
+    "childShortName": "rect4x4_PLR",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect5x5_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors (rect5x5_PLR)",
@@ -789,6 +829,7 @@
       "category": "Rectangle"},
     "boardKey": "rect5x5",
     "pieceSupply": [["PLR",-1]],
+    "childShortName": "rect5x5_PLR",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect6x6_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors (rect6x6_PLR)",
@@ -810,6 +851,7 @@
       "category": "Rectangle"},
     "boardKey": "rect6x6",
     "pieceSupply": [["PLR",-1]],
+    "childShortName": "rect6x6_PLR",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect7x7_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors (rect7x7_PLR)",
@@ -831,6 +873,7 @@
       "category": "Rectangle"},
     "boardKey": "rect7x7",
     "pieceSupply": [["PLR",-1]],
+    "childShortName": "rect7x7_PLR",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect8x8_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors (rect8x8_PLR)",
@@ -852,6 +895,7 @@
       "category": "Rectangle"},
     "boardKey": "rect8x8",
     "pieceSupply": [["PLR",-1]],
+    "childShortName": "rect8x8_PLR",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect9x9_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors (rect9x9_PLR)",
@@ -873,6 +917,7 @@
       "category": "Rectangle"},
     "boardKey": "rect9x9",
     "pieceSupply": [["PLR",-1]],
+    "childShortName": "rect9x9_PLR",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_rect10x10_PLR": {
     "name": "Clones Tile A Rectangle - Restricted Neighbors (rect10x10_PLR)",
@@ -894,6 +939,7 @@
       "category": "Rectangle"},
     "boardKey": "rect10x10",
     "pieceSupply": [["PLR",-1]],
+    "childShortName": "rect10x10_PLR",
     "template": "Clones_Tile_A_Square"},
   "Clones_Tile_A_Square_Simple_rect1x1_T": {
     "name": "Clones Tile A Rectangle - Simple Version (rect1x1_T)",
@@ -912,6 +958,7 @@
       "category": "Rectangle"},
     "boardKey": "rect1x1",
     "pieceSupply": [["T",-1]],
+    "childShortName": "rect1x1_T",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect2x2_T": {
     "name": "Clones Tile A Rectangle - Simple Version (rect2x2_T)",
@@ -930,6 +977,7 @@
       "category": "Rectangle"},
     "boardKey": "rect2x2",
     "pieceSupply": [["T",-1]],
+    "childShortName": "rect2x2_T",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect3x3_T": {
     "name": "Clones Tile A Rectangle - Simple Version (rect3x3_T)",
@@ -948,6 +996,7 @@
       "category": "Rectangle"},
     "boardKey": "rect3x3",
     "pieceSupply": [["T",-1]],
+    "childShortName": "rect3x3_T",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect4x4_T": {
     "name": "Clones Tile A Rectangle - Simple Version (rect4x4_T)",
@@ -966,6 +1015,7 @@
       "category": "Rectangle"},
     "boardKey": "rect4x4",
     "pieceSupply": [["T",-1]],
+    "childShortName": "rect4x4_T",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect5x5_T": {
     "name": "Clones Tile A Rectangle - Simple Version (rect5x5_T)",
@@ -984,6 +1034,7 @@
       "category": "Rectangle"},
     "boardKey": "rect5x5",
     "pieceSupply": [["T",-1]],
+    "childShortName": "rect5x5_T",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect6x6_T": {
     "name": "Clones Tile A Rectangle - Simple Version (rect6x6_T)",
@@ -1002,6 +1053,7 @@
       "category": "Rectangle"},
     "boardKey": "rect6x6",
     "pieceSupply": [["T",-1]],
+    "childShortName": "rect6x6_T",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect7x7_T": {
     "name": "Clones Tile A Rectangle - Simple Version (rect7x7_T)",
@@ -1020,6 +1072,7 @@
       "category": "Rectangle"},
     "boardKey": "rect7x7",
     "pieceSupply": [["T",-1]],
+    "childShortName": "rect7x7_T",
     "template": "Clones_Tile_A_Square_Simple"},
   "Clones_Tile_A_Square_Simple_rect8x8_T": {
     "name": "Clones Tile A Rectangle - Simple Version (rect8x8_T)",
@@ -1038,4 +1091,5 @@
       "category": "Rectangle"},
     "boardKey": "rect8x8",
     "pieceSupply": [["T",-1]],
+    "childShortName": "rect8x8_T",
     "template": "Clones_Tile_A_Square_Simple"}}

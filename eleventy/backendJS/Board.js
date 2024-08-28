@@ -65,9 +65,11 @@ module.exports = class Board {
                     if (!itFits) {
                         return;
                     }
-
+                        
                     // ...create a successor partial, and add it to the list.
                     var newPartial = structuredClone(currentPartial);
+                    newPartial.depth++;
+
                     orientedPiece.points.forEach(p => {
                         var target = Vector.minus(Vector.plus(targetPoint, p), insertionPoint);
                         //console.log("   checking target: " + JSON.stringify(target));
@@ -84,6 +86,12 @@ module.exports = class Board {
                         hit.orientation = p.orientation;
                         hit.id = nextId;
                     });
+
+                    if (false) { // debugging
+                        console.log("  getSuccessorPartialsForThisTargetPoint. pieceKey: " + pieceKey + " insertionPoint: " + JSON.stringify(insertionPoint));
+                        var textMap = Board.getTextMap(newPartial.board);
+                        console.log(textMap);
+                    }
 
                     // Decrement piece count in supply
                     PieceSupply.decrementPieceCount(newPartial.supply, pieceKey);
@@ -205,6 +213,30 @@ module.exports = class Board {
         function concatPieceKeys(points) {
             return points.map(p => [p.x,p.y,p.z,p.id,p.pieceKey].join(",")).join(";");
         }
+    }
+
+    // Used for command line debugging
+    static getTextMap(board) {
+        var maxX = Math.max(...board.points.map(p => p.x));
+        var maxY = Math.max(...board.points.map(p => p.y));
+        var textMap = " ";
+
+        for (var y = 1; y <= maxY; y++) {
+            for (var x = 1; x <= maxX; x++) {
+                var point = board.points.find(p => p.x == x && p.y == y && p.z == 1);
+                if (point == undefined) {
+                    textMap += "."; // not part of the board
+                } else if (point.empty) {
+                    textMap += "*"; // empty spot on board
+                } else {
+                    textMap += point.id; // occupied spot on board
+                }
+            }
+            textMap += "\n ";
+        }
+
+        return textMap.trimEnd();
+
     }
 
     static isSolution(currentPartial, puzzleState) {

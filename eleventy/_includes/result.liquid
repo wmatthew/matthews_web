@@ -1,18 +1,20 @@
 
-Found {{solution.solutionsUnique.size}} solution
-{%- if solution.solutionsUnique.size != 1 -%}
-s{% endif %}.
+Found {{solution.numSolutionsUnique}} solution
+{%- if solution.numSolutionsUnique != 1 -%}s{% endif %}.
 
 In {{solution.solveTimeSeconds}} seconds and {{solution.numSteps}} steps, 
 solver v{{solution.solverVersion}} ran on {{solution.solveDate}} and
-found {{solution.solutionsTotal.size}} total solutions,
-which reduced to {{solution.solutionsUnique.size}} unique solutions.
+found {{solution.numSolutionsTotal }} total solutions,
+which reduced to {{solution.numSolutionsUnique }} unique solutions.
 
 {%- if solution.didWeBailOutEarly %}
-
 ⚠️ Bailed out early due to {{ solution.didWeBailOutEarly }} - findings are incomplete.
 {% else %}
 Completed without bailing early.
+{% endif %}
+
+{%- if solution.unsupportedConstraints.size > 0 %}
+⚠️ Warning: some unsupported constraints: {{ solution.unsupportedConstraints | join:", " }}
 {% endif %}
 
 {%- if solution.solutionsUnique.size > 0 %}

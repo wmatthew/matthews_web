@@ -33,8 +33,9 @@
 {% else %}
 <p>Constraints: 
 {% for setting in constraints.constraint_flags -%}
-  <a href="{{ setting[0] | getUrl }}" style="font-size:x-large;">{{ icons[setting[0]] }}</a> 
-{% endfor -%}
+  <a href="{{ setting[0] | getUrl }}" style="font-size:x-large;" title="{{ setting[0] }} = {{ setting[1] }}">{{ icons[setting[0]] }}</a>
+  {% if forloop.last == false %} {%endif%}
+{%- endfor -%}
 </p>
 {% endif %}
 

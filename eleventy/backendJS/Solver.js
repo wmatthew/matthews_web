@@ -12,12 +12,12 @@ module.exports = class Solver {
     //==========================================
     // Solver version log
     // 0.1.x: Initial version. No flags supported.
-    static solverVersion = "0.1.1";
+    static solverVersion = "0.1.2";
     static constraintsLibrary = JSON.parse(fs.readFileSync("_data/constraints-library.json", 'utf8'));
 
     static getSolution(constraintKey) {
         if (!(constraintKey in Solver.constraintsLibrary)) {
-            // It's not in the library, probably because it's a template.
+            // It's not in the library. Possibly because it's a template.
             return false;
         }
         var path = Solver.cachePath(constraintKey);
@@ -28,25 +28,21 @@ module.exports = class Solver {
         return JSON.parse(fs.readFileSync(path, 'utf8'));
     }
 
-    // the new cache
     static cachePath(constraintKey) {
         var parentKey = Solver.constraintsLibrary[constraintKey].parentKey;
         var path = "_data/solutions/" + parentKey + "/" + constraintKey + ".json";
-        //console.log("path: " + path);
         return path;
     }
 
-    // uses the new cache
     static saveResult(constraintKey, result) {
-        console.log("Saving result for " + constraintKey);
+        console.log("  saving result for " + constraintKey);
         var newFilePath = Solver.cachePath(constraintKey);
 
         // Create dir if it doesn't exist
         var segments = newFilePath.split("/");
         var leafDirPath = segments.slice(0, segments.length-1).join("/");
-        console.log("Making dir: " + leafDirPath);
+        // console.log("Making dir: " + leafDirPath);
         fs.mkdirSync(leafDirPath, {recursive: true});
-        console.log("Made dir: " + leafDirPath);
 
         // write to the file, creating if necessary
         fs.writeFileSync(newFilePath, jsonFormatter.formatJSON(result));
@@ -67,15 +63,21 @@ module.exports = class Solver {
 
         if (useCache) {
             var solutionObj = Solver.getSolution(constraintKey);
-            if (solutionObj && solutionObj.didWeBailOutEarly == false) {
-                console.log(constraintKey + " found in cache. (took " + solutionObj.solveTimeSeconds + "s)");
-                return;
+            if (solutionObj == undefined) {
+                console.log("  " + constraintKey + " not found in cache.");
+            } else if (solutionObj.didWeBailOutEarly != false) {
+                console.log("  " + constraintKey + " in cache, but bailed early.");
+            } else if (solutionObj.unsupportedConstraints == undefined) {
+                console.log("  " + constraintKey + " in cache, but is missing field unsupportedConstraints.");
+            } else if (solutionObj.unsupportedConstraints.length > 0) {
+                console.log("  " + constraintKey + " in cache, but has some unsupportedConstraints.");
             } else {
-                console.log(constraintKey + " not found in cache.");
+                console.log("  " + constraintKey + " found in cache. (took " + solutionObj.solveTimeSeconds + "s)");
+                return;
             }
         }
 
-        var result = Solver.solveThisPuzzleWithoutLookingAtCache(constraintKey);
+        var result = Solver.solvePuzzleWithoutCache(constraintKey);
         Solver.saveResult(constraintKey, result);
     }
 
@@ -103,16 +105,19 @@ module.exports = class Solver {
         var candidate = newState.partials.pop();
 
         if (Board.isSolution(candidate, newState)) {
-            // Save this new solution to an array and hash.
-            newState.completedBoards.push(candidate.board);
-            var key = Board.getUniqueKey(candidate.board);
-
             // Paint it. Can always repaint later/display differently if needed.
             Painter.paintPoints(candidate.board.points);
 
+            // Save this new solution to an array and hash.
+            newState.completedBoards.push(candidate.board);
+            var key = Board.getUniqueKey(candidate.board);
             newState.completedBoardsUnique[key] = candidate.board;
 
-            console.log("🎉 Found a solution! now have " + newState.completedBoards.length + " (" + Object.keys(newState.completedBoardsUnique).length + " uniq)");
+            //console.log("🎉 Found a solution! now have " + newState.completedBoards.length + " (" + Object.keys(newState.completedBoardsUnique).length + " uniq)");
+            //var textMap = Board.getTextMap(candidate.board);
+            //console.log(textMap);
+            //console.log("newState.partials: " + newState.partials.map(p => p.depth));
+            //console.log("");
 
         } else {
             // Push + Pop = stack = depth first search
@@ -122,14 +127,14 @@ module.exports = class Solver {
         return newState;
     }
     
-    static solveThisPuzzleWithoutLookingAtCache(constraintKey) {
-        console.log("solveThisPuzzleWithoutLookingAtCache: " + constraintKey);
+    static solvePuzzleWithoutCache(constraintKey) {
+        console.log("  solvePuzzleWithoutCache: " + constraintKey);
 
         var startTime = new Date();
         const puzzleReferenceCopy = Solver.constraintsLibrary[constraintKey];
 
-        // For now, warn only.
-        Constraints.areTheseConstraintsSupported(puzzleReferenceCopy.constraint_flags);
+        var unsupportedConstraints = Constraints.getUnsupportedConstraints(puzzleReferenceCopy.constraint_flags);
+        unsupportedConstraints.forEach(f => console.log("  ⚠️  Warning: unsupported flag: " + f));
 
         var puzzle = structuredClone(puzzleReferenceCopy);
         puzzle.board.points.map(p => {
@@ -140,12 +145,14 @@ module.exports = class Solver {
             "puzzle": puzzle,
             "partials": [{
                 board: puzzle.board,
-                supply: puzzle.pieceSupply
+                supply: puzzle.pieceSupply,
+                depth: 0
             }],
             "completedBoards": [],
             "completedBoardsUnique": {},
             "numSteps": 0,
-            "didWeBailOutEarly": false
+            "didWeBailOutEarly": false,
+            "unsupportedConstraints": unsupportedConstraints
         };
         
         while (currentState.partials.length > 0 && currentState.didWeBailOutEarly == false) {
@@ -175,10 +182,11 @@ module.exports = class Solver {
             "numSteps": currentState.numSteps,
             "didWeBailOutEarly": currentState.didWeBailOutEarly,
             "solveTimeSeconds": parseInt((new Date() - startTime) / 1000),
-            "solveDate": new Date().toLocaleDateString()
+            "solveDate": new Date().toLocaleDateString(),
+            "unsupportedConstraints": currentState.unsupportedConstraints
         };
         
-        console.log("   " + result.numSolutionsUnique + " unique solutions. " + result.solveTimeSeconds + " seconds, " + result.numSteps + " steps.");
+        console.log("  " + result.numSolutionsUnique + " unique solutions. " + result.solveTimeSeconds + " seconds, " + result.numSteps + " steps.");
         return result;
     }
 

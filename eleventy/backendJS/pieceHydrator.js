@@ -3,7 +3,7 @@ module.exports = class Hydrator {
 
     // modify the piece in place
     static hydrate(piece) {
-        // generate points if we don't already have them
+        // only generate points from compact if we don't already have them
         if (!piece.points) {
           piece.points = Hydrator.convertCompactToPoints(piece.compact);
         }
@@ -83,10 +83,12 @@ module.exports = class Hydrator {
 
         var minX = Math.min(...grid.points.map(p => p.x));
         var minY = Math.min(...grid.points.map(p => p.y));
+        var minZ = Math.min(...grid.points.map(p => p.z));
 
         newGrid.points = grid.points.map(p => {
             p.x = p.x - minX + 1;
             p.y = p.y - minY + 1;
+            p.z = p.z - minZ + 1;
             return p;
         });
 

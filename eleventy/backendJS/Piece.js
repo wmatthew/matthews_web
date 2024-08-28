@@ -7,7 +7,7 @@ const Constraints = require('./Constraints.js');
 
 module.exports = class Piece {
     
-    // takes a hydrated piece as input.
+    // Takes a hydrated piece as input. Returns a clone.
     // TODO: consolidate hydration and transform into one function?
     static transformPiece(piece, transform) {
         var newPiece = structuredClone(piece);
@@ -43,8 +43,15 @@ module.exports = class Piece {
             throw new Error("transformPiece: unknown turns: " + turns);
         }
 
+        // Note: concat orientations
+        newPiece.points.forEach(p => {
+            if (p.orientation == undefined) p.orientation = "";
+            p.orientation = p.orientation + transform;
+        });
+
         // rehydrate the piece since we changed it.
-        return Hydrator.hydrate(Hydrator.fixCoordinates(newPiece));
+        var fixedClone = Hydrator.fixCoordinates(newPiece);
+        return Hydrator.hydrate(fixedClone);
     }
 
     // does not modify input
@@ -56,27 +63,14 @@ module.exports = class Piece {
         }
         
         var result = directions.flatMap(direction => 
-            Piece.fourRotations(piece, direction)
+            [0,1,2,3].map(i => Piece.transformPiece(piece, direction + i))
         );
 
-        //console.log("getOrientations: " + result.length + " orientations");
-        return result;
-    }
-
-    // does not mofify input
-    static fourRotations(piece, direction) {
-        var rotations = [];
-        var newPiece = structuredClone(piece);
-
-        for (var i = 0; i < 4; i++) {
-            var orientationName = direction + i;
-            newPiece.points.forEach(p => p.orientation = orientationName);
-            rotations.push(newPiece);
-            
-            newPiece = structuredClone(newPiece);
-            Piece.rotate90(newPiece);
+        if (Constraints.checkConstraint(constraints, "allowSupportedOverhangs")) {
+            return result;
+        } else {
+            return result.filter(p => !p.hasOverhangs);
         }
-        return rotations; 
     }
 
     // modifies input!
@@ -97,8 +91,9 @@ module.exports = class Piece {
         TestUtil.assertEqual(JSON.stringify(rPiece.points), '[{"x":1,"y":1,"z":1},{"x":2,"y":1,"z":1},{"x":1,"y":2,"z":1}]', "rPiece stringify");
         TestUtil.assertEqual(rPiece.pointsPretty, "1,1,1|2,1,1|1,2,1", "rPiece pretty");
 
-        var disallowsOrienting = {allowPieceOrienting:false};
-        var allowsOrienting = {allowPieceOrienting:true};
+        var disallowsOrienting = {allowPieceOrienting:false, allowSupportedOverhangs:true};
+        var allowsOrienting = {allowPieceOrienting:true, allowSupportedOverhangs:true};
+        var allowsOrientingNoOverhangs = {allowPieceOrienting:true, allowSupportedOverhangs:false};
         TestUtil.assertEqual(Piece.getOrientations(rPiece, disallowsOrienting).length, 4, "getOrientations has 4 entries");        
         TestUtil.assertEqual(Piece.getOrientations(rPiece, allowsOrienting).length, 24, "getOrientations has 24 entries");        
 
@@ -110,5 +105,19 @@ module.exports = class Piece {
             Piece.transformPiece(Piece.transformPiece(rPiece, "A2"), "A2").pointsPretty,
             rPiece.pointsPretty, "A2 2x = A0");
 
+        var PLRPiece = Piece.pieceFromKey("PLR");
+
+        TestUtil.assertEqual(Piece.transformPiece(PLRPiece, "A0").pointsPretty, "1,1,1|1,1,2|2,1,1|2,1,2|3,1,1|1,2,1", "PLR-A0");
+        TestUtil.assertEqual(Piece.transformPiece(PLRPiece, "N0").pointsPretty, "1,2,1|1,1,1|2,2,1|2,1,1|3,2,1|1,2,2", "PLR-N0");
+        TestUtil.assertEqual(Piece.transformPiece(PLRPiece, "U0").pointsPretty, "3,1,2|3,1,1|2,1,2|2,1,1|1,1,2|3,2,2", "PLR-U0");
+        TestUtil.assertEqual(Piece.transformPiece(PLRPiece, "W0").pointsPretty, "2,1,1|1,1,1|2,1,2|1,1,2|2,1,3|2,2,1", "PLR-W0");
+
+        TestUtil.assertEqual(Piece.transformPiece(PLRPiece, "W0").footprintArea, 3, "PLR-W0 footprintArea");
+
+        var PLRorientations = Piece.getOrientations(PLRPiece, allowsOrienting);
+        TestUtil.assertEqual(PLRorientations.map(p => p.footprintArea).join(), "4,4,4,4,5,5,5,5,1,1,1,1,3,3,3,3,1,1,1,1,2,2,2,2", "PLRorientations footprintArea");
+
+        var PLRorientationsNoOverhangs = Piece.getOrientations(PLRPiece, allowsOrientingNoOverhangs);
+        TestUtil.assertEqual(PLRorientationsNoOverhangs.map(p => p.footprintArea).join(), "4,4,4,4,5,5,5,5,3,3,3,3", "PLRorientations footprintArea");
     }
 }

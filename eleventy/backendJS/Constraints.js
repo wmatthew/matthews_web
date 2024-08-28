@@ -26,16 +26,13 @@ module.exports = class Constraints {
         "allowUnusedOrientations": "allowUnusedOrientations"       
     }
 
-    static areTheseConstraintsSupported(constraintKeys) {
+    static getUnsupportedConstraints(constraintKeys) {
         var supportedConstraints = [
-            "allowPieceOrienting"
+            "allowPieceOrienting",
+            "allowUpwardOverflow"
             // add more here as we support constraint flags.
         ]; 
-        var unsupportedFlags = Object.keys(constraintKeys).filter(f => !(supportedConstraints.includes(f)));
-        if (unsupportedFlags.length > 0) {        
-          console.log("⚠️  Warning: unsupported flags: " + unsupportedFlags);
-        }
-        return unsupportedFlags.length == 0;
+        return Object.keys(constraintKeys).filter(f => !(supportedConstraints.includes(f)));
     }
 
     static checkConstraint(constraintFlagHash, constraintKey) {

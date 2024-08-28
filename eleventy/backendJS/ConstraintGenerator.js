@@ -68,7 +68,7 @@ module.exports = class ConstraintGenerator {
         //==========================================
         // Clones tile a square
         var parentKey = "Clones_Tile_A_Square";
-        for (var size=1; size<=10; size++) {
+        for (var size=3; size<=10; size++) {
             ["PLR"].forEach(p => {
                 var childSupply = [[p, PieceSupply.INFINITE_PIECES]];
                 var childBoard = "rect"+size+"x"+size;
@@ -78,7 +78,7 @@ module.exports = class ConstraintGenerator {
 
         // (simplest version; no upward overflow allowed)
         var parentKey = "Clones_Tile_A_Square_Simple";
-        for (var size=1; size<=8; size++) {
+        for (var size=3; size<=8; size++) {
             ["T"].forEach(p => {
                 var childSupply = [[p, PieceSupply.INFINITE_PIECES]];
                 var childBoard = "rect"+size+"x"+size;

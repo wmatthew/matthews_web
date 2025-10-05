@@ -68,13 +68,20 @@ module.exports = class ConstraintGenerator {
         //==========================================
         // Clones tile a square
         var parentKey = "Clones_Tile_A_Square";
-        for (var size=3; size<=10; size++) {
-            ["PLR"].forEach(p => {
+        var boards = [];
+        for (var height=2; height<=7; height++) {
+            for (var width=2; width<=height; width++) {
+                boards.push("rect"+width+"x"+height);
+            }
+        }
+
+        boards.forEach(board => {
+            ["L", "PLR", "PQO", "PQR", "PQA", "APL", "P", "VPL", "L+3", "1x2x3", "2x3x5"].forEach(p => {
                 var childSupply = [[p, PieceSupply.INFINITE_PIECES]];
-                var childBoard = "rect"+size+"x"+size;
+                var childBoard = board;
                 addClone(parentKey, childBoard, childSupply, [p]);
             });
-        }
+        });
 
         // (simplest version; no upward overflow allowed)
         var parentKey = "Clones_Tile_A_Square_Simple";
@@ -85,6 +92,9 @@ module.exports = class ConstraintGenerator {
                 addClone(parentKey, childBoard, childSupply, [p]);
             });
         }
+
+        // block city, 11x11, 2x3x5
+        var parentKey = "";
 
         //==========================================
         // Save it to constraint-library.json (overwrite)

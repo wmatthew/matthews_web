@@ -19,6 +19,8 @@
     "APL": { "compact": "321/2" },
     "PQA": { "compact": "321/21" },
     "VPL": { "compact": "311/11" },
+    "1x2x3": { "compact": "33" },
+    "2x3x5": { "compact": "555/555" },
     "3x4x5": { "compact": "5555/5555/5555" },
     "PQO": { "compact": "221/21" },
     "knot": { "compact": "322/31/11", "note": "Identical footprint on 3 sides." },

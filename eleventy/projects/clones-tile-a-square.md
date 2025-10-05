@@ -1,44 +1,38 @@
 ---
 layout: layouts/base.liquid
-title: Clones Tile A Square
+title: Clones Tile A Rectangle
 eleventyNavigation:
-  key: Clones Tile A Square
+  key: Clones Tile A Rectangle
   parent: Investigations
-permalink: polycube/clones/tile/a/square/
+permalink: polycube/clones/tile/a/rectangle/
 tags:
   - investigation
 ---
 # {{title}}
 
-## Premise
-Puzzle: you are given N identical polycubes and asked to tile a square board of size B.
-* Each piece must touch the board.
-* The board must be completely covered (no gaps, no spillover outside the boundaries)
-* Pieces in the same orientation can't touch (at face, edge or corner)
-
-For what pieces and values B, N is this a good puzzle?
-
-## Configuration
-
-{% include constraints constraints:constraints-templates.Clones_Tile_A_Square %}
-
-
-...
-
-{% include constraints constraints:constraints-library.Clones_Tile_A_Square_Simple_rect4x4_T %}
-
-## Pieces
-
-Here's the piece you start with. We'll examine 1-25 of these.
+Tile a rectangular board with these:
 
 {% include piece3d, key:"PLR", color:1, size:"small" %}
 
-Here are the three valid faces:
+## Rules
+* Each piece must touch the board.
+* The board must be completely covered (no gaps, no spillover outside the boundaries)
+* Pieces in the same orientation can't touch (at face, edge or corner)
+* No overhangs: pieces may not extend over empty space or other pieces.
 
+We can vary the number of pieces N and the board shape B. For what values of B and N is this a good puzzle?
+
+## Orientations
+
+Here are the three overhang-free faces:
+
+{% include piece3d, transform:"N1", key:"PLR", color:1, size:"small", caption:caption %}
 {% include pieceElevation, key:"P", color:1, size:"small" %}
 
+{% include piece3d, transform:"A3", key:"PLR", color:1, size:"small", caption:caption %}
 {% include pieceElevation, key:"L", color:1, size:"small" %}
 
+{% include piece3d, transform:"W3", key:"PLR", color:1, size:"small", caption:caption %}
 {% include pieceElevation, key:"R", color:1, size:"small" %}
 
 
@@ -72,3 +66,12 @@ When highlighting each cell we see:
 * board size (B)
 * preview of 1 solution (if applicable)
 
+# Appendix: Formal Configuration
+
+## Generated Puzzles
+
+{% for conPair in constraints-library %}
+ {% if conPair[1].parentKey == "Clones_Tile_A_Square" %}
+  {% include constraints constraints:conPair[1] %}
+ {% endif %}
+{% endfor %}

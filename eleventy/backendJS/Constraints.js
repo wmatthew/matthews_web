@@ -1,6 +1,7 @@
 const fs = require('fs');
 const Solver = require('../backendJS/Solver.js');
 var constraintMetadata = JSON.parse(fs.readFileSync("_data/constraints-metadata.json", 'utf8'));
+const TestUtil = require('./TestUtil.js');
 
 module.exports = class Constraints {
 
@@ -15,21 +16,27 @@ module.exports = class Constraints {
         "allowSkyPieces": "allowSkyPieces",
         "colorByPiece": "colorByPiece",
         "colorByOrientation": "colorByOrientation",
+        "colorByDistinctOrientation": "colorByDistinctOrientation",
         "allowColorVertexNeighbors": "allowColorVertexNeighbors",
         "allowColorEdgeNeighbors": "allowColorEdgeNeighbors",
         "allowColorFaceNeighbors": "allowColorFaceNeighbors",
         "allowHiddenNeighborsToBreakColorRules": "allowHiddenNeighborsToBreakColorRules",
+        "allowGroundFloorToBreakColorRules": "allowGroundFloorToBreakColorRules",
         "allow4PieceEdgeIntersections": "allow4PieceEdgeIntersections",
         "allowPieceRotation": "allowPieceRotation",
         "allowPieceOrienting": "allowPieceOrienting",
         "allowUnusedPieces": "allowUnusedPieces",
-        "allowUnusedOrientations": "allowUnusedOrientations"       
+        "allowUnusedOrientations": "allowUnusedOrientations",
+        "allowPieceMirroring": "allowPieceMirroring"
     }
 
     static getUnsupportedConstraints(constraintKeys) {
         var supportedConstraints = [
             "allowPieceOrienting",
-            "allowUpwardOverflow"
+            "allowUpwardOverflow",
+            "colorByOrientation",
+            "colorByPiece",
+            "allowColorVertexNeighbors"
             // add more here as we support constraint flags.
         ]; 
         return Object.keys(constraintKeys).filter(f => !(supportedConstraints.includes(f)));
@@ -45,6 +52,16 @@ module.exports = class Constraints {
 
     static setSolutionField(constraintObject) {
         constraintObject.solution = Solver.getSolution(constraintObject.key);
+    }
+
+    static tests() {
+        console.log("Constraints.js");
+
+        // make sure every constraint has an icon, etc.
+        var keys = Constraints.KEY;
+        TestUtil.assertSameKeys(keys, constraintMetadata.Icons, "every constraint has an icon.");
+        TestUtil.assertSameKeys(keys, constraintMetadata.Descriptions, "every constraint has a description.");
+        TestUtil.assertSameKeys(keys, constraintMetadata.Tiling_Default.constraint_flags, "every constraint has a default value.");       
     }
 }
 

@@ -17,7 +17,7 @@
       "allowUpwardOverflow": true},
     "key": "Clones_Tile_A_Square",
     "parentKey": false,
-    "url": false},
+    "url": "/polycube/clones/tile/a/rectangle/"},
   "Overhang_City": {
     "name": "Overhang City",
     "description": "Copies of a polycube tile a rectangle and can overhang.",

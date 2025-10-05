@@ -27,32 +27,32 @@
 <li>Generated: An instance of a template- a concrete puzzle definition. Fixed values for all settings.</li>
 </ul>
 <h2>Board and Piece Supply</h2>
-<p>The board is a list of coordinates that define a 2D or 3D space that will be filled by pieces.</p>
-<p>The piece supply is the set of pieces that fill the board.</p>
+<p>The board is a finite list of coordinates that define a 2D or 3D space that will be filled by pieces.</p>
+<p>The piece supply is the set of pieces that can be used to fill the board. Each piece has a set quantity (finite or infinite).</p>
 <h2>Constraint Flags</h2>
 <p>Constraint flags are true/false values defining rules for a puzzle. Here's a list of constraint flags and what they mean.</p>
 <p>Gaps</p>
 <ul>
 <li><span style="font-size: x-large;">🫥</span>
 <b>allowGaps</b>:
-if true, pieces don't have to fully cover the boardKey. Default false.</li>
+if true, pieces don't have to fully cover the board. Default false.</li>
 </ul>
 <p>Overflow: Pieces extending beyond their board's footprint.</p>
 <ul>
 <li>
 <p><span style="font-size: x-large;">🌊</span>
 <b>allowGroundLevelOverflow</b>:
-if true, pieces can extend beyond the footprint of their boardKey, on the level closest to the boardKey. Default false.</p>
+if true, pieces can extend beyond the footprint of their board, on the bottom level. Default false.</p>
 </li>
 <li>
 <p><span style="font-size: x-large;">🌧️</span>
 <b>allowSkyLevelOverflow</b>:
-if true, pieces can extend beyond the footprint of their boardKey, above the level closest to the boardKey. Default false.</p>
+if true, pieces can extend beyond the footprint of their board, above the bottom level. Default false.</p>
 </li>
 <li>
 <p><span style="font-size: x-large;">🏙️</span>
 <b>allowUpwardOverflow</b>:
-if true, pieces can extend upward. This lets us reuse a simple 2D boardKey for 3D puzzles of any height, as long as they don't need a ceiling. Default false.
+if true, pieces can extend upward. This lets us reuse a simple 2D board for 3D puzzles of any height, as long as they don't need a ceiling. Default false.
 Used by <a href="/investigations/#:~:text=Key: Clones_Tile_A_Square">Clones Tile A Rectangle - Restricted Neighbors</a>, <a href="/investigations/#:~:text=Key: Overhang_City">Overhang City</a></p>
 </li>
 </ul>
@@ -72,20 +72,23 @@ Used by <a href="/investigations/#:~:text=Key: Overhang_City">Overhang City</a>,
 <li>
 <p><span style="font-size: x-large;">✈️</span>
 <b>allowSkyPieces</b>:
-if true, pieces can be placed without any part touching the ground level. Default false.
+if true, pieces can be placed without any part touching the bottom level. Default false.
 Used by <a href="/investigations/#:~:text=Key: Angel_Cube">Angel Cube</a></p>
 </li>
 </ul>
 <p>Coloring: preventing similar pieces from being placed together. At most one of these can be true. If none of these are true and there are color restrictions enabled, all pieces get the same color.</p>
 <ul>
-<li><span style="font-size: x-large;">🍏</span>
+<li><span style="font-size: x-large;">🫛</span>
 <b>colorByPiece</b>:
 if true, each piece is assigned its own color. If a piece is added to supply multiple times, each gets its own color. Default false.
 Used by <a href="/investigations/#:~:text=Key: Tatami_3color">Tatami Tiling - 3 color variation</a></li>
-<li><span style="font-size: x-large;">🧃</span>
+<li><span style="font-size: x-large;">🍊</span>
 <b>colorByOrientation</b>:
-if true, each distinct piece orientation gives the piece its own color (up to 6 colors per piece. a cube would have 1 color). Default false.
+if true, each piece orientation gives the piece its own color (a cube has 6 colors). Default false.
 Used by <a href="/investigations/#:~:text=Key: Clones_Tile_A_Square">Clones Tile A Rectangle - Restricted Neighbors</a></li>
+<li><span style="font-size: x-large;">🍏</span>
+<b>colorByDistinctOrientation</b>:
+if true, each distinct piece orientation gives the piece its own color (a cube has 1 color). Default false.</li>
 </ul>
 <p>Color-Based Restrictions: how close is allowed? If all of these are true, coloring has no effect.</p>
 <ul>
@@ -110,6 +113,11 @@ if true, same colors can meet on a face. Default true.</p>
 <b>allowHiddenNeighborsToBreakColorRules</b>:
 if true, color rules are not applied to pieces where the relevant meeting is buried/hidden in the solved state. Default true.</p>
 </li>
+<li>
+<p><span style="font-size: x-large;">🌋</span>
+<b>allowGroundFloorToBreakColorRules</b>:
+if true, color rules are not applied to pieces where the relevant meeting is on the bottom level Default false.</p>
+</li>
 </ul>
 <p>Other Restrictions on how pieces meet:</p>
 <ul>
@@ -128,28 +136,22 @@ Used by <a href="/investigations/#:~:text=Key: Locked_Triangles">Locked Triangle
 <b>allowPieceOrienting</b>:
 if true, pieces can be flipped to a different face (like rolling dice). Default true.
 Used by <a href="/investigations/#:~:text=Key: Tatami">Tatami Tiling - Classic</a>, <a href="/investigations/#:~:text=Key: Tatami_3color">Tatami Tiling - 3 color variation</a>, <a href="/investigations/#:~:text=Key: P_Pentominos">P-Pentominos</a>, <a href="/investigations/#:~:text=Key: Locked_Triangles">Locked Triangles</a></li>
+<li><span style="font-size: x-large;">🪞</span>
+<b>allowPieceMirroring</b>:
+if true, pieces can be reflected along the x-axis. Useful for 2D puzzles. Default false.</li>
 </ul>
 <p>Leftovers</p>
 <ul>
 <li>
-<p><span style="font-size: x-large;">🛗</span>
+<p><span style="font-size: x-large;">🗑️</span>
 <b>allowUnusedOrientations</b>:
 if true, the solution can omit piece orientations. This allows for 2D puzzles. Default true.</p>
 </li>
 <li>
-<p><span style="font-size: x-large;">🗑️</span>
+<p><span style="font-size: x-large;">🚮</span>
 <b>allowUnusedPieces</b>:
 if true, the solution can omit entire pieces. Default false.
 Used by <a href="/investigations/#:~:text=Key: Tatami_3color">Tatami Tiling - 3 color variation</a></p>
-</li>
-</ul>
-<h2>Ideas for future constraints</h2>
-<ul>
-<li>
-<p>allowGroundFloorToBreakColorRules: Spike city would be like block city but towers (any structure beyond ground level) can't touch eachother. This would require an additional flag, like &quot;allowGroundFloorToBreakColorRules&quot;</p>
-</li>
-<li>
-<p>colorEveryOrientation: Does a 1x2x3 piece have 3 orientations or 6? Should there be a flag to decide this? (ie: instead of colorByOrientation, have colorEveryOrientation + colorEveryDistinctOrientation)</p>
 </li>
 </ul>
 

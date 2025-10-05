@@ -22,9 +22,9 @@ Types of constraints:
 
 ## Board and Piece Supply
 
-The board is a list of coordinates that define a 2D or 3D space that will be filled by pieces.
+The board is a finite list of coordinates that define a 2D or 3D space that will be filled by pieces.
 
-The piece supply is the set of pieces that fill the board.
+The piece supply is the set of pieces that can be used to fill the board. Each piece has a set quantity (finite or infinite).
 
 ## Constraint Flags
 
@@ -46,12 +46,14 @@ Overhangs: where a piece (or part of a piece) is above a different piece or empt
 Coloring: preventing similar pieces from being placed together. At most one of these can be true. If none of these are true and there are color restrictions enabled, all pieces get the same color.
 * {% include constraint-summary key:"colorByPiece" %}
 * {% include constraint-summary key:"colorByOrientation" %}
+* {% include constraint-summary key:"colorByDistinctOrientation" %}
 
 Color-Based Restrictions: how close is allowed? If all of these are true, coloring has no effect.
 * {% include constraint-summary key:"allowColorVertexNeighbors" %}
 * {% include constraint-summary key:"allowColorEdgeNeighbors" %}
 * {% include constraint-summary key:"allowColorFaceNeighbors" %}
 * {% include constraint-summary key:"allowHiddenNeighborsToBreakColorRules" %}
+* {% include constraint-summary key:"allowGroundFloorToBreakColorRules" %}
 
 Other Restrictions on how pieces meet:
 * {% include constraint-summary key:"allow4PieceEdgeIntersections" %}
@@ -59,13 +61,9 @@ Other Restrictions on how pieces meet:
 Turning Pieces
 * {% include constraint-summary key:"allowPieceRotation" %}
 * {% include constraint-summary key:"allowPieceOrienting" %}
+* {% include constraint-summary key:"allowPieceMirroring" %}
 
 Leftovers
 * {% include constraint-summary key:"allowUnusedOrientations" %}
 * {% include constraint-summary key:"allowUnusedPieces" %}
 
-## Ideas for future constraints
-
-* allowGroundFloorToBreakColorRules: Spike city would be like block city but towers (any structure beyond ground level) can't touch eachother. This would require an additional flag, like "allowGroundFloorToBreakColorRules"
-
-* colorEveryOrientation: Does a 1x2x3 piece have 3 orientations or 6? Should there be a flag to decide this? (ie: instead of colorByOrientation, have colorEveryOrientation + colorEveryDistinctOrientation)

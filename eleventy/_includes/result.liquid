@@ -20,5 +20,6 @@ Completed without bailing early.
 {%- if solution.solutionsUnique.size > 0 %}
 {% for sol in solution.solutionsUnique limit:3 %}
   {% include solution points:sol[1].points, caption:forloop.index, size:"small" %}
+  {{ sol[1].maxZ }}
 {% endfor %}
 {% endif %}

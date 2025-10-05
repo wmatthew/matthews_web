@@ -36,57 +36,9 @@ Compact notation implies a default orientation. Best practices for choosing an o
 * Don't worry about finding a canonical/minimal representation that can be algorithmically determined (eg, shortest or lexicographically earliest representation). Instead, orient in a way that is convenient/intuitive.
 * If the name of a polycube uses letters to describe its shape, try to match orientation and chirality of those letters. (TODO: match chirality? of footprint or piece when viewed head-on?)
 
-# 2D Polycubes (Polyominos)
+# Polycubes
 
-{% include pieceReport, key:"I1", color:1, size:"small" %}
-
-{% include pieceReport, key:"I2", color:1, size:"small" %}
-
-{% include pieceReport, key:"I3", color:1, size:"small" %}
-
-{% include pieceReport, key:"R", color:1, size:"small" %}
-
-{% include pieceReport, key:"T", color:1, size:"small" %}
-
-{% include pieceReport, key:"O", color:1, size:"small" %}
-
-{% include pieceReport, key:"I4", color:1, size:"small" %}
-
-{% include pieceReport, key:"L", color:1, size:"small" %}
-
-{% include pieceReport, key:"S", color:1, size:"small" %}
-
-{% include pieceReport, key:"P", color:1, size:"small" %}
-
-{% include pieceReport, key:"A", color:1, size:"small" %}
-
-# 3D Polycubes
-
-{% include pieceReport, key:"S2", color:1, size:"small" %}
-
-{% include pieceReport, key:"PLR", color:1, size:"small" %}
-
-{% include pieceReport, key:"PQR", color:1, size:"small" %}
-
-{% include pieceReport, key:"PQO", color:1, size:"small" %}
-
-{% include pieceReport, key:"VPL", color:1, size:"small" %}
-
-{% include pieceReport, key:"APL", color:1, size:"small" %}
-
-{% include pieceReport, key:"L+3", color:1, size:"small" %}
-
-{% include pieceReport, key:"PLR+", color:1, size:"small" %}
-
-{% include pieceReport, key:"knot", color:1, size:"small" %}
-
-{% include pieceReport, key:"knot+1", color:1, size:"small" %}
-
-{% include pieceReport, key:"helix", color:1, size:"small" %}
-
-{% include pieceReport, key:"3x4x5", color:1, size:"small" %}
-
-{% include pieceReport, key:"hollowCube", color:1, size:"small" %}
-
-{% include pieceReport, key:"kian", color:1, size:"small" %}
+{% for pair in piece-library %}
+  {% include pieceReport, key:pair[0], color:1, size:"small" %}
+{% endfor%}
 

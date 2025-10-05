@@ -34,10 +34,36 @@ module.exports = class Board {
         }
     }
 
+    // check
+    static collisionTestPasses(points, target, newCollisionPaint, flags) {
+        //console.log("collisionTest at " + JSON.stringify(target) + " paint: " + newCollisionPaint);
+        var allowVertexNeighbors = Constraints.checkConstraint(flags, Constraints.KEY.allowColorVertexNeighbors);
+        //console.log("  allowVertexNeighbors: " + allowVertexNeighbors);
+        if (allowVertexNeighbors) return true; // pass immediately, no checks needed.
+
+        var anyCollisions = points.some(a => {
+            var closeEnough =
+                Math.abs(a.x - target.x) <=1 &&
+                Math.abs(a.y - target.y) <=1 &&
+                Math.abs(a.z - target.z) <=1;
+            if (closeEnough == false) return false;
+
+            //console.log("Comparing " + a.collisionPaint + " to " + newCollisionPaint);
+            //console.log("Comparing " + JSON.stringify(target) + " to " + JSON.stringify(a));
+            return closeEnough && a.collisionPaint == newCollisionPaint;
+        });
+        //console.log("  anyCollisions: " + anyCollisions);
+
+        return anyCollisions == false;
+    }
+
     // does not modify its input.
     static getSuccessorPartialsForThisTargetPoint(currentPartial, puzzleState, targetPoint, quitEarlyIfResultCountReaches=Infinity) {
         var result = [];
         var nextId = currentPartial.board.points.filter(p => p.id != undefined).reduce((max, p) => Math.max(max, p.id), 0) + 1;
+
+        var colorByOrientation = Constraints.checkConstraint(puzzleState.puzzle.constraint_flags, Constraints.KEY.colorByOrientation);
+        var colorByPiece = Constraints.checkConstraint(puzzleState.puzzle.constraint_flags, Constraints.KEY.colorByPiece);
 
         // For every piece...
         currentPartial.supply.forEach(pieceKeyAndQuantity => {
@@ -47,25 +73,47 @@ module.exports = class Board {
 
             // For every orientation of that piece...
             Piece.getOrientations(piece, puzzleState.puzzle.constraint_flags).forEach(orientedPiece => {
+                //console.log("orientation: " + orientedPiece.points[0].orientation);
                 if (shouldQuitEarly()) return;
+
+                var collisionPaint = nextId; // no paint.
+                if (colorByOrientation) {
+                    collisionPaint = [pieceKey, orientedPiece.points[0].orientation[0]].join("_");
+                } else if (colorByPiece) {
+                    collisionPaint = pieceKey;
+                }
+                //console.log("Collision paint: " + collisionPaint);
 
                 // For every insertionPoint (offset) within that oriented piece...
                 var upwardFlow = Constraints.checkConstraint(puzzleState.puzzle.constraint_flags, Constraints.KEY.allowUpwardOverflow);
                 var insertionPoints = upwardFlow ? orientedPiece.floorPoints : orientedPiece.points;
                 insertionPoints.forEach(insertionPoint => {
                     if (shouldQuitEarly()) return;
+                    //console.log("insertionPoint: " + JSON.stringify(insertionPoint));
 
                     // If the piece fits there...
                     var itFits = insertionPoints.every(p => {
                         var target = Vector.minus(Vector.plus(targetPoint, p), insertionPoint);
                         var hit = currentPartial.board.points.find(a => a.x == target.x && a.y == target.y && a.z == target.z);
-                        return !!hit && hit.empty;
+                        if (hit == undefined) {
+                            //console.log("   point is not on board");
+                            return false; // point is not on board
+                        } else if (hit.empty == false) {                            
+                            //console.log("   point not empty: " + JSON.stringify(hit));
+                            return false; // point is occupied.
+                        } else if (Board.collisionTestPasses(currentPartial.board.points, target, collisionPaint, puzzleState.puzzle.constraint_flags) == false) {
+                            //console.log("   point failed collisionPaint test");
+                            return false; // point failed collisionPaint test.
+                        }
+                        return true;
                     });
 
-                    if (!itFits) {
-                        return;
+                    if (itFits == false) {
+                       return;
                     }
-                        
+                       
+                    //console.log("   it fits! " + collisionPaint);
+
                     // ...create a successor partial, and add it to the list.
                     var newPartial = structuredClone(currentPartial);
                     newPartial.depth++;
@@ -84,6 +132,7 @@ module.exports = class Board {
                         hit.empty = false;
                         hit.pieceKey = pieceKey;
                         hit.orientation = p.orientation;
+                        hit.collisionPaint = collisionPaint;
                         hit.id = nextId;
                     });
 
@@ -101,6 +150,8 @@ module.exports = class Board {
         });    
 
         if (shouldQuitEarly()) return false;
+
+        // console.log("  getSuccessorPartialsForThisTargetPoint. result.length: " + result.length);
         return result;    
 
         function shouldQuitEarly() {
@@ -229,7 +280,7 @@ module.exports = class Board {
                 } else if (point.empty) {
                     textMap += "*"; // empty spot on board
                 } else {
-                    textMap += point.id; // occupied spot on board
+                    textMap += point.collisionPaint + " "; // occupied spot on board
                 }
             }
             textMap += "\n ";

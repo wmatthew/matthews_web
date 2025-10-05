@@ -15,7 +15,7 @@ Research and Development. Things that might become puzzles or games in the futur
 {%- endfor -%}
 </ul>
 
-## Templates
+## {{ constraints-templates.size }} Templates
 {% for conPair in constraints-templates %}
 {% include constraints constraints:conPair[1] %}
 {% endfor %}

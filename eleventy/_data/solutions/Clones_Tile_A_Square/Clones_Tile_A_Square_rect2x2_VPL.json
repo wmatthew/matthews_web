@@ -1,0 +1,33 @@
+{
+  "key": "Clones_Tile_A_Square_rect2x2_VPL",
+  "constraints": {
+    "name": "Clones Tile A Rectangle - Restricted Neighbors (rect2x2_VPL)",
+    "description": "Copies of a single polycube tile a rectangle. Matching orientations can't touch.",
+    "type": "Generated",
+    "constraint_flags": {
+      "colorByOrientation": true,
+      "allowColorVertexNeighbors": false,
+      "allowUpwardOverflow": true},
+    "key": "Clones_Tile_A_Square_rect2x2_VPL",
+    "parentKey": "Clones_Tile_A_Square",
+    "url": false,
+    "board": {
+      "key": "rect2x2",
+      "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 2,"y": 2,"z": 1}]],
+      "points": [{"x": 1,"y": 1,"z": 1},{"x": 1,"y": 2,"z": 1},{"x": 2,"y": 1,"z": 1},{"x": 2,"y": 2,"z": 1}],
+      "area": 4,
+      "description": "Rectangle of size 2x2.",
+      "category": "Rectangle"},
+    "boardKey": "rect2x2",
+    "pieceSupply": [["VPL",-1]],
+    "childShortName": "rect2x2_VPL",
+    "template": "Clones_Tile_A_Square"},
+  "solverVersion": "0.1.2",
+  "solutionsUnique": {},
+  "numSolutionsTotal": 0,
+  "numSolutionsUnique": 0,
+  "numSteps": 1,
+  "didWeBailOutEarly": false,
+  "solveTimeSeconds": 0,
+  "solveDate": "8/28/2024",
+  "unsupportedConstraints": []}

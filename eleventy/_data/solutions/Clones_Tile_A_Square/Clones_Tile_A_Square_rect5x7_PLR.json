@@ -1,0 +1,33 @@
+{
+  "key": "Clones_Tile_A_Square_rect5x7_PLR",
+  "constraints": {
+    "name": "Clones Tile A Rectangle - Restricted Neighbors (rect5x7_PLR)",
+    "description": "Copies of a single polycube tile a rectangle. Matching orientations can't touch.",
+    "type": "Generated",
+    "constraint_flags": {
+      "colorByOrientation": true,
+      "allowColorVertexNeighbors": false,
+      "allowUpwardOverflow": true},
+    "key": "Clones_Tile_A_Square_rect5x7_PLR",
+    "parentKey": "Clones_Tile_A_Square",
+    "url": false,
+    "board": {
+      "key": "rect5x7",
+      "boxes": [[{"x": 1,"y": 1,"z": 1},{"x": 5,"y": 7,"z": 1}]],
+      "points": [{"x": 1,"y": 1,"z": 1},{"x": 1,"y": 2,"z": 1},{"x": 1,"y": 3,"z": 1},{"x": 1,"y": 4,"z": 1},{"x": 1,"y": 5,"z": 1},{"x": 1,"y": 6,"z": 1},{"x": 1,"y": 7,"z": 1},{"x": 2,"y": 1,"z": 1},{"x": 2,"y": 2,"z": 1},{"x": 2,"y": 3,"z": 1},{"x": 2,"y": 4,"z": 1},{"x": 2,"y": 5,"z": 1},{"x": 2,"y": 6,"z": 1},{"x": 2,"y": 7,"z": 1},{"x": 3,"y": 1,"z": 1},{"x": 3,"y": 2,"z": 1},{"x": 3,"y": 3,"z": 1},{"x": 3,"y": 4,"z": 1},{"x": 3,"y": 5,"z": 1},{"x": 3,"y": 6,"z": 1},{"x": 3,"y": 7,"z": 1},{"x": 4,"y": 1,"z": 1},{"x": 4,"y": 2,"z": 1},{"x": 4,"y": 3,"z": 1},{"x": 4,"y": 4,"z": 1},{"x": 4,"y": 5,"z": 1},{"x": 4,"y": 6,"z": 1},{"x": 4,"y": 7,"z": 1},{"x": 5,"y": 1,"z": 1},{"x": 5,"y": 2,"z": 1},{"x": 5,"y": 3,"z": 1},{"x": 5,"y": 4,"z": 1},{"x": 5,"y": 5,"z": 1},{"x": 5,"y": 6,"z": 1},{"x": 5,"y": 7,"z": 1}],
+      "area": 35,
+      "description": "Rectangle of size 5x7.",
+      "category": "Rectangle"},
+    "boardKey": "rect5x7",
+    "pieceSupply": [["PLR",-1]],
+    "childShortName": "rect5x7_PLR",
+    "template": "Clones_Tile_A_Square"},
+  "solverVersion": "0.1.2",
+  "solutionsUnique": {},
+  "numSolutionsTotal": 0,
+  "numSolutionsUnique": 0,
+  "numSteps": 197,
+  "didWeBailOutEarly": false,
+  "solveTimeSeconds": 1,
+  "solveDate": "8/28/2024",
+  "unsupportedConstraints": []}

@@ -30,40 +30,40 @@ The piece supply is the set of pieces that can be used to fill the board. Each p
 
 Constraint flags are true/false values defining rules for a puzzle. Here's a list of constraint flags and what they mean.
 
-Gaps
+**Gaps**
 * {% include constraint-summary key:"allowGaps" %}
 
-Overflow: Pieces extending beyond their board's footprint.
+**Overflow**: Pieces extending beyond their board's footprint.
 * {% include constraint-summary key:"allowGroundLevelOverflow" %}
 * {% include constraint-summary key:"allowSkyLevelOverflow" %}
 * {% include constraint-summary key:"allowUpwardOverflow" %}
 
-Overhangs: where a piece (or part of a piece) is above a different piece or empty space.
+**Overhangs**: where a piece (or part of a piece) is above a different piece or empty space.
 * {% include constraint-summary key:"allowUnsupportedOverhangs" %}
 * {% include constraint-summary key:"allowSupportedOverhangs" %}
 * {% include constraint-summary key:"allowSkyPieces" %}
 
-Coloring: preventing similar pieces from being placed together. At most one of these can be true. If none of these are true and there are color restrictions enabled, all pieces get the same color.
+**Coloring**: preventing similar pieces from being placed together. At most one of these can be true. If none of these are true and there are color restrictions enabled, all pieces get the same color.
 * {% include constraint-summary key:"colorByPiece" %}
 * {% include constraint-summary key:"colorByOrientation" %}
 * {% include constraint-summary key:"colorByDistinctOrientation" %}
 
-Color-Based Restrictions: how close is allowed? If all of these are true, coloring has no effect.
+**Color-Based Restrictions**: how close is allowed? If all of these are true, coloring has no effect.
 * {% include constraint-summary key:"allowColorVertexNeighbors" %}
 * {% include constraint-summary key:"allowColorEdgeNeighbors" %}
 * {% include constraint-summary key:"allowColorFaceNeighbors" %}
 * {% include constraint-summary key:"allowHiddenNeighborsToBreakColorRules" %}
 * {% include constraint-summary key:"allowGroundFloorToBreakColorRules" %}
 
-Other Restrictions on how pieces meet:
+**Other Restrictions** on how pieces meet:
 * {% include constraint-summary key:"allow4PieceEdgeIntersections" %}
 
-Turning Pieces
+**Turning Pieces**
 * {% include constraint-summary key:"allowPieceRotation" %}
 * {% include constraint-summary key:"allowPieceOrienting" %}
 * {% include constraint-summary key:"allowPieceMirroring" %}
 
-Leftovers
+**Leftovers**: does the solution have to be exhaustive?
 * {% include constraint-summary key:"allowUnusedOrientations" %}
 * {% include constraint-summary key:"allowUnusedPieces" %}
 

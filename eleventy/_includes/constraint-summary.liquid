@@ -5,9 +5,9 @@
 
 <span style="font-size: x-large;">{{ icon }}</span>
 <b>{{key}}</b>:
-{{ description }} Default {{ defaultValue }}.
+{{ description }} By default this is {{ defaultValue }}.
 {% for challenge in usedBy %}
-{%- if forloop.first %}Used by {% endif -%}
+{%- if forloop.first %}This is overridden to {{ defaultValue == false }} in {% endif -%}
 <a href="{{ challenge.url }}">{{ challenge.displayName }}</a>
-{%- if forloop.last == false %}, {% endif %}
+{%- if forloop.last == false %}, {% else %}.{% endif %}
 {%- endfor -%}

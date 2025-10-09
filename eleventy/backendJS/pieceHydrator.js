@@ -16,7 +16,7 @@ module.exports = class Hydrator {
 
         // filter out non-peak points
         // add labels, '?' for overhangs
-        // TODO These next three lines assume coordinates start at (1,1) - that they're already fixed.
+        // TODO These next three lines assume coordinates start at (1,1,1) - ie, that they're already corrected.
         piece.elevationMap = piece.points.filter(p => p.z == Math.max(...piece.points.filter(a => a.x==p.x&&a.y==p.y).map(a => a.z)));
         piece.hasOverhangs = piece.elevationMap.some(p => piece.points.filter(a => a.x==p.x&&a.y==p.y).length < p.z);
         piece.floorPoints = piece.points.filter(p => p.z == 1);
@@ -44,16 +44,41 @@ module.exports = class Hydrator {
         piece["isHydrated"] = true;
         return piece;
 
+        // This is the style for the entire cube AND individual faces
         function transformStyle(x,y,z) {
-            // A series of CSS transforms.
-            // note: Y and Z deliberately swapped here.
-            return "transform: translateX(" +
-                x * 200 +
-                "px) translateZ(" +
-                y * 200 +
-                "px) translateY(" +
-                z * -200 +
-                "px);";
+            // every position has an ID, color, and text
+            // ID:0 = empty space
+
+            // TODO: if the position on the other side of the face matches ID, omit the face.
+            // if it's different, render the face
+
+            var style = {};
+
+            // Style for the overall cube
+            // note: Y and Z are deliberately swapped here.
+            style.cube = "transform: translateX(" +
+            x * 200 +
+            "px) translateZ(" +
+            y * 200 +
+            "px) translateY(" +
+            z * -200 +
+            "px);";
+
+            // Style for the front face of the cube
+            style.front = false; // face color, or false to omit
+
+            // Style for the back face of the cube
+            style.front = false; // face color, or false to omit
+
+            // ...
+
+            // Style for the left face of the cube
+            style.left = {};
+            style.left.color = "#f00";
+            style.left.border = "5px dotted #000"; // TODO: split into 4 attributes
+            style.left.text = "left";
+
+            return style.cube;
           }
     
     }
@@ -73,10 +98,10 @@ module.exports = class Hydrator {
     }
 
     static hideOneLabels(label) {
-        return (label == "1") ? "" : label;
+        return (label == "1") ? false : label;
     }
 
-    // Make sure the coordinates start at (1,1)
+    // Ensure the coordinates start at (1,1,1)
     // returns a clone
     static fixCoordinates(grid) {
         const newGrid = structuredClone(grid);

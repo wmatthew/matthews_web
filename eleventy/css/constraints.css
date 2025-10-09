@@ -1,8 +1,16 @@
+.constraintsTemplate::before {
+    content: "TEMPLATE";
+            color: #4467da89;
+            margin-left: -5px;
+}
+
 .constraintsTemplate {
-    border: #d579d8 solid 4px; padding: 15px;
+    border: #4467da dashed 4px; padding: 15px;
+    background: #4467da5a;
 }
 
 .constraintsGenerated {
     border: #4467da solid 4px; padding: 15px;
+    background: #4467da5a;
 }
 

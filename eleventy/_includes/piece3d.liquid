@@ -1,22 +1,22 @@
 {% assign is_spinning = spin | default:false %} 
-{% assign caption = caption | default:key %} 
-{% assign transform = transform | default:"A0" %}
-{% assign piece = piece-library[key] | hydratePiece | transformPiece:transform %} 
+{% assign actualCaption = caption | default:key %} 
+{% assign actualTransform = transform | default:"A0" %}
+{% assign piece = piece-library[key] | hydratePiece | transformPiece:actualTransform %} 
 
 <div class="map" style="width:282px;">
 <div class="actualMap">
-<div class="scene">
+<div class="scene {{ scene_classes}}">
   <div class="zoomer">
     <div class="spinner {% if is_spinning %}is_spinning{% endif %}">
       <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
       {% for computedStyle in piece.pointsRender %}
         <div class="cube" style="{{ computedStyle }}">
-          <div class="cube__face cube__face--front">front</div>
-          <div class="cube__face cube__face--back">back</div>
-          <div class="cube__face cube__face--right">right</div>
-          <div class="cube__face cube__face--left">left</div>
-          <div class="cube__face cube__face--top">top</div>
-          <div class="cube__face cube__face--bottom">bottom</div>
+          {%- include piece3dFace side:"front" -%}
+          {%- include piece3dFace side:"back" -%}
+          {%- include piece3dFace side:"right" -%}
+          {%- include piece3dFace side:"left" -%}
+          {%- include piece3dFace side:"top" -%}
+          {%- include piece3dFace side:"bottom" -%}
         </div>
       {% endfor %}
       </div>
@@ -24,7 +24,7 @@
   </div>
 </div>
 </div>
-{% if caption %}
-  <div class="caption" align="center">{{caption}}</div>
+{% if actualCaption %}
+  <div class="caption" align="center">{{actualCaption}}</div>
 {% endif %}
 </div>

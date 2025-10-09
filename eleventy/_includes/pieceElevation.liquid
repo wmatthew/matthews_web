@@ -1,22 +1,17 @@
-{% assign piece = piece-library[key] | hydratePiece %} 
-{% assign caption = caption | default:key %} 
-
-{% if rotate %}
-  {% assign piece2 = piece | rotatePiece | hydratePiece %} 
-{% else %}
-  {% assign piece2 = piece %} 
-{% endif %}
+{% assign actualTransform = transform | default:"A0" %}
+{% assign piece = piece-library[key] | hydratePiece | transformPiece:actualTransform %} 
+{% assign actualCaption = caption | default:key %} 
 
 <div class="map {{size}}">
-<div class="actualMap">
-{% for pos in piece2.elevationMap %}
+ <div class="actualMap">
+  {% for pos in piece.elevationMap %}
   {% assign label = pos.z | hideOneLabels %} 
   {% assign adjustedColor = color | plus: pos.z | plus: -1 %}
   {% include square, x: pos.x, y: pos.y, color:adjustedColor, text:label %}
   {% else %}empty!
-{% endfor %}
-</div>
-{% if caption %}
-  <div class="caption" align="center">{{caption}}</div>
-{% endif %}
+  {% endfor %}
+ </div>
+ {% if actualCaption %}
+  <div class="caption" align="center">{{actualCaption}}</div>
+ {% endif %}
 </div>

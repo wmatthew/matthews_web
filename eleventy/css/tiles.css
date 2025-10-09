@@ -3,7 +3,7 @@
 }
 
 .map {
-    margin: 20px;
+    /*margin: 20px;*/
     user-select: none;
     overflow: hidden;
 }
@@ -24,7 +24,7 @@ div.caption {
 .actualMap {
     display: grid;
     padding: 15px;
-    grid-auto-rows: 1fr; /* introduces hairline gaps between rows, resolves others */
+    /** grid-auto-rows: 1fr; /* introduces hairline gaps between rows, resolves others. See /puzzle/rendering/widgets/ for details. */
     grid-gap: 0px;
     background-color: #eee;
 }
@@ -46,3 +46,59 @@ div.caption {
     align-items: center;
     justify-content: space-around;    
 }
+
+  /* Elevation Map */  
+  .map .but {
+    float: left;
+    width: 62px;
+    height: 62px;
+    line-height: 62px;
+    text-align: center;
+  }
+  
+  .map .but.active {
+    background-color: #DDD;
+    border-top: 3px solid #0D0;
+    border-bottom: 3px solid #F00;
+    border-left: 3px solid #00F;
+    border-right: 3px solid #00F;
+  }
+  
+  .map .but:hover {
+    background-color: #FFF;
+    background: #94ff9b;
+  }
+  
+  .map .but.active:hover {
+    background-color: #FFF;
+    background: linear-gradient(45deg, #ff9d9b 50%, #94ff9b 50%);
+  }
+  
+  /* Text Area */
+  .points {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+  }
+  
+  .points textarea {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    resize: none;
+  }
+  
+  .compact {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+  }
+  
+  .compact textarea {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    resize: none;
+  }

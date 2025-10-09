@@ -31,133 +31,131 @@
 <p>The piece supply is the set of pieces that can be used to fill the board. Each piece has a set quantity (finite or infinite).</p>
 <h2>Constraint Flags</h2>
 <p>Constraint flags are true/false values defining rules for a puzzle. Here's a list of constraint flags and what they mean.</p>
-<p>Gaps</p>
+<p><strong>Gaps</strong></p>
 <ul>
 <li><span style="font-size: x-large;">🫥</span>
 <b>allowGaps</b>:
-if true, pieces don't have to fully cover the board. Default false.</li>
+If true, pieces don't have to fully cover the board. By default this is false.</li>
 </ul>
-<p>Overflow: Pieces extending beyond their board's footprint.</p>
+<p><strong>Overflow</strong>: Pieces extending beyond their board's footprint.</p>
 <ul>
 <li>
 <p><span style="font-size: x-large;">🌊</span>
 <b>allowGroundLevelOverflow</b>:
-if true, pieces can extend beyond the footprint of their board, on the bottom level. Default false.</p>
+If true, pieces can extend beyond the footprint of their board, on the bottom level. By default this is false.</p>
 </li>
 <li>
 <p><span style="font-size: x-large;">🌧️</span>
 <b>allowSkyLevelOverflow</b>:
-if true, pieces can extend beyond the footprint of their board, above the bottom level. Default false.</p>
+If true, pieces can extend beyond the footprint of their board, above the bottom level. By default this is false.</p>
 </li>
 <li>
 <p><span style="font-size: x-large;">🏙️</span>
 <b>allowUpwardOverflow</b>:
-if true, pieces can extend upward. This lets us reuse a simple 2D board for 3D puzzles of any height, as long as they don't need a ceiling. Default false.
-Used by <a href="/investigations/#:~:text=Key: Clones_Tile_A_Square">Clones Tile A Rectangle - Restricted Neighbors</a>, <a href="/investigations/#:~:text=Key: Overhang_City">Overhang City</a></p>
+If true, pieces can extend upward. This lets us reuse a simple 2D board for 3D puzzles of any height, as long as they don't need a ceiling. By default this is false.
+This is overridden to true in <a href="/investigations/#:~:text=Key: Clones_Tile_A_Square">Clones Tile A Rectangle - Restricted Neighbors</a>, <a href="/investigations/#:~:text=Key: Overhang_City">Overhang City</a>.</p>
 </li>
 </ul>
-<p>Overhangs: where a piece (or part of a piece) is above a different piece or empty space.</p>
+<p><strong>Overhangs</strong>: where a piece (or part of a piece) is above a different piece or empty space.</p>
 <ul>
 <li>
 <p><span style="font-size: x-large;">🪑</span>
 <b>allowUnsupportedOverhangs</b>:
-if true, overhangs over empty space are allowed. Default false.</p>
+If true, overhangs over empty space are allowed. By default this is false.</p>
 </li>
 <li>
 <p><span style="font-size: x-large;">💺</span>
 <b>allowSupportedOverhangs</b>:
-if true, overhangs over other pieces are allowed. Default false.
-Used by <a href="/investigations/#:~:text=Key: Overhang_City">Overhang City</a>, <a href="/investigations/#:~:text=Key: Angel_Cube">Angel Cube</a></p>
+If true, overhangs over other pieces are allowed. By default this is false.
+This is overridden to true in <a href="/investigations/#:~:text=Key: Overhang_City">Overhang City</a>, <a href="/investigations/#:~:text=Key: Angel_Cube">Angel Cube</a>.</p>
 </li>
 <li>
 <p><span style="font-size: x-large;">✈️</span>
 <b>allowSkyPieces</b>:
-if true, pieces can be placed without any part touching the bottom level. Default false.
-Used by <a href="/investigations/#:~:text=Key: Angel_Cube">Angel Cube</a></p>
+If true, pieces can be placed without any part touching the bottom level. By default this is false.
+This is overridden to true in <a href="/investigations/#:~:text=Key: Angel_Cube">Angel Cube</a>.</p>
 </li>
 </ul>
-<p>Coloring: preventing similar pieces from being placed together. At most one of these can be true. If none of these are true and there are color restrictions enabled, all pieces get the same color.</p>
+<p><strong>Coloring</strong>: preventing similar pieces from being placed together. At most one of these can be true. If none of these are true and there are color restrictions enabled, all pieces get the same color.</p>
 <ul>
 <li><span style="font-size: x-large;">🫛</span>
 <b>colorByPiece</b>:
-if true, each piece is assigned its own color. If a piece is added to supply multiple times, each gets its own color. Default false.
-Used by <a href="/investigations/#:~:text=Key: Tatami_3color">Tatami Tiling - 3 color variation</a></li>
+If true, each piece is assigned its own color. If a piece is added to supply multiple times, each gets its own color. By default this is false.
+This is overridden to true in <a href="/investigations/#:~:text=Key: Tatami_3color">Tatami Tiling - 3 color variation</a>.</li>
 <li><span style="font-size: x-large;">🍊</span>
 <b>colorByOrientation</b>:
-if true, each piece orientation gives the piece its own color (a cube has 6 colors). Default false.
-Used by <a href="/investigations/#:~:text=Key: Clones_Tile_A_Square">Clones Tile A Rectangle - Restricted Neighbors</a></li>
+If true, each piece orientation gives the piece its own color (a cube has 6 colors). By default this is false.
+This is overridden to true in <a href="/investigations/#:~:text=Key: Clones_Tile_A_Square">Clones Tile A Rectangle - Restricted Neighbors</a>.</li>
 <li><span style="font-size: x-large;">🍏</span>
 <b>colorByDistinctOrientation</b>:
-if true, each distinct piece orientation gives the piece its own color (a cube has 1 color). Default false.</li>
+If true, each distinct piece orientation gives the piece its own color (a cube has 1 color). By default this is false.</li>
 </ul>
-<p>Color-Based Restrictions: how close is allowed? If all of these are true, coloring has no effect.</p>
+<p><strong>Color-Based Restrictions</strong>: how close is allowed? If all of these are true, coloring has no effect.</p>
 <ul>
 <li>
 <p><span style="font-size: x-large;">👉</span>
 <b>allowColorVertexNeighbors</b>:
-if true, same colors can meet at a vertex. Default true.
-Used by <a href="/investigations/#:~:text=Key: Clones_Tile_A_Square">Clones Tile A Rectangle - Restricted Neighbors</a>, <a href="/investigations/#:~:text=Key: Tatami_3color">Tatami Tiling - 3 color variation</a></p>
+If true, same colors can meet at a vertex. By default this is true.
+This is overridden to false in <a href="/investigations/#:~:text=Key: Clones_Tile_A_Square">Clones Tile A Rectangle - Restricted Neighbors</a>, <a href="/investigations/#:~:text=Key: Tatami_3color">Tatami Tiling - 3 color variation</a>.</p>
 </li>
 <li>
 <p><span style="font-size: x-large;">🔪</span>
 <b>allowColorEdgeNeighbors</b>:
-if true, same colors can meet at an edge. Default true.</p>
+If true, same colors can meet at an edge. By default this is true.</p>
 </li>
 <li>
 <p><span style="font-size: x-large;">😡</span>
 <b>allowColorFaceNeighbors</b>:
-if true, same colors can meet on a face. Default true.</p>
+If true, same colors can meet on a face. By default this is true.</p>
 </li>
 <li>
 <p><span style="font-size: x-large;">🙈</span>
 <b>allowHiddenNeighborsToBreakColorRules</b>:
-if true, color rules are not applied to pieces where the relevant meeting is buried/hidden in the solved state. Default true.</p>
+If true, color rules are not applied to pieces where the relevant meeting is buried/hidden in the solved state. By default this is true.</p>
 </li>
 <li>
 <p><span style="font-size: x-large;">🌋</span>
 <b>allowGroundFloorToBreakColorRules</b>:
-if true, color rules are not applied to pieces where the relevant meeting is on the bottom level Default false.</p>
+If true, color rules are not applied to pieces where the relevant meeting is on the bottom level. By default this is false.</p>
 </li>
 </ul>
-<p>Other Restrictions on how pieces meet:</p>
+<p><strong>Other Restrictions</strong> on how pieces meet:</p>
 <ul>
 <li><span style="font-size: x-large;">🚦</span>
 <b>allow4PieceEdgeIntersections</b>:
-if true, four pieces are allowed to meet at an intersection. Used in flat 2D puzzles. Default true.
-Used by <a href="/investigations/#:~:text=Key: Tatami">Tatami Tiling - Classic</a></li>
+If true, four pieces are allowed to meet at an intersection. Used in flat 2D puzzles. By default this is true.
+This is overridden to false in <a href="/investigations/#:~:text=Key: Tatami">Tatami Tiling - Classic</a>.</li>
 </ul>
-<p>Turning Pieces</p>
+<p><strong>Turning Pieces</strong></p>
 <ul>
 <li><span style="font-size: x-large;">🌪️</span>
 <b>allowPieceRotation</b>:
-if true, pieces can be rotated in place (ie, keeping the same face down) Default true.
-Used by <a href="/investigations/#:~:text=Key: Locked_Triangles">Locked Triangles</a></li>
+If true, pieces can be rotated in place (ie, keeping the same face down). By default this is true.
+This is overridden to false in <a href="/investigations/#:~:text=Key: Locked_Triangles">Locked Triangles</a>.</li>
 <li><span style="font-size: x-large;">🎲</span>
 <b>allowPieceOrienting</b>:
-if true, pieces can be flipped to a different face (like rolling dice). Default true.
-Used by <a href="/investigations/#:~:text=Key: Tatami">Tatami Tiling - Classic</a>, <a href="/investigations/#:~:text=Key: Tatami_3color">Tatami Tiling - 3 color variation</a>, <a href="/investigations/#:~:text=Key: P_Pentominos">P-Pentominos</a>, <a href="/investigations/#:~:text=Key: Locked_Triangles">Locked Triangles</a></li>
+If true, pieces can be flipped to a different face (like rolling dice). By default this is true.
+This is overridden to false in <a href="/investigations/#:~:text=Key: Tatami">Tatami Tiling - Classic</a>, <a href="/investigations/#:~:text=Key: Tatami_3color">Tatami Tiling - 3 color variation</a>, <a href="/investigations/#:~:text=Key: P_Pentominos">P-Pentominos</a>, <a href="/investigations/#:~:text=Key: Locked_Triangles">Locked Triangles</a>.</li>
 <li><span style="font-size: x-large;">🪞</span>
 <b>allowPieceMirroring</b>:
-if true, pieces can be reflected along the x-axis. Useful for 2D puzzles. Default false.</li>
+If true, pieces can be reflected along the x-axis. Useful for 2D puzzles. By default this is false.</li>
 </ul>
-<p>Leftovers</p>
+<p><strong>Leftovers</strong>: does the solution have to be exhaustive?</p>
 <ul>
 <li>
 <p><span style="font-size: x-large;">🗑️</span>
 <b>allowUnusedOrientations</b>:
-if true, the solution can omit piece orientations. This allows for 2D puzzles. Default true.</p>
+If true, the solution can omit piece orientations. This allows for 2D puzzles. By default this is true.</p>
 </li>
 <li>
 <p><span style="font-size: x-large;">🚮</span>
 <b>allowUnusedPieces</b>:
-if true, the solution can omit entire pieces. Default false.
-Used by <a href="/investigations/#:~:text=Key: Tatami_3color">Tatami Tiling - 3 color variation</a></p>
+If true, the solution can omit entire pieces. If false, every piece must be used. Not applied to puzzles with infinite pieces in their supply. By default this is false.
+This is overridden to true in <a href="/investigations/#:~:text=Key: Tatami_3color">Tatami Tiling - 3 color variation</a>.</p>
 </li>
 </ul>
 
-    <ul class="tags">
-<li><a class="taglink" href="/posts/tagged/with/tiling/"><span class="tag">tiling</span></a></li><li><a class="taglink" href="/posts/tagged/with/investigation/"><span class="tag">investigation</span></a></li>
-</ul>
+    
     </div>
   </body>
 </html>

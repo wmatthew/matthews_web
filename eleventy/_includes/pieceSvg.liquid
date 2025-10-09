@@ -1,0 +1,26 @@
+{%
+   # pieceSvg: Render a 2D piece as an SVG.
+   # TODO: Set xmlns on the svg tag?
+%}
+
+{% assign piece = piece-library[key] | hydratePiece %} 
+{% assign actualCaption = caption | default:key %} 
+
+{% comment %}Color mapping from CSS classes to SVG fill colors{% endcomment %}
+{% assign fillColor = "hsl(131, 53%, 48%)" %}
+
+<div class="map {{size}}">
+<div class="actualMap">
+  <svg viewBox="0 0 {{piece.maxX}} {{piece.maxY}}" width="100%" height="auto" style="max-width: 100%;">
+   <rect width="100%" height="100%" fill="#EEE"/>
+    {%- for pos in piece.points -%}
+      {%- assign x = pos.x | minus: 1 %}
+      {%- assign y = pos.y | minus: 1%}
+      <rect x="{{x}}" y="{{y}}" width="1" height="1" fill="{{fillColor}}" stroke="hsl(216, 27%, 20%)" stroke-width="0.01"/>
+    {%- endfor %}
+  </svg>
+  </div>
+  {%- if actualCaption -%}
+    <div class="caption" align="center">{{actualCaption}}</div>
+  {%- endif -%}
+</div>

@@ -5,20 +5,26 @@
   flex-wrap: wrap;
 }
 
+.tabs-container.hide-labels > .tab-label {
+  display: none;
+}
+
+.tabs-container > input[type=radio]:first-child + .tab-label {
+  border-radius: 5px 0 0 0px;
+}
+
+.tabs-container > input[type=radio]:last-of-type + .tab-label {
+  border-radius: 0 5px 0px 0;
+}
+
+/* hide the actual radio buttons */
 .tabs-container > input[type=radio] {
   display: none;
 }
 
 .tabs-container > input[type=radio]:checked + .tab-label {
-  background-color: darkslategray;
-}
-
-.tabs-container > input[type=radio]:first-child + .tab-label {
-  border-radius: 50px 0 0 50px;
-}
-
-.tabs-container > input[type=radio]:last-of-type + .tab-label {
-  border-radius: 0 50px 50px 0;
+  background-color: #eee;
+  color: darkslategray;
 }
 
 .tabs-container > input[type=radio]:not(:checked) + .tab-label + .tab-content {
@@ -28,7 +34,7 @@
 .tabs-container .tab-label {
     padding: 5px 15px;
     color: white;
-    background-color: slategray;
+    background-color: darkslategray;
 }
 
 .tabs-container .tab-content {

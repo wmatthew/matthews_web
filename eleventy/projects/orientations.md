@@ -32,7 +32,9 @@ Thus, A0 is the identity orientation (no change).
 
 {% for orientation in piece-orientations %}
   {% assign caption = orientation | append: ' orientation' %}
+  <div style="float:left; margin: 5px;">
   {% include piece3d, transform:orientation, key:"OL", color:1, size:"small", caption:caption %}
+  </div>
 {% endfor %}
 
 ## Evaluating Piece Orientations

@@ -1,0 +1,8 @@
+{% assign splitTemplates = templates | split: "," %}
+
+<span style="font-size: x-large;">🗼</span>
+Template{%- if splitTemplates.size > 1 %}s{% endif %}:
+{% for template in splitTemplates -%}
+  {{template}}
+  {%- if forloop.last == false %}, {% endif %}
+{%- endfor -%}

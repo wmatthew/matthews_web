@@ -22,10 +22,6 @@
     }
   }
   
-  .referenceCopy {
-    display:none;
-  }
-  
   div.scene {
     float: left;
     width: 200px;
@@ -65,26 +61,23 @@
     position: absolute;
     transform-style: preserve-3d;
   }
-  
-  .cube.show-front {
-    transform: translateZ(-100px) rotateY(0deg);
+
+  .show_cube_face_labels .cube__face {
+    color: black;
   }
-  .cube.show-right {
-    transform: translateZ(-100px) rotateY(-90deg);
+
+  .opaque_cube_faces .cube__face {
+    background: hsla(0, 100%, 45%, 1.0);
   }
-  .cube.show-back {
-    transform: translateZ(-100px) rotateY(-180deg);
+
+  .dotted_cube_edges .cube__face{
+    border: 5px dotted black;
   }
-  .cube.show-left {
-    transform: translateZ(-100px) rotateY(90deg);
+
+  .transparent_cube_faces .cube__face {
+    background: transparent;
   }
-  .cube.show-top {
-    transform: translateZ(-100px) rotateX(-90deg);
-  }
-  .cube.show-bottom {
-    transform: translateZ(-100px) rotateX(90deg);
-  }
-  
+
   .cube__face {
     position: absolute;
     width: 200px;
@@ -99,101 +92,25 @@
   
   .cube__face--front {
     background: hsla(0, 100%, 45%, 0.8);
-  }
-  .cube__face--right {
-    background: hsla(240, 100%, 50%, 0.8);
-  }
-  .cube__face--back {
-    background: hsla(120, 100%, 40%, 0.8);
-  }
-  .cube__face--left {
-    background: hsla(240, 100%, 50%, 0.8);
-  }
-  .cube__face--top {
-    background: hsla(60, 100%, 50%, 0.8);
-  }
-  .cube__face--bottom {
-    background: hsla(60, 100%, 50%, 0.8);
-  }
-  
-  .cube__face--front {
     transform: rotateY(0deg) translateZ(100px);
   }
   .cube__face--right {
+    background: hsla(240, 100%, 50%, 0.8);
     transform: rotateY(90deg) translateZ(100px);
   }
   .cube__face--back {
+    background: hsla(120, 100%, 40%, 0.8);
     transform: rotateY(180deg) translateZ(100px);
   }
   .cube__face--left {
+    background: hsla(240, 100%, 50%, 0.8);
     transform: rotateY(-90deg) translateZ(100px);
   }
   .cube__face--top {
+    background: hsla(60, 100%, 50%, 0.8);
     transform: rotateX(90deg) translateZ(100px);
   }
   .cube__face--bottom {
+    background: hsla(60, 100%, 50%, 0.8);
     transform: rotateX(-90deg) translateZ(100px);
-  }
-  
-  /* Elevation Map */
-  .map {
-    margin: 20px;
-    padding: 5px;
-    user-select: none;
-    border: 1px solid #ccc;
-  }
-  
-  .map .but {
-    float: left;
-    width: 62px;
-    height: 62px;
-    line-height: 62px;
-    text-align: center;
-  }
-  
-  .map .but.active {
-    background-color: #DDD;
-    border-top: 3px solid #0D0;
-    border-bottom: 3px solid #F00;
-    border-left: 3px solid #00F;
-    border-right: 3px solid #00F;
-  }
-  
-  .map .but:hover {
-    background-color: #FFF;
-    background: #94ff9b;
-  }
-  
-  .map .but.active:hover {
-    background-color: #FFF;
-    background: linear-gradient(45deg, #ff9d9b 50%, #94ff9b 50%);
-  }
-  
-  /* Text Area */
-  .points {
-    float: left;
-    width: 200px;
-    height: 200px;
-    margin: 20px;
-  }
-  
-  .points textarea {
-    width: 200px;
-    height: 200px;
-    border: 1px solid #ccc;
-    resize: none;
-  }
-  
-  .compact {
-    float: left;
-    width: 200px;
-    height: 200px;
-    margin: 20px;
-  }
-  
-  .compact textarea {
-    width: 200px;
-    height: 200px;
-    border: 1px solid #ccc;
-    resize: none;
   }

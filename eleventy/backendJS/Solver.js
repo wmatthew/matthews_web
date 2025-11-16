@@ -1,13 +1,13 @@
 //==========================================
 // Solves things in constraint-library.json.
 // To run: node backendJS/Solver.js
-const jsonFormatter = require('./jsonFormatter.js');
-const Board = require('./Board.js');
-const Painter = require('./Painter.js');
-const Constraints = require('./Constraints.js');
-const fs = require('fs');
+import jsonFormatter from './jsonFormatter.js';
+import Board from './Board.js';
+import Painter from './Painter.js';
+import Constraints from './Constraints.js';
+import fs from 'fs';
 
-module.exports = class Solver {
+export default class Solver {
 
     static BAILED_TOO_MANY_STEPS = "too many steps";
     static BAILED_TOO_MANY_SOLUTIONS = "too many solutions";

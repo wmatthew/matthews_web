@@ -1,4 +1,4 @@
-const BoardGenerator = require('../backendJS/BoardGenerator.js');
-const ConstraintGenerator = require('../backendJS/ConstraintGenerator.js');
+import BoardGenerator from '../backendJS/BoardGenerator.js';
+import ConstraintGenerator from '../backendJS/ConstraintGenerator.js';
 BoardGenerator.generateBoards();
 ConstraintGenerator.generateConstraints();

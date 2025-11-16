@@ -1,27 +1,11 @@
-// TODO: convert to ES modules. https://www.11ty.dev/docs/cjs-esm/
-
-/** The new way
-import { eleventyNavigationPlugin } from "@11ty/eleventy-navigation";
+import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import Image from "@11ty/eleventy-img";
 import Hydrator from "./backendJS/pieceHydrator.js";
 import Constraints from "./backendJS/Constraints.js";
 import Connections from "./backendJS/Connections.js";
-import Board from "./backendJS/Board.js";
 import Piece from "./backendJS/Piece.js";
 
-import UpgradeHelper from "@11ty/eleventy-upgrade-help";
-*/
-
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const Image = require("@11ty/eleventy-img");
-const Hydrator = require("./backendJS/pieceHydrator.js");
-const Constraints = require("./backendJS/Constraints.js");
-const Connections = require("./backendJS/Connections.js");
-const Board = require("./backendJS/Board.js");
-const Piece = require("./backendJS/Piece.js");
-
-module.exports = function (eleventyConfig) { // old way (commonJS)
-//export default function (eleventyConfig) { // new way
+export default function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({"root": "/"});
   eleventyConfig.addPassthroughCopy("img");
@@ -43,7 +27,7 @@ module.exports = function (eleventyConfig) { // old way (commonJS)
         // width: current width in px
         // format: current file format
         // options: set of options passed to the Image call
-        slug = src.split(".")[0].split("/").pop();
+        var slug = src.split(".")[0].split("/").pop();
         return `${slug}-${width}.${format}`;    
       },
       outputDir: "../docs/img/"

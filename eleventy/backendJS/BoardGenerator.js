@@ -4,10 +4,10 @@
 
 // Output format:
 // array of (pairs of (x,y,z) coords defining a bounding box)
-const fs = require('fs');
-const jsonFormatter = require('./jsonFormatter.js');
+import fs from 'fs';
+import jsonFormatter from './jsonFormatter.js';
 
-module.exports = class BoardGenerator {
+export default class BoardGenerator {
 
     static generateBoards() {
 

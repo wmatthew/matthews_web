@@ -1,4 +1,4 @@
-module.exports = class TestUtil {
+export default class TestUtil {
 
     static assert(condition, message) {
         if (!condition) {

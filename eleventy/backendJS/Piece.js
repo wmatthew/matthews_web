@@ -1,11 +1,11 @@
-const fs = require('fs');
+import fs from 'fs';
 
 var pieceLib = JSON.parse(fs.readFileSync("_data/piece-library.json", 'utf8'));
-const Hydrator = require('./pieceHydrator.js');
-const TestUtil = require('./TestUtil.js');
-const Constraints = require('./Constraints.js');
+import Hydrator from './pieceHydrator.js';
+import TestUtil from './TestUtil.js';
+import Constraints from './Constraints.js';
 
-module.exports = class Piece {
+export default class Piece {
     
     // Takes a hydrated piece as input. Returns a clone.
     // TODO: consolidate hydration and transform into one function?

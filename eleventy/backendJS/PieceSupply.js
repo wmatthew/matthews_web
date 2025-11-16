@@ -1,6 +1,6 @@
-const TestUtil = require('./TestUtil.js');
+import TestUtil from './TestUtil.js';
 
-module.exports = class PieceSupply {
+export default class PieceSupply {
     static INFINITE_PIECES = -1;
 
     static decrementPieceCount(supply, pieceKey) {

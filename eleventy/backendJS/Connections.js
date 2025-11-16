@@ -1,13 +1,13 @@
-const fs = require('fs');
+import fs from 'fs';
 var constraintTemplates = JSON.parse(fs.readFileSync("_data/constraints-templates.json", 'utf8'));
 var constraintLibrary = JSON.parse(fs.readFileSync("_data/constraints-library.json", 'utf8'));
 var constraintMetadata = JSON.parse(fs.readFileSync("_data/constraints-metadata.json", 'utf8'));
 var boardLib = JSON.parse(fs.readFileSync("_data/board-library.json", 'utf8'));
 var pieceLib = JSON.parse(fs.readFileSync("_data/piece-library.json", 'utf8'));
 
-const TestUtil = require('./TestUtil.js');
+import TestUtil from './TestUtil.js';
 
-module.exports = class Connections {
+export default class Connections {
 
     static getUrl(key) {
         // Figure out if this is a board, constraint, constraintKey, or piece and return the right URL for it.

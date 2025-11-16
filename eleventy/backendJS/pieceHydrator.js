@@ -1,5 +1,5 @@
 // Precompute fields for a piece in the pieceLibrary
-module.exports = class Hydrator {
+export default class Hydrator {
 
     // modify the piece in place
     static hydrate(piece) {

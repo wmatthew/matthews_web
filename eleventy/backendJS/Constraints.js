@@ -1,9 +1,9 @@
-const fs = require('fs');
-const Solver = require('../backendJS/Solver.js');
+import fs from 'fs';
+import Solver from './Solver.js';
 var constraintMetadata = JSON.parse(fs.readFileSync("_data/constraints-metadata.json", 'utf8'));
-const TestUtil = require('./TestUtil.js');
+import TestUtil from './TestUtil.js';
 
-module.exports = class Constraints {
+export default class Constraints {
 
     // Use these static values to avoid undetected typos.
     static KEY = {

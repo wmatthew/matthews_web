@@ -1,4 +1,4 @@
-module.exports = class Painter {
+export default class Painter {
 
     // Takes in an array of points with fields x,y,z,id.
     // MODIFIES INPUT: sets additional field 'color' for each point.

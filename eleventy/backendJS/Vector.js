@@ -1,5 +1,5 @@
 // A class for objects that have fields x, y, and z set.
-module.exports = class Vector {
+export default class Vector {
 
     static plus(v1, v2) {
         return {

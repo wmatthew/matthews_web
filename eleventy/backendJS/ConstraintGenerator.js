@@ -1,12 +1,12 @@
 //==========================================
 // Regenerates constraint-library.json from constraint-templates.json.
 // To run: node backendJS/generateConstraints.js
-const Board = require('./Board.js');
-const PieceSupply = require('./PieceSupply.js');
-const jsonFormatter = require('./jsonFormatter.js');
-const fs = require('fs');
+import Board from './Board.js';
+import PieceSupply from './PieceSupply.js';
+import jsonFormatter from './jsonFormatter.js';
+import fs from 'fs';
 
-module.exports = class ConstraintGenerator {
+export default class ConstraintGenerator {
 
     static generateConstraints() {
 

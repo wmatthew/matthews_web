@@ -3,7 +3,7 @@
 var importantSubstrings = ["p", "b", "c", "a", "r", "d", "s", "_"];
 
 // Takes in either a string or an object and returns a formatted JSON string.
-module.exports = class JSONFormatter {
+export default class JSONFormatter {
     static formatJSON(rawInput) {
 
         var inputString;

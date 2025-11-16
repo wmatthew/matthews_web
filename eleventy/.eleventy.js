@@ -75,10 +75,7 @@ module.exports = function (eleventyConfig) { // old way (commonJS)
   eleventyConfig.addFilter("getThingsThatUsePiece", Connections.getThingsThatUsePiece );
   eleventyConfig.addFilter("getChildConstraints", Connections.getChildConstraints );
   eleventyConfig.addFilter("getThingsThatUseBoard", Connections.getThingsThatUseBoard );
-//  eleventyConfig.addFilter("groupBoardsByCategory", Board.groupBoardsByCategory );
-
-// If you have other `addPlugin` calls, it’s important that UpgradeHelper is added last.
-// eleventyConfig.addPlugin(UpgradeHelper);
+//  eleventyConfig.addFilter("groupBoardsByCategory", Board.groupBoardsByCategory ); // doesn't exist yet?
 
   return {
     dir: {

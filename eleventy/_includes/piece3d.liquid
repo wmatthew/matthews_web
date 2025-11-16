@@ -9,22 +9,22 @@
   <div class="zoomer">
     <div class="spinner {% if is_spinning %}is_spinning{% endif %}">
       <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
-      {% for computedStyle in piece.pointsRender %}
+      {%- for computedStyle in piece.pointsRender -%}
         <div class="cube" style="{{ computedStyle }}">
-          {%- include piece3dFace side:"front" -%}
-          {%- include piece3dFace side:"back" -%}
-          {%- include piece3dFace side:"right" -%}
-          {%- include piece3dFace side:"left" -%}
-          {%- include piece3dFace side:"top" -%}
-          {%- include piece3dFace side:"bottom" -%}
+          {%- include piece3dFace side:"front" text:"front" -%}
+          {%- include piece3dFace side:"back" text:"back" -%}
+          {%- include piece3dFace side:"right" text:"right" -%}
+          {%- include piece3dFace side:"left" text:"left" -%}
+          {%- include piece3dFace side:"top" text:"top" -%}
+          {%- include piece3dFace side:"bottom" text:"bottom" -%}
         </div>
-      {% endfor %}
+      {%- endfor -%}
       </div>
     </div>
   </div>
 </div>
 </div>
-{% if actualCaption %}
+{%- if actualCaption -%}
   <div class="caption" align="center">{{actualCaption}}</div>
 {% endif %}
 </div>

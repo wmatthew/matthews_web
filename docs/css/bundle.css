@@ -530,3 +530,14 @@ div.caption {
 }
 
 
+.editor__textbox--loading {
+    background-color: #ccccff;
+}
+
+.editor__textbox--error {
+    background-color: #ffcccc;
+}
+
+.editor__textbox--success {
+    background-color: #ccffcc;
+}

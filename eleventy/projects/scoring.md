@@ -7,7 +7,7 @@ eleventyNavigation:
 tags:
   - tiling
   - investigation
-permalink: scoring/tiling/puzzles
+permalink: scoring/tiling/puzzles/
 ---
 # {{title}}
 

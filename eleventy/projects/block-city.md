@@ -8,6 +8,6 @@ tags:
   - tiling
   - investigation
   - 3D printed
-permalink: block/city
+permalink: block/city/
 ---
 # {{title}}

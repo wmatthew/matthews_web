@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Editor</title>
+    <link rel="stylesheet" href="/css/bundle.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#969696">
+  </head>
+  <body>
+    
+    <div class="content">
+    <p>// TODO: move script to head</p>
+<script type="text/javascript" src="../../backendJS/Plot.js"></script>
+<script type="text/javascript" src="../../frontendJS/Editor.js"></script>
+<h1>Editor</h1>
+<p>Editor for puzzle pieces, empty boards, partial and full solutions.</p>
+<h2>Format</h2>
+<ul>
+<li>2D Grid(s) of pieceIDs (pieceID value can be A-Z; can extend later if needed)</li>
+<li>
+<ul>
+<li>= split levels</li>
+</ul>
+</li>
+<li>. = blank / empty space so far</li>
+<li>@ = out of bounds</li>
+<li>-- = end of grids. rest of file is annotations</li>
+<li>Annotations for special faces/edges</li>
+</ul>
+<h2>Annotations</h2>
+<ul>
+<li>3D: PieceID, index, face, edge, color, text</li>
+<li>2D: exact same as 3-D. can just be rendered with top down view.</li>
+<li>If you want to animate pieces being added - Piece ID is the render order</li>
+</ul>
+<h2>Plot</h2>
+<div id="editorStatus">
+Edit the text below, then press a button.
+</div>
+<textarea id="editorTextArea" class="editor__textbox--loading" rows=15 cols=50>
+AAAB
+CABB
+CC.B
+C...
+@..@
+--
+A,1,top,face,#F00,⭐️
+</textarea>
+<p><button type=button id="validate">validate</button>
+<button type=button id="render">render</button></p>
+<h2>3D View</h2>
+<div class="map" id="editor3d" style="width:282px;">
+ <div class="actualMap">
+  <div class="scene ">
+   <div class="zoomer">
+    <div class="spinner is_spinning">
+     <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="caption" align="center">3D View</div>
+</div>
+<h2>2D View (exploded)</h2>
+<div id="editor2dexploded"></div>
+<h2>2D View (6 side views)</h2>
+<div id="editor2dsides"></div>
+
+    
+    </div>
+  </body>
+</html>

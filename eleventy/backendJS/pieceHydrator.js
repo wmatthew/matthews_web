@@ -3,20 +3,25 @@ module.exports = class Hydrator {
 
     // modify the piece in place
     static hydrate(piece) {
-        // only generate points from compact if we don't already have them
+        if (!piece.compact && !piece.points) {
+            throw new Error("Can't hydrate a piece without points or compact representation.");
+        }
+
+        // The compact representation cannot be undefined - force it to be set or false.
+        if (!piece.compact) {
+            piece.compact = false;
+          }
+
+        // generate points from compact if we don't already have them
         if (!piece.points) {
           piece.points = Hydrator.convertCompactToPoints(piece.compact);
         }
 
-        if (!piece.compact) {
-            piece.compact = false;
-        }
+        piece.pointsPretty = piece.points.map(p => [p.x,p.y,p.z].join(",")).join("|"); // not that pretty TBH
 
-        piece.pointsPretty = piece.points.map(p => [p.x,p.y,p.z].join(",")).join("|");
-
-        // filter out non-peak points
         // add labels, '?' for overhangs
         // TODO These next three lines assume coordinates start at (1,1,1) - ie, that they're already corrected.
+        // filter out non-peak points
         piece.elevationMap = piece.points.filter(p => p.z == Math.max(...piece.points.filter(a => a.x==p.x&&a.y==p.y).map(a => a.z)));
         piece.hasOverhangs = piece.elevationMap.some(p => piece.points.filter(a => a.x==p.x&&a.y==p.y).length < p.z);
         piece.floorPoints = piece.points.filter(p => p.z == 1);
@@ -41,8 +46,44 @@ module.exports = class Hydrator {
         piece.height = piece.maxY - piece.minY + 1;
         piece.depth = piece.maxZ - piece.minZ + 1;
 
+        piece.faces = calculateFaces();
+        piece.edges = calculateEdges();
+
+
         piece["isHydrated"] = true;
         return piece;
+
+        function deepAdd(array, address, value) {
+            if (address.length == 0) {
+                throw new Error("can't have an empty address");
+                // TODO: base case
+            }
+
+            if (address.length == 1) {
+                // base case
+                array[address[0]] = value;
+                return;
+            }
+
+            var firstKey = address[0];
+            if (!(firstKey in array)) {
+                array[firstKey] = {}
+            }
+            deepAdd(array[firstKey], address.slice(1), value);
+        }
+
+        function calculateFaces() {
+            var faces = {};
+            piece.points.forEach(p => {
+                ["left", "right", "top", "bottom", "front", "back"].forEach(dir => {
+                    deepAdd(faces, [p.x, p.y, p.z, dir, "interior"], dir == "left");
+                })
+            })
+            return faces;
+        }
+
+        function calculateEdges() {
+        }
 
         // This is the style for the entire cube AND individual faces
         function transformStyle(x,y,z) {
@@ -67,10 +108,11 @@ module.exports = class Hydrator {
             // Style for the front face of the cube
             style.front = false; // face color, or false to omit
 
-            // Style for the back face of the cube
-            style.front = false; // face color, or false to omit
-
-            // ...
+            // Style for the back,etc faces of the cube
+            style.back = false; // face color, or false to omit
+            style.top = false; // face color, or false to omit
+            style.bottom = false; // face color, or false to omit
+            style.right = false; // face color, or false to omit
 
             // Style for the left face of the cube
             style.left = {};
@@ -79,7 +121,7 @@ module.exports = class Hydrator {
             style.left.text = "left";
 
             return style.cube;
-          }
+        }
     
     }
 

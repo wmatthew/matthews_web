@@ -6,6 +6,16 @@ const Piece = require('./Piece.js');
 const Vector = require('./Vector.js');
 const TestUtil = require('./TestUtil.js');
 
+/** The new way
+import fs from 'fs';
+var boardLib = JSON.parse(fs.readFileSync("_data/board-library.json", 'utf8'));
+import Constraints from './Constraints.js';
+import PieceSupply from './PieceSupply.js';
+import Piece from './Piece.js';
+import Vector from './Vector.js';
+import TestUtil from './TestUtil.js';
+*/
+
 module.exports = class Board {
 
     static boardFromKey(key) {

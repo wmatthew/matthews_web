@@ -2,7 +2,7 @@
 {% assign piece = piece-library[key] | hydratePiece | transformPiece:actualTransform %} 
 {% assign actualCaption = caption | default:key %} 
 
-<div class="map {{size}}">
+<div class="map {{size}}" {% if mapid %} id="{{mapid}}"{% endif %}>
  <div class="actualMap">
   {% for pos in piece.elevationMap %}
   {% assign label = pos.z | hideOneLabels %} 

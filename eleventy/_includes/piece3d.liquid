@@ -3,7 +3,7 @@
 {% assign actualTransform = transform | default:"A0" %}
 {% assign piece = piece-library[key] | hydratePiece | transformPiece:actualTransform %} 
 
-<div class="map" style="width:282px;">
+<div class="map" style="width:270px;"{% if mapid %} id="{{mapid}}"{% endif %}>
 <div class="actualMap">
 <div class="scene {{ scene_classes}}">
   <div class="zoomer">

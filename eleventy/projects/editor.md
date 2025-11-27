@@ -9,9 +9,10 @@ tags:
   - tool
 ---
 
-// TODO: move script to head
-<script type="text/javascript" src="../../backendJS/Plot.js"></script>
-<script type="text/javascript" src="../../frontendJS/Editor.js"></script>
+<!-- TODO: move scripts to head? -->
+
+<script type="module" src="../../backendJS/Plot.js"></script>
+<script type="module" src="../../frontendJS/Editor.js"></script>
 
 # {{title}}
 
@@ -19,8 +20,8 @@ Editor for puzzle pieces, empty boards, partial and full solutions.
 
 ## Format
 * 2D Grid(s) of pieceIDs (pieceID value can be A-Z; can extend later if needed)
-* - = split levels
-* . = blank / empty space so far
+* hyphen = split levels
+* . = blank / empty space
 * @ = out of bounds
 * -- = end of grids. rest of file is annotations
 * Annotations for special faces/edges
@@ -31,40 +32,38 @@ Editor for puzzle pieces, empty boards, partial and full solutions.
 * If you want to animate pieces being added - Piece ID is the render order 
 
 ## Plot
-<div id="editorStatus">
-Edit the text below, then press a button.
-</div>
+<div id="editorStatus">Edit the text below, then press a button.</div>
 
 <textarea id="editorTextArea" class="editor__textbox--loading" rows=15 cols=50>
-AAAB
-CABB
-CC.B
-C...
-@..@
+AHHG
+AADG
+BADD
+BCCD
+-
+..HH
+B..G
+B..G
+CC..
 --
-A,1,top,face,#F00,⭐️
+H,4,top,face,#F00,⭐️
 </textarea>
 
-<button type=button id="validate">validate</button>
-<button type=button id="render">render</button>
-
 ## 3D View
-<div class="map" id="editor3d" style="width:282px;">
- <div class="actualMap">
-  <div class="scene ">
-   <div class="zoomer">
-    <div class="spinner is_spinning">
-     <div class="polycube" style="transform: translateX(-200px) translateZ(-200px) translateY(300px);">
-     </div>
-    </div>
-   </div>
-  </div>
- </div>
- <div class="caption" align="center">3D View</div>
-</div>
- 
-## 2D View (exploded)
-<div id="editor2dexploded"></div>
+{% include piece3d, key:"empty", color:1, size:"small", spin:false, caption:"3D View", mapid:"editor3d" %}
 
-## 2D View (6 side views)
-<div id="editor2dsides"></div>
+## 6 Side Views
+
+{% include pieceElevation, key:"empty", color:1, size:"small", caption:"Front", mapid:"editorFront" %}
+
+{% include pieceElevation, key:"empty", color:1, size:"small", caption:"Back", mapid:"editorBack" %}
+
+{% include pieceElevation, key:"empty", color:1, size:"small", caption:"Left", mapid:"editorLeft" %}
+
+{% include pieceElevation, key:"empty", color:1, size:"small", caption:"Right", mapid:"editorRight" %}
+
+{% include pieceElevation, key:"empty", color:1, size:"small", caption:"Top", mapid:"editorTop" %}
+
+{% include pieceElevation, key:"empty", color:1, size:"small", caption:"Bottom", mapid:"editorBottom" %}
+
+## Exploded Layer View
+<div id="editor2dexploded"></div>

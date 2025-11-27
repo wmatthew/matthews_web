@@ -10,9 +10,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({"root": "/"});
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("frontendJS");
-  eleventyConfig.addPassthroughCopy("backendJS/Plot.mjs");
+  eleventyConfig.addPassthroughCopy("backendJS/Plot.js");
 
   eleventyConfig.addWatchTarget("./frontendJS");
+  eleventyConfig.addWatchTarget("./backendJS");
 
   // Generate thumbnail images
   // TODO: move thumbnail generation to shortcode / filter

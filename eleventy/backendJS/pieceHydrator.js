@@ -7,7 +7,7 @@ export default class Hydrator {
             throw new Error("Can't hydrate a piece without points or compact representation.");
         }
 
-        // The compact representation cannot be undefined - force it to be set or false.
+        // The compact representation cannot be undefined or empty string. Force it to be set or false.
         if (!piece.compact) {
             piece.compact = false;
           }

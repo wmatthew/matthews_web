@@ -1,4 +1,5 @@
 {
+    "empty": { "compact": "/" },
     "I1": { "compact": "1" },
     "I2": { "compact": "11" },
     "R": { "compact": "11/1" },

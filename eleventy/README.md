@@ -37,7 +37,7 @@ open http://localhost:8080/
 All in one command:
 
 ```
-rm -rf ../docs && npx @11ty/eleventy --serve && open http://localhost:8080/
+rm -rf ../docs && npx @11ty/eleventy --serve & open http://localhost:8080/
 ```
 
 ## Other Notes

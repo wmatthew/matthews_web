@@ -9,3 +9,7 @@
 .editor__textbox--success {
     background-color: #ccffcc;
 }
+
+.editor__textbox--changed {
+    background-color: #ffffcc;
+}
